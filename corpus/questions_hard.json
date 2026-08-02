@@ -1,0 +1,178 @@
+[
+ {
+  "id": "h-ar-1",
+  "doc": "hard_annual_report.txt",
+  "set": "hard",
+  "question": "What was consolidated revenue for fiscal 2025?",
+  "expect_value": "2,847.3",
+  "gt_quote": "at a double-digit  rate.Consolidated\nrevenue  for fiscal 2025 was $2,847.3 million, an increase of 8.6% over the\nprior year.\n\n\nTITAN MATERIALS"
+ },
+ {
+  "id": "h-ar-2",
+  "doc": "hard_annual_report.txt",
+  "set": "hard",
+  "question": "How much was research and development expense?",
+  "expect_value": "412.6",
+  "gt_quote": "consolidated financial statements. Research and development expense\ntotaled $412.6 million, representing 14.5% of consolidated revenue. Management\ndoes"
+ },
+ {
+  "id": "h-ar-3",
+  "doc": "hard_annual_report.txt",
+  "set": "hard",
+  "question": "How many people did the Company employ at year end?",
+  "expect_value": "11,204",
+  "gt_quote": "out across all manufacturing sites.At year end the\nCompany employed 11,204 people across 23 countries.\n\nThe integration of the Herzfeld acquisition"
+ },
+ {
+  "id": "h-ar-4",
+  "doc": "hard_annual_report.txt",
+  "set": "hard",
+  "question": "What quarterly dividend did the Board declare per share?",
+  "expect_value": "$1.15",
+  "gt_quote": "our commercial teams.The Board decla-\nred a quarterly dividend of $1.15 per share, payable January 15, 2026.\n\nWe continued to rationalize"
+ },
+ {
+  "id": "h-ar-5",
+  "doc": "hard_annual_report.txt",
+  "set": "hard",
+  "question": "How large was the goodwill impairment charge?",
+  "expect_value": "88.2",
+  "gt_quote": "cash\nflow.The Company recorded a goodwill impairment charge of $88.2 million\nrelated to the Coatings reporting unit.\n\nLitigation and environmental"
+ },
+ {
+  "id": "h-ar-6",
+  "doc": "hard_annual_report.txt",
+  "set": "hard",
+  "question": "What was the effective tax rate for fiscal 2025?",
+  "expect_value": "21.4%",
+  "gt_quote": "customer service levels.The\neffective tax  rate for fiscal 2025 was 21.4%, compared with 23.9% in fiscal\n2024."
+ },
+ {
+  "id": "h-ar-7",
+  "doc": "hard_annual_report.txt",
+  "set": "hard",
+  "question": "What was the order backlog at year end?",
+  "expect_value": "$5.1",
+  "gt_quote": "in our judgment, affirmed it. Order backlog at year end stood at $5.1\nbillion, of which approximately 62% is expected to convert to revenue"
+ },
+ {
+  "id": "h-ar-8",
+  "doc": "hard_annual_report.txt",
+  "set": "hard",
+  "question": "What operating income did the Advanced Polymers segment report?",
+  "expect_value": "301.8",
+  "gt_quote": "Krakow.The Advanced Polymers segment reported operating income of $301.8\n\nTITAN MATERIALS GROUP · 2025 ANNUAL  REPORT"
+ },
+ {
+  "id": "h-tr-1",
+  "doc": "hard_transcript.txt",
+  "set": "hard",
+  "question": "What is the revised quarterly marketing budget?",
+  "expect_value": "$340K",
+  "gt_quote": "Okay so, hard numbers: the revised marketing budget is $340K for the quarter, down from $410K, and that is not a discussion item, that came from finance."
+ },
+ {
+  "id": "h-tr-2",
+  "doc": "hard_transcript.txt",
+  "set": "hard",
+  "question": "What date is the public launch locked for?",
+  "expect_value": "March 9th",
+  "gt_quote": "We are locked on March 9th for the public launch, um, and I mean locked — press embargo lifts that morning."
+ },
+ {
+  "id": "h-tr-3",
+  "doc": "hard_transcript.txt",
+  "set": "hard",
+  "question": "What was monthly churn in June?",
+  "expect_value": "4.7%",
+  "gt_quote": "Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it."
+ },
+ {
+  "id": "h-tr-4",
+  "doc": "hard_transcript.txt",
+  "set": "hard",
+  "question": "How many backend engineers does Marcus say he needs?",
+  "expect_value": "six",
+  "gt_quote": "I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now."
+ },
+ {
+  "id": "h-tr-5",
+  "doc": "hard_transcript.txt",
+  "set": "hard",
+  "question": "What was the Datadog quote for the new tier?",
+  "expect_value": "$78,000",
+  "gt_quote": "So the Datadog quote came in at $78,000 a year for the new tier, which is, yeah, a lot, but the old plan caps out."
+ },
+ {
+  "id": "h-tr-6",
+  "doc": "hard_transcript.txt",
+  "set": "hard",
+  "question": "What is NPS currently sitting at?",
+  "expect_value": "41",
+  "gt_quote": "For what it's worth NPS is sitting at 41, up three points since the onboarding redesign shipped."
+ },
+ {
+  "id": "h-tr-7",
+  "doc": "hard_transcript.txt",
+  "set": "hard",
+  "question": "What was trial-to-paid conversion last month?",
+  "expect_value": "2.3%",
+  "gt_quote": "Trial-to-paid conversion was 2.3% last month, still below where we modeled it, um, but trending the right way."
+ },
+ {
+  "id": "h-tr-8",
+  "doc": "hard_transcript.txt",
+  "set": "hard",
+  "question": "By what date must the security review be done?",
+  "expect_value": "August 15",
+  "gt_quote": "The security review has to be done by August 15, no exceptions, legal was extremely clear about that."
+ },
+ {
+  "id": "h-em-1",
+  "doc": "hard_email_thread.txt",
+  "set": "hard",
+  "question": "What is the total contract value for the 24-month term?",
+  "expect_value": "$1.2 million",
+  "gt_quote": "> > > \n> > > > The total contract value for the 24-month term is $1.2 million.\n> > > > \n> > > > We can extend the multi-year discount of 12% if"
+ },
+ {
+  "id": "h-em-2",
+  "doc": "hard_email_thread.txt",
+  "set": "hard",
+  "question": "By what date must renewal paperwork be countersigned?",
+  "expect_value": "September 30, 2026",
+  "gt_quote": "impossible.\n> \n> Renewal paperwork must be countersigned no later than September 30, 2026.\n> \n> If that date is at risk we should talk this week.\n> \n> Best,"
+ },
+ {
+  "id": "h-em-3",
+  "doc": "hard_email_thread.txt",
+  "set": "hard",
+  "question": "What multi-year discount percentage is on offer?",
+  "expect_value": "12%",
+  "gt_quote": "million.\n> > > > \n> > > > We can extend the multi-year discount of 12% if the seat count stays above 400.\n> > > > \n> > > > Happy to walk"
+ },
+ {
+  "id": "h-em-4",
+  "doc": "hard_email_thread.txt",
+  "set": "hard",
+  "question": "What is the uptime commitment in Section 4.2?",
+  "expect_value": "99.95%",
+  "gt_quote": "both points.\n> > \n> > The uptime commitment in Section 4.2 remains 99.95% measured monthly.\n> > \n> > Service credits are capped at $25,000"
+ },
+ {
+  "id": "h-em-5",
+  "doc": "hard_email_thread.txt",
+  "set": "hard",
+  "question": "What are service credits capped at per incident?",
+  "expect_value": "$25,000",
+  "gt_quote": "remains 99.95% measured monthly.\n> > \n> > Service credits are capped at $25,000 per incident.\n> > \n> > The discount survives consolidation as long"
+ },
+ {
+  "id": "h-em-6",
+  "doc": "hard_email_thread.txt",
+  "set": "hard",
+  "question": "How many seats is the current deployment?",
+  "expect_value": "450 seats",
+  "gt_quote": "before I socialize this internally.\n> > > \n> > > Current deployment is 450 seats across three business units.\n> > > \n> > > Does the discount survive"
+ }
+]
