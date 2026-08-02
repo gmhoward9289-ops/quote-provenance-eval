@@ -1,0 +1,45 @@
+id,arm,outcome,ratio,answer_correct,detail
+h-ar-1,quote,exact,1.0,True,
+h-ar-2,quote,minor_edit,0.914,True,small word-level edits
+h-ar-3,quote,minor_edit,0.972,True,small word-level edits
+h-ar-4,quote,minor_edit,0.977,True,small word-level edits
+h-ar-5,quote,exact,1.0,True,
+h-ar-6,quote,exact,1.0,True,
+h-ar-7,quote,exact,1.0,True,
+h-ar-8,quote,normalized,1.0,True,unicode punctuation / case
+h-tr-1,quote,exact,1.0,True,
+h-tr-2,quote,minor_edit,0.981,True,small word-level edits
+h-tr-3,quote,exact,1.0,True,
+h-tr-4,quote,exact,1.0,True,
+h-tr-5,quote,exact,1.0,True,
+h-tr-6,quote,exact,1.0,True,
+h-tr-7,quote,minor_edit,0.952,True,small word-level edits
+h-tr-8,quote,minor_edit,0.969,True,small word-level edits
+h-em-1,quote,minor_edit,0.915,True,small word-level edits
+h-em-2,quote,minor_edit,0.966,True,small word-level edits
+h-em-3,quote,exact,1.0,True,
+h-em-4,quote,normalized,1.0,True,"whitespace, unicode punctuation / case"
+h-em-5,quote,exact,1.0,True,
+h-em-6,quote,exact,1.0,True,
+h-ar-1,anchor,exact/value-hit,,True,
+h-ar-2,anchor,normalized/value-hit,,True,
+h-ar-3,anchor,exact/value-hit,,True,
+h-ar-4,anchor,normalized/value-hit,,True,
+h-ar-5,anchor,subsequence/value-miss,,True,
+h-ar-6,anchor,normalized/value-hit,,True,
+h-ar-7,anchor,exact/value-hit,,True,
+h-ar-8,anchor,normalized/value-hit,,True,
+h-tr-1,anchor,normalized/value-hit,,True,
+h-tr-2,anchor,normalized/value-hit,,True,
+h-tr-3,anchor,exact/value-hit,,True,
+h-tr-4,anchor,exact/value-hit,,True,
+h-tr-5,anchor,normalized/value-hit,,True,
+h-tr-6,anchor,exact/value-hit,,True,
+h-tr-7,anchor,exact/value-hit,,True,
+h-tr-8,anchor,exact/value-hit,,True,
+h-em-1,anchor,exact/value-miss,,True,
+h-em-2,anchor,normalized/value-miss,,True,
+h-em-3,anchor,exact/value-hit,,True,
+h-em-4,anchor,exact/value-hit,,True,
+h-em-5,anchor,exact/value-hit,,True,
+h-em-6,anchor,normalized/value-miss,,True,

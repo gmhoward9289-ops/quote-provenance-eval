@@ -1,0 +1,61 @@
+id,arm,outcome,ratio,answer_correct,detail
+qr-1,quote,minor_edit,0.9,True,small word-level edits
+qr-2,quote,exact,1.0,True,
+qr-3,quote,normalized,1.0,True,"whitespace, unicode punctuation / case"
+qr-4,quote,exact,1.0,True,
+qr-5,quote,fabricated,0.493,True,no plausible source span
+ct-1,quote,normalized,1.0,True,"whitespace, unicode punctuation / case"
+ct-2,quote,exact,1.0,True,
+ct-3,quote,normalized,1.0,True,"whitespace, unicode punctuation / case"
+ct-4,quote,minor_edit,0.955,True,small word-level edits
+ct-5,quote,minor_edit,0.95,True,small word-level edits
+na-1,quote,normalized,1.0,True,unicode punctuation / case
+na-2,quote,minor_edit,0.925,True,small word-level edits
+na-3,quote,exact,1.0,True,
+na-4,quote,normalized,1.0,True,"whitespace, unicode punctuation / case"
+na-5,quote,exact,1.0,True,
+ip-1,quote,fabricated,0.456,True,no plausible source span
+ip-2,quote,minor_edit,0.922,True,small word-level edits
+ip-3,quote,normalized,1.0,True,"whitespace, unicode punctuation / case"
+ip-4,quote,minor_edit,0.939,True,small word-level edits
+ip-5,quote,exact,1.0,True,
+ve-1,quote,fabricated,0.612,True,no plausible source span
+ve-2,quote,minor_edit,0.961,True,small word-level edits
+ve-3,quote,exact,1.0,True,
+ve-4,quote,minor_edit,0.937,True,small word-level edits
+ve-5,quote,exact,1.0,True,
+mm-1,quote,exact,1.0,True,
+mm-2,quote,fabricated,0.406,True,no plausible source span
+mm-3,quote,normalized,1.0,True,"whitespace, unicode punctuation / case"
+mm-4,quote,exact,1.0,True,
+mm-5,quote,exact,1.0,True,
+qr-1,anchor,exact/value-hit,,True,
+qr-2,anchor,exact/value-hit,,True,
+qr-3,anchor,exact/value-hit,,True,
+qr-4,anchor,exact/value-hit,,True,
+qr-5,anchor,normalized/value-hit,,True,
+ct-1,anchor,exact/value-hit,,True,
+ct-2,anchor,exact/value-hit,,True,
+ct-3,anchor,fuzzy/value-hit,0.84,True,
+ct-4,anchor,exact/value-miss,,True,
+ct-5,anchor,exact/value-hit,,True,
+na-1,anchor,exact/value-hit,,True,
+na-2,anchor,exact/value-hit,,True,
+na-3,anchor,not_found,,True,
+na-4,anchor,exact/value-hit,,True,
+na-5,anchor,exact/value-hit,,True,
+ip-1,anchor,exact/value-hit,,True,
+ip-2,anchor,exact/value-hit,,True,
+ip-3,anchor,fuzzy/value-hit,0.909,True,
+ip-4,anchor,exact/value-hit,,True,
+ip-5,anchor,exact/value-hit,,True,
+ve-1,anchor,exact/value-hit,,True,
+ve-2,anchor,exact/value-hit,,True,
+ve-3,anchor,normalized/value-hit,,True,
+ve-4,anchor,exact/value-hit,,True,
+ve-5,anchor,exact/value-hit,,True,
+mm-1,anchor,exact/value-hit,,True,
+mm-2,anchor,normalized/value-hit,,True,
+mm-3,anchor,normalized/value-hit,,True,
+mm-4,anchor,normalized/value-hit,,True,
+mm-5,anchor,fuzzy/value-hit,0.846,True,
