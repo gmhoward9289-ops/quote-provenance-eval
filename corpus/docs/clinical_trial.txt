@@ -1,0 +1,15 @@
+Efficacy and Safety of Lorvatinib in Adults with Treatment-Resistant Hypertension: A Randomized, Double-Blind, Placebo-Controlled Phase 3 Trial
+
+BACKGROUND
+Treatment-resistant hypertension affects an estimated 10-15% of adults receiving antihypertensive therapy and is associated with markedly elevated cardiovascular risk. Lorvatinib is a first-in-class selective aldosterone synthase inhibitor.
+
+METHODS
+We randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks. The primary endpoint was change from baseline in 24-hour ambulatory systolic blood pressure at week 12. Secondary endpoints included office blood pressure response, defined as office systolic pressure below 130 mm Hg at week 24, and change in urinary albumin-to-creatinine ratio.
+
+RESULTS
+The mean age of participants was 61.4 years; 43.7% were women, and 28.9% had type 2 diabetes at baseline. At week 12, the mean change in 24-hour ambulatory systolic blood pressure was -16.2 mm Hg in the lorvatinib group and -4.8 mm Hg in the placebo group, for a placebo-adjusted difference of -11.4 mm Hg (95% confidence interval, -13.7 to -9.1; P<0.001). An office systolic pressure below 130 mm Hg at week 24 was achieved by 39.6% of participants receiving lorvatinib versus 14.2% receiving placebo (odds ratio, 3.94; 95% CI, 2.98 to 5.21). The urinary albumin-to-creatinine ratio declined by 31% relative to placebo among participants with baseline albuminuria.
+
+Hyperkalemia (serum potassium above 5.5 mmol per liter) occurred in 7.3% of the lorvatinib group and 1.6% of the placebo group; two participants discontinued lorvatinib because of hyperkalemia. Adrenal insufficiency was not observed. Serious adverse events occurred in 8.1% of the lorvatinib group and 9.4% of the placebo group.
+
+CONCLUSIONS
+In adults with treatment-resistant hypertension, lorvatinib produced a clinically meaningful reduction in ambulatory systolic blood pressure at 12 weeks with an acceptable safety profile. Longer trials are needed to establish effects on cardiovascular outcomes. (Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.)

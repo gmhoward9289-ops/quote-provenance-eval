@@ -1,0 +1,277 @@
+From: Rachel Kim <rkim@northstar-crm.example>
+Subject: RE: RE: RE: RE: Renewal terms — Meridian account
+Date: Mon, 17 Jul 2026 013:14:00 -0400
+
+Understood on timing — that date is firm on our side too, so we are aligned.
+
+I'll send the DocuSign package tomorrow morning with everything reflected as
+above.
+
+Best,
+Rachel
+
+This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+
+-----Original Message-----
+> From: Dev Okonkwo <d.okonkwo@meridianrobotics.example>
+> Subject: RE: RE: RE: Renewal terms — Meridian account
+> Date: Mon, 16 Jul 2026 012:13:00 -0400
+> 
+> Great. Last thing — timing. Our fiscal close makes October impossible.
+> 
+> Renewal paperwork must be countersigned no later than September 30, 2026.
+> 
+> If that date is at risk we should talk this week.
+> 
+> Best,
+> Dev
+> 
+> This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+> 
+> -----Original Message-----
+> > From: Rachel Kim <rkim@northstar-crm.example>
+> > Subject: RE: RE: Renewal terms — Meridian account
+> > Date: Mon, 15 Jul 2026 011:12:00 -0400
+> > 
+> > Confirming both points.
+> > 
+> > The uptime commitment in Section 4.2 remains 99.95% measured monthly.
+> > 
+> > Service credits are capped at $25,000 per incident.
+> > 
+> > The discount survives consolidation as long as aggregate seats stay above
+> > the threshold.
+> > 
+> > Best,
+> > Rachel
+> > 
+> > This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+> > 
+> > -----Original Message-----
+> > > From: Dev Okonkwo <d.okonkwo@meridianrobotics.example>
+> > > Subject: RE: Renewal terms — Meridian account
+> > > Date: Mon, 14 Jul 2026 010:11:00 -0400
+> > > 
+> > > Thanks Rachel. Two clarifications before I socialize this internally.
+> > > 
+> > > Current deployment is 450 seats across three business units.
+> > > 
+> > > Does the discount survive if we consolidate units next year?
+> > > 
+> > > Also please confirm the SLA language carries over unchanged.
+> > > 
+> > > Best,
+> > > Dev
+> > > 
+> > > This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+> > > 
+> > > -----Original Message-----
+> > > > From: Rachel Kim <rkim@northstar-crm.example>
+> > > > Subject: Renewal terms — Meridian account
+> > > > Date: Mon, 13 Jul 2026 09:10:00 -0400
+> > > > 
+> > > > Hi Dev, good speaking this morning. Summarizing where we landed so nothing
+> > > > gets lost.
+> > > > 
+> > > > The total contract value for the 24-month term is $1.2 million.
+> > > > 
+> > > > We can extend the multi-year discount of 12% if the seat count stays above 400.
+> > > > 
+> > > > Happy to walk your procurement team through the math whenever convenient.
+> > > > 
+> > > > Best,
+> > > > Rachel
+> > > > 
+> > > > This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+> > > > 
+
+============================================================================
+
+From: Dev Okonkwo <d.okonkwo@meridianrobotics.example>
+Subject: RE: RE: RE: Renewal terms — Meridian account
+Date: Mon, 16 Jul 2026 012:13:00 -0400
+
+Great. Last thing — timing. Our fiscal close makes October impossible.
+
+Renewal paperwork must be countersigned no later than September 30, 2026.
+
+If that date is at risk we should talk this week.
+
+Best,
+Dev
+
+This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+
+-----Original Message-----
+> From: Rachel Kim <rkim@northstar-crm.example>
+> Subject: RE: RE: Renewal terms — Meridian account
+> Date: Mon, 15 Jul 2026 011:12:00 -0400
+> 
+> Confirming both points.
+> 
+> The uptime commitment in Section 4.2 remains 99.95% measured monthly.
+> 
+> Service credits are capped at $25,000 per incident.
+> 
+> The discount survives consolidation as long as aggregate seats stay above
+> the threshold.
+> 
+> Best,
+> Rachel
+> 
+> This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+> 
+> -----Original Message-----
+> > From: Dev Okonkwo <d.okonkwo@meridianrobotics.example>
+> > Subject: RE: Renewal terms — Meridian account
+> > Date: Mon, 14 Jul 2026 010:11:00 -0400
+> > 
+> > Thanks Rachel. Two clarifications before I socialize this internally.
+> > 
+> > Current deployment is 450 seats across three business units.
+> > 
+> > Does the discount survive if we consolidate units next year?
+> > 
+> > Also please confirm the SLA language carries over unchanged.
+> > 
+> > Best,
+> > Dev
+> > 
+> > This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+> > 
+> > -----Original Message-----
+> > > From: Rachel Kim <rkim@northstar-crm.example>
+> > > Subject: Renewal terms — Meridian account
+> > > Date: Mon, 13 Jul 2026 09:10:00 -0400
+> > > 
+> > > Hi Dev, good speaking this morning. Summarizing where we landed so nothing
+> > > gets lost.
+> > > 
+> > > The total contract value for the 24-month term is $1.2 million.
+> > > 
+> > > We can extend the multi-year discount of 12% if the seat count stays above 400.
+> > > 
+> > > Happy to walk your procurement team through the math whenever convenient.
+> > > 
+> > > Best,
+> > > Rachel
+> > > 
+> > > This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+> > > 
+
+============================================================================
+
+From: Rachel Kim <rkim@northstar-crm.example>
+Subject: RE: RE: Renewal terms — Meridian account
+Date: Mon, 15 Jul 2026 011:12:00 -0400
+
+Confirming both points.
+
+The uptime commitment in Section 4.2 remains 99.95% measured monthly.
+
+Service credits are capped at $25,000 per incident.
+
+The discount survives consolidation as long as aggregate seats stay above
+the threshold.
+
+Best,
+Rachel
+
+This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+
+-----Original Message-----
+> From: Dev Okonkwo <d.okonkwo@meridianrobotics.example>
+> Subject: RE: Renewal terms — Meridian account
+> Date: Mon, 14 Jul 2026 010:11:00 -0400
+> 
+> Thanks Rachel. Two clarifications before I socialize this internally.
+> 
+> Current deployment is 450 seats across three business units.
+> 
+> Does the discount survive if we consolidate units next year?
+> 
+> Also please confirm the SLA language carries over unchanged.
+> 
+> Best,
+> Dev
+> 
+> This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+> 
+> -----Original Message-----
+> > From: Rachel Kim <rkim@northstar-crm.example>
+> > Subject: Renewal terms — Meridian account
+> > Date: Mon, 13 Jul 2026 09:10:00 -0400
+> > 
+> > Hi Dev, good speaking this morning. Summarizing where we landed so nothing
+> > gets lost.
+> > 
+> > The total contract value for the 24-month term is $1.2 million.
+> > 
+> > We can extend the multi-year discount of 12% if the seat count stays above 400.
+> > 
+> > Happy to walk your procurement team through the math whenever convenient.
+> > 
+> > Best,
+> > Rachel
+> > 
+> > This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+> > 
+
+============================================================================
+
+From: Dev Okonkwo <d.okonkwo@meridianrobotics.example>
+Subject: RE: Renewal terms — Meridian account
+Date: Mon, 14 Jul 2026 010:11:00 -0400
+
+Thanks Rachel. Two clarifications before I socialize this internally.
+
+Current deployment is 450 seats across three business units.
+
+Does the discount survive if we consolidate units next year?
+
+Also please confirm the SLA language carries over unchanged.
+
+Best,
+Dev
+
+This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+
+-----Original Message-----
+> From: Rachel Kim <rkim@northstar-crm.example>
+> Subject: Renewal terms — Meridian account
+> Date: Mon, 13 Jul 2026 09:10:00 -0400
+> 
+> Hi Dev, good speaking this morning. Summarizing where we landed so nothing
+> gets lost.
+> 
+> The total contract value for the 24-month term is $1.2 million.
+> 
+> We can extend the multi-year discount of 12% if the seat count stays above 400.
+> 
+> Happy to walk your procurement team through the math whenever convenient.
+> 
+> Best,
+> Rachel
+> 
+> This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.
+> 
+
+============================================================================
+
+From: Rachel Kim <rkim@northstar-crm.example>
+Subject: Renewal terms — Meridian account
+Date: Mon, 13 Jul 2026 09:10:00 -0400
+
+Hi Dev, good speaking this morning. Summarizing where we landed so nothing
+gets lost.
+
+The total contract value for the 24-month term is $1.2 million.
+
+We can extend the multi-year discount of 12% if the seat count stays above 400.
+
+Happy to walk your procurement team through the math whenever convenient.
+
+Best,
+Rachel
+
+This message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.

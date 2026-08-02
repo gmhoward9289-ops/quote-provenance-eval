@@ -1,0 +1,32 @@
+Postmortem: API Gateway Outage, 2026-03-14 (INC-4471)
+
+Severity: SEV-1
+Duration: 3 hours 42 minutes (08:17 UTC to 11:59 UTC)
+Customer impact: Approximately 62% of API requests returned 5xx errors during the incident window; peak error rate reached 91% between 09:05 and 09:40 UTC.
+
+Summary
+On 2026-03-14 at 08:17 UTC, a configuration change to the rate-limiting service (release rl-2.14.0) introduced a regression in the token-bucket refill logic. Under sustained load, refill timestamps were computed using a cached clock value that could lag real time by up to 45 seconds, causing the limiter to erroneously classify legitimate traffic as over-quota. The gateway returned HTTP 503 for all affected requests instead of falling back to pass-through mode as designed.
+
+Timeline (all times UTC)
+08:11 — rl-2.14.0 deployed to 5% canary; canary metrics nominal.
+08:17 — Rollout promoted to 100% after automated canary analysis passed. Error rate begins climbing.
+08:24 — First page fired: gateway 5xx rate exceeded 10% threshold.
+08:36 — Incident declared SEV-2; on-call engineer begins investigating gateway logs.
+09:05 — Error rate reaches 91%. Incident upgraded to SEV-1.
+09:22 — Rate limiter identified as proximate cause; rollback to rl-2.13.7 initiated.
+09:41 — Rollback complete, but error rate plateaus at 34% due to thundering-herd retries from client SDKs.
+10:15 — Emergency config pushed raising limiter burst capacity by 3x to absorb retry storm.
+11:59 — Error rate below 0.5% for 30 consecutive minutes; incident closed.
+
+Root cause
+The refill routine in rl-2.14.0 replaced a per-request monotonic clock read with a value cached by a background goroutine to reduce syscall overhead. The cache was refreshed every 50 ms in testing, but the refresh goroutine was scheduled on the same worker pool as request handling; under production load the pool saturated and refresh latency grew unbounded. The pass-through fallback did not engage because the limiter returned a well-formed "deny" verdict rather than an error, and fallback logic only triggers on errors.
+
+Why the canary missed it
+The canary fleet receives roughly 5% of production traffic and never reached the worker-pool saturation point at which cache refresh began to starve. Canary analysis ran for only 6 minutes, well short of the 25-30 minutes of sustained load needed to reproduce the failure.
+
+Corrective actions
+1. Revert to per-request monotonic clock reads; the syscall overhead was measured at 0.3% CPU, which we accept. (Done, shipped in rl-2.14.1.)
+2. Treat "deny" verdicts exceeding 5x the trailing 7-day baseline as a limiter fault and engage pass-through. (Owner: platform team, due 2026-04-10.)
+3. Extend canary bake time to 30 minutes for all rate-limiter releases. (Done.)
+4. Move the clock-refresh goroutine to a dedicated OS thread. (Abandoned in favor of action 1.)
+5. Add client SDK jittered exponential backoff; the retry storm added roughly 80 minutes to recovery. (Owner: SDK team, due 2026-05-01.)

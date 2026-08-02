@@ -1,0 +1,114 @@
+PRODUCT PLANNING SYNC — RAW TRANSCRIPT (AUTO-GENERATED, UNEDITED)
+Recorded meeting, 4 participants, 47 minutes
+
+[00:02:13] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.
+
+[00:03:15] PRIYA: Sorry, I was on mute. Classic. What I was saying was, we should probably take that offline.
+
+[00:03:40] DANA: I mean, I don't disagree, I just think we're solving next quarter's problem this quarter.
+
+[00:04:41] DANA: Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.
+
+[00:05:15] TOM: Can we park the offsite discussion? It's eating our agenda every single week.
+
+[00:05:57] MARCUS: [crosstalk]
+
+[00:06:17] TOM: Honestly the dashboard numbers and the warehouse numbers still don't agree, so take everything I'm about to say with a grain of salt.
+
+[00:07:04] TOM: That's fair, that's fair. Okay.
+
+[00:07:30] MARCUS: Um, so, quick tangent, the parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.
+
+[00:08:56] DANA: Let's timebox this to five minutes because we have to get to roadmap.
+
+[00:10:02] PRIYA: Okay so, hard numbers: the revised marketing budget is $340K for the quarter, down from $410K, and that is not a discussion item, that came from finance.
+
+[00:11:30] MARCUS: We are locked on March 9th for the public launch, um, and I mean locked — press embargo lifts that morning.
+
+[00:12:04] TOM: I'll drop the doc in the channel after this, everyone please actually read it this time.
+
+[00:13:21] DANA: Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it.
+
+[00:14:02] DANA: Hmm, yeah, I don't have that number in front of me, let me get back to you.
+
+[00:15:04] TOM: Right, and to be clear this is the same thing we said last quarter, so nobody should be surprised.
+
+[00:16:12] PRIYA: Sorry, my dog is going insane, one second. Okay. Where were we.
+
+[00:17:05] MARCUS: Do we have a decision or are we just admiring the problem? Genuine question.
+
+[00:17:54] PRIYA: New phone, who dis — sorry, wrong window, ignore that, someone was messaging me.
+
+[00:18:25] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.
+
+[00:19:05] PRIYA: Sorry, I was on mute. Classic. What I was saying was, we should probably take that offline.
+
+[00:20:02] MARCUS: I mean, I don't disagree, I just think we're solving next quarter's problem this quarter.
+
+[00:21:16] MARCUS: I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.
+
+[00:21:51] TOM: Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.
+
+[00:22:40] PRIYA: Can we park the offsite discussion? It's eating our agenda every single week.
+
+[00:23:11] PRIYA: [crosstalk]
+
+[00:24:41] TOM: So the Datadog quote came in at $78,000 a year for the new tier, which is, yeah, a lot, but the old plan caps out.
+
+[00:25:42] TOM: Honestly the dashboard numbers and the warehouse numbers still don't agree, so take everything I'm about to say with a grain of salt.
+
+[00:26:09] MARCUS: That's fair, that's fair. Okay.
+
+[00:26:36] TOM: Um, so, quick tangent, the parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.
+
+[00:27:38] PRIYA: Let's timebox this to five minutes because we have to get to roadmap.
+
+[00:28:48] DANA: I'll drop the doc in the channel after this, everyone please actually read it this time.
+
+[00:29:14] TOM: Hmm, yeah, I don't have that number in front of me, let me get back to you.
+
+[00:30:15] DANA: Right, and to be clear this is the same thing we said last quarter, so nobody should be surprised.
+
+[00:31:48] DANA: For what it's worth NPS is sitting at 41, up three points since the onboarding redesign shipped.
+
+[00:32:49] PRIYA: Sorry, my dog is going insane, one second. Okay. Where were we.
+
+[00:33:39] TOM: Do we have a decision or are we just admiring the problem? Genuine question.
+
+[00:34:10] TOM: New phone, who dis — sorry, wrong window, ignore that, someone was messaging me.
+
+[00:35:20] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.
+
+[00:36:17] DANA: Sorry, I was on mute. Classic. What I was saying was, we should probably take that offline.
+
+[00:37:01] MARCUS: I mean, I don't disagree, I just think we're solving next quarter's problem this quarter.
+
+[00:38:13] DANA: Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.
+
+[00:39:37] DANA: Trial-to-paid conversion was 2.3% last month, still below where we modeled it, um, but trending the right way.
+
+[00:40:07] DANA: Can we park the offsite discussion? It's eating our agenda every single week.
+
+[00:41:05] PRIYA: The security review has to be done by August 15, no exceptions, legal was extremely clear about that.
+
+[00:42:28] TOM: [crosstalk]
+
+[00:43:52] MARCUS: Honestly the dashboard numbers and the warehouse numbers still don't agree, so take everything I'm about to say with a grain of salt.
+
+[00:44:38] TOM: That's fair, that's fair. Okay.
+
+[00:46:09] TOM: Um, so, quick tangent, the parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.
+
+[00:46:45] DANA: Let's timebox this to five minutes because we have to get to roadmap.
+
+[00:47:46] PRIYA: I'll drop the doc in the channel after this, everyone please actually read it this time.
+
+[00:48:28] DANA: Hmm, yeah, I don't have that number in front of me, let me get back to you.
+
+[00:49:51] PRIYA: Right, and to be clear this is the same thing we said last quarter, so nobody should be surprised.
+
+[00:50:47] PRIYA: Sorry, my dog is going insane, one second. Okay. Where were we.
+
+[00:52:10] PRIYA: Do we have a decision or are we just admiring the problem? Genuine question.
+
+[00:52:58] PRIYA: New phone, who dis — sorry, wrong window, ignore that, someone was messaging me.
