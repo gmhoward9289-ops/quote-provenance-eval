@@ -1,0 +1,4 @@
+id,arm,outcome,ratio,answer_correct,detail
+qr-1,quote,exact,1.0,True,
+qr-2,quote,exact,1.0,True,
+qr-3,quote,normalized,1.0,True,"whitespace, unicode punctuation / case"

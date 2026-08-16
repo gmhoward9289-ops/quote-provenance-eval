@@ -42,7 +42,10 @@ QUOTE_SYSTEM = (
     'markdown fences, no commentary: {"answer": "<the answer>", "quote": '
     '"<supporting quote>"}. The quote MUST be copied character-for-character '
     "from the document — identical punctuation, capitalization, spacing, and "
-    "special characters. Do not shorten with ellipses. Do not fix typos."
+    "special characters. Do not shorten with ellipses. Do not fix typos. "
+    "If the document does not contain the requested information, respond "
+    'with {"answer": "NOT_FOUND", "quote": ""} — never quote text that does '
+    "not answer the question."
 )
 
 ANCHOR_SYSTEM = (
@@ -51,8 +54,27 @@ ANCHOR_SYSTEM = (
     '"<location anchor>"}. The anchor is a short distinctive phrase of 3 to 8 '
     "consecutive words copied from the document, from the same sentence as "
     "the answer. Its only job is to let a program find the location — keep it "
-    "short and distinctive."
+    "short and distinctive. If the document does not contain the requested "
+    'information, respond with {"answer": "NOT_FOUND", "anchor": ""}.'
 )
+
+REFUSAL_TOKENS = ("not_found", "not found", "n/a", "none", "unknown")
+
+
+def is_refusal(answer: str) -> bool:
+    a = (answer or "").strip().casefold()
+    return a == "" or any(t in a for t in REFUSAL_TOKENS)
+
+
+def wilson_ci(k: int, n: int, z: float = 1.96) -> tuple[float, float]:
+    """95% Wilson score interval for a binomial proportion."""
+    if n == 0:
+        return (0.0, 0.0)
+    p = k / n
+    denom = 1 + z * z / n
+    center = (p + z * z / (2 * n)) / denom
+    half = z * ((p * (1 - p) / n + z * z / (4 * n * n)) ** 0.5) / denom
+    return (round(max(0.0, center - half), 3), round(min(1.0, center + half), 3))
 
 
 def user_prompt(doc_text: str, question: str) -> str:
@@ -104,12 +126,15 @@ def answer_correct(expected: str, *candidates: str) -> bool:
     return any(values_match(expected, c) for c in candidates)
 
 
-def run_arm(arm: str, questions: list, docs: dict, provider: str, model: str, verbose: bool) -> list:
+def run_arm(arm: str, questions: list, docs: dict, provider: str, model: str,
+            verbose: bool, rep: int = 1) -> list:
     rows = []
     for i, q in enumerate(questions, 1):
         doc_text = docs[q["doc"]]
         row = {"id": q["id"], "doc": q["doc"], "question": q["question"],
-               "expect_value": q["expect_value"], "arm": arm}
+               "expect_value": q.get("expect_value"), "arm": arm, "rep": rep}
+        if q.get("expect_absent"):
+            row["absent"] = True
         try:
             raw = get_response(provider, model, arm, q, doc_text)
         except ProviderError as e:
@@ -130,9 +155,19 @@ def run_arm(arm: str, questions: list, docs: dict, provider: str, model: str, ve
         if arm == "quote":
             quote = str(parsed.get("quote", ""))
             row["quote"] = quote
-            row["score"] = score_quote(doc_text, quote)
-            row["answer_correct"] = answer_correct(q["expect_value"], row["answer"], quote)
-            label = row["score"]["level"]
+            if row.get("absent"):
+                # correct behavior: refuse, and offer no quote at all
+                row["refused"] = is_refusal(row["answer"]) and not quote.strip()
+                if quote.strip():
+                    row["score"] = score_quote(doc_text, quote)
+                label = "refused" if row["refused"] else "ANSWERED-ABSENT"
+            else:
+                row["score"] = score_quote(doc_text, quote)
+                # symmetric counterpart of the anchor arm's value_in_span: does
+                # the quoted text itself contain the expected value?
+                row["value_in_quote"] = answer_correct(q["expect_value"], quote)
+                row["answer_correct"] = answer_correct(q["expect_value"], row["answer"], quote)
+                label = row["score"]["level"]
         else:
             anchor_text = str(parsed.get("anchor", ""))
             row["anchor"] = anchor_text
@@ -143,10 +178,16 @@ def run_arm(arm: str, questions: list, docs: dict, provider: str, model: str, ve
             if located:
                 # invariant: emitted sentence is a real substring of the source
                 assert loc["sentence"] in doc_text
-                row["value_in_span"] = answer_correct(q["expect_value"], loc["sentence"])
-            row["answer_correct"] = answer_correct(q["expect_value"], row["answer"])
-            label = loc["method"] + ("" if not located else
-                                     ("/value-hit" if row["value_in_span"] else "/value-miss"))
+            if row.get("absent"):
+                row["refused"] = is_refusal(row["answer"])
+                label = "refused" if row["refused"] else "ANSWERED-ABSENT"
+                label += "/located" if located else ""
+            else:
+                if located:
+                    row["value_in_span"] = answer_correct(q["expect_value"], loc["sentence"])
+                row["answer_correct"] = answer_correct(q["expect_value"], row["answer"])
+                label = loc["method"] + ("" if not located else
+                                         ("/value-hit" if row["value_in_span"] else "/value-miss"))
         if verbose:
             print(f"  [{arm} {i}/{len(questions)}] {q['id']}: {label}")
         rows.append(row)
@@ -154,10 +195,11 @@ def run_arm(arm: str, questions: list, docs: dict, provider: str, model: str, ve
 
 
 def summarize(rows: list) -> dict:
-    quote_rows = [r for r in rows if r["arm"] == "quote" and "score" in r]
-    anchor_rows = [r for r in rows if r["arm"] == "anchor" and "locate" in r]
+    quote_rows = [r for r in rows if r["arm"] == "quote" and "score" in r and not r.get("absent")]
+    anchor_rows = [r for r in rows if r["arm"] == "anchor" and "locate" in r and not r.get("absent")]
     errors = [r for r in rows if "error" in r or r.get("parse_error")]
     s: dict = {"n_quote": len(quote_rows), "n_anchor": len(anchor_rows), "n_failed_calls": len(errors)}
+    ci: dict = {}
 
     if quote_rows:
         n = len(quote_rows)
@@ -167,6 +209,14 @@ def summarize(rows: list) -> dict:
         s["quote_levels"] = levels
         exact = levels.get("exact", 0)
         s["quote_exact_rate"] = round(exact / n, 3)
+        ci["quote_exact_rate"] = wilson_ci(exact, n)
+        # apples-to-apples with anchor_coverage: exact quote AND the quote
+        # contains the expected value (anchor_coverage requires located AND
+        # value in the located sentence)
+        cov = sum(1 for r in quote_rows
+                  if r["score"]["level"] == "exact" and r.get("value_in_quote"))
+        s["quote_coverage"] = round(cov / n, 3)
+        ci["quote_coverage"] = wilson_ci(cov, n)
         s["quote_recoverable_rate"] = round((exact + levels.get("normalized", 0)) / n, 3)
         s["quote_fabricated_rate"] = round(levels.get("fabricated", 0) / n, 3)
         s["quote_answer_accuracy"] = round(sum(r["answer_correct"] for r in quote_rows) / n, 3)
@@ -175,7 +225,9 @@ def summarize(rows: list) -> dict:
         n = len(anchor_rows)
         located = [r for r in anchor_rows if r["located"]]
         s["anchor_located_rate"] = round(len(located) / n, 3)
-        s["anchor_coverage"] = round(sum(1 for r in located if r.get("value_in_span")) / n, 3)
+        cov = sum(1 for r in located if r.get("value_in_span"))
+        s["anchor_coverage"] = round(cov / n, 3)
+        ci["anchor_coverage"] = wilson_ci(cov, n)
         s["anchor_methods"] = {}
         for r in anchor_rows:
             m = r["locate"]["method"]
@@ -183,6 +235,39 @@ def summarize(rows: list) -> dict:
         s["anchor_answer_accuracy"] = round(sum(r["answer_correct"] for r in anchor_rows) / n, 3)
         # by construction — every located span passed the substring assert
         s["anchor_provenance_fidelity_of_located"] = 1.0
+
+    if ci:
+        s["ci95"] = ci
+
+    # value-absent questions: the right answer is a refusal with no span.
+    # The dangerous failure is a confident answer backed by real-looking
+    # provenance (an exact quote / a located anchor of irrelevant text).
+    abs_q = [r for r in rows if r.get("absent") and r["arm"] == "quote" and "refused" in r]
+    abs_a = [r for r in rows if r.get("absent") and r["arm"] == "anchor" and "refused" in r]
+    if abs_q:
+        n = len(abs_q)
+        s["n_absent_quote"] = n
+        s["quote_absent_refusal_rate"] = round(sum(r["refused"] for r in abs_q) / n, 3)
+        s["quote_absent_confident_with_exact_span"] = sum(
+            1 for r in abs_q
+            if not r["refused"] and r.get("score", {}).get("level") == "exact")
+    if abs_a:
+        n = len(abs_a)
+        s["n_absent_anchor"] = n
+        s["anchor_absent_refusal_rate"] = round(sum(r["refused"] for r in abs_a) / n, 3)
+        s["anchor_absent_confident_with_located_span"] = sum(
+            1 for r in abs_a if not r["refused"] and r["located"])
+
+    # per-repeat breakdown of the headline rates (only present for --repeats > 1)
+    reps = sorted({r.get("rep", 1) for r in rows})
+    if len(reps) > 1:
+        per: dict = {}
+        for rep in reps:
+            sub = summarize([r for r in rows if r.get("rep", 1) == rep])
+            for k in ("quote_exact_rate", "quote_coverage", "anchor_coverage"):
+                if k in sub:
+                    per.setdefault(k, []).append(sub[k])
+        s["per_rep"] = per
     return s
 
 
@@ -195,10 +280,13 @@ def cmd_run(args: argparse.Namespace) -> None:
     arms = ["quote", "anchor"] if args.arm == "both" else [args.arm]
 
     all_rows = []
-    for arm in arms:
-        print(f"Running arm={arm} provider={args.provider} model={args.model} "
-              f"({len(questions)} questions)")
-        all_rows += run_arm(arm, questions, docs, args.provider, args.model, args.verbose)
+    for rep in range(1, args.repeats + 1):
+        for arm in arms:
+            rep_tag = f" rep={rep}/{args.repeats}" if args.repeats > 1 else ""
+            print(f"Running arm={arm} provider={args.provider} model={args.model} "
+                  f"({len(questions)} questions){rep_tag}")
+            all_rows += run_arm(arm, questions, docs, args.provider, args.model,
+                                args.verbose, rep)
 
     summary = summarize(all_rows)
     out_dir = ROOT / "results"
@@ -209,58 +297,89 @@ def cmd_run(args: argparse.Namespace) -> None:
     out = out_dir / f"run_{args.provider}_{safe_model}{tag}_{stamp}.json"
     out.write_text(json.dumps({
         "provider": args.provider, "model": args.model, "timestamp": stamp,
-        "summary": summary, "rows": all_rows,
+        "corpus": qpath.stem, "summary": summary, "rows": all_rows,
     }, indent=2, ensure_ascii=False), encoding="utf-8")
 
     csv_path = out.with_suffix(".csv")
     with csv_path.open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["id", "arm", "outcome", "ratio", "answer_correct", "detail"])
+        w.writerow(["id", "arm", "rep", "outcome", "ratio", "answer_correct", "detail"])
         for r in all_rows:
-            if "score" in r:
-                w.writerow([r["id"], r["arm"], r["score"]["level"], r["score"]["ratio"],
+            rep = r.get("rep", 1)
+            if "refused" in r:
+                outcome = "refused" if r["refused"] else "answered-absent"
+                detail = r.get("score", {}).get("level", "")
+                if r.get("located"):
+                    detail = (detail + " located").strip()
+                w.writerow([r["id"], r["arm"], rep, outcome, "", "", detail])
+            elif "score" in r:
+                w.writerow([r["id"], r["arm"], rep, r["score"]["level"], r["score"]["ratio"],
                             r.get("answer_correct"), r["score"]["detail"]])
             elif "locate" in r:
                 outcome = r["locate"]["method"]
                 if r["located"]:
                     outcome += "/value-hit" if r.get("value_in_span") else "/value-miss"
-                w.writerow([r["id"], r["arm"], outcome, r["locate"].get("ratio", ""),
+                w.writerow([r["id"], r["arm"], rep, outcome, r["locate"].get("ratio", ""),
                             r.get("answer_correct"), ""])
             else:
-                w.writerow([r["id"], r["arm"], "call_failed", "", "", r.get("error", "parse error")])
+                w.writerow([r["id"], r["arm"], rep, "call_failed", "", "", r.get("error", "parse error")])
 
     print("\n=== SUMMARY ===")
     print(json.dumps(summary, indent=2))
     print(f"\nSaved: {out}\n       {csv_path}")
-    if "quote_exact_rate" in summary and "anchor_coverage" in summary:
-        print(f"\nHeadline: verbatim-quote exact-match rate "
-              f"{summary['quote_exact_rate']:.0%} vs anchored-extraction coverage "
-              f"{summary['anchor_coverage']:.0%} (anchored spans are exact by construction).")
+    if "quote_coverage" in summary and "anchor_coverage" in summary:
+        ci = summary.get("ci95", {})
+        def with_ci(key):
+            v = f"{summary[key]:.0%}"
+            if key in ci:
+                lo, hi = ci[key]
+                v += f" (95% CI {lo:.0%}–{hi:.0%})"
+            return v
+        print(f"\nHeadline: verbatim-quote coverage (exact quote containing the value) "
+              f"{with_ci('quote_coverage')} vs anchored-extraction coverage "
+              f"{with_ci('anchor_coverage')} (anchored spans are exact by construction).")
 
 
 def cmd_report(args: argparse.Namespace) -> None:
     runs = []
     for path in args.results:
         data = json.loads(Path(path).read_text(encoding="utf-8"))
+        if "corpus" not in data:
+            # older runs: recover the corpus tag from the filename
+            m = re.search(r"_hard_\d{8}-\d{6}", Path(path).name)
+            data["corpus"] = "questions_hard" if m else "questions"
         runs.append(data)
     lines = [
         "# Quote-provenance eval — cross-run comparison", "",
-        "| provider | model | quote exact | +normalized | fabricated | anchor located | anchor coverage |",
-        "|---|---|---|---|---|---|---|",
+        "| provider | model | corpus | quote exact | quote coverage | +normalized | fabricated | anchor located | anchor coverage |",
+        "|---|---|---|---|---|---|---|---|---|",
     ]
     for r in runs:
         s = r["summary"]
+        ci = s.get("ci95", {})
+        corpus = r["corpus"].replace("questions_", "").replace("questions", "clean")
         def pct(key):
             return f"{s[key]:.0%}" if key in s else "—"
+        def pct_ci(key):
+            if key not in s:
+                return "—"
+            v = f"{s[key]:.0%}"
+            if key in ci:
+                lo, hi = ci[key]
+                v += f" <sub>{lo:.0%}–{hi:.0%}</sub>"
+            return v
         lines.append(
-            f"| {r['provider']} | {r['model']} | {pct('quote_exact_rate')} | "
+            f"| {r['provider']} | {r['model']} | {corpus} | {pct('quote_exact_rate')} | "
+            f"{pct_ci('quote_coverage')} | "
             f"{pct('quote_recoverable_rate')} | {pct('quote_fabricated_rate')} | "
-            f"{pct('anchor_located_rate')} | {pct('anchor_coverage')} |")
+            f"{pct('anchor_located_rate')} | {pct_ci('anchor_coverage')} |")
     lines += [
         "",
         "**How to read this:** *quote exact* is the share of model-produced "
         "'verbatim' quotes that actually appear character-for-character in the "
         "source — the only kind a naive string-match verifier accepts. "
+        "*quote coverage* additionally requires the exact quote to contain the "
+        "expected value — the apples-to-apples comparator for *anchor coverage*. "
         "*+normalized* adds quotes recoverable with cheap unicode/whitespace "
         "normalization. *anchor coverage* is the share of questions where the "
         "anchored-extraction arm located the model's anchor AND the located "
@@ -283,6 +402,9 @@ def main() -> None:
                     help="model id, or mock profile (faithful|sloppy|chaotic)")
     pr.add_argument("--arm", default="both", choices=["both", "quote", "anchor"])
     pr.add_argument("--limit", type=int, default=0, help="only run the first N questions")
+    pr.add_argument("--repeats", type=int, default=1,
+                    help="run the whole question set N times; summary pools "
+                         "across repeats and adds a per-repeat breakdown")
     pr.add_argument("--questions", default=str(ROOT / "corpus" / "questions.json"),
                     help="questions file (e.g. corpus/questions_hard.json)")
     pr.add_argument("--verbose", action="store_true", help="per-question progress lines")

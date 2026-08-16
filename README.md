@@ -12,7 +12,7 @@
   - `fabricated` — below 0.70 (no plausible source span)
 - **Anchor arm** — the model returns `{answer, anchor}` where the anchor is a short phrase (3–8 words) near the value. Deterministic code (`anchor.py`) locates the anchor in the source (exact → normalized → ordered-token subsequence → fuzzy; the subsequence step catches anchors where the model skipped a parenthetical or aside) and emits the containing sentence *from the source text*. Every emitted span is a real substring of the document by construction — provenance fidelity is 100% for anything located. The metric that can fail is **coverage**: anchor located AND located sentence contains the expected value. Fabricated anchors fail closed (`not_found`) instead of producing fake provenance.
 
-The comparison that matters: **quote-arm exact rate** vs **anchor-arm coverage**.
+The comparison that matters: **quote-arm coverage** vs **anchor-arm coverage**. Both are held to the same bar: the emitted span must be verifiably real *and* contain the expected value. (`quote_coverage` = exact quote AND value present; in every run so far it equals the raw exact rate — models that quote exactly quote the right sentence — but the harness checks rather than assumes.)
 
 ## Quickstart (no API key needed)
 
@@ -42,13 +42,17 @@ python3 eval.py run --provider anthropic --model claude-sonnet-4-5 --verbose
 # Ollama (local, free — good for iterating)
 python3 eval.py run --provider ollama --model llama3.1:8b --verbose
 # non-default host: export OLLAMA_HOST=http://localhost:11434
+# context window: pinned via OLLAMA_NUM_CTX (default 8192). The harness
+# estimates prompt size and refuses to run a doc that might not fit —
+# Ollama truncates silently, and a truncation failure would masquerade as
+# a quoting failure.
 
 # OpenRouter (one key, many models — good for the cross-model table)
 export OPENROUTER_API_KEY=sk-or-...
 python3 eval.py run --provider openrouter --model openai/gpt-4o-mini --verbose
 ```
 
-Useful flags: `--arm quote|anchor|both` (default both), `--limit N` for a cheap smoke test.
+Useful flags: `--arm quote|anchor|both` (default both), `--limit N` for a cheap smoke test, `--repeats N` to run the whole set N times (the summary pools across repeats, reports 95% Wilson intervals in `ci95`, and adds a `per_rep` breakdown of the headline rates — publish with `--repeats 3` or more).
 
 Each run writes `results/run_<provider>_<model>_<stamp>.json` (full raw responses included, so you can re-inspect anything) and a per-question `.csv`. Build the cross-model table with:
 
@@ -69,13 +73,15 @@ Six synthetic documents in `corpus/docs/` — synthetic so ground truth is exact
 
 `corpus/questions.json` has 30 questions with ground-truth spans. Run `python3 validate_corpus.py` after any edit — it verifies every ground-truth quote is an exact, unique substring of its document (eat your own dog food: never trust an unverified span, including mine).
 
-To grow the eval: add a `.txt` to `corpus/docs/`, add question entries, re-run the validator. More docs and more question styles (multi-hop, ambiguous, value-absent) make the numbers more publishable.
+`corpus/questions_absent.json` has 10 **value-absent** questions (`--questions corpus/questions_absent.json`): the document does not contain the requested value, and both system prompts permit an explicit `NOT_FOUND` refusal. The right behavior is refusing; the dangerous failure is a confident invented answer backed by a real-looking span (an exact quote or a located anchor of irrelevant text). The summary reports `*_absent_refusal_rate` and counts of `confident_with_*_span` — fabrication under pressure, measured directly. These rows are excluded from the main coverage rates.
+
+To grow the eval: add a `.txt` to `corpus/docs/`, add question entries, re-run the validator. More docs and more question styles (multi-hop, ambiguous) make the numbers more publishable.
 
 ## Interpreting results / writing it up
 
-- The headline gap is `quote_exact_rate` vs `anchor_coverage`. If you want one sentence: *"Told to quote verbatim, the model produced an exactly-verifiable quote X% of the time; letting code locate a model-supplied anchor yielded verified source spans Y% of the time, and every emitted span is guaranteed to exist in the source."*
+- The headline gap is `quote_coverage` vs `anchor_coverage` (symmetric: both require a real span containing the expected value). If you want one sentence: *"Told to quote verbatim, the model produced an exactly-verifiable quote X% of the time; letting code locate a model-supplied anchor yielded verified source spans Y% of the time, and every emitted span is guaranteed to exist in the source."*
 - The failure taxonomy (`quote_levels`) is the interesting middle of a write-up: how much is trivial normalization loss vs real paraphrase vs outright fabrication.
-- Report medians over ≥3 runs per model if you publish numbers; temperature is 0 but providers aren't perfectly deterministic.
+- Publish with `--repeats 3` or more; temperature is 0 but providers aren't perfectly deterministic. The summary's `ci95` Wilson intervals are the honest error bars for a 30-question pilot — at n=30, an 80% rate carries a ±14-point interval, so don't read single-digit gaps as real.
 - Caveats to state honestly: 30 questions is a pilot, docs are short (single-context), synthetic docs may be easier to quote than scanned/OCR'd real-world text, and thresholds (0.90/0.70) are judgment calls — they're in `scoring.py`, tune and disclose.
 
 ## Files

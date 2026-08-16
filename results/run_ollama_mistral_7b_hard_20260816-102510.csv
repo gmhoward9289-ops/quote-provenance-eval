@@ -1,0 +1,133 @@
+id,arm,rep,outcome,ratio,answer_correct,detail
+h-ar-1,quote,1,minor_edit,0.983,True,small word-level edits
+h-ar-2,quote,1,exact,1.0,True,
+h-ar-3,quote,1,normalized,1.0,True,unicode punctuation / case
+h-ar-4,quote,1,minor_edit,0.966,True,small word-level edits
+h-ar-5,quote,1,exact,1.0,True,
+h-ar-6,quote,1,normalized,1.0,True,unicode punctuation / case
+h-ar-7,quote,1,normalized,1.0,True,unicode punctuation / case
+h-ar-8,quote,1,minor_edit,0.932,True,small word-level edits
+h-tr-1,quote,1,exact,1.0,True,
+h-tr-2,quote,1,normalized,1.0,True,unicode punctuation in quote
+h-tr-3,quote,1,exact,1.0,True,
+h-tr-4,quote,1,exact,1.0,True,
+h-tr-5,quote,1,exact,1.0,True,
+h-tr-6,quote,1,normalized,1.0,True,unicode punctuation / case
+h-tr-7,quote,1,exact,1.0,True,
+h-tr-8,quote,1,exact,1.0,True,
+h-em-1,quote,1,exact,1.0,True,
+h-em-2,quote,1,exact,1.0,True,
+h-em-3,quote,1,exact,1.0,True,
+h-em-4,quote,1,exact,1.0,True,
+h-em-5,quote,1,exact,1.0,True,
+h-em-6,quote,1,exact,1.0,True,
+h-ar-1,anchor,1,normalized/value-hit,,True,
+h-ar-2,anchor,1,normalized/value-hit,,True,
+h-ar-3,anchor,1,normalized/value-hit,,True,
+h-ar-4,anchor,1,fuzzy/value-hit,0.983,True,
+h-ar-5,anchor,1,normalized/value-hit,,True,
+h-ar-6,anchor,1,normalized/value-hit,,True,
+h-ar-7,anchor,1,exact/value-hit,,True,
+h-ar-8,anchor,1,exact/value-hit,,True,
+h-tr-1,anchor,1,exact/value-hit,,True,
+h-tr-2,anchor,1,normalized/value-hit,,True,
+h-tr-3,anchor,1,exact/value-hit,,True,
+h-tr-4,anchor,1,exact/value-hit,,True,
+h-tr-5,anchor,1,exact/value-hit,,True,
+h-tr-6,anchor,1,exact/value-hit,,True,
+h-tr-7,anchor,1,exact/value-hit,,True,
+h-tr-8,anchor,1,exact/value-hit,,True,
+h-em-1,anchor,1,exact/value-hit,,True,
+h-em-2,anchor,1,exact/value-hit,,True,
+h-em-3,anchor,1,exact/value-hit,,True,
+h-em-4,anchor,1,exact/value-hit,,True,
+h-em-5,anchor,1,exact/value-hit,,True,
+h-em-6,anchor,1,exact/value-hit,,True,
+h-ar-1,quote,2,minor_edit,0.983,True,small word-level edits
+h-ar-2,quote,2,exact,1.0,True,
+h-ar-3,quote,2,normalized,1.0,True,unicode punctuation / case
+h-ar-4,quote,2,minor_edit,0.966,True,small word-level edits
+h-ar-5,quote,2,exact,1.0,True,
+h-ar-6,quote,2,normalized,1.0,True,unicode punctuation / case
+h-ar-7,quote,2,normalized,1.0,True,unicode punctuation / case
+h-ar-8,quote,2,minor_edit,0.932,True,small word-level edits
+h-tr-1,quote,2,exact,1.0,True,
+h-tr-2,quote,2,normalized,1.0,True,unicode punctuation in quote
+h-tr-3,quote,2,exact,1.0,True,
+h-tr-4,quote,2,exact,1.0,True,
+h-tr-5,quote,2,exact,1.0,True,
+h-tr-6,quote,2,normalized,1.0,True,unicode punctuation / case
+h-tr-7,quote,2,exact,1.0,True,
+h-tr-8,quote,2,exact,1.0,True,
+h-em-1,quote,2,exact,1.0,True,
+h-em-2,quote,2,exact,1.0,True,
+h-em-3,quote,2,exact,1.0,True,
+h-em-4,quote,2,exact,1.0,True,
+h-em-5,quote,2,exact,1.0,True,
+h-em-6,quote,2,exact,1.0,True,
+h-ar-1,anchor,2,normalized/value-hit,,True,
+h-ar-2,anchor,2,normalized/value-hit,,True,
+h-ar-3,anchor,2,normalized/value-hit,,True,
+h-ar-4,anchor,2,fuzzy/value-hit,0.983,True,
+h-ar-5,anchor,2,normalized/value-hit,,True,
+h-ar-6,anchor,2,normalized/value-hit,,True,
+h-ar-7,anchor,2,exact/value-hit,,True,
+h-ar-8,anchor,2,exact/value-hit,,True,
+h-tr-1,anchor,2,exact/value-hit,,True,
+h-tr-2,anchor,2,normalized/value-hit,,True,
+h-tr-3,anchor,2,exact/value-hit,,True,
+h-tr-4,anchor,2,exact/value-hit,,True,
+h-tr-5,anchor,2,exact/value-hit,,True,
+h-tr-6,anchor,2,exact/value-hit,,True,
+h-tr-7,anchor,2,exact/value-hit,,True,
+h-tr-8,anchor,2,exact/value-hit,,True,
+h-em-1,anchor,2,exact/value-hit,,True,
+h-em-2,anchor,2,exact/value-hit,,True,
+h-em-3,anchor,2,exact/value-hit,,True,
+h-em-4,anchor,2,exact/value-hit,,True,
+h-em-5,anchor,2,exact/value-hit,,True,
+h-em-6,anchor,2,exact/value-hit,,True,
+h-ar-1,quote,3,minor_edit,0.983,True,small word-level edits
+h-ar-2,quote,3,exact,1.0,True,
+h-ar-3,quote,3,normalized,1.0,True,unicode punctuation / case
+h-ar-4,quote,3,minor_edit,0.966,True,small word-level edits
+h-ar-5,quote,3,exact,1.0,True,
+h-ar-6,quote,3,normalized,1.0,True,unicode punctuation / case
+h-ar-7,quote,3,normalized,1.0,True,unicode punctuation / case
+h-ar-8,quote,3,minor_edit,0.932,True,small word-level edits
+h-tr-1,quote,3,exact,1.0,True,
+h-tr-2,quote,3,normalized,1.0,True,unicode punctuation in quote
+h-tr-3,quote,3,exact,1.0,True,
+h-tr-4,quote,3,exact,1.0,True,
+h-tr-5,quote,3,exact,1.0,True,
+h-tr-6,quote,3,normalized,1.0,True,unicode punctuation / case
+h-tr-7,quote,3,exact,1.0,True,
+h-tr-8,quote,3,exact,1.0,True,
+h-em-1,quote,3,exact,1.0,True,
+h-em-2,quote,3,exact,1.0,True,
+h-em-3,quote,3,exact,1.0,True,
+h-em-4,quote,3,exact,1.0,True,
+h-em-5,quote,3,exact,1.0,True,
+h-em-6,quote,3,exact,1.0,True,
+h-ar-1,anchor,3,normalized/value-hit,,True,
+h-ar-2,anchor,3,normalized/value-hit,,True,
+h-ar-3,anchor,3,normalized/value-hit,,True,
+h-ar-4,anchor,3,fuzzy/value-hit,0.983,True,
+h-ar-5,anchor,3,normalized/value-hit,,True,
+h-ar-6,anchor,3,normalized/value-hit,,True,
+h-ar-7,anchor,3,exact/value-hit,,True,
+h-ar-8,anchor,3,exact/value-hit,,True,
+h-tr-1,anchor,3,exact/value-hit,,True,
+h-tr-2,anchor,3,normalized/value-hit,,True,
+h-tr-3,anchor,3,exact/value-hit,,True,
+h-tr-4,anchor,3,exact/value-hit,,True,
+h-tr-5,anchor,3,exact/value-hit,,True,
+h-tr-6,anchor,3,exact/value-hit,,True,
+h-tr-7,anchor,3,exact/value-hit,,True,
+h-tr-8,anchor,3,exact/value-hit,,True,
+h-em-1,anchor,3,exact/value-hit,,True,
+h-em-2,anchor,3,exact/value-hit,,True,
+h-em-3,anchor,3,exact/value-hit,,True,
+h-em-4,anchor,3,exact/value-hit,,True,
+h-em-5,anchor,3,exact/value-hit,,True,
+h-em-6,anchor,3,exact/value-hit,,True,

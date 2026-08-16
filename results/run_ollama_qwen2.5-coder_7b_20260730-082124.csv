@@ -1,0 +1,61 @@
+id,arm,outcome,ratio,answer_correct,detail
+qr-1,quote,exact,1.0,True,
+qr-2,quote,exact,1.0,True,
+qr-3,quote,exact,1.0,True,
+qr-4,quote,normalized,1.0,True,unicode punctuation / case
+qr-5,quote,exact,1.0,True,
+ct-1,quote,normalized,1.0,True,unicode punctuation / case
+ct-2,quote,exact,1.0,True,
+ct-3,quote,exact,1.0,True,
+ct-4,quote,exact,1.0,True,
+ct-5,quote,exact,1.0,True,
+na-1,quote,exact,1.0,True,
+na-2,quote,exact,1.0,True,
+na-3,quote,exact,1.0,True,
+na-4,quote,minor_edit,0.992,True,small word-level edits
+na-5,quote,minor_edit,0.994,True,small word-level edits
+ip-1,quote,exact,1.0,True,
+ip-2,quote,normalized,1.0,True,unicode punctuation / case
+ip-3,quote,normalized,1.0,True,unicode punctuation / case
+ip-4,quote,exact,1.0,True,
+ip-5,quote,normalized,1.0,True,unicode punctuation / case
+ve-1,quote,exact,1.0,True,
+ve-2,quote,normalized,1.0,True,unicode punctuation / case
+ve-3,quote,exact,1.0,True,
+ve-4,quote,minor_edit,0.96,True,small word-level edits
+ve-5,quote,paraphrase,0.854,True,recognizably derived but rewritten
+mm-1,quote,exact,1.0,True,
+mm-2,quote,exact,1.0,True,
+mm-3,quote,exact,1.0,True,
+mm-4,quote,exact,1.0,True,
+mm-5,quote,exact,1.0,True,
+qr-1,anchor,exact/value-hit,,True,
+qr-2,anchor,exact/value-hit,,True,
+qr-3,anchor,exact/value-hit,,True,
+qr-4,anchor,exact/value-hit,,True,
+qr-5,anchor,exact/value-hit,,True,
+ct-1,anchor,exact/value-hit,,True,
+ct-2,anchor,exact/value-hit,,True,
+ct-3,anchor,exact/value-hit,,True,
+ct-4,anchor,exact/value-hit,,True,
+ct-5,anchor,exact/value-hit,,True,
+na-1,anchor,exact/value-hit,,True,
+na-2,anchor,exact/value-hit,,True,
+na-3,anchor,exact/value-hit,,True,
+na-4,anchor,exact/value-hit,,True,
+na-5,anchor,exact/value-hit,,True,
+ip-1,anchor,exact/value-hit,,True,
+ip-2,anchor,exact/value-hit,,True,
+ip-3,anchor,exact/value-hit,,True,
+ip-4,anchor,normalized/value-hit,,True,
+ip-5,anchor,normalized/value-hit,,True,
+ve-1,anchor,exact/value-hit,,True,
+ve-2,anchor,exact/value-hit,,False,
+ve-3,anchor,exact/value-hit,,True,
+ve-4,anchor,exact/value-hit,,True,
+ve-5,anchor,exact/value-hit,,True,
+mm-1,anchor,exact/value-hit,,True,
+mm-2,anchor,exact/value-hit,,True,
+mm-3,anchor,exact/value-hit,,True,
+mm-4,anchor,exact/value-miss,,True,
+mm-5,anchor,exact/value-hit,,False,

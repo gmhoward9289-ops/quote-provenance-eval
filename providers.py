@@ -91,15 +91,30 @@ def call_openrouter(model: str, system: str, user: str) -> str:
         raise ProviderError(f"Unexpected OpenRouter response: {json.dumps(data)[:400]}") from e
 
 
+OLLAMA_MAX_TOKENS = 1024
+
+
 def call_ollama(model: str, system: str, user: str) -> str:
     host = os.environ.get("OLLAMA_HOST", "http://localhost:11434").rstrip("/")
+    num_ctx = int(os.environ.get("OLLAMA_NUM_CTX", "8192"))
+    # Ollama silently truncates a prompt that exceeds num_ctx — the model
+    # then can't see part of the document, and a truncation failure would
+    # masquerade as a quoting failure. Guard with a conservative estimate
+    # (~3 chars/token for English prose).
+    est_tokens = (len(system) + len(user)) // 3 + 64
+    if est_tokens + OLLAMA_MAX_TOKENS > num_ctx:
+        raise ProviderError(
+            f"prompt is ~{est_tokens} tokens; with {OLLAMA_MAX_TOKENS} output "
+            f"tokens it may not fit num_ctx={num_ctx} and Ollama would truncate "
+            f"silently. Set OLLAMA_NUM_CTX higher (and re-check GPU residency "
+            f"with /api/ps) or shorten the document.")
     data = _post_json(
         f"{host}/api/chat",
         {},
         {
             "model": model,
             "stream": False,
-            "options": {"temperature": 0, "num_ctx": 8192},
+            "options": {"temperature": 0, "num_ctx": num_ctx},
             "messages": [
                 {"role": "system", "content": system},
                 {"role": "user", "content": user},

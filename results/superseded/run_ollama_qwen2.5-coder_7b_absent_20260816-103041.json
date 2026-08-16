@@ -1,0 +1,941 @@
+{
+  "provider": "ollama",
+  "model": "qwen2.5-coder:7b",
+  "timestamp": "20260816-103041",
+  "corpus": "questions_absent",
+  "summary": {
+    "n_quote": 0,
+    "n_anchor": 0,
+    "n_failed_calls": 0,
+    "n_absent_quote": 30,
+    "quote_absent_refusal_rate": 0.9,
+    "quote_absent_confident_with_exact_span": 3,
+    "n_absent_anchor": 30,
+    "anchor_absent_refusal_rate": 0.9,
+    "anchor_absent_confident_with_located_span": 3,
+    "per_rep": {}
+  },
+  "rows": [
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "What engineering headcount was discussed for next quarter?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"6 backend engineers\", \"quote\": \"I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.\"}",
+      "answer": "6 backend engineers",
+      "quote": "I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "What engineering headcount was discussed for next quarter?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"6 backend engineers\", \"anchor\": \"I need six backend engineers by end of quarter\"}",
+      "answer": "6 backend engineers",
+      "anchor": "I need six backend engineers by end of quarter",
+      "locate": {
+        "method": "exact",
+        "span": "I need six backend engineers by end of quarter",
+        "sentence": "[00:21:16] MARCUS: I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "What engineering headcount was discussed for next quarter?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"6 backend engineers\", \"quote\": \"I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.\"}",
+      "answer": "6 backend engineers",
+      "quote": "I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "What engineering headcount was discussed for next quarter?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"6 backend engineers\", \"anchor\": \"I need six backend engineers by end of quarter\"}",
+      "answer": "6 backend engineers",
+      "anchor": "I need six backend engineers by end of quarter",
+      "locate": {
+        "method": "exact",
+        "span": "I need six backend engineers by end of quarter",
+        "sentence": "[00:21:16] MARCUS: I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "What engineering headcount was discussed for next quarter?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"6 backend engineers\", \"quote\": \"I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.\"}",
+      "answer": "6 backend engineers",
+      "quote": "I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "What engineering headcount was discussed for next quarter?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"6 backend engineers\", \"anchor\": \"I need six backend engineers by end of quarter\"}",
+      "answer": "6 backend engineers",
+      "anchor": "I need six backend engineers by end of quarter",
+      "locate": {
+        "method": "exact",
+        "span": "I need six backend engineers by end of quarter",
+        "sentence": "[00:21:16] MARCUS: I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now."
+      },
+      "located": true,
+      "refused": false
+    }
+  ]
+}

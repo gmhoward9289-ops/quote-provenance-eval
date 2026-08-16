@@ -10,6 +10,7 @@ from pathlib import Path
 
 from anchor import locate
 from eval import answer_correct, parse_model_json, summarize
+from scoring import score_quote
 
 ROOT = Path(__file__).parent
 DOCS = {p.name: p.read_text(encoding="utf-8") for p in (ROOT / "corpus" / "docs").glob("*.txt")}
@@ -21,6 +22,9 @@ def rescore_row(row: dict) -> dict:
     if "raw_response" not in row:
         return row
     q = QUESTIONS[row["id"]]
+    if q.get("expect_absent"):
+        # absent-question rows keep their original refusal scoring
+        return row
     doc = DOCS[row["doc"]]
     expect = q["expect_value"]
     row = dict(row, expect_value=expect)
@@ -39,13 +43,20 @@ def rescore_row(row: dict) -> dict:
             row.pop("value_in_span", None)
         row["answer_correct"] = answer_correct(expect, row["answer"])
     else:
-        row["answer_correct"] = answer_correct(expect, row["answer"], row.get("quote", ""))
+        quote = str(parsed.get("quote", ""))
+        row["quote"] = quote
+        row["score"] = score_quote(doc, quote)
+        row["value_in_quote"] = answer_correct(expect, quote)
+        row["answer_correct"] = answer_correct(expect, row["answer"], quote)
     return row
 
 
 def main() -> None:
     for path in sys.argv[1:]:
         data = json.loads(Path(path).read_text(encoding="utf-8"))
+        if "corpus" not in data:
+            data["corpus"] = ("questions_hard" if "_hard_" in Path(path).name
+                              else "questions")
         old = data["summary"]
         rows = [rescore_row(r) for r in data["rows"]]
         new = summarize(rows)

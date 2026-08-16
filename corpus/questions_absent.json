@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ab-1",
+    "doc": "quarterly_report.txt",
+    "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+    "expect_absent": true,
+    "expect_value": null,
+    "distractor_quote": "Operating expenses were $54.9 million, or 36.9% of revenue"
+  },
+  {
+    "id": "ab-2",
+    "doc": "clinical_trial.txt",
+    "question": "How many clinical sites participated in the trial?",
+    "expect_absent": true,
+    "expect_value": null,
+    "distractor_quote": "We randomly assigned 1,284 adults"
+  },
+  {
+    "id": "ab-3",
+    "doc": "clinical_trial.txt",
+    "question": "What was the median follow-up duration in months?",
+    "expect_absent": true,
+    "expect_value": null,
+    "distractor_quote": "The primary endpoint was change from baseline"
+  },
+  {
+    "id": "ab-4",
+    "doc": "news_article.txt",
+    "question": "What is the name of Harborview's mayor?",
+    "expect_absent": true,
+    "expect_value": null,
+    "distractor_quote": "said Council President Maria Okafor"
+  },
+  {
+    "id": "ab-5",
+    "doc": "incident_postmortem.txt",
+    "question": "What was the estimated revenue impact of the outage?",
+    "expect_absent": true,
+    "expect_value": null,
+    "distractor_quote": "Customer impact: Approximately 62% of API requests"
+  },
+  {
+    "id": "ab-6",
+    "doc": "messy_memo.txt",
+    "question": "How much does a replacement badge cost?",
+    "expect_absent": true,
+    "expect_value": null,
+    "distractor_quote": "New badges are ready for pickup at the Building 7 security desk"
+  },
+  {
+    "id": "ab-7",
+    "doc": "victorian_essay.txt",
+    "question": "Who is the author of the essay?",
+    "expect_absent": true,
+    "expect_value": null,
+    "distractor_quote": "On the Cultivation of Attention"
+  },
+  {
+    "id": "ab-8",
+    "doc": "hard_annual_report.txt",
+    "question": "Who is the company's chief executive officer?",
+    "expect_absent": true,
+    "expect_value": null,
+    "distractor_quote": "To our shareholders: fiscal 2025 tested the resilience"
+  },
+  {
+    "id": "ab-9",
+    "doc": "hard_email_thread.txt",
+    "question": "What payment terms (net days) were agreed for the renewal?",
+    "expect_absent": true,
+    "expect_value": null,
+    "distractor_quote": "The total contract value for the 24-month term is $1.2 million."
+  },
+  {
+    "id": "ab-10",
+    "doc": "hard_transcript.txt",
+    "question": "On what date was this meeting held?",
+    "expect_absent": true,
+    "expect_value": null,
+    "distractor_quote": "We are locked on March 9th for the public launch"
+  }
+]

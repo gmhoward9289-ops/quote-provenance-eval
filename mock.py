@@ -69,10 +69,26 @@ def _corrupt(text: str, mode: str, rng: random.Random, answer: str) -> str:
     return text
 
 
+_ABSENT_REFUSE_P = {"faithful": 1.0, "sloppy": 0.8, "chaotic": 0.5}
+
+
 def mock_response(question: dict, arm: str, profile: str) -> str:
     if profile not in PROFILES:
         raise ValueError(f"unknown mock profile {profile!r}; choose from {list(PROFILES)}")
     rng = random.Random(f"{question['id']}:{profile}:{arm}")
+
+    if question.get("expect_absent"):
+        key = "quote" if arm == "quote" else "anchor"
+        if rng.random() <= _ABSENT_REFUSE_P[profile]:
+            return json.dumps({"answer": "NOT_FOUND", key: "", "_mock_mode": "refuse"})
+        # the scary failure: a confident invented value backed by a real
+        # (but irrelevant) span from the document
+        fake = f"${rng.randrange(10, 99)}.{rng.randrange(1, 9)} million"
+        span = question.get("distractor_quote", "the figure was confirmed in the appendix")
+        if arm == "anchor":
+            span = " ".join(span.split()[:5])
+        return json.dumps({"answer": fake, key: span, "_mock_mode": "fabricate_absent"})
+
     mode = _pick_mode(profile, rng)
     answer = question["expect_value"]
 

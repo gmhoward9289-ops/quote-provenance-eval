@@ -16,6 +16,17 @@ def main() -> int:
     errors = 0
     for q in questions:
         doc_text = (DOCS / q["doc"]).read_text(encoding="utf-8")
+        if q.get("expect_absent"):
+            # value-absent question: no gt fields; the distractor (used by the
+            # mock's fabrication mode) must itself be a real doc substring
+            if q.get("expect_value") is not None or "gt_quote" in q:
+                print(f"FAIL {q['id']}: expect_absent question carries gt fields")
+                errors += 1
+            dq = q.get("distractor_quote", "")
+            if dq and dq not in doc_text:
+                print(f"FAIL {q['id']}: distractor_quote not found in {q['doc']}")
+                errors += 1
+            continue
         n = doc_text.count(q["gt_quote"])
         if n == 0:
             print(f"FAIL {q['id']}: gt_quote not found in {q['doc']}")

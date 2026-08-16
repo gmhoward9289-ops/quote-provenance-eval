@@ -1,0 +1,5 @@
+id,arm,outcome,ratio,answer_correct,detail
+qr-1,quote,exact,1.0,True,
+qr-2,quote,exact,1.0,True,
+qr-1,anchor,exact/value-hit,,True,
+qr-2,anchor,exact/value-hit,,False,

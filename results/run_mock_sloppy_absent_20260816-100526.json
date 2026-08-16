@@ -1,0 +1,330 @@
+{
+  "provider": "mock",
+  "model": "sloppy",
+  "timestamp": "20260816-100526",
+  "corpus": "questions_absent",
+  "summary": {
+    "n_quote": 0,
+    "n_anchor": 0,
+    "n_failed_calls": 0,
+    "n_absent_quote": 10,
+    "quote_absent_refusal_rate": 0.9,
+    "quote_absent_confident_with_exact_span": 1,
+    "n_absent_anchor": 10,
+    "anchor_absent_refusal_rate": 0.7,
+    "anchor_absent_confident_with_located_span": 3
+  },
+  "rows": [
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$70.3 million\", \"quote\": \"New badges are ready for pickup at the Building 7 security desk\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$70.3 million",
+      "quote": "New badges are ready for pickup at the Building 7 security desk",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "What engineering headcount was discussed for next quarter?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$14.7 million\", \"anchor\": \"The primary endpoint was change\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$14.7 million",
+      "anchor": "The primary endpoint was change",
+      "locate": {
+        "method": "exact",
+        "span": "The primary endpoint was change",
+        "sentence": "The primary endpoint was change from baseline in 24-hour ambulatory systolic blood pressure at week 12."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$60.3 million\", \"anchor\": \"To our shareholders: fiscal 2025\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$60.3 million",
+      "anchor": "To our shareholders: fiscal 2025",
+      "locate": {
+        "method": "exact",
+        "span": "To our shareholders: fiscal 2025",
+        "sentence": "To our shareholders: fiscal 2025 tested the resilience of our operating model"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$17.7 million\", \"anchor\": \"The total contract value for\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$17.7 million",
+      "anchor": "The total contract value for",
+      "locate": {
+        "method": "exact",
+        "span": "The total contract value for",
+        "sentence": "> > > > The total contract value for the 24-month term is $1.2 million."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "What engineering headcount was discussed for next quarter?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    }
+  ]
+}

@@ -1,0 +1,364 @@
+{
+  "provider": "mock",
+  "model": "chaotic",
+  "timestamp": "20260816-100618",
+  "corpus": "questions_absent",
+  "summary": {
+    "n_quote": 0,
+    "n_anchor": 0,
+    "n_failed_calls": 0,
+    "n_absent_quote": 10,
+    "quote_absent_refusal_rate": 0.3,
+    "quote_absent_confident_with_exact_span": 7,
+    "n_absent_anchor": 10,
+    "anchor_absent_refusal_rate": 0.5,
+    "anchor_absent_confident_with_located_span": 5
+  },
+  "rows": [
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$82.1 million\", \"quote\": \"The primary endpoint was change from baseline\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$82.1 million",
+      "quote": "The primary endpoint was change from baseline",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$53.4 million\", \"quote\": \"said Council President Maria Okafor\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$53.4 million",
+      "quote": "said Council President Maria Okafor",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$49.6 million\", \"quote\": \"Customer impact: Approximately 62% of API requests\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$49.6 million",
+      "quote": "Customer impact: Approximately 62% of API requests",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$33.1 million\", \"quote\": \"New badges are ready for pickup at the Building 7 security desk\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$33.1 million",
+      "quote": "New badges are ready for pickup at the Building 7 security desk",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$70.1 million\", \"quote\": \"On the Cultivation of Attention\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$70.1 million",
+      "quote": "On the Cultivation of Attention",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$43.7 million\", \"quote\": \"To our shareholders: fiscal 2025 tested the resilience\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$43.7 million",
+      "quote": "To our shareholders: fiscal 2025 tested the resilience",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$62.8 million\", \"quote\": \"The total contract value for the 24-month term is $1.2 million.\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$62.8 million",
+      "quote": "The total contract value for the 24-month term is $1.2 million.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "What engineering headcount was discussed for next quarter?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$13.4 million\", \"anchor\": \"We randomly assigned 1,284 adults\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$13.4 million",
+      "anchor": "We randomly assigned 1,284 adults",
+      "locate": {
+        "method": "exact",
+        "span": "We randomly assigned 1,284 adults",
+        "sentence": "We randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$85.2 million\", \"anchor\": \"said Council President Maria Okafor\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$85.2 million",
+      "anchor": "said Council President Maria Okafor",
+      "locate": {
+        "method": "exact",
+        "span": "said Council President Maria Okafor",
+        "sentence": "\"This is the single largest investment in mobility our city has ever contemplated,\" said Council President Maria Okafor, who championed the measure."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$15.2 million\", \"anchor\": \"New badges are ready for\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$15.2 million",
+      "anchor": "New badges are ready for",
+      "locate": {
+        "method": "exact",
+        "span": "New badges are ready for",
+        "sentence": "New badges are ready for pickup at the Building 7 security desk starting Sept 18; bring photo ID."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$89.1 million\", \"anchor\": \"To our shareholders: fiscal 2025\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$89.1 million",
+      "anchor": "To our shareholders: fiscal 2025",
+      "locate": {
+        "method": "exact",
+        "span": "To our shareholders: fiscal 2025",
+        "sentence": "To our shareholders: fiscal 2025 tested the resilience of our operating model"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\", \"_mock_mode\": \"refuse\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "What engineering headcount was discussed for next quarter?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"$73.6 million\", \"anchor\": \"the revised marketing budget is\", \"_mock_mode\": \"fabricate_absent\"}",
+      "answer": "$73.6 million",
+      "anchor": "the revised marketing budget is",
+      "locate": {
+        "method": "exact",
+        "span": "the revised marketing budget is",
+        "sentence": "[00:10:02] PRIYA: Okay so, hard numbers: the revised marketing budget is $340K for the quarter, down from $410K, and that is not a discussion item, that came from finance."
+      },
+      "located": true,
+      "refused": false
+    }
+  ]
+}
