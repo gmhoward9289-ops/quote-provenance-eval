@@ -1,0 +1,39 @@
+name: Auto-merge owner PRs
+
+# Turns on GitHub's native auto-merge for pull requests the repository owner
+# opens, so they merge themselves once the required checks go green. Nobody
+# has to run `gh pr merge`.
+#
+# PRs from anyone else never match the `if` below, and could not merge anyway:
+# merging needs write access, and the owner is the only collaborator here. That
+# permission -- not a branch rule -- is what makes an outside PR wait for a
+# human. A ruleset cannot condition required reviews on the PR author.
+#
+# Bot-authored PRs (release-please, dependabot) deliberately do not match
+# either. Cutting a release stays a decision someone makes on purpose.
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  enable-auto-merge:
+    if: >-
+      github.event.pull_request.user.login == github.repository_owner
+      && github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable auto-merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        # The fallback covers repos with no required status checks: GitHub
+        # refuses to *queue* an auto-merge on a PR that nothing is blocking,
+        # so merge it outright instead.
+        run: |
+          gh pr merge --auto --squash --delete-branch "$PR_URL" \
+            || gh pr merge --squash --delete-branch "$PR_URL"
