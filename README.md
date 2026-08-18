@@ -1,5 +1,7 @@
 # Trust, But Anchor
 
+[![Discussions](https://img.shields.io/github/discussions/gmhoward9289-ops/trust-but-anchor)](https://github.com/gmhoward9289-ops/trust-but-anchor/discussions)
+
 **On adversarial documents, models produce a character-for-character verbatim quote only 64–73% of the time — even when explicitly told to.** Letting code locate a short model-proposed anchor phrase instead recovers 91–100% coverage, with every emitted span guaranteed to be a real substring of the source. That's the whole argument: don't trust the model's quote — trust its anchor, and verify the anchor in code.
 
 **Question:** when you ask an LLM to justify an extracted value with a *verbatim* quote from the source, how often is the quote actually verbatim — and does "model proposes, code anchors" beat trusting the model's quotes?
@@ -33,6 +35,8 @@ The mock provider simulates a model with controllable sloppiness (`faithful`, `s
 Even the chaotic profile recovers 93% coverage through anchoring — that's the whole argument in one row.
 
 ## Running against real models
+
+Have results for a model not in `results/comparison.md`? Post it in [Show and tell](https://github.com/gmhoward9289-ops/trust-but-anchor/discussions/categories/show-and-tell).
 
 Everything is stdlib-only Python 3.10+; nothing to install.
 
