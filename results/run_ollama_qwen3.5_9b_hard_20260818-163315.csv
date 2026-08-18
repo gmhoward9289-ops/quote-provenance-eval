@@ -1,0 +1,45 @@
+id,arm,rep,outcome,ratio,answer_correct,detail
+h-ar-1,quote,1,call_failed,,,parse error
+h-ar-2,quote,1,normalized,1.0,True,unicode punctuation / case
+h-ar-3,quote,1,normalized,1.0,True,unicode punctuation / case
+h-ar-4,quote,1,normalized,1.0,True,unicode punctuation / case
+h-ar-5,quote,1,normalized,1.0,True,unicode punctuation / case
+h-ar-6,quote,1,call_failed,,,parse error
+h-ar-7,quote,1,call_failed,,,parse error
+h-ar-8,quote,1,call_failed,,,parse error
+h-tr-1,quote,1,exact,1.0,True,
+h-tr-2,quote,1,exact,1.0,True,
+h-tr-3,quote,1,exact,1.0,True,
+h-tr-4,quote,1,exact,1.0,True,
+h-tr-5,quote,1,exact,1.0,True,
+h-tr-6,quote,1,exact,1.0,True,
+h-tr-7,quote,1,exact,1.0,True,
+h-tr-8,quote,1,exact,1.0,True,
+h-em-1,quote,1,exact,1.0,True,
+h-em-2,quote,1,call_failed,,,parse error
+h-em-3,quote,1,exact,1.0,True,
+h-em-4,quote,1,call_failed,,,parse error
+h-em-5,quote,1,exact,1.0,True,
+h-em-6,quote,1,call_failed,,,parse error
+h-ar-1,anchor,1,normalized/value-hit,,True,
+h-ar-2,anchor,1,normalized/value-hit,,True,
+h-ar-3,anchor,1,normalized/value-hit,,True,
+h-ar-4,anchor,1,exact/value-hit,,True,
+h-ar-5,anchor,1,exact/value-hit,,True,
+h-ar-6,anchor,1,normalized/value-hit,,True,
+h-ar-7,anchor,1,exact/value-hit,,True,
+h-ar-8,anchor,1,exact/value-hit,,True,
+h-tr-1,anchor,1,call_failed,,,parse error
+h-tr-2,anchor,1,exact/value-hit,,True,
+h-tr-3,anchor,1,exact/value-hit,,True,
+h-tr-4,anchor,1,exact/value-hit,,True,
+h-tr-5,anchor,1,exact/value-hit,,True,
+h-tr-6,anchor,1,exact/value-hit,,True,
+h-tr-7,anchor,1,exact/value-hit,,True,
+h-tr-8,anchor,1,exact/value-hit,,True,
+h-em-1,anchor,1,exact/value-hit,,True,
+h-em-2,anchor,1,exact/value-hit,,True,
+h-em-3,anchor,1,exact/value-hit,,True,
+h-em-4,anchor,1,exact/value-hit,,True,
+h-em-5,anchor,1,exact/value-hit,,True,
+h-em-6,anchor,1,exact/value-hit,,True,

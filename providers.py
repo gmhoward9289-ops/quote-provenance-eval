@@ -3,7 +3,7 @@
 Supported providers:
   anthropic   — needs ANTHROPIC_API_KEY
   openrouter  — needs OPENROUTER_API_KEY
-  ollama      — needs a local Ollama server (OLLAMA_HOST, default http://localhost:11434)
+  ollama      — needs a local Ollama server (OLLAMA_HOST, default http://127.0.0.1:11434)
   mock        — no network; simulates a model with controllable sloppiness (see mock.py)
 """
 from __future__ import annotations
@@ -95,7 +95,9 @@ OLLAMA_MAX_TOKENS = 1024
 
 
 def call_ollama(model: str, system: str, user: str) -> str:
-    host = os.environ.get("OLLAMA_HOST", "http://localhost:11434").rstrip("/")
+    # 127.0.0.1, not localhost: a localhost-addressed Ollama client has hung
+    # silently on a cold first call (IPv6 resolution stall on Windows).
+    host = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434").rstrip("/")
     num_ctx = int(os.environ.get("OLLAMA_NUM_CTX", "8192"))
     # Ollama silently truncates a prompt that exceeds num_ctx — the model
     # then can't see part of the document, and a truncation failure would
@@ -108,19 +110,23 @@ def call_ollama(model: str, system: str, user: str) -> str:
             f"tokens it may not fit num_ctx={num_ctx} and Ollama would truncate "
             f"silently. Set OLLAMA_NUM_CTX higher (and re-check GPU residency "
             f"with /api/ps) or shorten the document.")
-    data = _post_json(
-        f"{host}/api/chat",
-        {},
-        {
-            "model": model,
-            "stream": False,
-            "options": {"temperature": 0, "num_ctx": num_ctx},
-            "messages": [
-                {"role": "system", "content": system},
-                {"role": "user", "content": user},
-            ],
-        },
-    )
+    payload = {
+        "model": model,
+        "stream": False,
+        "options": {"temperature": 0, "num_ctx": num_ctx},
+        "messages": [
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ],
+    }
+    # Reasoning models (qwen3.5, gpt-oss, ...) can put everything in the
+    # 'thinking' channel and return empty content — which scores as
+    # unparseable. Opt in to disabling it: OLLAMA_THINK=false. Not sent by
+    # default because Ollama rejects the field for non-thinking models.
+    think = os.environ.get("OLLAMA_THINK", "").strip().lower()
+    if think in ("false", "true"):
+        payload["think"] = think == "true"
+    data = _post_json(f"{host}/api/chat", {}, payload)
     return data.get("message", {}).get("content", "")
 
 

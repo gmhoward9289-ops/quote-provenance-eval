@@ -47,7 +47,8 @@ def rescore_row(row: dict) -> dict:
         row["quote"] = quote
         row["score"] = score_quote(doc, quote)
         row["value_in_quote"] = answer_correct(expect, quote)
-        row["answer_correct"] = answer_correct(expect, row["answer"], quote)
+        # answer field alone — the quote side is value_in_quote
+        row["answer_correct"] = answer_correct(expect, row["answer"])
     return row
 
 
