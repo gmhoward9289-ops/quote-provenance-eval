@@ -166,7 +166,8 @@ def run_arm(arm: str, questions: list, docs: dict, provider: str, model: str,
                 # symmetric counterpart of the anchor arm's value_in_span: does
                 # the quoted text itself contain the expected value?
                 row["value_in_quote"] = answer_correct(q["expect_value"], quote)
-                row["answer_correct"] = answer_correct(q["expect_value"], row["answer"], quote)
+                # answer field alone — the quote side is value_in_quote
+                row["answer_correct"] = answer_correct(q["expect_value"], row["answer"])
                 label = row["score"]["level"]
         else:
             anchor_text = str(parsed.get("anchor", ""))
@@ -195,17 +196,30 @@ def run_arm(arm: str, questions: list, docs: dict, provider: str, model: str,
 
 
 def summarize(rows: list) -> dict:
-    quote_rows = [r for r in rows if r["arm"] == "quote" and "score" in r and not r.get("absent")]
-    anchor_rows = [r for r in rows if r["arm"] == "anchor" and "locate" in r and not r.get("absent")]
-    errors = [r for r in rows if "error" in r or r.get("parse_error")]
-    s: dict = {"n_quote": len(quote_rows), "n_anchor": len(anchor_rows), "n_failed_calls": len(errors)}
+    # Intent-to-treat: a response the model produced but we could not parse
+    # is a failure of the arm (a naive pipeline gets no provenance from it),
+    # so parse failures stay IN the denominators — as 'unparseable' for the
+    # quote arm and as not-located for the anchor arm. Only provider/network
+    # errors (no response at all) are excluded from the rates; they are
+    # infrastructure, not model behavior, and are reported separately.
+    def attempted(arm: str) -> list:
+        return [r for r in rows if r["arm"] == arm and not r.get("absent")
+                and "raw_response" in r]
+    quote_rows = attempted("quote")
+    anchor_rows = attempted("anchor")
+    provider_errors = [r for r in rows if "error" in r]
+    unparseable = [r for r in rows if r.get("parse_error")]
+    s: dict = {"n_quote": len(quote_rows), "n_anchor": len(anchor_rows),
+               "n_provider_errors": len(provider_errors),
+               "n_unparseable": len(unparseable)}
     ci: dict = {}
 
     if quote_rows:
         n = len(quote_rows)
         levels = {}
         for r in quote_rows:
-            levels[r["score"]["level"]] = levels.get(r["score"]["level"], 0) + 1
+            lvl = r["score"]["level"] if "score" in r else "unparseable"
+            levels[lvl] = levels.get(lvl, 0) + 1
         s["quote_levels"] = levels
         exact = levels.get("exact", 0)
         s["quote_exact_rate"] = round(exact / n, 3)
@@ -214,25 +228,33 @@ def summarize(rows: list) -> dict:
         # contains the expected value (anchor_coverage requires located AND
         # value in the located sentence)
         cov = sum(1 for r in quote_rows
-                  if r["score"]["level"] == "exact" and r.get("value_in_quote"))
+                  if "score" in r and r["score"]["level"] == "exact"
+                  and r.get("value_in_quote"))
         s["quote_coverage"] = round(cov / n, 3)
         ci["quote_coverage"] = wilson_ci(cov, n)
         s["quote_recoverable_rate"] = round((exact + levels.get("normalized", 0)) / n, 3)
         s["quote_fabricated_rate"] = round(levels.get("fabricated", 0) / n, 3)
-        s["quote_answer_accuracy"] = round(sum(r["answer_correct"] for r in quote_rows) / n, 3)
+        s["quote_answer_accuracy"] = round(
+            sum(r.get("answer_correct", False) for r in quote_rows) / n, 3)
 
     if anchor_rows:
         n = len(anchor_rows)
-        located = [r for r in anchor_rows if r["located"]]
+        located = [r for r in anchor_rows if r.get("located")]
         s["anchor_located_rate"] = round(len(located) / n, 3)
         cov = sum(1 for r in located if r.get("value_in_span"))
         s["anchor_coverage"] = round(cov / n, 3)
         ci["anchor_coverage"] = wilson_ci(cov, n)
         s["anchor_methods"] = {}
         for r in anchor_rows:
-            m = r["locate"]["method"]
+            m = r["locate"]["method"] if "locate" in r else "unparseable"
             s["anchor_methods"][m] = s["anchor_methods"].get(m, 0) + 1
-        s["anchor_answer_accuracy"] = round(sum(r["answer_correct"] for r in anchor_rows) / n, 3)
+        # located anchors whose matched span occurs more than once in the
+        # (normalized) doc — a value-miss on these may be "right anchor,
+        # wrong occurrence" rather than a bad anchor
+        s["anchor_ambiguous"] = sum(
+            1 for r in located if r["locate"].get("occurrences", 1) > 1)
+        s["anchor_answer_accuracy"] = round(
+            sum(r.get("answer_correct", False) for r in anchor_rows) / n, 3)
         # by construction — every located span passed the substring assert
         s["anchor_provenance_fidelity_of_located"] = 1.0
 
@@ -242,21 +264,26 @@ def summarize(rows: list) -> dict:
     # value-absent questions: the right answer is a refusal with no span.
     # The dangerous failure is a confident answer backed by real-looking
     # provenance (an exact quote / a located anchor of irrelevant text).
-    abs_q = [r for r in rows if r.get("absent") and r["arm"] == "quote" and "refused" in r]
-    abs_a = [r for r in rows if r.get("absent") and r["arm"] == "anchor" and "refused" in r]
+    # Unparseable responses count in the denominator (not a clean refusal).
+    abs_q = [r for r in rows if r.get("absent") and r["arm"] == "quote"
+             and ("refused" in r or r.get("parse_error"))]
+    abs_a = [r for r in rows if r.get("absent") and r["arm"] == "anchor"
+             and ("refused" in r or r.get("parse_error"))]
     if abs_q:
         n = len(abs_q)
         s["n_absent_quote"] = n
-        s["quote_absent_refusal_rate"] = round(sum(r["refused"] for r in abs_q) / n, 3)
+        s["quote_absent_refusal_rate"] = round(
+            sum(r.get("refused", False) for r in abs_q) / n, 3)
         s["quote_absent_confident_with_exact_span"] = sum(
             1 for r in abs_q
-            if not r["refused"] and r.get("score", {}).get("level") == "exact")
+            if not r.get("refused") and r.get("score", {}).get("level") == "exact")
     if abs_a:
         n = len(abs_a)
         s["n_absent_anchor"] = n
-        s["anchor_absent_refusal_rate"] = round(sum(r["refused"] for r in abs_a) / n, 3)
+        s["anchor_absent_refusal_rate"] = round(
+            sum(r.get("refused", False) for r in abs_a) / n, 3)
         s["anchor_absent_confident_with_located_span"] = sum(
-            1 for r in abs_a if not r["refused"] and r["located"])
+            1 for r in abs_a if not r.get("refused") and r.get("located"))
 
     # per-repeat breakdown of the headline rates (only present for --repeats > 1)
     reps = sorted({r.get("rep", 1) for r in rows})
@@ -351,8 +378,8 @@ def cmd_report(args: argparse.Namespace) -> None:
         runs.append(data)
     lines = [
         "# Quote-provenance eval — cross-run comparison", "",
-        "| provider | model | corpus | quote exact | quote coverage | +normalized | fabricated | anchor located | anchor coverage |",
-        "|---|---|---|---|---|---|---|---|---|",
+        "| provider | model | corpus | n | unparseable | quote exact | quote coverage | +normalized | fabricated | anchor located | anchor coverage |",
+        "|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for r in runs:
         s = r["summary"]
@@ -368,8 +395,12 @@ def cmd_report(args: argparse.Namespace) -> None:
                 lo, hi = ci[key]
                 v += f" <sub>{lo:.0%}–{hi:.0%}</sub>"
             return v
+        nq, na = s.get("n_quote", 0), s.get("n_anchor", 0)
+        n_col = str(nq) if nq == na else f"{nq}/{na}"
+        bad = s.get("n_unparseable", s.get("n_failed_calls", 0))
         lines.append(
-            f"| {r['provider']} | {r['model']} | {corpus} | {pct('quote_exact_rate')} | "
+            f"| {r['provider']} | {r['model']} | {corpus} | {n_col} | {bad} | "
+            f"{pct('quote_exact_rate')} | "
             f"{pct_ci('quote_coverage')} | "
             f"{pct('quote_recoverable_rate')} | {pct('quote_fabricated_rate')} | "
             f"{pct('anchor_located_rate')} | {pct_ci('anchor_coverage')} |")
@@ -384,7 +415,10 @@ def cmd_report(args: argparse.Namespace) -> None:
         "normalization. *anchor coverage* is the share of questions where the "
         "anchored-extraction arm located the model's anchor AND the located "
         "source sentence contains the expected value — and every span it emits "
-        "is a real substring of the source by construction.", "",
+        "is a real substring of the source by construction. All rates are "
+        "intent-to-treat: responses that arrived but could not be parsed stay "
+        "in the denominators (*unparseable* column); only provider/network "
+        "errors are excluded.", "",
     ]
     out = ROOT / "results" / "comparison.md"
     out.write_text("\n".join(lines), encoding="utf-8")

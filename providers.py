@@ -3,7 +3,7 @@
 Supported providers:
   anthropic   — needs ANTHROPIC_API_KEY
   openrouter  — needs OPENROUTER_API_KEY
-  ollama      — needs a local Ollama server (OLLAMA_HOST, default http://localhost:11434)
+  ollama      — needs a local Ollama server (OLLAMA_HOST, default http://127.0.0.1:11434)
   mock        — no network; simulates a model with controllable sloppiness (see mock.py)
 """
 from __future__ import annotations
@@ -95,7 +95,9 @@ OLLAMA_MAX_TOKENS = 1024
 
 
 def call_ollama(model: str, system: str, user: str) -> str:
-    host = os.environ.get("OLLAMA_HOST", "http://localhost:11434").rstrip("/")
+    # 127.0.0.1, not localhost: a localhost-addressed Ollama client has hung
+    # silently on a cold first call (IPv6 resolution stall on Windows).
+    host = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434").rstrip("/")
     num_ctx = int(os.environ.get("OLLAMA_NUM_CTX", "8192"))
     # Ollama silently truncates a prompt that exceeds num_ctx — the model
     # then can't see part of the document, and a truncation failure would

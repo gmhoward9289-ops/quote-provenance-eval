@@ -110,7 +110,10 @@ def canon_value(s: str) -> str:
 def values_match(expected: str, candidate: str) -> bool:
     """Does the candidate text contain the expected value, allowing benign
     formatting drift (commas, $, digit words, dash style)? Fall back to
-    'all numeric tokens of the expected value are present'."""
+    'the numeric tokens of the expected value appear, whole and in order'.
+    Ordered whole-token matching keeps '6-3' from matching a sentence that
+    merely mentions a 3 and then a 6, or '63' — but still accepts
+    'six votes to three'."""
     ne, nc = canon_value(expected), canon_value(candidate or "")
     if not ne or not nc:
         return False
@@ -118,8 +121,9 @@ def values_match(expected: str, candidate: str) -> bool:
         return True
     nums = re.findall(r"\d+(?:\.\d+)?", ne)
     if nums:
-        cand_nums = set(re.findall(r"\d+(?:\.\d+)?", nc))
-        return all(n in cand_nums for n in nums)
+        cand_nums = re.findall(r"\d+(?:\.\d+)?", nc)
+        it = iter(cand_nums)
+        return all(n in it for n in nums)
     return False
 
 

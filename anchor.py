@@ -54,8 +54,15 @@ def _norm_index_map(doc: str) -> tuple[str, list[int]]:
     out: list[str] = []
     idx_map: list[int] = []
     pending_space = False
-    for i, ch in enumerate(doc):
-        n = unicodedata.normalize("NFKC", ch).translate(_PUNCT_MAP).casefold()
+    # Normalize base+combining-mark clusters as units, not single chars —
+    # per-char NFKC would leave 'e' + U+0301 decomposed while the full-string
+    # normalize() in scoring composes it to 'é', silently breaking matches.
+    i, L = 0, len(doc)
+    while i < L:
+        j = i + 1
+        while j < L and unicodedata.combining(doc[j]):
+            j += 1
+        n = unicodedata.normalize("NFKC", doc[i:j]).translate(_PUNCT_MAP).casefold()
         for c in n:
             if c.isspace():
                 pending_space = True
@@ -66,6 +73,7 @@ def _norm_index_map(doc: str) -> tuple[str, list[int]]:
             pending_space = False
             out.append(c)
             idx_map.append(i)
+        i = j
     return "".join(out), idx_map
 
 
@@ -81,26 +89,35 @@ def _expand_to_sentence(doc: str, start: int, end: int) -> str:
 
 def locate(doc: str, anchor: str) -> dict:
     """Locate an anchor phrase in the doc. Returns:
-    {method, span, sentence} — span/sentence are exact doc substrings —
-    or {method: 'not_found'}."""
+    {method, span, sentence, occurrences} — span/sentence are exact doc
+    substrings; occurrences counts how often the matched span's normalized
+    text appears in the normalized doc (>1 = ambiguous anchor: the locator
+    takes the first occurrence, so a value-miss may be "right anchor, wrong
+    occurrence") — or {method: 'not_found'}."""
     anchor = (anchor or "").strip().strip('"').strip("'")
     if not anchor:
         return {"method": "not_found"}
+
+    ndoc, idx_map = _norm_index_map(doc)
+    nanchor = normalize(anchor)
+
+    def occurrences(nspan: str) -> int:
+        return ndoc.count(nspan) if nspan else 0
 
     # 1. exact
     pos = doc.find(anchor)
     if pos != -1:
         return {"method": "exact", "span": anchor,
+                "occurrences": max(doc.count(anchor), occurrences(nanchor)),
                 "sentence": _expand_to_sentence(doc, pos, pos + len(anchor))}
 
     # 2. normalized
-    ndoc, idx_map = _norm_index_map(doc)
-    nanchor = normalize(anchor)
     npos = ndoc.find(nanchor)
     if nanchor and npos != -1:
         o_start = idx_map[npos]
         o_end = idx_map[min(npos + len(nanchor) - 1, len(idx_map) - 1)] + 1
         return {"method": "normalized", "span": doc[o_start:o_end],
+                "occurrences": occurrences(nanchor),
                 "sentence": _expand_to_sentence(doc, o_start, o_end)}
 
     # 3. ordered token subsequence — anchor words all present, in order,
@@ -113,6 +130,7 @@ def locate(doc: str, anchor: str) -> dict:
             o_start = idx_map[npos]
             o_end = idx_map[min(nend - 1, len(idx_map) - 1)] + 1
             return {"method": "subsequence", "span": doc[o_start:o_end],
+                    "occurrences": occurrences(ndoc[npos:nend]),
                     "sentence": _expand_to_sentence(doc, o_start, o_end)}
 
     # 4. fuzzy — best window, then re-find that window's chars
@@ -124,6 +142,7 @@ def locate(doc: str, anchor: str) -> dict:
             o_end = idx_map[min(wpos + len(best_win) - 1, len(idx_map) - 1)] + 1
             return {"method": "fuzzy", "ratio": round(ratio, 3),
                     "span": doc[o_start:o_end],
+                    "occurrences": occurrences(best_win),
                     "sentence": _expand_to_sentence(doc, o_start, o_end)}
 
     return {"method": "not_found"}
