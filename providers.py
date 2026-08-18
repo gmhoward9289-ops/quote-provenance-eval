@@ -110,19 +110,23 @@ def call_ollama(model: str, system: str, user: str) -> str:
             f"tokens it may not fit num_ctx={num_ctx} and Ollama would truncate "
             f"silently. Set OLLAMA_NUM_CTX higher (and re-check GPU residency "
             f"with /api/ps) or shorten the document.")
-    data = _post_json(
-        f"{host}/api/chat",
-        {},
-        {
-            "model": model,
-            "stream": False,
-            "options": {"temperature": 0, "num_ctx": num_ctx},
-            "messages": [
-                {"role": "system", "content": system},
-                {"role": "user", "content": user},
-            ],
-        },
-    )
+    payload = {
+        "model": model,
+        "stream": False,
+        "options": {"temperature": 0, "num_ctx": num_ctx},
+        "messages": [
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ],
+    }
+    # Reasoning models (qwen3.5, gpt-oss, ...) can put everything in the
+    # 'thinking' channel and return empty content — which scores as
+    # unparseable. Opt in to disabling it: OLLAMA_THINK=false. Not sent by
+    # default because Ollama rejects the field for non-thinking models.
+    think = os.environ.get("OLLAMA_THINK", "").strip().lower()
+    if think in ("false", "true"):
+        payload["think"] = think == "true"
+    data = _post_json(f"{host}/api/chat", {}, payload)
     return data.get("message", {}).get("content", "")
 
 
