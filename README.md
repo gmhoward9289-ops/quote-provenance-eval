@@ -92,6 +92,81 @@ To grow the eval: add a `.txt` to `corpus/docs/`, add question entries, re-run t
 - `anchor_ambiguous` counts located anchors whose matched span occurs more than once in the (normalized) document — the locator takes the first occurrence, so a value-miss on an ambiguous anchor may be "right anchor, wrong occurrence," not a bad anchor. On documents with heavy internal repetition (quoted-reply email threads, repeated OCR page footers) most anchors are ambiguous; that's a property of the document, and a production locator would want a disambiguation strategy (e.g. require the model to add a second nearby phrase).
 - Caveats to state honestly: 30 questions is a pilot, docs are short (single-context), synthetic docs may be easier to quote than scanned/OCR'd real-world text, and thresholds (0.90/0.70) are judgment calls — they're in `scoring.py`, tune and disclose. Value matching (`values_match`) allows benign formatting drift (currency symbols, digit-group commas, number words) and falls back to requiring the expected value's numeric tokens to appear whole and in order — also a judgment call, also in `scoring.py`.
 
+## Predicting failures before you spend a token (`preflight.py`)
+
+Most of what the eval measured after the fact was visible in the document and
+the prompt beforehand. `preflight.py` checks for it deterministically — no
+model call, no API key:
+
+```bash
+python3 preflight.py corpus/docs/*.txt --prompt=my_prompt.txt --num-ctx=8192
+```
+
+It reports anchor-ambiguity risk, verbatim-quote hazards (curly quotes, NBSP,
+en dashes), prompt-shape problems (no `NOT_FOUND` path, answer and evidence not
+separated), and context-overflow risk, each with the concrete fix. Exit code 1
+if anything is high-risk, so it works as a CI gate.
+
+The ambiguity metric is calibrated against this repo's own runs rather than
+intuition, and the naive version was wrong: whole-document repetition
+overpredicts badly. `hard_transcript.txt` repeats 54% of its 5-grams
+(conversational filler) yet not one located anchor across 31 runs was
+ambiguous — models anchor *near the value*, and value-adjacent text stays
+distinctive even in chatty prose. Restricting the count to value-adjacent
+n-grams tracks measurement: email thread 75% predicted / 100% measured,
+transcript 0% / 0%, annual report 7% / 0%.
+
+## Confidence earned from verification (`confidence.py`)
+
+Asking a model how sure it is returns a number it invented. `confidence.score()`
+scores an extraction from what code could confirm — how the anchor was located,
+whether that location is unique, whether the span carries the value — and emits
+**two** numbers, because the runs show they are different questions:
+
+- `answer_confidence` — will the answer turn out to be right?
+- `provenance_confidence` — is the emitted span trustworthy *as evidence*?
+
+An ambiguous exact anchor (phrase occurs more than once, locator silently took
+the first) still produced a correct answer 24/24 times. Ambiguity damages the
+citation, not the answer. Likewise a located span that lacks the expected value
+was still correct 22/22 — the anchor landed a sentence away, a coverage miss
+rather than a hallucination. One blended number would hide both.
+
+Priors are measured, not assumed (exact 98% n=1107, normalized 98% n=134, fuzzy
+95% n=42, `not_found` 3% n=155 — it fails closed). Re-derive them on your own
+data whenever the locator, corpus or model lineup changes:
+
+```bash
+python3 confidence.py --calibrate
+```
+
+They describe local open-weight models on short synthetic documents. Treat them
+as a starting prior, not a universal constant.
+
+## Quality against energy (`nightrun.py`, `profiles.py`)
+
+`nightrun.py` sweeps a list of models unattended, recording throughput (from
+Ollama's own `eval_count`/`eval_duration`), GPU residency (from `/api/ps`, never
+inferred from `ollama ls`), and sampled GPU power alongside the three corpora.
+`profiles.py` joins that with the quality numbers:
+
+```bash
+python3 profiles.py "results/run_*.json" results/power_metrics.jsonl
+```
+
+Energy is reported as **Wh per 100 extractions**, not per 1k tokens: tokens are
+an implementation detail of the model, extractions are what a user buys, and
+per-token accounting flatters a reasoning model that burns 40x the tokens to
+answer the same question. Power comes from the eval phase, not a short bench —
+a few seconds of sampling while the GPU ramps produced a 47–193 W spread on
+identical work, which is noise.
+
+Why it matters, from the first three models measured on a 16 GB RTX 4080 SUPER:
+`gpt-oss:20b` leads on quality (99% anchor coverage) while drawing the *lowest*
+sustained power of the three (77 W vs ~154 W) — and still costs **9x more
+energy per extraction** (36.3 vs 3.86 Wh/100), because it runs ~24x longer.
+Ranking by watts would have called it the cheap one.
+
 ## Files
 
 ```
@@ -103,6 +178,11 @@ anchor.py           deterministic anchor location + sentence expansion
 validate_corpus.py  ground-truth integrity check
 rescore.py          re-score saved runs offline from stored raw responses
                     (no model calls) after improving locator/checker code
+preflight.py        deterministic doc + prompt linting before inference
+confidence.py       verification-earned confidence, calibrated from runs
+nightrun.py         unattended multi-model sweep with power/throughput
+profiles.py         quality x energy table (Wh per 100 extractions)
 corpus/             documents + questions
-results/            run outputs (JSON + CSV) and comparison.md
+results/            run outputs (JSON + CSV), comparison.md, profiles.md,
+                    power_metrics.jsonl
 ```
