@@ -1,0 +1,939 @@
+{
+  "provider": "ollama",
+  "model": "nemotron-mini:4b",
+  "timestamp": "20260819-022712",
+  "corpus": "questions_absent",
+  "summary": {
+    "n_quote": 0,
+    "n_anchor": 0,
+    "n_provider_errors": 0,
+    "n_unparseable": 0,
+    "n_absent_quote": 30,
+    "quote_absent_refusal_rate": 0.6,
+    "quote_absent_confident_with_exact_span": 0,
+    "n_absent_anchor": 30,
+    "anchor_absent_refusal_rate": 0.4,
+    "anchor_absent_confident_with_located_span": 6,
+    "per_rep": {}
+  },
+  "rows": [
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"642\", \"quote\": \"\"}",
+      "answer": "642",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"24\", \"quote\": \"\"}",
+      "answer": "24",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Maria Okafor\", \"quote\": \"\"}",
+      "answer": "Maria Okafor",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Charles Dickens\", \"quote\": \"\"}",
+      "answer": "Charles Dickens",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Not_Found\", \"quote\": \"\"}",
+      "answer": "Not_Found",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"42\", \"anchor\": \"clinical sites\"}",
+      "answer": "42",
+      "anchor": "clinical sites",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"24\", \"anchor\": \"months\"}",
+      "answer": "24",
+      "anchor": "months",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Maria Okafor\", \"anchor\": \"Council President\"}",
+      "answer": "Maria Okafor",
+      "anchor": "Council President",
+      "locate": {
+        "method": "exact",
+        "span": "Council President",
+        "occurrences": 1,
+        "sentence": "\"This is the single largest investment in mobility our city has ever contemplated,\" said Council President Maria Okafor, who championed the measure."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Charles Dickens\", \"anchor\": \"Cultivation\"}",
+      "answer": "Charles Dickens",
+      "anchor": "Cultivation",
+      "locate": {
+        "method": "exact",
+        "span": "Cultivation",
+        "occurrences": 1,
+        "sentence": "On the Cultivation of Attention"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"CEO\", \"anchor\": \"chief executive officer\"}",
+      "answer": "CEO",
+      "anchor": "chief executive officer",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"30\", \"anchor\": \"\"}",
+      "answer": "30",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"642\", \"quote\": \"\"}",
+      "answer": "642",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"24\", \"quote\": \"\"}",
+      "answer": "24",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Maria Okafor\", \"quote\": \"\"}",
+      "answer": "Maria Okafor",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Charles Dickens\", \"quote\": \"\"}",
+      "answer": "Charles Dickens",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Not_Found\", \"quote\": \"\"}",
+      "answer": "Not_Found",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"42\", \"anchor\": \"clinical sites\"}",
+      "answer": "42",
+      "anchor": "clinical sites",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"24\", \"anchor\": \"months\"}",
+      "answer": "24",
+      "anchor": "months",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Maria Okafor\", \"anchor\": \"Council President\"}",
+      "answer": "Maria Okafor",
+      "anchor": "Council President",
+      "locate": {
+        "method": "exact",
+        "span": "Council President",
+        "occurrences": 1,
+        "sentence": "\"This is the single largest investment in mobility our city has ever contemplated,\" said Council President Maria Okafor, who championed the measure."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Charles Dickens\", \"anchor\": \"Cultivation\"}",
+      "answer": "Charles Dickens",
+      "anchor": "Cultivation",
+      "locate": {
+        "method": "exact",
+        "span": "Cultivation",
+        "occurrences": 1,
+        "sentence": "On the Cultivation of Attention"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"CEO\", \"anchor\": \"chief executive officer\"}",
+      "answer": "CEO",
+      "anchor": "chief executive officer",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"30\", \"anchor\": \"\"}",
+      "answer": "30",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"642\", \"quote\": \"\"}",
+      "answer": "642",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"24\", \"quote\": \"\"}",
+      "answer": "24",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Maria Okafor\", \"quote\": \"\"}",
+      "answer": "Maria Okafor",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Charles Dickens\", \"quote\": \"\"}",
+      "answer": "Charles Dickens",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Not_Found\", \"quote\": \"\"}",
+      "answer": "Not_Found",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"42\", \"anchor\": \"clinical sites\"}",
+      "answer": "42",
+      "anchor": "clinical sites",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"24\", \"anchor\": \"months\"}",
+      "answer": "24",
+      "anchor": "months",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Maria Okafor\", \"anchor\": \"Council President\"}",
+      "answer": "Maria Okafor",
+      "anchor": "Council President",
+      "locate": {
+        "method": "exact",
+        "span": "Council President",
+        "occurrences": 1,
+        "sentence": "\"This is the single largest investment in mobility our city has ever contemplated,\" said Council President Maria Okafor, who championed the measure."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Charles Dickens\", \"anchor\": \"Cultivation\"}",
+      "answer": "Charles Dickens",
+      "anchor": "Cultivation",
+      "locate": {
+        "method": "exact",
+        "span": "Cultivation",
+        "occurrences": 1,
+        "sentence": "On the Cultivation of Attention"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"CEO\", \"anchor\": \"chief executive officer\"}",
+      "answer": "CEO",
+      "anchor": "chief executive officer",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"30\", \"anchor\": \"\"}",
+      "answer": "30",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    }
+  ]
+}

@@ -1,0 +1,1012 @@
+{
+  "provider": "ollama",
+  "model": "reader-lm:1.5b",
+  "timestamp": "20260819-073822",
+  "corpus": "questions_absent",
+  "summary": {
+    "n_quote": 0,
+    "n_anchor": 0,
+    "n_provider_errors": 2,
+    "n_unparseable": 7,
+    "n_absent_quote": 28,
+    "quote_absent_refusal_rate": 0.214,
+    "quote_absent_confident_with_exact_span": 9,
+    "n_absent_anchor": 30,
+    "anchor_absent_refusal_rate": 0.1,
+    "anchor_absent_confident_with_located_span": 16,
+    "per_rep": {}
+  },
+  "rows": [
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"94.1\", \"quote\": \"94.1\"}",
+      "answer": "94.1",
+      "quote": "94.1",
+      "refused": false,
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.5,
+        "detail": "no plausible source span"
+      }
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"642\", \"quote\": \"Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.\"}",
+      "answer": "642",
+      "quote": "Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"12\", \"quote\": \"642\"}",
+      "answer": "12",
+      "quote": "642",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"quote\": \"HARBORVIEW — After nearly eleven hours of public comment and debate, the Harborview City Council voted 6–3 early Wednesday to place a $2.3 billion transit bond on the November ballot, setting up what observers expect to be the most expensive local ballot campaign in the city's history.\"}\n\n{\"answer\": \"Maria Okafor\", \"quote\": \"Council President Maria Okafor, who championed the measure. \"}\n\n{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"quote\": \"This is the single largest investment in mobility our city has ever contemplated,\" said Council President Maria Okafor, who championed the measure. \"We can pay now, or we can pay far more later — congestion already costs Harborview families an estimated $1,900 per household every year.\"}\n\n{\"answer\": \"Dale Rutherford\", \"quote\": \"Councilmember Dale Rutherford, who voted no, warned that construction costs were \"spiral\" beyond anything the proponents are willing to admit\" and pointed to the Westside streetcar project, which finished 31 months late and 47% over budget.\"}\n\n{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"quote\": \"Opposition centered on the bond's property-tax impact. The city's independent budget office estimates the measure would add $186 per year to the tax bill of a median-priced home, a figure opponents called \"regressive and punishing.\" Councilmember Dale Rutherford, who voted no, warned that construction costs were \"spiral\" beyond anything the proponents are willing to admit\" and pointed to the Westside streetcar project, which finished 31 months late and 47% over budget.\"}\n\n{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"quote\": \"Polling released last week by the Harborview Institute showed the measure with 54% support among likely voters, just above the simple majority it needs to pass — but pollsters cautioned that support for tax measures typically erodes as election day approaches.\"}\n\n{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"quote\": \"The council also voted unanimously to create a nine-member citizen oversight committee with subpoena power to audit bond expenditures, a concession designed to win over skeptical voters after the Westside streetcar overruns.\"}",
+      "answer": "Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session",
+      "quote": "HARBORVIEW — After nearly eleven hours of public comment and debate, the Harborview City Council voted 6–3 early Wednesday to place a $2.3 billion transit bond on the November ballot, setting up what observers expect to be the most expensive local ballot campaign in the city's history.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"} — never quote text that does not answer the question.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"An essay, 1873\", \"quote\": \"\"}",
+      "answer": "An essay, 1873",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"TITAN MATERIALS GROUP · 2025 ANNUAL REPORT\", \"quote\": \"Robert J. Williams\"}",
+      "answer": "TITAN MATERIALS GROUP · 2025 ANNUAL REPORT",
+      "quote": "Robert J. Williams",
+      "refused": false,
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.556,
+        "detail": "no plausible source span"
+      }
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\n  \"answer\": \"RE: Renewal terms — Meridian account\",\n  \"quote\": \"\\nUnderstood on timing — that date is firm on our side too, so we are aligned.\\nI'll send the DocuSign package tomorrow morning with everything reflected as\\nabove.\\nBest,\\nRachel\\nThis message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.\\n-----Original Message-----\n> From: Rachel Kim <rkim@northstar-crm.example>\n> Subject: RE: Renewal terms — Meridian account\n> Date: Mon, 16 Jul 2026 012:13:00 -0400\n> \n> Great. Last thing — timing. Our fiscal close makes October impossible.\\nRenewal paperwork must be countersigned no later than September 30, 2026.\\nIf that date is at risk we should talk this week.\\nBest,\\nDev\\nThis message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.\\n-----Original Message-----\n> > From: Rachel Kim <rkim@northstar-crm.example>\n> > Subject: Renewal terms — Meridian account\n> > Date: Mon, 14 Jul 2026 010:11:00 -0400\n> > \n> > Thanks Rachel. Two clarifications before I socialize this internally.\\nCurrent deployment is 450 seats across three business units.\\nDoes the discount survive if we consolidate units next year?\\nAlso please confirm the SLA language carries over unchanged.\\nBest,\\nDev\\nThis message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.\\n-----Original Message-----\n> > > From: Rachel Kim <rkim@northstar-crm.example>\n> > > Subject: Renewal terms — Meridian account\n> > > Date: Mon, 13 Jul 2026 09:10:00 -0400\n> > > \n> > > Hi Dev, good speaking this morning. Summarizing where we landed so nothing\n> > > gets lost.\\nThe total contract value for the 24-month term is $1.2 million.\\nWe can extend the multi-year discount of 12% if the seat count stays above 400.\\nHappy to walk your procurement team through the math whenever convenient.\\nBest,\\nRachel\\nThis message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.\\n-----Original Message-----\n> > > From: Dev Okonkwo <d.okonkwo@meridianrobotics.example>\n> > > Subject: Renewal terms — Meridian account\n> > > Date: Mon, 14 Jul 2026 010:11:00 -0400\n> > > \n> > > Thanks Rachel. Two clarifications before I socialize this internally.\\nCurrent deployment is 450 seats across three business units.\\nDoes the discount survive if we consolidate units next year?\\nAlso please confirm the SLA language carries over unchanged.\\nBest,\\nDev\\nThis message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.\\n-----Original Message-----\n> > > From: Rachel Kim <rkim@northstar-crm.example>\n> > > Subject: Renewal terms — Meridian account\n> > > Date: Mon, 13 Jul 2026 09:10:00 -0400\n> > > \n> > > Hi Dev, good speaking this morning. Summarizing where we landed so nothing\n> > > gets lost.\\nThe total contract value for the 24-month term is $1.2 million.\\nWe can extend the multi-year discount of 12% if the seat count stays above 400.\\nHappy to walk your procurement team through the math whenever convenient.\\nBest,\\nRachel\\nThis message and any attachments are confidential and intended solely for the addressee. If you have received this message in error, please notify the sender and delete it. Nothing in this message constitutes a binding offer unless executed in a definitive written agreement.\\n\" }",
+      "parse_error": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\":\"NOT\\_FOUND\",\"quote\":\"\"}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"94.8\", \"anchor\": \"\"}",
+      "answer": "94.8",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"642\", \"anchor\": \"TRIDENT-3 ClinicalTrials.gov\"}",
+      "answer": "642",
+      "anchor": "TRIDENT-3 ClinicalTrials.gov",
+      "locate": {
+        "method": "exact",
+        "span": "TRIDENT-3 ClinicalTrials.gov",
+        "occurrences": 1,
+        "sentence": "(Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.)"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"12\", \"anchor\": \"TRIDENT-3 ClinicalTrials.gov\"}",
+      "answer": "12",
+      "anchor": "TRIDENT-3 ClinicalTrials.gov",
+      "locate": {
+        "method": "exact",
+        "span": "TRIDENT-3 ClinicalTrials.gov",
+        "occurrences": 1,
+        "sentence": "(Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.)"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"anchor\": \"HARBORVIEW\"}",
+      "answer": "Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session",
+      "anchor": "HARBORVIEW",
+      "locate": {
+        "method": "exact",
+        "span": "HARBORVIEW",
+        "occurrences": 5,
+        "sentence": "HARBORVIEW — After nearly eleven hours of public comment and debate, the Harborview City Council voted 6–3 early Wednesday to place a $2.3 billion transit bond on the November ballot, setting up what observers expect to be the most expensive local ballot campaign in the city's history."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"85\", \"anchor\": \"badges\"}",
+      "answer": "85",
+      "anchor": "badges",
+      "locate": {
+        "method": "exact",
+        "span": "badges",
+        "occurrences": 3,
+        "sentence": "New badges are ready for pickup at the Building 7 security desk starting Sept 18; bring photo ID."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"An essay, 1873\", \"anchor\": \"\"}",
+      "answer": "An essay, 1873",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"TITAN MATERIALS GROUP · 2025 ANNUAL REPORT\", \"anchor\": \"\"}",
+      "answer": "TITAN MATERIALS GROUP · 2025 ANNUAL REPORT",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\n  \"answer\": \"90\",\n  \"anchor\": \"Net 30\"\n}",
+      "answer": "90",
+      "anchor": "Net 30",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\":\"NOT\\_FOUND\",\"anchor\":\"\"}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"94.1\", \"quote\": \"94.1\"}",
+      "answer": "94.1",
+      "quote": "94.1",
+      "refused": false,
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.5,
+        "detail": "no plausible source span"
+      }
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"642\", \"quote\": \"Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.\"}",
+      "answer": "642",
+      "quote": "Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"12\", \"quote\": \"642\"}",
+      "answer": "12",
+      "quote": "642",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"quote\": \"HARBORVIEW — After nearly eleven hours of public comment and debate, the Harborview City Council voted 6–3 early Wednesday to place a $2.3 billion transit bond on the November ballot, setting up what observers expect to be the most expensive local ballot campaign in the city's history.\"}\n\n{\"answer\": \"Maria Okafor\", \"quote\": \"Council President Maria Okafor, who championed the measure. \"}\n\n{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"quote\": \"This is the single largest investment in mobility our city has ever contemplated,\" said Council President Maria Okafor, who championed the measure. \"We can pay now, or we can pay far more later — congestion already costs Harborview families an estimated $1,900 per household every year.\"}\n\n{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"quote\": \"Opposition centered on the bond's property-tax impact. The city's independent budget office estimates the measure would add $186 per year to the tax bill of a median-priced home, a figure opponents called \"regressive and punishing.\" Councilmember Dale Rutherford, who voted no, warned that construction costs were \"spiraling beyond anything the proponents are willing to admit\" and pointed to the Westside streetcar project, which finished 31 months late and 47% over budget. \"Transit advocates packed the chamber wearing green scarves, and a coalition of twelve neighborhood associations submitted a petition with 18,400 signatures supporting the measure. Business groups were split: the Downtown Alliance endorsed the bond, while the Regional Chamber of Commerce declined to take a position, citing \"unresolved questions about cost controls.\"\"}",
+      "answer": "Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session",
+      "quote": "HARBORVIEW — After nearly eleven hours of public comment and debate, the Harborview City Council voted 6–3 early Wednesday to place a $2.3 billion transit bond on the November ballot, setting up what observers expect to be the most expensive local ballot campaign in the city's history.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"} — never quote text that does not answer the question.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"An essay, 1873\", \"quote\": \"\"}",
+      "answer": "An essay, 1873",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"TITAN MATERIALS GROUP · 2025 ANNUAL REPORT\", \"quote\": \"Robert J. Williams\"}",
+      "answer": "TITAN MATERIALS GROUP · 2025 ANNUAL REPORT",
+      "quote": "Robert J. Williams",
+      "refused": false,
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.556,
+        "detail": "no plausible source span"
+      }
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "error": "timed out"
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\":\"NOT\\_FOUND\",\"quote\":\"\"}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"94.8\", \"anchor\": \"\"}",
+      "answer": "94.8",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"642\", \"anchor\": \"TRIDENT-3 ClinicalTrials.gov\"}",
+      "answer": "642",
+      "anchor": "TRIDENT-3 ClinicalTrials.gov",
+      "locate": {
+        "method": "exact",
+        "span": "TRIDENT-3 ClinicalTrials.gov",
+        "occurrences": 1,
+        "sentence": "(Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.)"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"12\", \"anchor\": \"TRIDENT-3 ClinicalTrials.gov\"}",
+      "answer": "12",
+      "anchor": "TRIDENT-3 ClinicalTrials.gov",
+      "locate": {
+        "method": "exact",
+        "span": "TRIDENT-3 ClinicalTrials.gov",
+        "occurrences": 1,
+        "sentence": "(Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.)"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"anchor\": \"HARBORVIEW\"}",
+      "answer": "Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session",
+      "anchor": "HARBORVIEW",
+      "locate": {
+        "method": "exact",
+        "span": "HARBORVIEW",
+        "occurrences": 5,
+        "sentence": "HARBORVIEW — After nearly eleven hours of public comment and debate, the Harborview City Council voted 6–3 early Wednesday to place a $2.3 billion transit bond on the November ballot, setting up what observers expect to be the most expensive local ballot campaign in the city's history."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"85\", \"anchor\": \"badges\"}",
+      "answer": "85",
+      "anchor": "badges",
+      "locate": {
+        "method": "exact",
+        "span": "badges",
+        "occurrences": 3,
+        "sentence": "New badges are ready for pickup at the Building 7 security desk starting Sept 18; bring photo ID."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"An essay, 1873\", \"anchor\": \"\"}",
+      "answer": "An essay, 1873",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"TITAN MATERIALS GROUP · 2025 ANNUAL REPORT\", \"anchor\": \"TITAN MATERIALS GROUP\"}",
+      "answer": "TITAN MATERIALS GROUP · 2025 ANNUAL REPORT",
+      "anchor": "TITAN MATERIALS GROUP",
+      "locate": {
+        "method": "exact",
+        "span": "TITAN MATERIALS GROUP",
+        "occurrences": 3,
+        "sentence": "TITAN MATERIALS GROUP  ANNUAL REPORT — FISCAL 2025"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\n  \"answer\": \"90\",\n  \"anchor\": \"RE: Renewal terms — Meridian account\"\n}",
+      "answer": "90",
+      "anchor": "RE: Renewal terms — Meridian account",
+      "locate": {
+        "method": "exact",
+        "span": "RE: Renewal terms — Meridian account",
+        "occurrences": 10,
+        "sentence": "Subject: RE: RE: RE: RE: Renewal terms — Meridian account"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\":\"NOT\\_FOUND\",\"anchor\":\"\"}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"94.1\", \"quote\": \"94.1\"}",
+      "answer": "94.1",
+      "quote": "94.1",
+      "refused": false,
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.5,
+        "detail": "no plausible source span"
+      }
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"642\", \"quote\": \"Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.\"}",
+      "answer": "642",
+      "quote": "Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"12\", \"quote\": \"642\"}",
+      "answer": "12",
+      "quote": "642",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"quote\": \"HARBORVIEW — After nearly eleven hours of public comment and debate, the Harborview City Council voted 6–3 early Wednesday to place a $2.3 billion transit bond on the November ballot, setting up what observers expect to be the most expensive local ballot campaign in the city's history.\"}\n\n{\"answer\": \"Maria Okafor\", \"quote\": \"Council President Maria Okafor, who championed the measure. \"}\n\n{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"quote\": \"This is the single largest investment in mobility our city has ever contemplated,\" said Council President Maria Okafor, who championed the measure. \"We can pay now, or we can pay far more later — congestion already costs Harborview families an estimated $1,900 per household every year.\"}\n\n{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"quote\": \"Opposition centered on the bond's property-tax impact. The city's independent budget office estimates the measure would add $186 per year to the tax bill of a median-priced home, a figure opponents called \"regressive and punishing.\" Councilmember Dale Rutherford, who voted no, warned that construction costs were \"spiraling beyond anything the proponents are willing to admit\" and pointed to the Westside streetcar project, which finished 31 months late and 47% over budget. \"Transit advocates packed the chamber wearing green scarves, and a coalition of twelve neighborhood associations submitted a petition with 18,400 signatures supporting the measure. Business groups were split: the Downtown Alliance endorsed the bond, while the Regional Chamber of Commerce declined to take a position, citing \"unresolved questions about cost controls.\"\"}",
+      "answer": "Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session",
+      "quote": "HARBORVIEW — After nearly eleven hours of public comment and debate, the Harborview City Council voted 6–3 early Wednesday to place a $2.3 billion transit bond on the November ballot, setting up what observers expect to be the most expensive local ballot campaign in the city's history.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"} — never quote text that does not answer the question.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"An essay, 1873\", \"quote\": \"\"}",
+      "answer": "An essay, 1873",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"TITAN MATERIALS GROUP · 2025 ANNUAL REPORT\", \"quote\": \"Robert J. Williams\"}",
+      "answer": "TITAN MATERIALS GROUP · 2025 ANNUAL REPORT",
+      "quote": "Robert J. Williams",
+      "refused": false,
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.556,
+        "detail": "no plausible source span"
+      }
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "error": "timed out"
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\":\"NOT\\_FOUND\",\"quote\":\"\"}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"94.8\", \"anchor\": \"\"}",
+      "answer": "94.8",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"642\", \"anchor\": \"TRIDENT-3 ClinicalTrials.gov\"}",
+      "answer": "642",
+      "anchor": "TRIDENT-3 ClinicalTrials.gov",
+      "locate": {
+        "method": "exact",
+        "span": "TRIDENT-3 ClinicalTrials.gov",
+        "occurrences": 1,
+        "sentence": "(Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.)"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"12\", \"anchor\": \"TRIDENT-3 ClinicalTrials.gov\"}",
+      "answer": "12",
+      "anchor": "TRIDENT-3 ClinicalTrials.gov",
+      "locate": {
+        "method": "exact",
+        "span": "TRIDENT-3 ClinicalTrials.gov",
+        "occurrences": 1,
+        "sentence": "(Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.)"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session\", \"anchor\": \"HARBORVIEW\"}",
+      "answer": "Harborview Council Approves $2.3 Billion Transit Bond After Marathon Session",
+      "anchor": "HARBORVIEW",
+      "locate": {
+        "method": "exact",
+        "span": "HARBORVIEW",
+        "occurrences": 5,
+        "sentence": "HARBORVIEW — After nearly eleven hours of public comment and debate, the Harborview City Council voted 6–3 early Wednesday to place a $2.3 billion transit bond on the November ballot, setting up what observers expect to be the most expensive local ballot campaign in the city's history."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"85\", \"anchor\": \"badges\"}",
+      "answer": "85",
+      "anchor": "badges",
+      "locate": {
+        "method": "exact",
+        "span": "badges",
+        "occurrences": 3,
+        "sentence": "New badges are ready for pickup at the Building 7 security desk starting Sept 18; bring photo ID."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"An essay, 1873\", \"anchor\": \"\"}",
+      "answer": "An essay, 1873",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"TITAN MATERIALS GROUP · 2025 ANNUAL REPORT\", \"anchor\": \"TITAN MATERIALS GROUP\"}",
+      "answer": "TITAN MATERIALS GROUP · 2025 ANNUAL REPORT",
+      "anchor": "TITAN MATERIALS GROUP",
+      "locate": {
+        "method": "exact",
+        "span": "TITAN MATERIALS GROUP",
+        "occurrences": 3,
+        "sentence": "TITAN MATERIALS GROUP  ANNUAL REPORT — FISCAL 2025"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\n  \"answer\": \"90\",\n  \"anchor\": \"RE: Renewal terms — Meridian account\"\n}",
+      "answer": "90",
+      "anchor": "RE: Renewal terms — Meridian account",
+      "locate": {
+        "method": "exact",
+        "span": "RE: Renewal terms — Meridian account",
+        "occurrences": 10,
+        "sentence": "Subject: RE: RE: RE: RE: Renewal terms — Meridian account"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\":\"NOT\\_FOUND\",\"anchor\":\"\"}",
+      "parse_error": true
+    }
+  ]
+}

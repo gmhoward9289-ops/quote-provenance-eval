@@ -33,6 +33,12 @@ CORPUS_QUESTIONS = {"main": 30, "corpus/questions_hard.json": 22,
                     "corpus/questions_absent.json": 10}
 ARMS, REPEATS = 2, 3
 
+# Quality bar a model must clear before its energy number is worth quoting.
+# Refusal is absolute: a model that invents answers for values that aren't
+# there is disqualified regardless of how well it scores on values that are.
+COVERAGE_BAR = 0.95
+REFUSAL_BAR = 1.0
+
 
 def load_power(path: str) -> tuple[dict, dict]:
     bench, evals = {}, defaultdict(list)
@@ -147,19 +153,37 @@ def build(results_glob: str, power_path: str) -> str:
 
     done = [r for r in rows if r["wh_per_100"] and r["anchor_coverage"]]
     if done:
-        cheap = min(done, key=lambda r: r["wh_per_100"])
+        # "Cheapest" on its own is a trap: the least energy per extraction
+        # belongs to models that barely locate anything, and cheap failure is
+        # not a bargain. The recommendation has to clear a quality bar first.
+        usable = [r for r in done
+                  if (r["anchor_coverage"] or 0) >= COVERAGE_BAR
+                  and (r["refusal"] or 0) >= REFUSAL_BAR]
         best = max(done, key=lambda r: r["anchor_coverage"])
-        out += ["", "## Read-out", "",
-                f"- Cheapest verified extraction: **{cheap['model']}** at "
-                f"{cheap['wh_per_100']} Wh per 100 extractions "
-                f"({pct(cheap['anchor_coverage'])} anchor coverage).",
-                f"- Best anchor coverage: **{best['model']}** at "
-                f"{pct(best['anchor_coverage'])} "
-                f"({best['wh_per_100']} Wh per 100).",
-                f"- Energy spread across {len(done)} measured models: "
-                f"{min(r['wh_per_100'] for r in done)}–"
-                f"{max(r['wh_per_100'] for r in done)} Wh per 100 extractions "
-                f"({max(r['wh_per_100'] for r in done) / max(min(r['wh_per_100'] for r in done), 0.01):.0f}x)."]
+        lo = min(r["wh_per_100"] for r in done)
+        hi = max(r["wh_per_100"] for r in done)
+        out += ["", "## Read-out", ""]
+        if usable:
+            pick = min(usable, key=lambda r: r["wh_per_100"])
+            out.append(
+                f"- **Recommended: `{pick['model']}`** — cheapest model clearing "
+                f"the bar ({pct(COVERAGE_BAR)} anchor coverage and "
+                f"{pct(REFUSAL_BAR)} absent-value refusal): "
+                f"{pct(pick['anchor_coverage'])} coverage at "
+                f"{pick['wh_per_100']} Wh per 100 extractions.")
+            out.append(f"- {len(usable)} of {len(done)} measured models clear "
+                       f"that bar.")
+        out += [
+            f"- Best anchor coverage: **{best['model']}** at "
+            f"{pct(best['anchor_coverage'])} ({best['wh_per_100']} Wh per 100).",
+            f"- Energy spread across {len(done)} measured models: {lo}–{hi} Wh "
+            f"per 100 extractions ({hi / max(lo, 0.01):.0f}x), while coverage "
+            f"among models clearing the bar varies by only a few points.",
+            "",
+            "Cheapest overall is deliberately not reported: the lowest energy "
+            "per extraction belongs to models that locate almost nothing, and "
+            "cheap failure is not a bargain.",
+        ]
     return "\n".join(out)
 
 

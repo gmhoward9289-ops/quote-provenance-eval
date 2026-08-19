@@ -1,0 +1,3329 @@
+{
+  "provider": "ollama",
+  "model": "granite3.1-moe:3b",
+  "timestamp": "20260819-021859",
+  "corpus": "questions",
+  "summary": {
+    "n_quote": 90,
+    "n_anchor": 90,
+    "n_provider_errors": 0,
+    "n_unparseable": 0,
+    "quote_levels": {
+      "fabricated": 49,
+      "normalized": 12,
+      "exact": 20,
+      "minor_edit": 9
+    },
+    "quote_exact_rate": 0.222,
+    "quote_coverage": 0.189,
+    "quote_recoverable_rate": 0.356,
+    "quote_fabricated_rate": 0.544,
+    "quote_answer_accuracy": 0.9,
+    "anchor_located_rate": 0.5,
+    "anchor_coverage": 0.3,
+    "anchor_methods": {
+      "not_found": 45,
+      "fuzzy": 21,
+      "exact": 17,
+      "subsequence": 6,
+      "normalized": 1
+    },
+    "anchor_ambiguous": 9,
+    "anchor_answer_accuracy": 0.867,
+    "anchor_provenance_fidelity_of_located": 1.0,
+    "ci95": {
+      "quote_exact_rate": [
+        0.149,
+        0.318
+      ],
+      "quote_coverage": [
+        0.121,
+        0.282
+      ],
+      "anchor_coverage": [
+        0.215,
+        0.401
+      ]
+    },
+    "per_rep": {
+      "quote_exact_rate": [
+        0.2,
+        0.233,
+        0.233
+      ],
+      "quote_coverage": [
+        0.167,
+        0.2,
+        0.2
+      ],
+      "anchor_coverage": [
+        0.3,
+        0.3,
+        0.3
+      ]
+    }
+  },
+  "rows": [
+    {
+      "id": "qr-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's total revenue in Q3 2025?",
+      "expect_value": "148.7",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"148.7 million\", \"quote\": \"\"}",
+      "answer": "148.7 million",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-2",
+      "doc": "quarterly_report.txt",
+      "question": "How many industrial units did Meridian ship during the quarter?",
+      "expect_value": "4,112",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"4,112\", \"quote\": \"\"}",
+      "answer": "4,112",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-3",
+      "doc": "quarterly_report.txt",
+      "question": "What was net income per diluted share in Q3 2025?",
+      "expect_value": "$0.42",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"0.42\", \"quote\": \"\"}",
+      "answer": "0.42",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-4",
+      "doc": "quarterly_report.txt",
+      "question": "What is the revenue guidance range for the fourth quarter?",
+      "expect_value": "$155 million and $162 million",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"155 to 162 million\", \"quote\": \"\"}",
+      "answer": "155 to 162 million",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-5",
+      "doc": "quarterly_report.txt",
+      "question": "How large is the newly authorized share repurchase program?",
+      "expect_value": "$100 million",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"100 million\", \"quote\": \"The board has authorized a $100 million share repurchase program, effective November 1, 2025.\"}",
+      "answer": "100 million",
+      "quote": "The board has authorized a $100 million share repurchase program, effective November 1, 2025.",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation / case"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-1",
+      "doc": "clinical_trial.txt",
+      "question": "What was the placebo-adjusted difference in 24-hour ambulatory systolic blood pressure at week 12?",
+      "expect_value": "-11.4",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"-11.4 mm Hg\", \"quote\": \"\"}",
+      "answer": "-11.4 mm Hg",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many adults were randomized in the trial?",
+      "expect_value": "1,284",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"1284\", \"quote\": \"\"}",
+      "answer": "1284",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-3",
+      "doc": "clinical_trial.txt",
+      "question": "What percentage of the lorvatinib group experienced hyperkalemia?",
+      "expect_value": "7.3%",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"7.3%\", \"quote\": \"Hyperkalemia (serum potassium above 5.5 mmol per liter) occurred in 7.3% of the lorvatinib group and 1.6% of the placebo group; two participants discontinued lorvatinib because of hyperkalemia.\"}",
+      "answer": "7.3%",
+      "quote": "Hyperkalemia (serum potassium above 5.5 mmol per liter) occurred in 7.3% of the lorvatinib group and 1.6% of the placebo group; two participants discontinued lorvatinib because of hyperkalemia.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-4",
+      "doc": "clinical_trial.txt",
+      "question": "What percentage of lorvatinib participants achieved office systolic pressure below 130 mm Hg at week 24?",
+      "expect_value": "39.6%",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"39.6%\", \"quote\": \"\"}",
+      "answer": "39.6%",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-5",
+      "doc": "clinical_trial.txt",
+      "question": "What was the mean age of trial participants?",
+      "expect_value": "61.4",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"61.4\", \"quote\": \"\"}",
+      "answer": "61.4",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-1",
+      "doc": "news_article.txt",
+      "question": "What was the council's vote tally on the transit bond?",
+      "expect_value": "6–3",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"6-3\", \"quote\": \"\"}",
+      "answer": "6-3",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-2",
+      "doc": "news_article.txt",
+      "question": "How much would the measure add to the annual tax bill of a median-priced home?",
+      "expect_value": "$186",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"186\", \"quote\": \"\\\"The bond would add $186 per year to the tax bill of a median-priced home, according to the city's independent budget office.\\\"\"}",
+      "answer": "186",
+      "quote": "\"The bond would add $186 per year to the tax bill of a median-priced home, according to the city's independent budget office.\"",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.659,
+        "detail": "no plausible source span"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "na-3",
+      "doc": "news_article.txt",
+      "question": "According to Council President Okafor, how much does congestion cost Harborview families per household each year?",
+      "expect_value": "$1,900",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"1900\", \"quote\": \"\\\"congestion already costs Harborview families an estimated $1,900 per household every year.\\\"\"}",
+      "answer": "1900",
+      "quote": "\"congestion already costs Harborview families an estimated $1,900 per household every year.\"",
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.989,
+        "detail": "small word-level edits"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "na-4",
+      "doc": "news_article.txt",
+      "question": "By how much did the Westside streetcar project go over budget?",
+      "expect_value": "47%",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"47%\", \"quote\": \"\"}",
+      "answer": "47%",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-5",
+      "doc": "news_article.txt",
+      "question": "What level of support did the measure show in last week's poll?",
+      "expect_value": "54%",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"54%\", \"quote\": \"\"}",
+      "answer": "54%",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-1",
+      "doc": "incident_postmortem.txt",
+      "question": "How long did the outage last?",
+      "expect_value": "3 hours 42 minutes",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"3 hours 42 minutes\", \"quote\": \"08:17 UTC to 11:59 UTC\"}",
+      "answer": "3 hours 42 minutes",
+      "quote": "08:17 UTC to 11:59 UTC",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-2",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the peak error rate during the incident?",
+      "expect_value": "91%",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"91%\", \"quote\": \"The peak error rate reached 91% between 09:05 and 09:40 UTC.\"}",
+      "answer": "91%",
+      "quote": "The peak error rate reached 91% between 09:05 and 09:40 UTC.",
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.95,
+        "detail": "small word-level edits"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-3",
+      "doc": "incident_postmortem.txt",
+      "question": "Which release introduced the rate-limiter regression?",
+      "expect_value": "rl-2.14.0",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"rl-2.14.0\", \"quote\": \"\"}",
+      "answer": "rl-2.14.0",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-4",
+      "doc": "incident_postmortem.txt",
+      "question": "How long did the automated canary analysis run?",
+      "expect_value": "6 minutes",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"6 minutes\", \"quote\": \"\"}",
+      "answer": "6 minutes",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the measured CPU overhead of per-request monotonic clock reads?",
+      "expect_value": "0.3%",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"0.3% CPU\", \"quote\": \"\"}",
+      "answer": "0.3% CPU",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-1",
+      "doc": "victorian_essay.txt",
+      "question": "How many books did the scholar of the last century possess?",
+      "expect_value": "forty",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"forty\", \"quote\": \"He possessed, perhaps, forty books, and he knew them as a shepherd knows his flock — not by their covers merely, but by their inmost character, their weaknesses, their peculiar virtues.\"}",
+      "answer": "forty",
+      "quote": "He possessed, perhaps, forty books, and he knew them as a shepherd knows his flock — not by their covers merely, but by their inmost character, their weaknesses, their peculiar virtues.",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation in quote"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-2",
+      "doc": "victorian_essay.txt",
+      "question": "For how long does the author ask the reader to persevere in the proposed regimen?",
+      "expect_value": "a single month",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"one month\", \"quote\": \"\"}",
+      "answer": "one month",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "ve-3",
+      "doc": "victorian_essay.txt",
+      "question": "What does the author say attention is, a gift or a habit?",
+      "expect_value": "habit",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"attention is a habit\", \"quote\": \"Attention is not a gift but a habit; it is formed, like all habits, by repetition.\"}",
+      "answer": "attention is a habit",
+      "quote": "Attention is not a gift but a habit; it is formed, like all habits, by repetition.",
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.988,
+        "detail": "small word-level edits"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-4",
+      "doc": "victorian_essay.txt",
+      "question": "How many books does the modern grandson possess?",
+      "expect_value": "four thousand",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"four thousand\", \"quote\": \"His grandson possesses four thousand, and knows none of them; he has traded intimacy for acquaintance, and acquaintance, multiplied indefinitely, becomes a kind of ignorance more hopeless than the honest ignorance of the ploughman, because it wears the costume of learning.\"}",
+      "answer": "four thousand",
+      "quote": "His grandson possesses four thousand, and knows none of them; he has traded intimacy for acquaintance, and acquaintance, multiplied indefinitely, becomes a kind of ignorance more hopeless than the honest ignorance of the ploughman, because it wears the costume of learning.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-5",
+      "doc": "victorian_essay.txt",
+      "question": "How long is the daily uninterrupted period the author proposes?",
+      "expect_value": "one uninterrupted hour",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"60 minutes\", \"quote\": \"Let him persevere in this practice for a single month.\"}",
+      "answer": "60 minutes",
+      "quote": "Let him persevere in this practice for a single month.",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation / case"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "mm-1",
+      "doc": "messy_memo.txt",
+      "question": "On which weekend does Engineering move?",
+      "expect_value": "Sept 20–21",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"Sept 20-21\", \"quote\": \"Engineering moves the weekend of Sept 20–21.\"}",
+      "answer": "Sept 20-21",
+      "quote": "Engineering moves the weekend of Sept 20–21.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-2",
+      "doc": "messy_memo.txt",
+      "question": "How many parking spaces does the Building 7 garage have?",
+      "expect_value": "340",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"340\", \"quote\": \"The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street.\"}",
+      "answer": "340",
+      "quote": "The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-3",
+      "doc": "messy_memo.txt",
+      "question": "How much does overflow parking cost the company per space per month?",
+      "expect_value": "$85",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"85\", \"quote\": \"The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street. Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.\"}",
+      "answer": "85",
+      "quote": "The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street. Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-4",
+      "doc": "messy_memo.txt",
+      "question": "What was the vote tally on the espresso machine's location?",
+      "expect_value": "118–34",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"118-34\", \"quote\": \"\"}",
+      "answer": "118-34",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-5",
+      "doc": "messy_memo.txt",
+      "question": "What fraction of badge photos failed the new system's quality check?",
+      "expect_value": "12%",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"0.12\", \"quote\": \"about 12% of badge photos failed the new system's quality check (mostly people who uploaded pictures of their dogs, you know who you are)\"}",
+      "answer": "0.12",
+      "quote": "about 12% of badge photos failed the new system's quality check (mostly people who uploaded pictures of their dogs, you know who you are)",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation / case"
+      },
+      "value_in_quote": true,
+      "answer_correct": false
+    },
+    {
+      "id": "qr-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's total revenue in Q3 2025?",
+      "expect_value": "148.7",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"148.7 million\", \"anchor\": \"Q3_revenue\"}",
+      "answer": "148.7 million",
+      "anchor": "Q3_revenue",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-2",
+      "doc": "quarterly_report.txt",
+      "question": "How many industrial units did Meridian ship during the quarter?",
+      "expect_value": "4,112",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"4,112\", \"anchor\": \"shipments\"}",
+      "answer": "4,112",
+      "anchor": "shipments",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-3",
+      "doc": "quarterly_report.txt",
+      "question": "What was net income per diluted share in Q3 2025?",
+      "expect_value": "$0.42",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"19.8\", \"anchor\": \"net_income\"}",
+      "answer": "19.8",
+      "anchor": "net_income",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.9,
+        "span": "Net income",
+        "occurrences": 1,
+        "sentence": "Net income was $19.8 million, or $0.42 per diluted share, compared with $6.1 million, or $0.13 per diluted share, in the prior-year period."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": false
+    },
+    {
+      "id": "qr-4",
+      "doc": "quarterly_report.txt",
+      "question": "What is the revenue guidance range for the fourth quarter?",
+      "expect_value": "$155 million and $162 million",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"155 million to 162 million\", \"anchor\": \"Q4_revenue\"}",
+      "answer": "155 million to 162 million",
+      "anchor": "Q4_revenue",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-5",
+      "doc": "quarterly_report.txt",
+      "question": "How large is the newly authorized share repurchase program?",
+      "expect_value": "$100 million",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"100 million\", \"anchor\": \"share repurchase program\"}",
+      "answer": "100 million",
+      "anchor": "share repurchase program",
+      "locate": {
+        "method": "exact",
+        "span": "share repurchase program",
+        "occurrences": 1,
+        "sentence": "We are also pleased to announce that the board has authorized a $100 million share repurchase program, effective November 1, 2025."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-1",
+      "doc": "clinical_trial.txt",
+      "question": "What was the placebo-adjusted difference in 24-hour ambulatory systolic blood pressure at week 12?",
+      "expect_value": "-11.4",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"-11.4 mm Hg\", \"anchor\": \"placebo-adjusted difference\"}",
+      "answer": "-11.4 mm Hg",
+      "anchor": "placebo-adjusted difference",
+      "locate": {
+        "method": "exact",
+        "span": "placebo-adjusted difference",
+        "occurrences": 1,
+        "sentence": "At week 12, the mean change in 24-hour ambulatory systolic blood pressure was -16.2 mm Hg in the lorvatinib group and -4.8 mm Hg in the placebo group, for a placebo-adjusted difference of -11.4 mm Hg (95% confidence interval, -13.7 to -9.1; P<0.001)."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many adults were randomized in the trial?",
+      "expect_value": "1,284",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"1284\", \"anchor\": \"randomization_count\"}",
+      "answer": "1284",
+      "anchor": "randomization_count",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-3",
+      "doc": "clinical_trial.txt",
+      "question": "What percentage of the lorvatinib group experienced hyperkalemia?",
+      "expect_value": "7.3%",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"7.3%\", \"anchor\": \"lorkatinib_hyperkalemia\"}",
+      "answer": "7.3%",
+      "anchor": "lorkatinib_hyperkalemia",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-4",
+      "doc": "clinical_trial.txt",
+      "question": "What percentage of lorvatinib participants achieved office systolic pressure below 130 mm Hg at week 24?",
+      "expect_value": "39.6%",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"39.6%\", \"anchor\": \"office_systolic_pressure\"}",
+      "answer": "39.6%",
+      "anchor": "office_systolic_pressure",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.917,
+        "span": "office systolic pressure",
+        "occurrences": 2,
+        "sentence": "Secondary endpoints included office blood pressure response, defined as office systolic pressure below 130 mm Hg at week 24, and change in urinary albumin-to-creatinine ratio."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-5",
+      "doc": "clinical_trial.txt",
+      "question": "What was the mean age of trial participants?",
+      "expect_value": "61.4",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"61.4\", \"anchor\": \"trial_participants\"}",
+      "answer": "61.4",
+      "anchor": "trial_participants",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-1",
+      "doc": "news_article.txt",
+      "question": "What was the council's vote tally on the transit bond?",
+      "expect_value": "6–3",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"6-3\", \"anchor\": \"council_vote\"}",
+      "answer": "6-3",
+      "anchor": "council_vote",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.917,
+        "span": "Council vote",
+        "occurrences": 1,
+        "sentence": "HARBORVIEW — After nearly eleven hours of public comment and debate, the Harborview City Council voted 6–3 early Wednesday to place a $2.3 billion transit bond on the November ballot, setting up what observers expect to be the most expensive local ballot campaign in the city's history."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "na-2",
+      "doc": "news_article.txt",
+      "question": "How much would the measure add to the annual tax bill of a median-priced home?",
+      "expect_value": "$186",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"186\", \"anchor\": \"median-price\"}",
+      "answer": "186",
+      "anchor": "median-price",
+      "locate": {
+        "method": "exact",
+        "span": "median-price",
+        "occurrences": 1,
+        "sentence": "The city's independent budget office estimates the measure would add $186 per year to the tax bill of a median-priced home, a figure opponents called \"regressive and punishing.\" Councilmember Dale Rutherford, who voted no, warned that construction costs were \"spiraling beyond anything the proponents are willing to admit\" and pointed to the Westside streetcar project, which finished 31 months late and 47% over budget."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "na-3",
+      "doc": "news_article.txt",
+      "question": "According to Council President Okafor, how much does congestion cost Harborview families per household each year?",
+      "expect_value": "$1,900",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"1900\", \"anchor\": \"congestion_cost\"}",
+      "answer": "1900",
+      "anchor": "congestion_cost",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-4",
+      "doc": "news_article.txt",
+      "question": "By how much did the Westside streetcar project go over budget?",
+      "expect_value": "47%",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"47%\", \"anchor\": \"overruns\"}",
+      "answer": "47%",
+      "anchor": "overruns",
+      "locate": {
+        "method": "exact",
+        "span": "overruns",
+        "occurrences": 1,
+        "sentence": "The council also voted unanimously to create a nine-member citizen oversight committee with subpoena power to audit bond expenditures, a concession designed to win over skeptical voters after the Westside streetcar overruns."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-5",
+      "doc": "news_article.txt",
+      "question": "What level of support did the measure show in last week's poll?",
+      "expect_value": "54%",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"54%\", \"anchor\": \"last_week_poll\"}",
+      "answer": "54%",
+      "anchor": "last_week_poll",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-1",
+      "doc": "incident_postmortem.txt",
+      "question": "How long did the outage last?",
+      "expect_value": "3 hours 42 minutes",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"3 hours 42 minutes\", \"anchor\": \"rollout_promoted\"}",
+      "answer": "3 hours 42 minutes",
+      "anchor": "rollout_promoted",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.938,
+        "span": "Rollout promoted",
+        "occurrences": 1,
+        "sentence": "08:17 — Rollout promoted to 100% after automated canary analysis passed."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-2",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the peak error rate during the incident?",
+      "expect_value": "91%",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"91%\", \"anchor\": \"error_rate\"}",
+      "answer": "91%",
+      "anchor": "error_rate",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.9,
+        "span": "error rate",
+        "occurrences": 5,
+        "sentence": "Customer impact: Approximately 62% of API requests returned 5xx errors during the incident window; peak error rate reached 91% between 09:05 and 09:40 UTC."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-3",
+      "doc": "incident_postmortem.txt",
+      "question": "Which release introduced the rate-limiter regression?",
+      "expect_value": "rl-2.14.0",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"rl-2.14.0\", \"anchor\": \"rate-limiter-regression\"}",
+      "answer": "rl-2.14.0",
+      "anchor": "rate-limiter-regression",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-4",
+      "doc": "incident_postmortem.txt",
+      "question": "How long did the automated canary analysis run?",
+      "expect_value": "6 minutes",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"6 minutes\", \"anchor\": \"canary_analysis_duration\"}",
+      "answer": "6 minutes",
+      "anchor": "canary_analysis_duration",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the measured CPU overhead of per-request monotonic clock reads?",
+      "expect_value": "0.3%",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"0.3% CPU\", \"anchor\": \"syscall_overhead\"}",
+      "answer": "0.3% CPU",
+      "anchor": "syscall_overhead",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.938,
+        "span": "syscall overhead",
+        "occurrences": 2,
+        "sentence": "The refill routine in rl-2.14.0 replaced a per-request monotonic clock read with a value cached by a background goroutine to reduce syscall overhead."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-1",
+      "doc": "victorian_essay.txt",
+      "question": "How many books did the scholar of the last century possess?",
+      "expect_value": "forty",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"forty\", \"anchor\": \"last_century\"}",
+      "answer": "forty",
+      "anchor": "last_century",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.917,
+        "span": "last century",
+        "occurrences": 1,
+        "sentence": "Consider the scholar of the last century: he possessed, perhaps, forty books, and he knew them as a shepherd knows his flock — not by their covers merely, but by their inmost character, their weaknesses, their peculiar virtues."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-2",
+      "doc": "victorian_essay.txt",
+      "question": "For how long does the author ask the reader to persevere in the proposed regimen?",
+      "expect_value": "a single month",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"one month\", \"anchor\": \"perseverance_month\"}",
+      "answer": "one month",
+      "anchor": "perseverance_month",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "ve-3",
+      "doc": "victorian_essay.txt",
+      "question": "What does the author say attention is, a gift or a habit?",
+      "expect_value": "habit",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"attention is a habit\", \"anchor\": \"habit_of_attention\"}",
+      "answer": "attention is a habit",
+      "anchor": "habit_of_attention",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-4",
+      "doc": "victorian_essay.txt",
+      "question": "How many books does the modern grandson possess?",
+      "expect_value": "four thousand",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"four thousand\", \"anchor\": \"book_count\"}",
+      "answer": "four thousand",
+      "anchor": "book_count",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-5",
+      "doc": "victorian_essay.txt",
+      "question": "How long is the daily uninterrupted period the author proposes?",
+      "expect_value": "one uninterrupted hour",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"60 minutes\", \"anchor\": \"one hour\"}",
+      "answer": "60 minutes",
+      "anchor": "one hour",
+      "locate": {
+        "method": "subsequence",
+        "span": "one uninterrupted hour",
+        "occurrences": 1,
+        "sentence": "Let the reader, then, make trial of a simple regimen: let him choose each morning one worthy object — a book, a problem, a piece of work — and give to it one uninterrupted hour, admitting no rival to his thoughts, however clamorous; and let him persevere in this practice for a single month."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": false
+    },
+    {
+      "id": "mm-1",
+      "doc": "messy_memo.txt",
+      "question": "On which weekend does Engineering move?",
+      "expect_value": "Sept 20–21",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"Sept 20-21\", \"anchor\": \"move dates\"}",
+      "answer": "Sept 20-21",
+      "anchor": "move dates",
+      "locate": {
+        "method": "normalized",
+        "span": "MOVE DATES",
+        "occurrences": 1,
+        "sentence": "MOVE DATES."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-2",
+      "doc": "messy_memo.txt",
+      "question": "How many parking spaces does the Building 7 garage have?",
+      "expect_value": "340",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"340 spaces\", \"anchor\": \"Building 7 garage spaces\"}",
+      "answer": "340 spaces",
+      "anchor": "Building 7 garage spaces",
+      "locate": {
+        "method": "subsequence",
+        "span": "Building 7 garage has 340 spaces",
+        "occurrences": 1,
+        "sentence": "The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-3",
+      "doc": "messy_memo.txt",
+      "question": "How much does overflow parking cost the company per space per month?",
+      "expect_value": "$85",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"85\", \"anchor\": \"overflow_cost\"}",
+      "answer": "85",
+      "anchor": "overflow_cost",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-4",
+      "doc": "messy_memo.txt",
+      "question": "What was the vote tally on the espresso machine's location?",
+      "expect_value": "118–34",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"118-34\", \"anchor\": \"majority vote\"}",
+      "answer": "118-34",
+      "anchor": "majority vote",
+      "locate": {
+        "method": "exact",
+        "span": "majority vote",
+        "occurrences": 1,
+        "sentence": "It goes to the 3rd floor commons, majority vote wins, this is a democracy."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-5",
+      "doc": "messy_memo.txt",
+      "question": "What fraction of badge photos failed the new system's quality check?",
+      "expect_value": "12%",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"0.12\", \"anchor\": \"badge_quality\"}",
+      "answer": "0.12",
+      "anchor": "badge_quality",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "qr-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's total revenue in Q3 2025?",
+      "expect_value": "148.7",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"148.7 million\", \"quote\": \"Total revenue reached $148.7 million, up 34% year over year, driven primarily by the industrial arm segment.\"}",
+      "answer": "148.7 million",
+      "quote": "Total revenue reached $148.7 million, up 34% year over year, driven primarily by the industrial arm segment.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-2",
+      "doc": "quarterly_report.txt",
+      "question": "How many industrial units did Meridian ship during the quarter?",
+      "expect_value": "4,112",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"4,112\", \"quote\": \"\"}",
+      "answer": "4,112",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-3",
+      "doc": "quarterly_report.txt",
+      "question": "What was net income per diluted share in Q3 2025?",
+      "expect_value": "$0.42",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"0.42\", \"quote\": \"\"}",
+      "answer": "0.42",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-4",
+      "doc": "quarterly_report.txt",
+      "question": "What is the revenue guidance range for the fourth quarter?",
+      "expect_value": "$155 million and $162 million",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"155 to 162 million\", \"quote\": \"\"}",
+      "answer": "155 to 162 million",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-5",
+      "doc": "quarterly_report.txt",
+      "question": "How large is the newly authorized share repurchase program?",
+      "expect_value": "$100 million",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"100 million\", \"quote\": \"The board has authorized a $100 million share repurchase program, effective November 1, 2025.\"}",
+      "answer": "100 million",
+      "quote": "The board has authorized a $100 million share repurchase program, effective November 1, 2025.",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation / case"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-1",
+      "doc": "clinical_trial.txt",
+      "question": "What was the placebo-adjusted difference in 24-hour ambulatory systolic blood pressure at week 12?",
+      "expect_value": "-11.4",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"-11.4 mm Hg\", \"quote\": \"\"}",
+      "answer": "-11.4 mm Hg",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many adults were randomized in the trial?",
+      "expect_value": "1,284",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"1284\", \"quote\": \"\"}",
+      "answer": "1284",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-3",
+      "doc": "clinical_trial.txt",
+      "question": "What percentage of the lorvatinib group experienced hyperkalemia?",
+      "expect_value": "7.3%",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"7.3%\", \"quote\": \"Hyperkalemia (serum potassium above 5.5 mmol per liter) occurred in 7.3% of the lorvatinib group and 1.6% of the placebo group; two participants discontinued lorvatinib because of hyperkalemia.\"}",
+      "answer": "7.3%",
+      "quote": "Hyperkalemia (serum potassium above 5.5 mmol per liter) occurred in 7.3% of the lorvatinib group and 1.6% of the placebo group; two participants discontinued lorvatinib because of hyperkalemia.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-4",
+      "doc": "clinical_trial.txt",
+      "question": "What percentage of lorvatinib participants achieved office systolic pressure below 130 mm Hg at week 24?",
+      "expect_value": "39.6%",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"39.6%\", \"quote\": \"\"}",
+      "answer": "39.6%",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-5",
+      "doc": "clinical_trial.txt",
+      "question": "What was the mean age of trial participants?",
+      "expect_value": "61.4",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"61.4\", \"quote\": \"\"}",
+      "answer": "61.4",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-1",
+      "doc": "news_article.txt",
+      "question": "What was the council's vote tally on the transit bond?",
+      "expect_value": "6–3",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"6-3\", \"quote\": \"\"}",
+      "answer": "6-3",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-2",
+      "doc": "news_article.txt",
+      "question": "How much would the measure add to the annual tax bill of a median-priced home?",
+      "expect_value": "$186",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"186\", \"quote\": \"\\\"The bond would add $186 per year to the tax bill of a median-priced home, according to the city's independent budget office.\\\"\"}",
+      "answer": "186",
+      "quote": "\"The bond would add $186 per year to the tax bill of a median-priced home, according to the city's independent budget office.\"",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.659,
+        "detail": "no plausible source span"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "na-3",
+      "doc": "news_article.txt",
+      "question": "According to Council President Okafor, how much does congestion cost Harborview families per household each year?",
+      "expect_value": "$1,900",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"1900\", \"quote\": \"\\\"congestion already costs Harborview families an estimated $1,900 per household every year.\\\"\"}",
+      "answer": "1900",
+      "quote": "\"congestion already costs Harborview families an estimated $1,900 per household every year.\"",
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.989,
+        "detail": "small word-level edits"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "na-4",
+      "doc": "news_article.txt",
+      "question": "By how much did the Westside streetcar project go over budget?",
+      "expect_value": "47%",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"47%\", \"quote\": \"\"}",
+      "answer": "47%",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-5",
+      "doc": "news_article.txt",
+      "question": "What level of support did the measure show in last week's poll?",
+      "expect_value": "54%",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"54%\", \"quote\": \"\"}",
+      "answer": "54%",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-1",
+      "doc": "incident_postmortem.txt",
+      "question": "How long did the outage last?",
+      "expect_value": "3 hours 42 minutes",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"3 hours 42 minutes\", \"quote\": \"08:17 UTC to 11:59 UTC\"}",
+      "answer": "3 hours 42 minutes",
+      "quote": "08:17 UTC to 11:59 UTC",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-2",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the peak error rate during the incident?",
+      "expect_value": "91%",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"91%\", \"quote\": \"The peak error rate reached 91% between 09:05 and 09:40 UTC.\"}",
+      "answer": "91%",
+      "quote": "The peak error rate reached 91% between 09:05 and 09:40 UTC.",
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.95,
+        "detail": "small word-level edits"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-3",
+      "doc": "incident_postmortem.txt",
+      "question": "Which release introduced the rate-limiter regression?",
+      "expect_value": "rl-2.14.0",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"rl-2.14.0\", \"quote\": \"\"}",
+      "answer": "rl-2.14.0",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-4",
+      "doc": "incident_postmortem.txt",
+      "question": "How long did the automated canary analysis run?",
+      "expect_value": "6 minutes",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"6 minutes\", \"quote\": \"\"}",
+      "answer": "6 minutes",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the measured CPU overhead of per-request monotonic clock reads?",
+      "expect_value": "0.3%",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"0.3% CPU\", \"quote\": \"\"}",
+      "answer": "0.3% CPU",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-1",
+      "doc": "victorian_essay.txt",
+      "question": "How many books did the scholar of the last century possess?",
+      "expect_value": "forty",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"forty\", \"quote\": \"He possessed, perhaps, forty books, and he knew them as a shepherd knows his flock — not by their covers merely, but by their inmost character, their weaknesses, their peculiar virtues.\"}",
+      "answer": "forty",
+      "quote": "He possessed, perhaps, forty books, and he knew them as a shepherd knows his flock — not by their covers merely, but by their inmost character, their weaknesses, their peculiar virtues.",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation in quote"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-2",
+      "doc": "victorian_essay.txt",
+      "question": "For how long does the author ask the reader to persevere in the proposed regimen?",
+      "expect_value": "a single month",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"one month\", \"quote\": \"\"}",
+      "answer": "one month",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "ve-3",
+      "doc": "victorian_essay.txt",
+      "question": "What does the author say attention is, a gift or a habit?",
+      "expect_value": "habit",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"attention is a habit\", \"quote\": \"Attention is not a gift but a habit; it is formed, like all habits, by repetition.\"}",
+      "answer": "attention is a habit",
+      "quote": "Attention is not a gift but a habit; it is formed, like all habits, by repetition.",
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.988,
+        "detail": "small word-level edits"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-4",
+      "doc": "victorian_essay.txt",
+      "question": "How many books does the modern grandson possess?",
+      "expect_value": "four thousand",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"four thousand\", \"quote\": \"His grandson possesses four thousand, and knows none of them; he has traded intimacy for acquaintance, and acquaintance, multiplied indefinitely, becomes a kind of ignorance more hopeless than the honest ignorance of the ploughman, because it wears the costume of learning.\"}",
+      "answer": "four thousand",
+      "quote": "His grandson possesses four thousand, and knows none of them; he has traded intimacy for acquaintance, and acquaintance, multiplied indefinitely, becomes a kind of ignorance more hopeless than the honest ignorance of the ploughman, because it wears the costume of learning.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-5",
+      "doc": "victorian_essay.txt",
+      "question": "How long is the daily uninterrupted period the author proposes?",
+      "expect_value": "one uninterrupted hour",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"60 minutes\", \"quote\": \"Let him persevere in this practice for a single month.\"}",
+      "answer": "60 minutes",
+      "quote": "Let him persevere in this practice for a single month.",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation / case"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "mm-1",
+      "doc": "messy_memo.txt",
+      "question": "On which weekend does Engineering move?",
+      "expect_value": "Sept 20–21",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"Sept 20-21\", \"quote\": \"Engineering moves the weekend of Sept 20–21.\"}",
+      "answer": "Sept 20-21",
+      "quote": "Engineering moves the weekend of Sept 20–21.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-2",
+      "doc": "messy_memo.txt",
+      "question": "How many parking spaces does the Building 7 garage have?",
+      "expect_value": "340",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"340\", \"quote\": \"The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street.\"}",
+      "answer": "340",
+      "quote": "The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-3",
+      "doc": "messy_memo.txt",
+      "question": "How much does overflow parking cost the company per space per month?",
+      "expect_value": "$85",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"85\", \"quote\": \"The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street. Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.\"}",
+      "answer": "85",
+      "quote": "The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street. Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-4",
+      "doc": "messy_memo.txt",
+      "question": "What was the vote tally on the espresso machine's location?",
+      "expect_value": "118–34",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"118-34\", \"quote\": \"\"}",
+      "answer": "118-34",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-5",
+      "doc": "messy_memo.txt",
+      "question": "What fraction of badge photos failed the new system's quality check?",
+      "expect_value": "12%",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"0.12\", \"quote\": \"about 12% of badge photos failed the new system's quality check (mostly people who uploaded pictures of their dogs, you know who you are)\"}",
+      "answer": "0.12",
+      "quote": "about 12% of badge photos failed the new system's quality check (mostly people who uploaded pictures of their dogs, you know who you are)",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation / case"
+      },
+      "value_in_quote": true,
+      "answer_correct": false
+    },
+    {
+      "id": "qr-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's total revenue in Q3 2025?",
+      "expect_value": "148.7",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"148.7 million\", \"anchor\": \"Q3_revenue\"}",
+      "answer": "148.7 million",
+      "anchor": "Q3_revenue",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-2",
+      "doc": "quarterly_report.txt",
+      "question": "How many industrial units did Meridian ship during the quarter?",
+      "expect_value": "4,112",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"4,112\", \"anchor\": \"shipments\"}",
+      "answer": "4,112",
+      "anchor": "shipments",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-3",
+      "doc": "quarterly_report.txt",
+      "question": "What was net income per diluted share in Q3 2025?",
+      "expect_value": "$0.42",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"19.8\", \"anchor\": \"net_income\"}",
+      "answer": "19.8",
+      "anchor": "net_income",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.9,
+        "span": "Net income",
+        "occurrences": 1,
+        "sentence": "Net income was $19.8 million, or $0.42 per diluted share, compared with $6.1 million, or $0.13 per diluted share, in the prior-year period."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": false
+    },
+    {
+      "id": "qr-4",
+      "doc": "quarterly_report.txt",
+      "question": "What is the revenue guidance range for the fourth quarter?",
+      "expect_value": "$155 million and $162 million",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"155 million to 162 million\", \"anchor\": \"Q4_revenue\"}",
+      "answer": "155 million to 162 million",
+      "anchor": "Q4_revenue",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-5",
+      "doc": "quarterly_report.txt",
+      "question": "How large is the newly authorized share repurchase program?",
+      "expect_value": "$100 million",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"100 million\", \"anchor\": \"share repurchase program\"}",
+      "answer": "100 million",
+      "anchor": "share repurchase program",
+      "locate": {
+        "method": "exact",
+        "span": "share repurchase program",
+        "occurrences": 1,
+        "sentence": "We are also pleased to announce that the board has authorized a $100 million share repurchase program, effective November 1, 2025."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-1",
+      "doc": "clinical_trial.txt",
+      "question": "What was the placebo-adjusted difference in 24-hour ambulatory systolic blood pressure at week 12?",
+      "expect_value": "-11.4",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"-11.4 mm Hg\", \"anchor\": \"placebo-adjusted difference\"}",
+      "answer": "-11.4 mm Hg",
+      "anchor": "placebo-adjusted difference",
+      "locate": {
+        "method": "exact",
+        "span": "placebo-adjusted difference",
+        "occurrences": 1,
+        "sentence": "At week 12, the mean change in 24-hour ambulatory systolic blood pressure was -16.2 mm Hg in the lorvatinib group and -4.8 mm Hg in the placebo group, for a placebo-adjusted difference of -11.4 mm Hg (95% confidence interval, -13.7 to -9.1; P<0.001)."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many adults were randomized in the trial?",
+      "expect_value": "1,284",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"1284\", \"anchor\": \"randomization_count\"}",
+      "answer": "1284",
+      "anchor": "randomization_count",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-3",
+      "doc": "clinical_trial.txt",
+      "question": "What percentage of the lorvatinib group experienced hyperkalemia?",
+      "expect_value": "7.3%",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"7.3%\", \"anchor\": \"lorkatinib_hyperkalemia\"}",
+      "answer": "7.3%",
+      "anchor": "lorkatinib_hyperkalemia",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-4",
+      "doc": "clinical_trial.txt",
+      "question": "What percentage of lorvatinib participants achieved office systolic pressure below 130 mm Hg at week 24?",
+      "expect_value": "39.6%",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"39.6%\", \"anchor\": \"office_systolic_pressure\"}",
+      "answer": "39.6%",
+      "anchor": "office_systolic_pressure",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.917,
+        "span": "office systolic pressure",
+        "occurrences": 2,
+        "sentence": "Secondary endpoints included office blood pressure response, defined as office systolic pressure below 130 mm Hg at week 24, and change in urinary albumin-to-creatinine ratio."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-5",
+      "doc": "clinical_trial.txt",
+      "question": "What was the mean age of trial participants?",
+      "expect_value": "61.4",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"61.4\", \"anchor\": \"trial_participants\"}",
+      "answer": "61.4",
+      "anchor": "trial_participants",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-1",
+      "doc": "news_article.txt",
+      "question": "What was the council's vote tally on the transit bond?",
+      "expect_value": "6–3",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"6-3\", \"anchor\": \"council_vote\"}",
+      "answer": "6-3",
+      "anchor": "council_vote",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.917,
+        "span": "Council vote",
+        "occurrences": 1,
+        "sentence": "HARBORVIEW — After nearly eleven hours of public comment and debate, the Harborview City Council voted 6–3 early Wednesday to place a $2.3 billion transit bond on the November ballot, setting up what observers expect to be the most expensive local ballot campaign in the city's history."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "na-2",
+      "doc": "news_article.txt",
+      "question": "How much would the measure add to the annual tax bill of a median-priced home?",
+      "expect_value": "$186",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"186\", \"anchor\": \"median-price\"}",
+      "answer": "186",
+      "anchor": "median-price",
+      "locate": {
+        "method": "exact",
+        "span": "median-price",
+        "occurrences": 1,
+        "sentence": "The city's independent budget office estimates the measure would add $186 per year to the tax bill of a median-priced home, a figure opponents called \"regressive and punishing.\" Councilmember Dale Rutherford, who voted no, warned that construction costs were \"spiraling beyond anything the proponents are willing to admit\" and pointed to the Westside streetcar project, which finished 31 months late and 47% over budget."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "na-3",
+      "doc": "news_article.txt",
+      "question": "According to Council President Okafor, how much does congestion cost Harborview families per household each year?",
+      "expect_value": "$1,900",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"1900\", \"anchor\": \"congestion_cost\"}",
+      "answer": "1900",
+      "anchor": "congestion_cost",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-4",
+      "doc": "news_article.txt",
+      "question": "By how much did the Westside streetcar project go over budget?",
+      "expect_value": "47%",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"47%\", \"anchor\": \"overruns\"}",
+      "answer": "47%",
+      "anchor": "overruns",
+      "locate": {
+        "method": "exact",
+        "span": "overruns",
+        "occurrences": 1,
+        "sentence": "The council also voted unanimously to create a nine-member citizen oversight committee with subpoena power to audit bond expenditures, a concession designed to win over skeptical voters after the Westside streetcar overruns."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-5",
+      "doc": "news_article.txt",
+      "question": "What level of support did the measure show in last week's poll?",
+      "expect_value": "54%",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"54%\", \"anchor\": \"last_week_poll\"}",
+      "answer": "54%",
+      "anchor": "last_week_poll",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-1",
+      "doc": "incident_postmortem.txt",
+      "question": "How long did the outage last?",
+      "expect_value": "3 hours 42 minutes",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"3 hours 42 minutes\", \"anchor\": \"rollout_promoted\"}",
+      "answer": "3 hours 42 minutes",
+      "anchor": "rollout_promoted",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.938,
+        "span": "Rollout promoted",
+        "occurrences": 1,
+        "sentence": "08:17 — Rollout promoted to 100% after automated canary analysis passed."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-2",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the peak error rate during the incident?",
+      "expect_value": "91%",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"91%\", \"anchor\": \"error_rate\"}",
+      "answer": "91%",
+      "anchor": "error_rate",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.9,
+        "span": "error rate",
+        "occurrences": 5,
+        "sentence": "Customer impact: Approximately 62% of API requests returned 5xx errors during the incident window; peak error rate reached 91% between 09:05 and 09:40 UTC."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-3",
+      "doc": "incident_postmortem.txt",
+      "question": "Which release introduced the rate-limiter regression?",
+      "expect_value": "rl-2.14.0",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"rl-2.14.0\", \"anchor\": \"rate-limiter-regression\"}",
+      "answer": "rl-2.14.0",
+      "anchor": "rate-limiter-regression",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-4",
+      "doc": "incident_postmortem.txt",
+      "question": "How long did the automated canary analysis run?",
+      "expect_value": "6 minutes",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"6 minutes\", \"anchor\": \"canary_analysis_duration\"}",
+      "answer": "6 minutes",
+      "anchor": "canary_analysis_duration",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the measured CPU overhead of per-request monotonic clock reads?",
+      "expect_value": "0.3%",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"0.3% CPU\", \"anchor\": \"syscall_overhead\"}",
+      "answer": "0.3% CPU",
+      "anchor": "syscall_overhead",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.938,
+        "span": "syscall overhead",
+        "occurrences": 2,
+        "sentence": "The refill routine in rl-2.14.0 replaced a per-request monotonic clock read with a value cached by a background goroutine to reduce syscall overhead."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-1",
+      "doc": "victorian_essay.txt",
+      "question": "How many books did the scholar of the last century possess?",
+      "expect_value": "forty",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"forty\", \"anchor\": \"last_century\"}",
+      "answer": "forty",
+      "anchor": "last_century",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.917,
+        "span": "last century",
+        "occurrences": 1,
+        "sentence": "Consider the scholar of the last century: he possessed, perhaps, forty books, and he knew them as a shepherd knows his flock — not by their covers merely, but by their inmost character, their weaknesses, their peculiar virtues."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-2",
+      "doc": "victorian_essay.txt",
+      "question": "For how long does the author ask the reader to persevere in the proposed regimen?",
+      "expect_value": "a single month",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"one month\", \"anchor\": \"perseverance_month\"}",
+      "answer": "one month",
+      "anchor": "perseverance_month",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "ve-3",
+      "doc": "victorian_essay.txt",
+      "question": "What does the author say attention is, a gift or a habit?",
+      "expect_value": "habit",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"attention is a habit\", \"anchor\": \"habit_of_attention\"}",
+      "answer": "attention is a habit",
+      "anchor": "habit_of_attention",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-4",
+      "doc": "victorian_essay.txt",
+      "question": "How many books does the modern grandson possess?",
+      "expect_value": "four thousand",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"four thousand\", \"anchor\": \"book_count\"}",
+      "answer": "four thousand",
+      "anchor": "book_count",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-5",
+      "doc": "victorian_essay.txt",
+      "question": "How long is the daily uninterrupted period the author proposes?",
+      "expect_value": "one uninterrupted hour",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"60 minutes\", \"anchor\": \"one hour\"}",
+      "answer": "60 minutes",
+      "anchor": "one hour",
+      "locate": {
+        "method": "subsequence",
+        "span": "one uninterrupted hour",
+        "occurrences": 1,
+        "sentence": "Let the reader, then, make trial of a simple regimen: let him choose each morning one worthy object — a book, a problem, a piece of work — and give to it one uninterrupted hour, admitting no rival to his thoughts, however clamorous; and let him persevere in this practice for a single month."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": false
+    },
+    {
+      "id": "mm-1",
+      "doc": "messy_memo.txt",
+      "question": "On which weekend does Engineering move?",
+      "expect_value": "Sept 20–21",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"Sept 20-21\", \"anchor\": \"move weekend\"}",
+      "answer": "Sept 20-21",
+      "anchor": "move weekend",
+      "locate": {
+        "method": "exact",
+        "span": "move weekend",
+        "occurrences": 1,
+        "sentence": "If you are not packed by 5pm Friday before your move weekend, the movers will pack for you and they will not be gentle about it."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-2",
+      "doc": "messy_memo.txt",
+      "question": "How many parking spaces does the Building 7 garage have?",
+      "expect_value": "340",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"340 spaces\", \"anchor\": \"Building 7 garage spaces\"}",
+      "answer": "340 spaces",
+      "anchor": "Building 7 garage spaces",
+      "locate": {
+        "method": "subsequence",
+        "span": "Building 7 garage has 340 spaces",
+        "occurrences": 1,
+        "sentence": "The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-3",
+      "doc": "messy_memo.txt",
+      "question": "How much does overflow parking cost the company per space per month?",
+      "expect_value": "$85",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"85\", \"anchor\": \"overflow_cost\"}",
+      "answer": "85",
+      "anchor": "overflow_cost",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-4",
+      "doc": "messy_memo.txt",
+      "question": "What was the vote tally on the espresso machine's location?",
+      "expect_value": "118–34",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"118-34\", \"anchor\": \"majority vote\"}",
+      "answer": "118-34",
+      "anchor": "majority vote",
+      "locate": {
+        "method": "exact",
+        "span": "majority vote",
+        "occurrences": 1,
+        "sentence": "It goes to the 3rd floor commons, majority vote wins, this is a democracy."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-5",
+      "doc": "messy_memo.txt",
+      "question": "What fraction of badge photos failed the new system's quality check?",
+      "expect_value": "12%",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"0.12\", \"anchor\": \"badge_quality\"}",
+      "answer": "0.12",
+      "anchor": "badge_quality",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "qr-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's total revenue in Q3 2025?",
+      "expect_value": "148.7",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"148.7 million\", \"quote\": \"Total revenue reached $148.7 million, up 34% year over year, driven primarily by the industrial arm segment.\"}",
+      "answer": "148.7 million",
+      "quote": "Total revenue reached $148.7 million, up 34% year over year, driven primarily by the industrial arm segment.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-2",
+      "doc": "quarterly_report.txt",
+      "question": "How many industrial units did Meridian ship during the quarter?",
+      "expect_value": "4,112",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"4,112\", \"quote\": \"\"}",
+      "answer": "4,112",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-3",
+      "doc": "quarterly_report.txt",
+      "question": "What was net income per diluted share in Q3 2025?",
+      "expect_value": "$0.42",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"0.42\", \"quote\": \"\"}",
+      "answer": "0.42",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-4",
+      "doc": "quarterly_report.txt",
+      "question": "What is the revenue guidance range for the fourth quarter?",
+      "expect_value": "$155 million and $162 million",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"155 to 162 million\", \"quote\": \"\"}",
+      "answer": "155 to 162 million",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-5",
+      "doc": "quarterly_report.txt",
+      "question": "How large is the newly authorized share repurchase program?",
+      "expect_value": "$100 million",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"100 million\", \"quote\": \"The board has authorized a $100 million share repurchase program, effective November 1, 2025.\"}",
+      "answer": "100 million",
+      "quote": "The board has authorized a $100 million share repurchase program, effective November 1, 2025.",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation / case"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-1",
+      "doc": "clinical_trial.txt",
+      "question": "What was the placebo-adjusted difference in 24-hour ambulatory systolic blood pressure at week 12?",
+      "expect_value": "-11.4",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"-11.4 mm Hg\", \"quote\": \"\"}",
+      "answer": "-11.4 mm Hg",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many adults were randomized in the trial?",
+      "expect_value": "1,284",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"1284\", \"quote\": \"\"}",
+      "answer": "1284",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-3",
+      "doc": "clinical_trial.txt",
+      "question": "What percentage of the lorvatinib group experienced hyperkalemia?",
+      "expect_value": "7.3%",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"7.3%\", \"quote\": \"Hyperkalemia (serum potassium above 5.5 mmol per liter) occurred in 7.3% of the lorvatinib group and 1.6% of the placebo group; two participants discontinued lorvatinib because of hyperkalemia.\"}",
+      "answer": "7.3%",
+      "quote": "Hyperkalemia (serum potassium above 5.5 mmol per liter) occurred in 7.3% of the lorvatinib group and 1.6% of the placebo group; two participants discontinued lorvatinib because of hyperkalemia.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-4",
+      "doc": "clinical_trial.txt",
+      "question": "What percentage of lorvatinib participants achieved office systolic pressure below 130 mm Hg at week 24?",
+      "expect_value": "39.6%",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"39.6%\", \"quote\": \"\"}",
+      "answer": "39.6%",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-5",
+      "doc": "clinical_trial.txt",
+      "question": "What was the mean age of trial participants?",
+      "expect_value": "61.4",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"61.4\", \"quote\": \"\"}",
+      "answer": "61.4",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-1",
+      "doc": "news_article.txt",
+      "question": "What was the council's vote tally on the transit bond?",
+      "expect_value": "6–3",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"6-3\", \"quote\": \"\"}",
+      "answer": "6-3",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-2",
+      "doc": "news_article.txt",
+      "question": "How much would the measure add to the annual tax bill of a median-priced home?",
+      "expect_value": "$186",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"186\", \"quote\": \"\\\"The bond would add $186 per year to the tax bill of a median-priced home, according to the city's independent budget office.\\\"\"}",
+      "answer": "186",
+      "quote": "\"The bond would add $186 per year to the tax bill of a median-priced home, according to the city's independent budget office.\"",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.659,
+        "detail": "no plausible source span"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "na-3",
+      "doc": "news_article.txt",
+      "question": "According to Council President Okafor, how much does congestion cost Harborview families per household each year?",
+      "expect_value": "$1,900",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"1900\", \"quote\": \"\\\"congestion already costs Harborview families an estimated $1,900 per household every year.\\\"\"}",
+      "answer": "1900",
+      "quote": "\"congestion already costs Harborview families an estimated $1,900 per household every year.\"",
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.989,
+        "detail": "small word-level edits"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "na-4",
+      "doc": "news_article.txt",
+      "question": "By how much did the Westside streetcar project go over budget?",
+      "expect_value": "47%",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"47%\", \"quote\": \"\"}",
+      "answer": "47%",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-5",
+      "doc": "news_article.txt",
+      "question": "What level of support did the measure show in last week's poll?",
+      "expect_value": "54%",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"54%\", \"quote\": \"\"}",
+      "answer": "54%",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-1",
+      "doc": "incident_postmortem.txt",
+      "question": "How long did the outage last?",
+      "expect_value": "3 hours 42 minutes",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"3 hours 42 minutes\", \"quote\": \"08:17 UTC to 11:59 UTC\"}",
+      "answer": "3 hours 42 minutes",
+      "quote": "08:17 UTC to 11:59 UTC",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-2",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the peak error rate during the incident?",
+      "expect_value": "91%",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"91%\", \"quote\": \"The peak error rate reached 91% between 09:05 and 09:40 UTC.\"}",
+      "answer": "91%",
+      "quote": "The peak error rate reached 91% between 09:05 and 09:40 UTC.",
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.95,
+        "detail": "small word-level edits"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-3",
+      "doc": "incident_postmortem.txt",
+      "question": "Which release introduced the rate-limiter regression?",
+      "expect_value": "rl-2.14.0",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"rl-2.14.0\", \"quote\": \"\"}",
+      "answer": "rl-2.14.0",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-4",
+      "doc": "incident_postmortem.txt",
+      "question": "How long did the automated canary analysis run?",
+      "expect_value": "6 minutes",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"6 minutes\", \"quote\": \"\"}",
+      "answer": "6 minutes",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the measured CPU overhead of per-request monotonic clock reads?",
+      "expect_value": "0.3%",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"0.3% CPU\", \"quote\": \"\"}",
+      "answer": "0.3% CPU",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-1",
+      "doc": "victorian_essay.txt",
+      "question": "How many books did the scholar of the last century possess?",
+      "expect_value": "forty",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"forty\", \"quote\": \"He possessed, perhaps, forty books, and he knew them as a shepherd knows his flock — not by their covers merely, but by their inmost character, their weaknesses, their peculiar virtues.\"}",
+      "answer": "forty",
+      "quote": "He possessed, perhaps, forty books, and he knew them as a shepherd knows his flock — not by their covers merely, but by their inmost character, their weaknesses, their peculiar virtues.",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation in quote"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-2",
+      "doc": "victorian_essay.txt",
+      "question": "For how long does the author ask the reader to persevere in the proposed regimen?",
+      "expect_value": "a single month",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"one month\", \"quote\": \"\"}",
+      "answer": "one month",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "ve-3",
+      "doc": "victorian_essay.txt",
+      "question": "What does the author say attention is, a gift or a habit?",
+      "expect_value": "habit",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"attention is a habit\", \"quote\": \"Attention is not a gift but a habit; it is formed, like all habits, by repetition.\"}",
+      "answer": "attention is a habit",
+      "quote": "Attention is not a gift but a habit; it is formed, like all habits, by repetition.",
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.988,
+        "detail": "small word-level edits"
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-4",
+      "doc": "victorian_essay.txt",
+      "question": "How many books does the modern grandson possess?",
+      "expect_value": "four thousand",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"four thousand\", \"quote\": \"His grandson possesses four thousand, and knows none of them; he has traded intimacy for acquaintance, and acquaintance, multiplied indefinitely, becomes a kind of ignorance more hopeless than the honest ignorance of the ploughman, because it wears the costume of learning.\"}",
+      "answer": "four thousand",
+      "quote": "His grandson possesses four thousand, and knows none of them; he has traded intimacy for acquaintance, and acquaintance, multiplied indefinitely, becomes a kind of ignorance more hopeless than the honest ignorance of the ploughman, because it wears the costume of learning.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-5",
+      "doc": "victorian_essay.txt",
+      "question": "How long is the daily uninterrupted period the author proposes?",
+      "expect_value": "one uninterrupted hour",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"60 minutes\", \"quote\": \"Let him persevere in this practice for a single month.\"}",
+      "answer": "60 minutes",
+      "quote": "Let him persevere in this practice for a single month.",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation / case"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "mm-1",
+      "doc": "messy_memo.txt",
+      "question": "On which weekend does Engineering move?",
+      "expect_value": "Sept 20–21",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"Sept 20-21\", \"quote\": \"Engineering moves the weekend of Sept 20–21.\"}",
+      "answer": "Sept 20-21",
+      "quote": "Engineering moves the weekend of Sept 20–21.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-2",
+      "doc": "messy_memo.txt",
+      "question": "How many parking spaces does the Building 7 garage have?",
+      "expect_value": "340",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"340\", \"quote\": \"The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street.\"}",
+      "answer": "340",
+      "quote": "The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-3",
+      "doc": "messy_memo.txt",
+      "question": "How much does overflow parking cost the company per space per month?",
+      "expect_value": "$85",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"85\", \"quote\": \"The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street. Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.\"}",
+      "answer": "85",
+      "quote": "The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street. Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-4",
+      "doc": "messy_memo.txt",
+      "question": "What was the vote tally on the espresso machine's location?",
+      "expect_value": "118–34",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"118-34\", \"quote\": \"\"}",
+      "answer": "118-34",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-5",
+      "doc": "messy_memo.txt",
+      "question": "What fraction of badge photos failed the new system's quality check?",
+      "expect_value": "12%",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"0.12\", \"quote\": \"about 12% of badge photos failed the new system's quality check (mostly people who uploaded pictures of their dogs, you know who you are)\"}",
+      "answer": "0.12",
+      "quote": "about 12% of badge photos failed the new system's quality check (mostly people who uploaded pictures of their dogs, you know who you are)",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation / case"
+      },
+      "value_in_quote": true,
+      "answer_correct": false
+    },
+    {
+      "id": "qr-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's total revenue in Q3 2025?",
+      "expect_value": "148.7",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"148.7 million\", \"anchor\": \"Q3_revenue\"}",
+      "answer": "148.7 million",
+      "anchor": "Q3_revenue",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-2",
+      "doc": "quarterly_report.txt",
+      "question": "How many industrial units did Meridian ship during the quarter?",
+      "expect_value": "4,112",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"4,112\", \"anchor\": \"shipments\"}",
+      "answer": "4,112",
+      "anchor": "shipments",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-3",
+      "doc": "quarterly_report.txt",
+      "question": "What was net income per diluted share in Q3 2025?",
+      "expect_value": "$0.42",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"19.8\", \"anchor\": \"net_income\"}",
+      "answer": "19.8",
+      "anchor": "net_income",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.9,
+        "span": "Net income",
+        "occurrences": 1,
+        "sentence": "Net income was $19.8 million, or $0.42 per diluted share, compared with $6.1 million, or $0.13 per diluted share, in the prior-year period."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": false
+    },
+    {
+      "id": "qr-4",
+      "doc": "quarterly_report.txt",
+      "question": "What is the revenue guidance range for the fourth quarter?",
+      "expect_value": "$155 million and $162 million",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"155 million to 162 million\", \"anchor\": \"Q4_revenue\"}",
+      "answer": "155 million to 162 million",
+      "anchor": "Q4_revenue",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "qr-5",
+      "doc": "quarterly_report.txt",
+      "question": "How large is the newly authorized share repurchase program?",
+      "expect_value": "$100 million",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"100 million\", \"anchor\": \"share repurchase program\"}",
+      "answer": "100 million",
+      "anchor": "share repurchase program",
+      "locate": {
+        "method": "exact",
+        "span": "share repurchase program",
+        "occurrences": 1,
+        "sentence": "We are also pleased to announce that the board has authorized a $100 million share repurchase program, effective November 1, 2025."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-1",
+      "doc": "clinical_trial.txt",
+      "question": "What was the placebo-adjusted difference in 24-hour ambulatory systolic blood pressure at week 12?",
+      "expect_value": "-11.4",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"-11.4 mm Hg\", \"anchor\": \"placebo-adjusted difference\"}",
+      "answer": "-11.4 mm Hg",
+      "anchor": "placebo-adjusted difference",
+      "locate": {
+        "method": "exact",
+        "span": "placebo-adjusted difference",
+        "occurrences": 1,
+        "sentence": "At week 12, the mean change in 24-hour ambulatory systolic blood pressure was -16.2 mm Hg in the lorvatinib group and -4.8 mm Hg in the placebo group, for a placebo-adjusted difference of -11.4 mm Hg (95% confidence interval, -13.7 to -9.1; P<0.001)."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many adults were randomized in the trial?",
+      "expect_value": "1,284",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"1284\", \"anchor\": \"randomization_count\"}",
+      "answer": "1284",
+      "anchor": "randomization_count",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-3",
+      "doc": "clinical_trial.txt",
+      "question": "What percentage of the lorvatinib group experienced hyperkalemia?",
+      "expect_value": "7.3%",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"7.3%\", \"anchor\": \"lorkatinib_hyperkalemia\"}",
+      "answer": "7.3%",
+      "anchor": "lorkatinib_hyperkalemia",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-4",
+      "doc": "clinical_trial.txt",
+      "question": "What percentage of lorvatinib participants achieved office systolic pressure below 130 mm Hg at week 24?",
+      "expect_value": "39.6%",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"39.6%\", \"anchor\": \"office_systolic_pressure\"}",
+      "answer": "39.6%",
+      "anchor": "office_systolic_pressure",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.917,
+        "span": "office systolic pressure",
+        "occurrences": 2,
+        "sentence": "Secondary endpoints included office blood pressure response, defined as office systolic pressure below 130 mm Hg at week 24, and change in urinary albumin-to-creatinine ratio."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ct-5",
+      "doc": "clinical_trial.txt",
+      "question": "What was the mean age of trial participants?",
+      "expect_value": "61.4",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"61.4\", \"anchor\": \"trial_participants\"}",
+      "answer": "61.4",
+      "anchor": "trial_participants",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-1",
+      "doc": "news_article.txt",
+      "question": "What was the council's vote tally on the transit bond?",
+      "expect_value": "6–3",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"6-3\", \"anchor\": \"council_vote\"}",
+      "answer": "6-3",
+      "anchor": "council_vote",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.917,
+        "span": "Council vote",
+        "occurrences": 1,
+        "sentence": "HARBORVIEW — After nearly eleven hours of public comment and debate, the Harborview City Council voted 6–3 early Wednesday to place a $2.3 billion transit bond on the November ballot, setting up what observers expect to be the most expensive local ballot campaign in the city's history."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "na-2",
+      "doc": "news_article.txt",
+      "question": "How much would the measure add to the annual tax bill of a median-priced home?",
+      "expect_value": "$186",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"186\", \"anchor\": \"median-price\"}",
+      "answer": "186",
+      "anchor": "median-price",
+      "locate": {
+        "method": "exact",
+        "span": "median-price",
+        "occurrences": 1,
+        "sentence": "The city's independent budget office estimates the measure would add $186 per year to the tax bill of a median-priced home, a figure opponents called \"regressive and punishing.\" Councilmember Dale Rutherford, who voted no, warned that construction costs were \"spiraling beyond anything the proponents are willing to admit\" and pointed to the Westside streetcar project, which finished 31 months late and 47% over budget."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "na-3",
+      "doc": "news_article.txt",
+      "question": "According to Council President Okafor, how much does congestion cost Harborview families per household each year?",
+      "expect_value": "$1,900",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"1900\", \"anchor\": \"congestion_cost\"}",
+      "answer": "1900",
+      "anchor": "congestion_cost",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-4",
+      "doc": "news_article.txt",
+      "question": "By how much did the Westside streetcar project go over budget?",
+      "expect_value": "47%",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"47%\", \"anchor\": \"overruns\"}",
+      "answer": "47%",
+      "anchor": "overruns",
+      "locate": {
+        "method": "exact",
+        "span": "overruns",
+        "occurrences": 1,
+        "sentence": "The council also voted unanimously to create a nine-member citizen oversight committee with subpoena power to audit bond expenditures, a concession designed to win over skeptical voters after the Westside streetcar overruns."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "na-5",
+      "doc": "news_article.txt",
+      "question": "What level of support did the measure show in last week's poll?",
+      "expect_value": "54%",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"54%\", \"anchor\": \"last_week_poll\"}",
+      "answer": "54%",
+      "anchor": "last_week_poll",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-1",
+      "doc": "incident_postmortem.txt",
+      "question": "How long did the outage last?",
+      "expect_value": "3 hours 42 minutes",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"3 hours 42 minutes\", \"anchor\": \"rollout_promoted\"}",
+      "answer": "3 hours 42 minutes",
+      "anchor": "rollout_promoted",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.938,
+        "span": "Rollout promoted",
+        "occurrences": 1,
+        "sentence": "08:17 — Rollout promoted to 100% after automated canary analysis passed."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-2",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the peak error rate during the incident?",
+      "expect_value": "91%",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"91%\", \"anchor\": \"error_rate\"}",
+      "answer": "91%",
+      "anchor": "error_rate",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.9,
+        "span": "error rate",
+        "occurrences": 5,
+        "sentence": "Customer impact: Approximately 62% of API requests returned 5xx errors during the incident window; peak error rate reached 91% between 09:05 and 09:40 UTC."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-3",
+      "doc": "incident_postmortem.txt",
+      "question": "Which release introduced the rate-limiter regression?",
+      "expect_value": "rl-2.14.0",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"rl-2.14.0\", \"anchor\": \"rate-limiter-regression\"}",
+      "answer": "rl-2.14.0",
+      "anchor": "rate-limiter-regression",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-4",
+      "doc": "incident_postmortem.txt",
+      "question": "How long did the automated canary analysis run?",
+      "expect_value": "6 minutes",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"6 minutes\", \"anchor\": \"canary_analysis_duration\"}",
+      "answer": "6 minutes",
+      "anchor": "canary_analysis_duration",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ip-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the measured CPU overhead of per-request monotonic clock reads?",
+      "expect_value": "0.3%",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"0.3% CPU\", \"anchor\": \"syscall_overhead\"}",
+      "answer": "0.3% CPU",
+      "anchor": "syscall_overhead",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.938,
+        "span": "syscall overhead",
+        "occurrences": 2,
+        "sentence": "The refill routine in rl-2.14.0 replaced a per-request monotonic clock read with a value cached by a background goroutine to reduce syscall overhead."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-1",
+      "doc": "victorian_essay.txt",
+      "question": "How many books did the scholar of the last century possess?",
+      "expect_value": "forty",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"forty\", \"anchor\": \"last_century\"}",
+      "answer": "forty",
+      "anchor": "last_century",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.917,
+        "span": "last century",
+        "occurrences": 1,
+        "sentence": "Consider the scholar of the last century: he possessed, perhaps, forty books, and he knew them as a shepherd knows his flock — not by their covers merely, but by their inmost character, their weaknesses, their peculiar virtues."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-2",
+      "doc": "victorian_essay.txt",
+      "question": "For how long does the author ask the reader to persevere in the proposed regimen?",
+      "expect_value": "a single month",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"one month\", \"anchor\": \"perseverance_month\"}",
+      "answer": "one month",
+      "anchor": "perseverance_month",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "ve-3",
+      "doc": "victorian_essay.txt",
+      "question": "What does the author say attention is, a gift or a habit?",
+      "expect_value": "habit",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"attention is a habit\", \"anchor\": \"habit_of_attention\"}",
+      "answer": "attention is a habit",
+      "anchor": "habit_of_attention",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-4",
+      "doc": "victorian_essay.txt",
+      "question": "How many books does the modern grandson possess?",
+      "expect_value": "four thousand",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"four thousand\", \"anchor\": \"book_count\"}",
+      "answer": "four thousand",
+      "anchor": "book_count",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "ve-5",
+      "doc": "victorian_essay.txt",
+      "question": "How long is the daily uninterrupted period the author proposes?",
+      "expect_value": "one uninterrupted hour",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"60 minutes\", \"anchor\": \"one hour\"}",
+      "answer": "60 minutes",
+      "anchor": "one hour",
+      "locate": {
+        "method": "subsequence",
+        "span": "one uninterrupted hour",
+        "occurrences": 1,
+        "sentence": "Let the reader, then, make trial of a simple regimen: let him choose each morning one worthy object — a book, a problem, a piece of work — and give to it one uninterrupted hour, admitting no rival to his thoughts, however clamorous; and let him persevere in this practice for a single month."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": false
+    },
+    {
+      "id": "mm-1",
+      "doc": "messy_memo.txt",
+      "question": "On which weekend does Engineering move?",
+      "expect_value": "Sept 20–21",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"Sept 20-21\", \"anchor\": \"move weekend\"}",
+      "answer": "Sept 20-21",
+      "anchor": "move weekend",
+      "locate": {
+        "method": "exact",
+        "span": "move weekend",
+        "occurrences": 1,
+        "sentence": "If you are not packed by 5pm Friday before your move weekend, the movers will pack for you and they will not be gentle about it."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-2",
+      "doc": "messy_memo.txt",
+      "question": "How many parking spaces does the Building 7 garage have?",
+      "expect_value": "340",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"340 spaces\", \"anchor\": \"Building 7 garage spaces\"}",
+      "answer": "340 spaces",
+      "anchor": "Building 7 garage spaces",
+      "locate": {
+        "method": "subsequence",
+        "span": "Building 7 garage has 340 spaces",
+        "occurrences": 1,
+        "sentence": "The Building 7 garage has 340 spaces for 410 people, so we're going to a first-come basis for the first month while we negotiate overflow with the lot across Fandango Street."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-3",
+      "doc": "messy_memo.txt",
+      "question": "How much does overflow parking cost the company per space per month?",
+      "expect_value": "$85",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"85\", \"anchor\": \"overflow_cost\"}",
+      "answer": "85",
+      "anchor": "overflow_cost",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-4",
+      "doc": "messy_memo.txt",
+      "question": "What was the vote tally on the espresso machine's location?",
+      "expect_value": "118–34",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"118-34\", \"anchor\": \"majority vote\"}",
+      "answer": "118-34",
+      "anchor": "majority vote",
+      "locate": {
+        "method": "exact",
+        "span": "majority vote",
+        "occurrences": 1,
+        "sentence": "It goes to the 3rd floor commons, majority vote wins, this is a democracy."
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "mm-5",
+      "doc": "messy_memo.txt",
+      "question": "What fraction of badge photos failed the new system's quality check?",
+      "expect_value": "12%",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"0.12\", \"anchor\": \"badge_quality\"}",
+      "answer": "0.12",
+      "anchor": "badge_quality",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    }
+  ]
+}

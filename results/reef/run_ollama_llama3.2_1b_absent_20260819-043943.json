@@ -1,0 +1,988 @@
+{
+  "provider": "ollama",
+  "model": "llama3.2:1b",
+  "timestamp": "20260819-043943",
+  "corpus": "questions_absent",
+  "summary": {
+    "n_quote": 0,
+    "n_anchor": 0,
+    "n_provider_errors": 0,
+    "n_unparseable": 20,
+    "n_absent_quote": 30,
+    "quote_absent_refusal_rate": 0.0,
+    "quote_absent_confident_with_exact_span": 12,
+    "n_absent_anchor": 30,
+    "anchor_absent_refusal_rate": 0.2,
+    "anchor_absent_confident_with_located_span": 12,
+    "per_rep": {}
+  },
+  "rows": [
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Meridian Robotics, Inc. shipped 4,112 industrial units during the quarter.\", \"quote\": \"We shipped 4,112 industrial units during the quarter, a new record.\"}",
+      "answer": "Meridian Robotics, Inc. shipped 4,112 industrial units during the quarter.",
+      "quote": "We shipped 4,112 industrial units during the quarter, a new record.",
+      "refused": false,
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.985,
+        "detail": "small word-level edits"
+      }
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"1,284\", \"quote\": \"We randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks.\"}",
+      "answer": "1,284",
+      "quote": "We randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"12\", \"quote\": \"The mean age of participants was 61.4 years; 43.7% were women, and 28.9% had type 2 diabetes at baseline. At week 12, the mean change in 24-hour ambulatory systolic blood pressure was -16.2 mm Hg in the lorvatinib group and -4.8 mm Hg in the placebo group, for a placebo-adjusted difference of -11.4 mm Hg (95% confidence interval, -13.7 to -9.1; P<0.001). An office systolic pressure below 130 mm Hg at week 24 was achieved by 39.6% of participants receiving lorvatinib versus 14.2% receiving placebo (odds ratio, 3.94; 95% CI, 2.98 to 5.21). The urinary albumin-to-creatinine ratio declined by 31% relative to placebo among participants with baseline albuminuria.\"}",
+      "answer": "12",
+      "quote": "The mean age of participants was 61.4 years; 43.7% were women, and 28.9% had type 2 diabetes at baseline. At week 12, the mean change in 24-hour ambulatory systolic blood pressure was -16.2 mm Hg in the lorvatinib group and -4.8 mm Hg in the placebo group, for a placebo-adjusted difference of -11.4 mm Hg (95% confidence interval, -13.7 to -9.1; P<0.001). An office systolic pressure below 130 mm Hg at week 24 was achieved by 39.6% of participants receiving lorvatinib versus 14.2% receiving placebo (odds ratio, 3.94; 95% CI, 2.98 to 5.21). The urinary albumin-to-creatinine ratio declined by 31% relative to placebo among participants with baseline albuminuria.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Tedrick\", \"quote\": \"This is the single largest investment in mobility our city has ever contemplated,\"}",
+      "answer": "Tedrick",
+      "quote": "This is the single largest investment in mobility our city has ever contemplated,",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"{\"estimated revenue impact\": \"<no information provided>\"}\"}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"{\"answer\": \"The cost of a replacement badge is not specified in the document.\", \"quote\": \"\"}\"}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Friedrich Schiller\", \"quote\": \"the scholar of the last century\"}}",
+      "answer": "Friedrich Schiller",
+      "quote": "the scholar of the last century",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Jim Krebs\", \"quote\": \"\\\"The Company's strategy remains unchanged: concentrate capital in specialty applications where technical service creates switching costs, divest commodity lines where price is the only lever, and maintain an investment-grade balance sheet through the cycle.\\\"\"}",
+      "answer": "Jim Krebs",
+      "quote": "\"The Company's strategy remains unchanged: concentrate capital in specialty applications where technical service creates switching costs, divest commodity lines where price is the only lever, and maintain an investment-grade balance sheet through the cycle.\"",
+      "refused": false,
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.942,
+        "detail": "small word-level edits"
+      }
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The total contract value for the 24-month term is $1.2 million.\", \"quote\": \"{\"total_contract_value\": \"$1,200,000\", \"payment_terms\": \"Net 30 Days\"}}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"4\", \"quote\": \"[00:02:13] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.\\n[00:03:15] PRIYA: Sorry, I was on mute. Classic. What I was saying was, we should probably take that offline.\\n[00:03:40] DANA: I mean, I don't disagree, I just think we're solving next quarter's problem this quarter.\\n[00:04:41] DANA: Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.\\n[00:05:15] TOM: Can we park the offsite discussion? It's eating our agenda every single week.\\n[00:05:57] MARCUS: [crosstalk]\\n[00:06:17] TOM: Honestly the dashboard numbers and the warehouse numbers still don't agree, so take everything I'm about to say with a grain of salt.\\n[00:07:04] TOM: That's fair, that's fair. Okay.\\n[00:07:30] MARCUS: Um, so, quick tangent, the parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.\\n[00:08:56] DANA: Let's timebox this to five minutes because we have to get to roadmap.\\n[00:10:02] PRIYA: Okay so, hard numbers: the revised marketing budget is $340K for the quarter, down from $410K, and that is not a discussion item, that came from finance.\\n[00:11:30] MARCUS: We are locked on March 9th for the public launch, um, and I mean locked — press embargo lifts that morning.\\n[00:12:04] TOM: I'll drop the doc in the channel after this, everyone please actually read it this time.\\n[00:13:21] DANA: Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it.\\n[00:14:02] DANA: Hmm, yeah, I don't have that number in front of me, let me get back to you.\\n[00:15:04] TOM: Right, and to be clear this is the same thing we said last quarter, so nobody should be surprised.\\n[00:16:12] PRIYA: Sorry, my dog is going insane, one second. Okay. Where were we.\\n[00:17:05] MARCUS: Do we have a decision or are we just admiring the problem? Genuine question.\\n[00:17:54] PRIYA: New phone, who dis — sorry, wrong window, ignore that, someone was messaging me.\\n[00:18:25] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.\\n[00:19:05] PRIYA: Sorry, I was on mute. Classic. What I was saying was, we should probably take that offline.\\n[00:20:02] MARCUS: I mean, I don't disagree, I just think we're solving next quarter's problem this quarter.\\n[00:21:16] MARCUS: I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.\\n[00:21:51] TOM: Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.\\n[00:22:40] PRIYA: Can we park the offsite discussion? It's eating our agenda every single week.\\n[00:23:11] PRIYA: [crosstalk]\\n[00:24:41] TOM: So the Datadog quote came in at $78,000 a year for the new tier, which is, yeah, a lot, but the old plan caps out.\\n[00:25:42] TOM: Honestly the dashboard numbers and the warehouse numbers still don't agree, so take everything I'm about to say with a grain of salt.\\n[00:26:09] MARCUS: That's fair, that's fair. Okay.\\n[00:26:36] TOM: Um, so, quick tangent, the parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.\\n[00:27:38] DANA: Let's timebox this to five minutes because we have to get to roadmap.\\n[00:28:48] PRIYA: I'll drop the doc in the channel after this, everyone please actually read it this time.\\n[00:29:14] TOM: Hmm, yeah, I don't have that number in front of me, let me get back to you.\\n[00:30:15] DANA: Right, and to be clear this is the same thing we said last quarter, so nobody should be surprised.\\n[00:31:48] DANA: For what it's worth NPS is sitting at 41, up three points since the onboarding redesign shipped.\\n[00:32:49] PRIYA: Sorry, my dog is going insane, one second. Okay. Where were we.\\n[00:33:39] TOM: Do we have a decision or are we just admiring the problem? Genuine question.\\n[00:34:10] TOM: New phone, who dis — sorry, wrong window, ignore that, someone was messaging me.\\n[00:35:20] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.\\n[00:36:17] DANA: Sorry, I was on mute. Classic. What I was saying was, we should probably take that offline.\\n[00:37:01] MARCUS: I mean, I don't disagree, I just think we're solving next quarter's problem this quarter.\\n[00:38:13] DANA: Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.\\n[00:39:37] DANA: Trial-to-paid conversion was 2.3% last month, still below where we modeled it, um, but trending the right way.\\n[00:40:07] DANA: Can we park the offsite discussion? It's eating our agenda every single week.\\n[00:41:05] PRIYA: The security review has to be done by August 15, no exceptions, legal was extremely clear about that.\\n[00:42:28] TOM: [crosstalk]\\n[00:43:52] MARCUS: Honestly the dashboard numbers and the warehouse numbers still don't agree, so take everything I'm about to say with a grain of salt.\\n[00:44:38] TOM: That's fair, that's fair. Okay.\\n[00:46:09] TOM: Um, so, quick tangent, the parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.\\n[00:46:45] DANA: Let's timebox this to five minutes because we have to get to roadmap.\\n[00:47:46] PRIYA: I'll drop the doc in the channel after this, everyone please actually read it this time.\\n[00:48:28] DANA: Hmm, yeah, I don't have that number in front of me, let me get back to you.\\n[00:49:51] PRIYA: Right, and to be clear this is the same thing we said last quarter, so nobody should be surprised.\\n[00:50:47] PRIYA: Sorry, my dog is going insane, one second. Okay. Where were we.\\n[00:52:10] PRIYA: Do we have a decision or are we just admiring the problem? Genuine question.\\n[00:52:58] PRIYA: New phone, who dis — sorry, wrong window, ignore that, someone was messaging me.",
+      "parse_error": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Meridian Robotics, Inc. — Q3 2025 Shareholder Letter\", \"anchor\": \"sales and marketing expense\"}",
+      "answer": "Meridian Robotics, Inc. — Q3 2025 Shareholder Letter",
+      "anchor": "sales and marketing expense",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"1,284\", \"anchor\": \"randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks.\"",
+      "parse_error": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"12\", \"anchor\": \"at 24 weeks\"}}",
+      "answer": "12",
+      "anchor": "at 24 weeks",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.909,
+        "span": "at 12 weeks",
+        "occurrences": 1,
+        "sentence": "In adults with treatment-resistant hypertension, lorvatinib produced a clinically meaningful reduction in ambulatory systolic blood pressure at 12 weeks with an acceptable safety profile."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Harborview Mayor\", \"anchor\": \"Mayor Okafor\"}",
+      "answer": "Harborview Mayor",
+      "anchor": "Mayor Okafor",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.833,
+        "span": "Maria Okafor",
+        "occurrences": 1,
+        "sentence": "\"This is the single largest investment in mobility our city has ever contemplated,\" said Council President Maria Okafor, who championed the measure."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"rate-limiting service\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "rate-limiting service",
+      "locate": {
+        "method": "exact",
+        "span": "rate-limiting service",
+        "occurrences": 1,
+        "sentence": "On 2026-03-14 at 08:17 UTC, a configuration change to the rate-limiting service (release rl-2.14.0) introduced a regression in the token-bucket refill logic."
+      },
+      "located": true,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"The cost of a replacement badge is not mentioned in the document.\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "The cost of a replacement badge is not mentioned in the document.",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\"Scholar of the last century\"",
+      "parse_error": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Michael J. Wagner\", \"anchor\": \"Responsible for leading Titan Materials Group.\"}",
+      "answer": "Michael J. Wagner",
+      "anchor": "Responsible for leading Titan Materials Group.",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Net 30\", \"anchor\": \"Renewal paperwork must be countersigned no later than September 30, 2026.\"}",
+      "answer": "Net 30",
+      "anchor": "Renewal paperwork must be countersigned no later than September 30, 2026.",
+      "locate": {
+        "method": "exact",
+        "span": "Renewal paperwork must be countersigned no later than September 30, 2026.",
+        "occurrences": 2,
+        "sentence": "> Renewal paperwork must be countersigned no later than September 30, 2026."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"4th\", \"anchor\": \"Recorded meeting\"}",
+      "answer": "4th",
+      "anchor": "Recorded meeting",
+      "locate": {
+        "method": "exact",
+        "span": "Recorded meeting",
+        "occurrences": 1,
+        "sentence": "Recorded meeting, 4 participants, 47 minutes"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Meridian Robotics, Inc. shipped 4,112 industrial units during the quarter.\", \"quote\": \"We shipped 4,112 industrial units during the quarter, a new record.\"}",
+      "answer": "Meridian Robotics, Inc. shipped 4,112 industrial units during the quarter.",
+      "quote": "We shipped 4,112 industrial units during the quarter, a new record.",
+      "refused": false,
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.985,
+        "detail": "small word-level edits"
+      }
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"1,284\", \"quote\": \"We randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks.\"}",
+      "answer": "1,284",
+      "quote": "We randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"12\", \"quote\": \"The mean age of participants was 61.4 years; 43.7% were women, and 28.9% had type 2 diabetes at baseline. At week 12, the mean change in 24-hour ambulatory systolic blood pressure was -16.2 mm Hg in the lorvatinib group and -4.8 mm Hg in the placebo group, for a placebo-adjusted difference of -11.4 mm Hg (95% confidence interval, -13.7 to -9.1; P<0.001). An office systolic pressure below 130 mm Hg at week 24 was achieved by 39.6% of participants receiving lorvatinib versus 14.2% receiving placebo (odds ratio, 3.94; 95% CI, 2.98 to 5.21). The urinary albumin-to-creatinine ratio declined by 31% relative to placebo among participants with baseline albuminuria.\"}",
+      "answer": "12",
+      "quote": "The mean age of participants was 61.4 years; 43.7% were women, and 28.9% had type 2 diabetes at baseline. At week 12, the mean change in 24-hour ambulatory systolic blood pressure was -16.2 mm Hg in the lorvatinib group and -4.8 mm Hg in the placebo group, for a placebo-adjusted difference of -11.4 mm Hg (95% confidence interval, -13.7 to -9.1; P<0.001). An office systolic pressure below 130 mm Hg at week 24 was achieved by 39.6% of participants receiving lorvatinib versus 14.2% receiving placebo (odds ratio, 3.94; 95% CI, 2.98 to 5.21). The urinary albumin-to-creatinine ratio declined by 31% relative to placebo among participants with baseline albuminuria.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Tedrick\", \"quote\": \"This is the single largest investment in mobility our city has ever contemplated,\"}",
+      "answer": "Tedrick",
+      "quote": "This is the single largest investment in mobility our city has ever contemplated,",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"{\"estimate\": \"<no estimate provided>\", \"quote\": \"\"}\"}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"{\"answer\": \"The cost of a replacement badge is not specified in the document.\", \"quote\": \"\"}\"}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Friedrich Schiller\", \"quote\": \"the scholar of the last century\"}}",
+      "answer": "Friedrich Schiller",
+      "quote": "the scholar of the last century",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Jim Krebs\", \"quote\": \"\\\"The Company's strategy remains unchanged: concentrate capital in specialty applications where technical service creates switching costs, divest commodity lines where price is the only lever, and maintain an investment-grade balance sheet through the cycle.\\\"\"}",
+      "answer": "Jim Krebs",
+      "quote": "\"The Company's strategy remains unchanged: concentrate capital in specialty applications where technical service creates switching costs, divest commodity lines where price is the only lever, and maintain an investment-grade balance sheet through the cycle.\"",
+      "refused": false,
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.942,
+        "detail": "small word-level edits"
+      }
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The total contract value for the 24-month term is $1.2 million.\", \"quote\": \"{\"total_contract_value\": \"$1,200,000\", \"payment_terms\": \"Net 30 Days\"}}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"4 participants, 47 minutes\", \"quote\": \"[00:02:13] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.\\n[00:03:15] PRIYA: Sorry, I was on mute. Classic. What I was saying was, we should probably take that offline.\\n[00:04:41] DANA: Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.\\n[00:05:15] TOM: Can we park the offsite discussion? It's eating our agenda every single week.\\n[00:06:17] MARCUS: [crosstalk]\\n[00:07:04] TOM: That's fair, that's fair. Okay.\\n[00:08:56] DANA: Let's timebox this to five minutes because we have to get to roadmap.\\n[00:10:02] PRIYA: Okay so, hard numbers: the revised marketing budget is $340K for the quarter, down from $410K, and that is not a discussion item, that came from finance.\\n[00:11:30] MARCUS: We are locked on March 9th for the public launch, um, and I mean locked — press embargo lifts that morning.\\n[00:12:04] TOM: I'll drop the doc in the channel after this, everyone please actually read it this time.\\n[00:13:21] DANA: Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it.\\n[00:14:02] DANA: Hmm, yeah, I don't have that number in front of me, let me get back to you.\\n[00:15:04] TOM: Right, and to be clear this is the same thing we said last quarter, so nobody should be surprised.\\n[00:16:12] PRIYA: Sorry, my dog is going insane, one second. Okay. Where were we.\\n[00:17:05] MARCUS: Do we have a decision or are we just admiring the problem? Genuine question.\\n[00:18:25] PRIYA: New phone, who dis — sorry, wrong window, ignore that, someone was messaging me.\\n[00:19:20] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.\\n[00:20:17] DANA: Sorry, I was on mute. Classic. What I was saying was, we should probably take that offline.\\n[00:21:51] PRIYA: The security review has to be done by August 15, no exceptions, legal was extremely clear about that.\\n[00:22:40] TOM: [crosstalk]\\n[00:23:52] MARCUS: Honestly the dashboard numbers and the warehouse numbers still don't agree, so take everything I'm about to say with a grain of salt.\\n[00:24:38] TOM: That's fair, that's fair. Okay.\\n[00:26:09] TOM: Um, so, quick tangent, the parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.\\n[00:27:38] DANA: Let's timebox this to five minutes because we have to get to roadmap.\\n[00:28:48] PRIYA: I'll drop the doc in the channel after this, everyone please actually read it this time.\\n[00:29:14] TOM: Hmm, yeah, I don't have that number in front of me, let me get back to you.\\n[00:30:15] DANA: Right, and to be clear this is the same thing we said last quarter, so nobody should be surprised.\\n[00:31:48] PRIYA: Sorry, my dog is going insane, one second. Okay. Where were we.\\n[00:33:39] TOM: Do we have a decision or are we just admiring the problem? Genuine question.\\n[00:34:10] TOM: New phone, who dis — sorry, wrong window, ignore that, someone was messaging me.\\n[00:35:20] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.\\n[00:36:17] DANA: Sorry, I was on mute. Classic. What I was saying was, we should probably take that offline.\\n[00:37:01] MARCUS: I mean, I don't disagree, I just think we're solving next quarter's problem this quarter.\\n[00:38:13] DANA: Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.\\n[00:39:37] DANA: Trial-to-paid conversion was 2.3% last month, still below where we modeled it, um, but trending the right way.\\n[00:40:07] DANA: Can we park the offsite discussion? It's eating our agenda every single week.\\n[00:41:05] PRIYA: The security review has to be done by August 15, no exceptions, legal was extremely clear about that.\\n[00:42:28] TOM: [crosstalk]\\n[00:43:52] MARCUS: Honestly the dashboard numbers and the warehouse numbers still don't agree, so take everything I'm about to say with a grain of salt.\\n[00:44:38] TOM: That's fair, that's fair. Okay.\\n[00:46:09] TOM: Um, so, quick tangent, the parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.\\n[00:46:45] DANA: Let's timebox this to five minutes because we have to get to roadmap.\\n[00:47:46] PRIYA: I'll drop the doc in the channel after this, everyone please actually read it this time.\\n[00:48:28] DANA: Hmm, yeah, I don't have that number in front of me, let me get back to you.\\n[00:49:51] PRIYA: Right, and to be clear this is the same thing we said last quarter, so nobody should be surprised.\\n[00:50:47] PRIYA: Sorry, my dog is going insane, one second. Okay. Where were we.\\n[00:52:10] PRIYA: Do we have a decision or are we just admiring the problem? Genuine question.\\n[00:52:58] PRIYA: New phone, who dis — sorry, wrong window, ignore that, someone was messaging me.\"",
+      "parse_error": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Meridian Robotics, Inc. — Q3 2025 Shareholder Letter\", \"anchor\": \"sales and marketing expense\"",
+      "parse_error": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"1,284\", \"anchor\": \"randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks.\"",
+      "parse_error": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"12\", \"anchor\": \"at 24 weeks\"}}",
+      "answer": "12",
+      "anchor": "at 24 weeks",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.909,
+        "span": "at 12 weeks",
+        "occurrences": 1,
+        "sentence": "In adults with treatment-resistant hypertension, lorvatinib produced a clinically meaningful reduction in ambulatory systolic blood pressure at 12 weeks with an acceptable safety profile."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Maria Okafor\", \"anchor\": \"City Council President\"}",
+      "answer": "Maria Okafor",
+      "anchor": "City Council President",
+      "locate": {
+        "method": "subsequence",
+        "span": "city has ever contemplated,\" said Council President",
+        "occurrences": 1,
+        "sentence": "\"This is the single largest investment in mobility our city has ever contemplated,\" said Council President Maria Okafor, who championed the measure."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"rate-limiting service\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "rate-limiting service",
+      "locate": {
+        "method": "exact",
+        "span": "rate-limiting service",
+        "occurrences": 1,
+        "sentence": "On 2026-03-14 at 08:17 UTC, a configuration change to the rate-limiting service (release rl-2.14.0) introduced a regression in the token-bucket refill logic."
+      },
+      "located": true,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"The cost of a replacement badge is not mentioned in the document.\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "The cost of a replacement badge is not mentioned in the document.",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\"Scholar of the last century\"",
+      "parse_error": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Michael J. Wagner\", \"anchor\": \"Responsible for leading Titan Materials Group.\"}",
+      "answer": "Michael J. Wagner",
+      "anchor": "Responsible for leading Titan Materials Group.",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Net 30\", \"anchor\": \"Renewal paperwork must be countersigned no later than September 30, 2026.\"}",
+      "answer": "Net 30",
+      "anchor": "Renewal paperwork must be countersigned no later than September 30, 2026.",
+      "locate": {
+        "method": "exact",
+        "span": "Renewal paperwork must be countersigned no later than September 30, 2026.",
+        "occurrences": 2,
+        "sentence": "> Renewal paperwork must be countersigned no later than September 30, 2026."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"4th\", \"anchor\": \"Recorded meeting\"}",
+      "answer": "4th",
+      "anchor": "Recorded meeting",
+      "locate": {
+        "method": "exact",
+        "span": "Recorded meeting",
+        "occurrences": 1,
+        "sentence": "Recorded meeting, 4 participants, 47 minutes"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Meridian Robotics, Inc. shipped 4,112 industrial units during the quarter.\", \"quote\": \"We shipped 4,112 industrial units during the quarter, a new record.\"}",
+      "answer": "Meridian Robotics, Inc. shipped 4,112 industrial units during the quarter.",
+      "quote": "We shipped 4,112 industrial units during the quarter, a new record.",
+      "refused": false,
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.985,
+        "detail": "small word-level edits"
+      }
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"1,284\", \"quote\": \"We randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks.\"}",
+      "answer": "1,284",
+      "quote": "We randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"12\", \"quote\": \"The mean age of participants was 61.4 years; 43.7% were women, and 28.9% had type 2 diabetes at baseline. At week 12, the mean change in 24-hour ambulatory systolic blood pressure was -16.2 mm Hg in the lorvatinib group and -4.8 mm Hg in the placebo group, for a placebo-adjusted difference of -11.4 mm Hg (95% confidence interval, -13.7 to -9.1; P<0.001). An office systolic pressure below 130 mm Hg at week 24 was achieved by 39.6% of participants receiving lorvatinib versus 14.2% receiving placebo (odds ratio, 3.94; 95% CI, 2.98 to 5.21). The urinary albumin-to-creatinine ratio declined by 31% relative to placebo among participants with baseline albuminuria.\"}",
+      "answer": "12",
+      "quote": "The mean age of participants was 61.4 years; 43.7% were women, and 28.9% had type 2 diabetes at baseline. At week 12, the mean change in 24-hour ambulatory systolic blood pressure was -16.2 mm Hg in the lorvatinib group and -4.8 mm Hg in the placebo group, for a placebo-adjusted difference of -11.4 mm Hg (95% confidence interval, -13.7 to -9.1; P<0.001). An office systolic pressure below 130 mm Hg at week 24 was achieved by 39.6% of participants receiving lorvatinib versus 14.2% receiving placebo (odds ratio, 3.94; 95% CI, 2.98 to 5.21). The urinary albumin-to-creatinine ratio declined by 31% relative to placebo among participants with baseline albuminuria.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Tedrick\", \"quote\": \"This is the single largest investment in mobility our city has ever contemplated,\"}",
+      "answer": "Tedrick",
+      "quote": "This is the single largest investment in mobility our city has ever contemplated,",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"{\"estimate\": \"<no estimate provided>\", \"quote\": \"\"}\"}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"{\"answer\": \"The cost of a replacement badge is not specified in the document.\", \"quote\": \"\"}\"}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Friedrich Schiller\", \"quote\": \"the scholar of the last century\"}}",
+      "answer": "Friedrich Schiller",
+      "quote": "the scholar of the last century",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Jim Krebs\", \"quote\": \"\\\"The Company's strategy remains unchanged: concentrate capital in specialty applications where technical service creates switching costs, divest commodity lines where price is the only lever, and maintain an investment-grade balance sheet through the cycle.\\\"\"}",
+      "answer": "Jim Krebs",
+      "quote": "\"The Company's strategy remains unchanged: concentrate capital in specialty applications where technical service creates switching costs, divest commodity lines where price is the only lever, and maintain an investment-grade balance sheet through the cycle.\"",
+      "refused": false,
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.942,
+        "detail": "small word-level edits"
+      }
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The total contract value for the 24-month term is $1.2 million.\", \"quote\": \"{\"total_contract_value\": \"$1,200,000\", \"payment_terms\": \"Net 30 Days\"}}",
+      "parse_error": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"4 participants, 47 minutes\", \"quote\": \"[00:02:13] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.\\n[00:03:15] PRIYA: Sorry, I was on mute. Classic. What I was saying was, we should probably take that offline.\\n[00:04:41] DANA: Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.\\n[00:05:15] TOM: Can we park the offsite discussion? It's eating our agenda every single week.\\n[00:06:17] MARCUS: [crosstalk]\\n[00:07:04] TOM: That's fair, that's fair. Okay.\\n[00:08:56] DANA: Let's timebox this to five minutes because we have to get to roadmap.\\n[00:10:02] PRIYA: Okay so, hard numbers: the revised marketing budget is $340K for the quarter, down from $410K, and that is not a discussion item, that came from finance.\\n[00:11:30] MARCUS: We are locked on March 9th for the public launch, um, and I mean locked — press embargo lifts that morning.\\n[00:12:04] TOM: I'll drop the doc in the channel after this, everyone please actually read it this time.\\n[00:13:21] DANA: Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it.\\n[00:14:02] DANA: Hmm, yeah, I don't have that number in front of me, let me get back to you.\\n[00:15:04] TOM: Right, and to be clear this is the same thing we said last quarter, so nobody should be surprised.\\n[00:16:12] PRIYA: Sorry, my dog is going insane, one second. Okay. Where were we.\\n[00:17:05] MARCUS: Do we have a decision or are we just admiring the problem? Genuine question.\\n[00:18:25] PRIYA: New phone, who dis — sorry, wrong window, ignore that, someone was messaging me.\\n[00:19:20] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.\\n[00:20:17] DANA: Sorry, I was on mute. Classic. What I was saying was, we should probably take that offline.\\n[00:21:51] PRIYA: The security review has to be done by August 15, no exceptions, legal was extremely clear about that.\\n[00:22:40] TOM: [crosstalk]\\n[00:23:52] MARCUS: Honestly the dashboard numbers and the warehouse numbers still don't agree, so take everything I'm about to say with a grain of salt.\\n[00:24:38] TOM: That's fair, that's fair. Okay.\\n[00:26:09] TOM: Um, so, quick tangent, the parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.\\n[00:27:38] DANA: Let's timebox this to five minutes because we have to get to roadmap.\\n[00:28:48] PRIYA: I'll drop the doc in the channel after this, everyone please actually read it this time.\\n[00:29:14] TOM: Hmm, yeah, I don't have that number in front of me, let me get back to you.\\n[00:30:15] DANA: Right, and to be clear this is the same thing we said last quarter, so nobody should be surprised.\\n[00:31:48] PRIYA: Sorry, my dog is going insane, one second. Okay. Where were we.\\n[00:33:39] TOM: Do we have a decision or are we just admiring the problem? Genuine question.\\n[00:34:10] TOM: New phone, who dis — sorry, wrong window, ignore that, someone was messaging me.\\n[00:35:20] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.\\n[00:36:17] DANA: Sorry, I was on mute. Classic. What I was saying was, we should probably take that offline.\\n[00:37:01] MARCUS: I mean, I don't disagree, I just think we're solving next quarter's problem this quarter.\\n[00:38:13] DANA: Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.\\n[00:39:37] DANA: Trial-to-paid conversion was 2.3% last month, still below where we modeled it, um, but trending the right way.\\n[00:40:07] DANA: Can we park the offsite discussion? It's eating our agenda every single week.\\n[00:41:05] PRIYA: The security review has to be done by August 15, no exceptions, legal was extremely clear about that.\\n[00:42:28] TOM: [crosstalk]\\n[00:43:52] MARCUS: Honestly the dashboard numbers and the warehouse numbers still don't agree, so take everything I'm about to say with a grain of salt.\\n[00:44:38] TOM: That's fair, that's fair. Okay.\\n[00:46:09] TOM: Um, so, quick tangent, the parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.\\n[00:46:45] DANA: Let's timebox this to five minutes because we have to get to roadmap.\\n[00:47:46] PRIYA: I'll drop the doc in the channel after this, everyone please actually read it this time.\\n[00:48:28] DANA: Hmm, yeah, I don't have that number in front of me, let me get back to you.\\n[00:49:51] PRIYA: Right, and to be clear this is the same thing we said last quarter, so nobody should be surprised.\\n[00:50:47] PRIYA: Sorry, my dog is going insane, one second. Okay. Where were we.\\n[00:52:10] PRIYA: Do we have a decision or are we just admiring the problem? Genuine question.\\n[00:52:58] PRIYA: New phone, who dis — sorry, wrong window, ignore that, someone was messaging me.\"",
+      "parse_error": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Meridian Robotics, Inc. — Q3 2025 Shareholder Letter\", \"anchor\": \"sales and marketing expense\"",
+      "parse_error": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"1,284\", \"anchor\": \"randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks.\"",
+      "parse_error": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"12\", \"anchor\": \"at 24 weeks\"}}",
+      "answer": "12",
+      "anchor": "at 24 weeks",
+      "locate": {
+        "method": "fuzzy",
+        "ratio": 0.909,
+        "span": "at 12 weeks",
+        "occurrences": 1,
+        "sentence": "In adults with treatment-resistant hypertension, lorvatinib produced a clinically meaningful reduction in ambulatory systolic blood pressure at 12 weeks with an acceptable safety profile."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Maria Okafor\", \"anchor\": \"City Council President\"}",
+      "answer": "Maria Okafor",
+      "anchor": "City Council President",
+      "locate": {
+        "method": "subsequence",
+        "span": "city has ever contemplated,\" said Council President",
+        "occurrences": 1,
+        "sentence": "\"This is the single largest investment in mobility our city has ever contemplated,\" said Council President Maria Okafor, who championed the measure."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"rate-limiting service\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "rate-limiting service",
+      "locate": {
+        "method": "exact",
+        "span": "rate-limiting service",
+        "occurrences": 1,
+        "sentence": "On 2026-03-14 at 08:17 UTC, a configuration change to the rate-limiting service (release rl-2.14.0) introduced a regression in the token-bucket refill logic."
+      },
+      "located": true,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"The cost of a replacement badge is not mentioned in the document.\"}",
+      "answer": "NOT_FOUND",
+      "anchor": "The cost of a replacement badge is not mentioned in the document.",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\"Scholar of the last century\"",
+      "parse_error": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Michael J. Wagner\", \"anchor\": \"Responsible for leading Titan Materials Group.\"}",
+      "answer": "Michael J. Wagner",
+      "anchor": "Responsible for leading Titan Materials Group.",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Net 30\", \"anchor\": \"Renewal paperwork must be countersigned no later than September 30, 2026.\"}",
+      "answer": "Net 30",
+      "anchor": "Renewal paperwork must be countersigned no later than September 30, 2026.",
+      "locate": {
+        "method": "exact",
+        "span": "Renewal paperwork must be countersigned no later than September 30, 2026.",
+        "occurrences": 2,
+        "sentence": "> Renewal paperwork must be countersigned no later than September 30, 2026."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"4th\", \"anchor\": \"Recorded meeting\"}",
+      "answer": "4th",
+      "anchor": "Recorded meeting",
+      "locate": {
+        "method": "exact",
+        "span": "Recorded meeting",
+        "occurrences": 1,
+        "sentence": "Recorded meeting, 4 participants, 47 minutes"
+      },
+      "located": true,
+      "refused": false
+    }
+  ]
+}

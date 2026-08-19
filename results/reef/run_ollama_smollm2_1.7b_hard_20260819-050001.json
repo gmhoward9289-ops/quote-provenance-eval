@@ -1,0 +1,2360 @@
+{
+  "provider": "ollama",
+  "model": "smollm2:1.7b",
+  "timestamp": "20260819-050001",
+  "corpus": "questions_hard",
+  "summary": {
+    "n_quote": 66,
+    "n_anchor": 66,
+    "n_provider_errors": 0,
+    "n_unparseable": 0,
+    "quote_levels": {
+      "fabricated": 48,
+      "normalized": 3,
+      "exact": 15
+    },
+    "quote_exact_rate": 0.227,
+    "quote_coverage": 0.091,
+    "quote_recoverable_rate": 0.273,
+    "quote_fabricated_rate": 0.727,
+    "quote_answer_accuracy": 0.773,
+    "anchor_located_rate": 0.197,
+    "anchor_coverage": 0.106,
+    "anchor_methods": {
+      "not_found": 53,
+      "exact": 13
+    },
+    "anchor_ambiguous": 3,
+    "anchor_answer_accuracy": 0.818,
+    "anchor_provenance_fidelity_of_located": 1.0,
+    "ci95": {
+      "quote_exact_rate": [
+        0.143,
+        0.342
+      ],
+      "quote_coverage": [
+        0.042,
+        0.184
+      ],
+      "anchor_coverage": [
+        0.052,
+        0.203
+      ]
+    },
+    "per_rep": {
+      "quote_exact_rate": [
+        0.227,
+        0.227,
+        0.227
+      ],
+      "quote_coverage": [
+        0.091,
+        0.091,
+        0.091
+      ],
+      "anchor_coverage": [
+        0.136,
+        0.091,
+        0.091
+      ]
+    }
+  },
+  "rows": [
+    {
+      "id": "h-ar-1",
+      "doc": "hard_annual_report.txt",
+      "question": "What was consolidated revenue for fiscal 2025?",
+      "expect_value": "2,847.3",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"2,847,300,000\", \"quote\": \"\"}",
+      "answer": "2,847,300,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-2",
+      "doc": "hard_annual_report.txt",
+      "question": "How much was research and development expense?",
+      "expect_value": "412.6",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$412.6 million\", \"quote\": \"\"}",
+      "answer": "$412.6 million",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-3",
+      "doc": "hard_annual_report.txt",
+      "question": "How many people did the Company employ at year end?",
+      "expect_value": "11,204",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"11,204\", \"quote\": \"\"}",
+      "answer": "11,204",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-4",
+      "doc": "hard_annual_report.txt",
+      "question": "What quarterly dividend did the Board declare per share?",
+      "expect_value": "$1.15",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$1.15\", \"quote\": \"\"}",
+      "answer": "$1.15",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-5",
+      "doc": "hard_annual_report.txt",
+      "question": "How large was the goodwill impairment charge?",
+      "expect_value": "88.2",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$88,200,000\", \"quote\": \"\"}",
+      "answer": "$88,200,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-6",
+      "doc": "hard_annual_report.txt",
+      "question": "What was the effective tax rate for fiscal 2025?",
+      "expect_value": "21.4%",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"21.4\", \"quote\": \"\"}",
+      "answer": "21.4",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-7",
+      "doc": "hard_annual_report.txt",
+      "question": "What was the order backlog at year end?",
+      "expect_value": "$5.1",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"51678\", \"quote\": \"\"}",
+      "answer": "51678",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-8",
+      "doc": "hard_annual_report.txt",
+      "question": "What operating income did the Advanced Polymers segment report?",
+      "expect_value": "301.8",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$301,800,000\", \"quote\": \"\"}",
+      "answer": "$301,800,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-tr-1",
+      "doc": "hard_transcript.txt",
+      "question": "What is the revised quarterly marketing budget?",
+      "expect_value": "$340K",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"340K\", \"quote\": \"\"}",
+      "answer": "340K",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-2",
+      "doc": "hard_transcript.txt",
+      "question": "What date is the public launch locked for?",
+      "expect_value": "March 9th",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"March 9th\", \"quote\": \"The parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.\"}",
+      "answer": "March 9th",
+      "quote": "The parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation / case"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-3",
+      "doc": "hard_transcript.txt",
+      "question": "What was monthly churn in June?",
+      "expect_value": "4.7%",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"4.7%\", \"quote\": \"Hmm, yeah, I don't have that number in front of me, let me get back to you.\"}",
+      "answer": "4.7%",
+      "quote": "Hmm, yeah, I don't have that number in front of me, let me get back to you.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-4",
+      "doc": "hard_transcript.txt",
+      "question": "How many backend engineers does Marcus say he needs?",
+      "expect_value": "six",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"6\", \"quote\": \"I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.\"}",
+      "answer": "6",
+      "quote": "I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-5",
+      "doc": "hard_transcript.txt",
+      "question": "What was the Datadog quote for the new tier?",
+      "expect_value": "$78,000",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$78,000\", \"quote\": \"That's fair, that's fair.\"}",
+      "answer": "$78,000",
+      "quote": "That's fair, that's fair.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-6",
+      "doc": "hard_transcript.txt",
+      "question": "What is NPS currently sitting at?",
+      "expect_value": "41",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"41\", \"quote\": \"\"}",
+      "answer": "41",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-7",
+      "doc": "hard_transcript.txt",
+      "question": "What was trial-to-paid conversion last month?",
+      "expect_value": "2.3%",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"2.3%\", \"quote\": \"Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.\"}",
+      "answer": "2.3%",
+      "quote": "Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-8",
+      "doc": "hard_transcript.txt",
+      "question": "By what date must the security review be done?",
+      "expect_value": "August 15",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"August 15\", \"quote\": \"The security review has to be done by August 15, no exceptions, legal was extremely clear about that.\"}",
+      "answer": "August 15",
+      "quote": "The security review has to be done by August 15, no exceptions, legal was extremely clear about that.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-1",
+      "doc": "hard_email_thread.txt",
+      "question": "What is the total contract value for the 24-month term?",
+      "expect_value": "$1.2 million",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$1,200,000\"}",
+      "answer": "$1,200,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-em-2",
+      "doc": "hard_email_thread.txt",
+      "question": "By what date must renewal paperwork be countersigned?",
+      "expect_value": "September 30, 2026",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"September 30, 2026\"}",
+      "answer": "September 30, 2026",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-3",
+      "doc": "hard_email_thread.txt",
+      "question": "What multi-year discount percentage is on offer?",
+      "expect_value": "12%",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"12\"}",
+      "answer": "12",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-4",
+      "doc": "hard_email_thread.txt",
+      "question": "What is the uptime commitment in Section 4.2?",
+      "expect_value": "99.95%",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"99.95% measured monthly\"}",
+      "answer": "99.95% measured monthly",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-5",
+      "doc": "hard_email_thread.txt",
+      "question": "What are service credits capped at per incident?",
+      "expect_value": "$25,000",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$25,000\"}",
+      "answer": "$25,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-6",
+      "doc": "hard_email_thread.txt",
+      "question": "How many seats is the current deployment?",
+      "expect_value": "450 seats",
+      "arm": "quote",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"450\"}",
+      "answer": "450",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-1",
+      "doc": "hard_annual_report.txt",
+      "question": "What was consolidated revenue for fiscal 2025?",
+      "expect_value": "2,847.3",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"2,847,300,000\", \"anchor\": \"\"}",
+      "answer": "2,847,300,000",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-2",
+      "doc": "hard_annual_report.txt",
+      "question": "How much was research and development expense?",
+      "expect_value": "412.6",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$412.6 million\", \"anchor\": \"\"}",
+      "answer": "$412.6 million",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-3",
+      "doc": "hard_annual_report.txt",
+      "question": "How many people did the Company employ at year end?",
+      "expect_value": "11,204",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"11,204\", \"anchor\": \"\"}",
+      "answer": "11,204",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-4",
+      "doc": "hard_annual_report.txt",
+      "question": "What quarterly dividend did the Board declare per share?",
+      "expect_value": "$1.15",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$1.15\", \"anchor\": \"\"}",
+      "answer": "$1.15",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-5",
+      "doc": "hard_annual_report.txt",
+      "question": "How large was the goodwill impairment charge?",
+      "expect_value": "88.2",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$88,200,000\", \"anchor\": \"\"}",
+      "answer": "$88,200,000",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-6",
+      "doc": "hard_annual_report.txt",
+      "question": "What was the effective tax rate for fiscal 2025?",
+      "expect_value": "21.4%",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"21.4\", \"anchor\": \"\"}",
+      "answer": "21.4",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-7",
+      "doc": "hard_annual_report.txt",
+      "question": "What was the order backlog at year end?",
+      "expect_value": "$5.1",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"5.1 billion\", \"anchor\": \"\"}",
+      "answer": "5.1 billion",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-8",
+      "doc": "hard_annual_report.txt",
+      "question": "What operating income did the Advanced Polymers segment report?",
+      "expect_value": "301.8",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$301,800,000\", \"anchor\": \"Page 3\"}",
+      "answer": "$301,800,000",
+      "anchor": "Page 3",
+      "locate": {
+        "method": "exact",
+        "span": "Page 3",
+        "occurrences": 1,
+        "sentence": "TITAN MATERIALS GROUP · 2025 ANNUAL  REPORT                          Page 3"
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-tr-1",
+      "doc": "hard_transcript.txt",
+      "question": "What is the revised quarterly marketing budget?",
+      "expect_value": "$340K",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"340K\", \"anchor\": \"410K\"}",
+      "answer": "340K",
+      "anchor": "410K",
+      "locate": {
+        "method": "exact",
+        "span": "410K",
+        "occurrences": 1,
+        "sentence": "[00:10:02] PRIYA: Okay so, hard numbers: the revised marketing budget is $340K for the quarter, down from $410K, and that is not a discussion item, that came from finance."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-2",
+      "doc": "hard_transcript.txt",
+      "question": "What date is the public launch locked for?",
+      "expect_value": "March 9th",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"March 9th\", \"anchor\": \"\"}",
+      "answer": "March 9th",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-3",
+      "doc": "hard_transcript.txt",
+      "question": "What was monthly churn in June?",
+      "expect_value": "4.7%",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"4.7%\", \"anchor\": \"June\"}",
+      "answer": "4.7%",
+      "anchor": "June",
+      "locate": {
+        "method": "exact",
+        "span": "June",
+        "occurrences": 1,
+        "sentence": "[00:13:21] DANA: Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-4",
+      "doc": "hard_transcript.txt",
+      "question": "How many backend engineers does Marcus say he needs?",
+      "expect_value": "six",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"6\", \"anchor\": \"MARCUS\"}",
+      "answer": "6",
+      "anchor": "MARCUS",
+      "locate": {
+        "method": "exact",
+        "span": "MARCUS",
+        "occurrences": 9,
+        "sentence": "[00:05:57] MARCUS: [crosstalk]"
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-5",
+      "doc": "hard_transcript.txt",
+      "question": "What was the Datadog quote for the new tier?",
+      "expect_value": "$78,000",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$78,000\", \"anchor\": \"Datadog\"}",
+      "answer": "$78,000",
+      "anchor": "Datadog",
+      "locate": {
+        "method": "exact",
+        "span": "Datadog",
+        "occurrences": 1,
+        "sentence": "[00:24:41] TOM: So the Datadog quote came in at $78,000 a year for the new tier, which is, yeah, a lot, but the old plan caps out."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-6",
+      "doc": "hard_transcript.txt",
+      "question": "What is NPS currently sitting at?",
+      "expect_value": "41",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"41\", \"anchor\": \"\"}",
+      "answer": "41",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-7",
+      "doc": "hard_transcript.txt",
+      "question": "What was trial-to-paid conversion last month?",
+      "expect_value": "2.3%",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"2.3%\", \"anchor\": \"\"}",
+      "answer": "2.3%",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-8",
+      "doc": "hard_transcript.txt",
+      "question": "By what date must the security review be done?",
+      "expect_value": "August 15",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"August 15\", \"anchor\": \"\"}",
+      "answer": "August 15",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-1",
+      "doc": "hard_email_thread.txt",
+      "question": "What is the total contract value for the 24-month term?",
+      "expect_value": "$1.2 million",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$1,200,000\"}",
+      "answer": "$1,200,000",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-em-2",
+      "doc": "hard_email_thread.txt",
+      "question": "By what date must renewal paperwork be countersigned?",
+      "expect_value": "September 30, 2026",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"September 30, 2026\", \"anchor\": \"\"}",
+      "answer": "September 30, 2026",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-3",
+      "doc": "hard_email_thread.txt",
+      "question": "What multi-year discount percentage is on offer?",
+      "expect_value": "12%",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": 12}",
+      "answer": "12",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-4",
+      "doc": "hard_email_thread.txt",
+      "question": "What is the uptime commitment in Section 4.2?",
+      "expect_value": "99.95%",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"99.95% measured monthly\"}",
+      "answer": "99.95% measured monthly",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-5",
+      "doc": "hard_email_thread.txt",
+      "question": "What are service credits capped at per incident?",
+      "expect_value": "$25,000",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"Service credits are capped at $25,000 per incident.\"}",
+      "answer": "Service credits are capped at $25,000 per incident.",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-6",
+      "doc": "hard_email_thread.txt",
+      "question": "How many seats is the current deployment?",
+      "expect_value": "450 seats",
+      "arm": "anchor",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"450\", \"anchor\": \"\"}",
+      "answer": "450",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-1",
+      "doc": "hard_annual_report.txt",
+      "question": "What was consolidated revenue for fiscal 2025?",
+      "expect_value": "2,847.3",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"2,847,300,000\", \"quote\": \"\"}",
+      "answer": "2,847,300,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-2",
+      "doc": "hard_annual_report.txt",
+      "question": "How much was research and development expense?",
+      "expect_value": "412.6",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$412.6 million\", \"quote\": \"\"}",
+      "answer": "$412.6 million",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-3",
+      "doc": "hard_annual_report.txt",
+      "question": "How many people did the Company employ at year end?",
+      "expect_value": "11,204",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"11,204\", \"quote\": \"\"}",
+      "answer": "11,204",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-4",
+      "doc": "hard_annual_report.txt",
+      "question": "What quarterly dividend did the Board declare per share?",
+      "expect_value": "$1.15",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$1.15\", \"quote\": \"\"}",
+      "answer": "$1.15",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-5",
+      "doc": "hard_annual_report.txt",
+      "question": "How large was the goodwill impairment charge?",
+      "expect_value": "88.2",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$88,200,000\", \"quote\": \"\"}",
+      "answer": "$88,200,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-6",
+      "doc": "hard_annual_report.txt",
+      "question": "What was the effective tax rate for fiscal 2025?",
+      "expect_value": "21.4%",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"21.4\", \"quote\": \"\"}",
+      "answer": "21.4",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-7",
+      "doc": "hard_annual_report.txt",
+      "question": "What was the order backlog at year end?",
+      "expect_value": "$5.1",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"51678\", \"quote\": \"\"}",
+      "answer": "51678",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-8",
+      "doc": "hard_annual_report.txt",
+      "question": "What operating income did the Advanced Polymers segment report?",
+      "expect_value": "301.8",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$301,800,000\", \"quote\": \"\"}",
+      "answer": "$301,800,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-tr-1",
+      "doc": "hard_transcript.txt",
+      "question": "What is the revised quarterly marketing budget?",
+      "expect_value": "$340K",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"340K\", \"quote\": \"\"}",
+      "answer": "340K",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-2",
+      "doc": "hard_transcript.txt",
+      "question": "What date is the public launch locked for?",
+      "expect_value": "March 9th",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"March 9th\", \"quote\": \"The parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.\"}",
+      "answer": "March 9th",
+      "quote": "The parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation / case"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-3",
+      "doc": "hard_transcript.txt",
+      "question": "What was monthly churn in June?",
+      "expect_value": "4.7%",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"4.7%\", \"quote\": \"Hmm, yeah, I don't have that number in front of me, let me get back to you.\"}",
+      "answer": "4.7%",
+      "quote": "Hmm, yeah, I don't have that number in front of me, let me get back to you.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-4",
+      "doc": "hard_transcript.txt",
+      "question": "How many backend engineers does Marcus say he needs?",
+      "expect_value": "six",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"6\", \"quote\": \"I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.\"}",
+      "answer": "6",
+      "quote": "I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-5",
+      "doc": "hard_transcript.txt",
+      "question": "What was the Datadog quote for the new tier?",
+      "expect_value": "$78,000",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$78,000\", \"quote\": \"That's fair, that's fair.\"}",
+      "answer": "$78,000",
+      "quote": "That's fair, that's fair.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-6",
+      "doc": "hard_transcript.txt",
+      "question": "What is NPS currently sitting at?",
+      "expect_value": "41",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"41\", \"quote\": \"\"}",
+      "answer": "41",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-7",
+      "doc": "hard_transcript.txt",
+      "question": "What was trial-to-paid conversion last month?",
+      "expect_value": "2.3%",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"2.3%\", \"quote\": \"Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.\"}",
+      "answer": "2.3%",
+      "quote": "Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-8",
+      "doc": "hard_transcript.txt",
+      "question": "By what date must the security review be done?",
+      "expect_value": "August 15",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"August 15\", \"quote\": \"The security review has to be done by August 15, no exceptions, legal was extremely clear about that.\"}",
+      "answer": "August 15",
+      "quote": "The security review has to be done by August 15, no exceptions, legal was extremely clear about that.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-1",
+      "doc": "hard_email_thread.txt",
+      "question": "What is the total contract value for the 24-month term?",
+      "expect_value": "$1.2 million",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$1,200,000\"}",
+      "answer": "$1,200,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-em-2",
+      "doc": "hard_email_thread.txt",
+      "question": "By what date must renewal paperwork be countersigned?",
+      "expect_value": "September 30, 2026",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"September 30, 2026\"}",
+      "answer": "September 30, 2026",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-3",
+      "doc": "hard_email_thread.txt",
+      "question": "What multi-year discount percentage is on offer?",
+      "expect_value": "12%",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"12\"}",
+      "answer": "12",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-4",
+      "doc": "hard_email_thread.txt",
+      "question": "What is the uptime commitment in Section 4.2?",
+      "expect_value": "99.95%",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"99.95% measured monthly\"}",
+      "answer": "99.95% measured monthly",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-5",
+      "doc": "hard_email_thread.txt",
+      "question": "What are service credits capped at per incident?",
+      "expect_value": "$25,000",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$25,000\"}",
+      "answer": "$25,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-6",
+      "doc": "hard_email_thread.txt",
+      "question": "How many seats is the current deployment?",
+      "expect_value": "450 seats",
+      "arm": "quote",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"450\"}",
+      "answer": "450",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-1",
+      "doc": "hard_annual_report.txt",
+      "question": "What was consolidated revenue for fiscal 2025?",
+      "expect_value": "2,847.3",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"2,847,300,000\", \"anchor\": \"\"}",
+      "answer": "2,847,300,000",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-2",
+      "doc": "hard_annual_report.txt",
+      "question": "How much was research and development expense?",
+      "expect_value": "412.6",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$412.6 million\", \"anchor\": \"\"}",
+      "answer": "$412.6 million",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-3",
+      "doc": "hard_annual_report.txt",
+      "question": "How many people did the Company employ at year end?",
+      "expect_value": "11,204",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"11,204\", \"anchor\": \"\"}",
+      "answer": "11,204",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-4",
+      "doc": "hard_annual_report.txt",
+      "question": "What quarterly dividend did the Board declare per share?",
+      "expect_value": "$1.15",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$1.15\", \"anchor\": \"\"}",
+      "answer": "$1.15",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-5",
+      "doc": "hard_annual_report.txt",
+      "question": "How large was the goodwill impairment charge?",
+      "expect_value": "88.2",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$88,200,000\", \"anchor\": \"\"}",
+      "answer": "$88,200,000",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-6",
+      "doc": "hard_annual_report.txt",
+      "question": "What was the effective tax rate for fiscal 2025?",
+      "expect_value": "21.4%",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"21.4\", \"anchor\": \"\"}",
+      "answer": "21.4",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-7",
+      "doc": "hard_annual_report.txt",
+      "question": "What was the order backlog at year end?",
+      "expect_value": "$5.1",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"5.1 billion\", \"anchor\": \"\"}",
+      "answer": "5.1 billion",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-8",
+      "doc": "hard_annual_report.txt",
+      "question": "What operating income did the Advanced Polymers segment report?",
+      "expect_value": "301.8",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$301,800,000\", \"anchor\": \"Page 3\"}",
+      "answer": "$301,800,000",
+      "anchor": "Page 3",
+      "locate": {
+        "method": "exact",
+        "span": "Page 3",
+        "occurrences": 1,
+        "sentence": "TITAN MATERIALS GROUP · 2025 ANNUAL  REPORT                          Page 3"
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-tr-1",
+      "doc": "hard_transcript.txt",
+      "question": "What is the revised quarterly marketing budget?",
+      "expect_value": "$340K",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"340K\", \"anchor\": \"\"}",
+      "answer": "340K",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-2",
+      "doc": "hard_transcript.txt",
+      "question": "What date is the public launch locked for?",
+      "expect_value": "March 9th",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"March 9th\", \"anchor\": \"\"}",
+      "answer": "March 9th",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-3",
+      "doc": "hard_transcript.txt",
+      "question": "What was monthly churn in June?",
+      "expect_value": "4.7%",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"4.7%\", \"anchor\": \"June\"}",
+      "answer": "4.7%",
+      "anchor": "June",
+      "locate": {
+        "method": "exact",
+        "span": "June",
+        "occurrences": 1,
+        "sentence": "[00:13:21] DANA: Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-4",
+      "doc": "hard_transcript.txt",
+      "question": "How many backend engineers does Marcus say he needs?",
+      "expect_value": "six",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"6\", \"anchor\": \"MARCUS\"}",
+      "answer": "6",
+      "anchor": "MARCUS",
+      "locate": {
+        "method": "exact",
+        "span": "MARCUS",
+        "occurrences": 9,
+        "sentence": "[00:05:57] MARCUS: [crosstalk]"
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-5",
+      "doc": "hard_transcript.txt",
+      "question": "What was the Datadog quote for the new tier?",
+      "expect_value": "$78,000",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$78,000\", \"anchor\": \"Datadog\"}",
+      "answer": "$78,000",
+      "anchor": "Datadog",
+      "locate": {
+        "method": "exact",
+        "span": "Datadog",
+        "occurrences": 1,
+        "sentence": "[00:24:41] TOM: So the Datadog quote came in at $78,000 a year for the new tier, which is, yeah, a lot, but the old plan caps out."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-6",
+      "doc": "hard_transcript.txt",
+      "question": "What is NPS currently sitting at?",
+      "expect_value": "41",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"41\", \"anchor\": \"\"}",
+      "answer": "41",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-7",
+      "doc": "hard_transcript.txt",
+      "question": "What was trial-to-paid conversion last month?",
+      "expect_value": "2.3%",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"2.3%\", \"anchor\": \"\"}",
+      "answer": "2.3%",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-8",
+      "doc": "hard_transcript.txt",
+      "question": "By what date must the security review be done?",
+      "expect_value": "August 15",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"August 15\", \"anchor\": \"\"}",
+      "answer": "August 15",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-1",
+      "doc": "hard_email_thread.txt",
+      "question": "What is the total contract value for the 24-month term?",
+      "expect_value": "$1.2 million",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$1,200,000\"}",
+      "answer": "$1,200,000",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-em-2",
+      "doc": "hard_email_thread.txt",
+      "question": "By what date must renewal paperwork be countersigned?",
+      "expect_value": "September 30, 2026",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"September 30, 2026\", \"anchor\": \"\"}",
+      "answer": "September 30, 2026",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-3",
+      "doc": "hard_email_thread.txt",
+      "question": "What multi-year discount percentage is on offer?",
+      "expect_value": "12%",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": 12}",
+      "answer": "12",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-4",
+      "doc": "hard_email_thread.txt",
+      "question": "What is the uptime commitment in Section 4.2?",
+      "expect_value": "99.95%",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"99.95% measured monthly\"}",
+      "answer": "99.95% measured monthly",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-5",
+      "doc": "hard_email_thread.txt",
+      "question": "What are service credits capped at per incident?",
+      "expect_value": "$25,000",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"Service credits are capped at $25,000 per incident.\"}",
+      "answer": "Service credits are capped at $25,000 per incident.",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-6",
+      "doc": "hard_email_thread.txt",
+      "question": "How many seats is the current deployment?",
+      "expect_value": "450 seats",
+      "arm": "anchor",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"450\", \"anchor\": \"\"}",
+      "answer": "450",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-1",
+      "doc": "hard_annual_report.txt",
+      "question": "What was consolidated revenue for fiscal 2025?",
+      "expect_value": "2,847.3",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"2,847,300,000\", \"quote\": \"\"}",
+      "answer": "2,847,300,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-2",
+      "doc": "hard_annual_report.txt",
+      "question": "How much was research and development expense?",
+      "expect_value": "412.6",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$412.6 million\", \"quote\": \"\"}",
+      "answer": "$412.6 million",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-3",
+      "doc": "hard_annual_report.txt",
+      "question": "How many people did the Company employ at year end?",
+      "expect_value": "11,204",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"11,204\", \"quote\": \"\"}",
+      "answer": "11,204",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-4",
+      "doc": "hard_annual_report.txt",
+      "question": "What quarterly dividend did the Board declare per share?",
+      "expect_value": "$1.15",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$1.15\", \"quote\": \"\"}",
+      "answer": "$1.15",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-5",
+      "doc": "hard_annual_report.txt",
+      "question": "How large was the goodwill impairment charge?",
+      "expect_value": "88.2",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$88,200,000\", \"quote\": \"\"}",
+      "answer": "$88,200,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-6",
+      "doc": "hard_annual_report.txt",
+      "question": "What was the effective tax rate for fiscal 2025?",
+      "expect_value": "21.4%",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"21.4\", \"quote\": \"\"}",
+      "answer": "21.4",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-7",
+      "doc": "hard_annual_report.txt",
+      "question": "What was the order backlog at year end?",
+      "expect_value": "$5.1",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"51678\", \"quote\": \"\"}",
+      "answer": "51678",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-8",
+      "doc": "hard_annual_report.txt",
+      "question": "What operating income did the Advanced Polymers segment report?",
+      "expect_value": "301.8",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$301,800,000\", \"quote\": \"\"}",
+      "answer": "$301,800,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-tr-1",
+      "doc": "hard_transcript.txt",
+      "question": "What is the revised quarterly marketing budget?",
+      "expect_value": "$340K",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"340K\", \"quote\": \"\"}",
+      "answer": "340K",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-2",
+      "doc": "hard_transcript.txt",
+      "question": "What date is the public launch locked for?",
+      "expect_value": "March 9th",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"March 9th\", \"quote\": \"The parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.\"}",
+      "answer": "March 9th",
+      "quote": "The parking garage badge readers are still broken, facilities says next week, I'll believe it when I see it.",
+      "score": {
+        "level": "normalized",
+        "ratio": 1.0,
+        "detail": "unicode punctuation / case"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-3",
+      "doc": "hard_transcript.txt",
+      "question": "What was monthly churn in June?",
+      "expect_value": "4.7%",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"4.7%\", \"quote\": \"Hmm, yeah, I don't have that number in front of me, let me get back to you.\"}",
+      "answer": "4.7%",
+      "quote": "Hmm, yeah, I don't have that number in front of me, let me get back to you.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-4",
+      "doc": "hard_transcript.txt",
+      "question": "How many backend engineers does Marcus say he needs?",
+      "expect_value": "six",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"6\", \"quote\": \"I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.\"}",
+      "answer": "6",
+      "quote": "I need six backend engineers by end of quarter or the migration slips, full stop, I've said this in three meetings now.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-5",
+      "doc": "hard_transcript.txt",
+      "question": "What was the Datadog quote for the new tier?",
+      "expect_value": "$78,000",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$78,000\", \"quote\": \"That's fair, that's fair.\"}",
+      "answer": "$78,000",
+      "quote": "That's fair, that's fair.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-6",
+      "doc": "hard_transcript.txt",
+      "question": "What is NPS currently sitting at?",
+      "expect_value": "41",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"41\", \"quote\": \"\"}",
+      "answer": "41",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-7",
+      "doc": "hard_transcript.txt",
+      "question": "What was trial-to-paid conversion last month?",
+      "expect_value": "2.3%",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"2.3%\", \"quote\": \"Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.\"}",
+      "answer": "2.3%",
+      "quote": "Wait, before we move on — did anyone follow up with the platform team about that? No? Okay, action item.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-8",
+      "doc": "hard_transcript.txt",
+      "question": "By what date must the security review be done?",
+      "expect_value": "August 15",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"August 15\", \"quote\": \"The security review has to be done by August 15, no exceptions, legal was extremely clear about that.\"}",
+      "answer": "August 15",
+      "quote": "The security review has to be done by August 15, no exceptions, legal was extremely clear about that.",
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      },
+      "value_in_quote": true,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-1",
+      "doc": "hard_email_thread.txt",
+      "question": "What is the total contract value for the 24-month term?",
+      "expect_value": "$1.2 million",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$1,200,000\"}",
+      "answer": "$1,200,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-em-2",
+      "doc": "hard_email_thread.txt",
+      "question": "By what date must renewal paperwork be countersigned?",
+      "expect_value": "September 30, 2026",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"September 30, 2026\"}",
+      "answer": "September 30, 2026",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-3",
+      "doc": "hard_email_thread.txt",
+      "question": "What multi-year discount percentage is on offer?",
+      "expect_value": "12%",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"12\"}",
+      "answer": "12",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-4",
+      "doc": "hard_email_thread.txt",
+      "question": "What is the uptime commitment in Section 4.2?",
+      "expect_value": "99.95%",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"99.95% measured monthly\"}",
+      "answer": "99.95% measured monthly",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-5",
+      "doc": "hard_email_thread.txt",
+      "question": "What are service credits capped at per incident?",
+      "expect_value": "$25,000",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$25,000\"}",
+      "answer": "$25,000",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-6",
+      "doc": "hard_email_thread.txt",
+      "question": "How many seats is the current deployment?",
+      "expect_value": "450 seats",
+      "arm": "quote",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"450\"}",
+      "answer": "450",
+      "quote": "",
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.0,
+        "detail": "empty quote"
+      },
+      "value_in_quote": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-1",
+      "doc": "hard_annual_report.txt",
+      "question": "What was consolidated revenue for fiscal 2025?",
+      "expect_value": "2,847.3",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"2,847,300,000\", \"anchor\": \"\"}",
+      "answer": "2,847,300,000",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-2",
+      "doc": "hard_annual_report.txt",
+      "question": "How much was research and development expense?",
+      "expect_value": "412.6",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$412.6 million\", \"anchor\": \"\"}",
+      "answer": "$412.6 million",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-3",
+      "doc": "hard_annual_report.txt",
+      "question": "How many people did the Company employ at year end?",
+      "expect_value": "11,204",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"11,204\", \"anchor\": \"\"}",
+      "answer": "11,204",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-4",
+      "doc": "hard_annual_report.txt",
+      "question": "What quarterly dividend did the Board declare per share?",
+      "expect_value": "$1.15",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$1.15\", \"anchor\": \"\"}",
+      "answer": "$1.15",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-5",
+      "doc": "hard_annual_report.txt",
+      "question": "How large was the goodwill impairment charge?",
+      "expect_value": "88.2",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$88,200,000\", \"anchor\": \"\"}",
+      "answer": "$88,200,000",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-ar-6",
+      "doc": "hard_annual_report.txt",
+      "question": "What was the effective tax rate for fiscal 2025?",
+      "expect_value": "21.4%",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"21.4\", \"anchor\": \"\"}",
+      "answer": "21.4",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-7",
+      "doc": "hard_annual_report.txt",
+      "question": "What was the order backlog at year end?",
+      "expect_value": "$5.1",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"5.1 billion\", \"anchor\": \"\"}",
+      "answer": "5.1 billion",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-ar-8",
+      "doc": "hard_annual_report.txt",
+      "question": "What operating income did the Advanced Polymers segment report?",
+      "expect_value": "301.8",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$301,800,000\", \"anchor\": \"Page 3\"}",
+      "answer": "$301,800,000",
+      "anchor": "Page 3",
+      "locate": {
+        "method": "exact",
+        "span": "Page 3",
+        "occurrences": 1,
+        "sentence": "TITAN MATERIALS GROUP · 2025 ANNUAL  REPORT                          Page 3"
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-tr-1",
+      "doc": "hard_transcript.txt",
+      "question": "What is the revised quarterly marketing budget?",
+      "expect_value": "$340K",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"340K\", \"anchor\": \"\"}",
+      "answer": "340K",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-2",
+      "doc": "hard_transcript.txt",
+      "question": "What date is the public launch locked for?",
+      "expect_value": "March 9th",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"March 9th\", \"anchor\": \"\"}",
+      "answer": "March 9th",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-3",
+      "doc": "hard_transcript.txt",
+      "question": "What was monthly churn in June?",
+      "expect_value": "4.7%",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"4.7%\", \"anchor\": \"June\"}",
+      "answer": "4.7%",
+      "anchor": "June",
+      "locate": {
+        "method": "exact",
+        "span": "June",
+        "occurrences": 1,
+        "sentence": "[00:13:21] DANA: Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-4",
+      "doc": "hard_transcript.txt",
+      "question": "How many backend engineers does Marcus say he needs?",
+      "expect_value": "six",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"6\", \"anchor\": \"MARCUS\"}",
+      "answer": "6",
+      "anchor": "MARCUS",
+      "locate": {
+        "method": "exact",
+        "span": "MARCUS",
+        "occurrences": 9,
+        "sentence": "[00:05:57] MARCUS: [crosstalk]"
+      },
+      "located": true,
+      "value_in_span": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-5",
+      "doc": "hard_transcript.txt",
+      "question": "What was the Datadog quote for the new tier?",
+      "expect_value": "$78,000",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$78,000\", \"anchor\": \"Datadog\"}",
+      "answer": "$78,000",
+      "anchor": "Datadog",
+      "locate": {
+        "method": "exact",
+        "span": "Datadog",
+        "occurrences": 1,
+        "sentence": "[00:24:41] TOM: So the Datadog quote came in at $78,000 a year for the new tier, which is, yeah, a lot, but the old plan caps out."
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-6",
+      "doc": "hard_transcript.txt",
+      "question": "What is NPS currently sitting at?",
+      "expect_value": "41",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"41\", \"anchor\": \"\"}",
+      "answer": "41",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-7",
+      "doc": "hard_transcript.txt",
+      "question": "What was trial-to-paid conversion last month?",
+      "expect_value": "2.3%",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"2.3%\", \"anchor\": \"\"}",
+      "answer": "2.3%",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-tr-8",
+      "doc": "hard_transcript.txt",
+      "question": "By what date must the security review be done?",
+      "expect_value": "August 15",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"August 15\", \"anchor\": \"\"}",
+      "answer": "August 15",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-1",
+      "doc": "hard_email_thread.txt",
+      "question": "What is the total contract value for the 24-month term?",
+      "expect_value": "$1.2 million",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$1,200,000\"}",
+      "answer": "$1,200,000",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": false
+    },
+    {
+      "id": "h-em-2",
+      "doc": "hard_email_thread.txt",
+      "question": "By what date must renewal paperwork be countersigned?",
+      "expect_value": "September 30, 2026",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"September 30, 2026\", \"anchor\": \"\"}",
+      "answer": "September 30, 2026",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-3",
+      "doc": "hard_email_thread.txt",
+      "question": "What multi-year discount percentage is on offer?",
+      "expect_value": "12%",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": 12}",
+      "answer": "12",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-4",
+      "doc": "hard_email_thread.txt",
+      "question": "What is the uptime commitment in Section 4.2?",
+      "expect_value": "99.95%",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"99.95% measured monthly\"}",
+      "answer": "99.95% measured monthly",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-5",
+      "doc": "hard_email_thread.txt",
+      "question": "What are service credits capped at per incident?",
+      "expect_value": "$25,000",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"Service credits are capped at $25,000 per incident.\"}",
+      "answer": "Service credits are capped at $25,000 per incident.",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    },
+    {
+      "id": "h-em-6",
+      "doc": "hard_email_thread.txt",
+      "question": "How many seats is the current deployment?",
+      "expect_value": "450 seats",
+      "arm": "anchor",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"450\", \"anchor\": \"\"}",
+      "answer": "450",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "answer_correct": true
+    }
+  ]
+}

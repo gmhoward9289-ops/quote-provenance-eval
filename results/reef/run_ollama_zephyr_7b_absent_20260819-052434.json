@@ -1,0 +1,935 @@
+{
+  "provider": "ollama",
+  "model": "zephyr:7b",
+  "timestamp": "20260819-052434",
+  "corpus": "questions_absent",
+  "summary": {
+    "n_quote": 0,
+    "n_anchor": 0,
+    "n_provider_errors": 0,
+    "n_unparseable": 2,
+    "n_absent_quote": 30,
+    "quote_absent_refusal_rate": 0.3,
+    "quote_absent_confident_with_exact_span": 0,
+    "n_absent_anchor": 30,
+    "anchor_absent_refusal_rate": 0.333,
+    "anchor_absent_confident_with_located_span": 6,
+    "per_rep": {}
+  },
+  "rows": [
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Sales and marketing expense in Q3 2025 for Meridian Robotics, Inc. Was not explicitly stated in the provided document. However, operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago. Sales and marketing expense is typically included within operating expenses, but without further information it cannot be determined if sales and marketing expense was separately disclosed.\"}",
+      "answer": "Sales and marketing expense in Q3 2025 for Meridian Robotics, Inc. Was not explicitly stated in the provided document. However, operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago. Sales and marketing expense is typically included within operating expenses, but without further information it cannot be determined if sales and marketing expense was separately disclosed.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"N/A\", \"quote\": \"\"}\n\nThe provided document does not contain information about how many clinical sites participated in the trial. Therefore, the response is {\"answer\": \"N/A\", \"quote\": \"\"}. Quoting text that does not answer the question is never done.",
+      "answer": "N/A",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"N/A\", \"quote\": \"\"}\n\nThe question asks for the median follow-up duration in months, but the provided document does not include this information. Therefore, the answer is \"N/A\" (not applicable), and there is no supporting quote to provide.",
+      "answer": "N/A",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Unspecified in the provided document.\", \"quote\": \"\"}",
+      "answer": "Unspecified in the provided document.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document provided does not contain information about the estimated revenue impact of the outage. Therefore, the response is to indicate that the requested information was not found and there is no supporting quote available.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The cost of a replacement badge is not mentioned in the document.\", \"quote\": \"\"}\n\nHowever, if we assume that the author's statement \"About 12% of badge photos failed the new system's quality check\" implies that there will be a fee for retakes, then we can infer that the cost of a replacement badge may also involve a fee. However, this is not explicitly stated in the document, and so the answer provided is accurate based on the information presented.\n\nIf further clarification is needed, it would be best to contact Facilities directly at facilities@ instead of relying solely on the internal memo.",
+      "answer": "The cost of a replacement badge is not mentioned in the document.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text. However, based on the use of 'our grandfathers' and 'his grandson', it can be inferred that the author may be writing from a historical perspective and could potentially be someone from the past.\", \"quote\": \"\"}\n\nIf the question asks for the author's name instead of just identifying whether or not it is explicitly stated, then the response would be: {\"answer\": \"The author of the essay 'On the Cultivation of Attention' is unknown from the provided text.\", \"quote\": \"\"}",
+      "answer": "The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text. However, based on the use of 'our grandfathers' and 'his grandson', it can be inferred that the author may be writing from a historical perspective and could potentially be someone from the past.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The text does not provide information about the company's chief executive officer.\"}\n\nQuote (if applicable): \"\"\n\nNote: The quote provided in the document is not relevant to answer this question, as it does not provide any information about the CEO. Therefore, I am providing an empty quote object.",
+      "answer": "The text does not provide information about the company's chief executive officer.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\n  \"answer\": \"Net 30\",\n  \"quote\": \"\"\n}\n\nNote: The quote should be left empty as per the instructions provided in the prompt. If there is no information available to provide a quote, it should still be left empty and not included in the JSON object.",
+      "answer": "Net 30",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The date of this meeting is not explicitly stated in the provided document.\"}",
+      "answer": "The date of this meeting is not explicitly stated in the provided document.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"54.9\", \"anchor\": \"Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago.\"}",
+      "answer": "54.9",
+      "anchor": "Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago.",
+      "locate": {
+        "method": "exact",
+        "span": "Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago.",
+        "occurrences": 1,
+        "sentence": "Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago. Research and development spending rose 18% to $27.4 million as we accelerated work on the Atlas-9 platform, which remains on schedule for general availability in the second quarter of 2026."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"N/A\", \"anchor\": \"clinical sites\"}",
+      "answer": "N/A",
+      "anchor": "clinical sites",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The study did not provide information on the median follow-up duration in months.\", \"anchor\": \"follow-up duration\"}",
+      "answer": "The study did not provide information on the median follow-up duration in months.",
+      "anchor": "follow-up duration",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe question does not provide any context or document to extract information from. Therefore, there is no mention of Harborview's mayor in the provided text, and the answer is \"NOT_FOUND\".",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nNo information provided in the given document regarding the estimated revenue impact of the outage.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The cost of a replacement badge is not mentioned in the provided document.\", \"anchor\": \"BADGES\"}",
+      "answer": "The cost of a replacement badge is not mentioned in the provided document.",
+      "anchor": "BADGES",
+      "locate": {
+        "method": "exact",
+        "span": "BADGES",
+        "occurrences": 3,
+        "sentence": "BADGES."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text.\", \"anchor\": \"\"}\n\nAlternatively, if further context suggests that the author is indeed Henry David Thoreau (as is commonly believed), then:\n\n{\"answer\": \"Henry David Thoreau\", \"anchor\": \"\"}",
+      "answer": "The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text.",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Rajesh S. Mokashi\", \"anchor\": \"company's chief executive officer\"}. The anchor is a short distinctive phrase of 3 to 8 consecutive words copied from the document, from the same sentence as the answer. Its only job is to let a program find the location — keep it short and distinctive. If the document does not contain the requested information, respond with {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}. In this case, the CEO's name can be found in the text provided, so we respond with the JSON object containing his name as the answer and \"company's chief executive officer\" as the anchor.",
+      "answer": "Rajesh S. Mokashi",
+      "anchor": "company's chief executive officer",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Net 30\", \"anchor\": \"payment terms\"}",
+      "answer": "Net 30",
+      "anchor": "payment terms",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Recorded meeting, 4 participants, 47 minutes held on an unknown date.\", \"anchor\": \"\"}",
+      "answer": "Recorded meeting, 4 participants, 47 minutes held on an unknown date.",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The sales and marketing expense for Meridian in Q3 2025 was not explicitly stated in the provided document. However, it is mentioned that operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago. This suggests that the sales and marketing expense as a percentage of revenue decreased from Q3 2024 to Q3 2025. The exact amount of the sales and marketing expense in Q3 2025 cannot be determined without further information.\"}",
+      "answer": "The sales and marketing expense for Meridian in Q3 2025 was not explicitly stated in the provided document. However, it is mentioned that operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago. This suggests that the sales and marketing expense as a percentage of revenue decreased from Q3 2024 to Q3 2025. The exact amount of the sales and marketing expense in Q3 2025 cannot be determined without further information.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"N/A\", \"quote\": \"\"}\n\nThe provided document does not contain information about how many clinical sites participated in the trial. Therefore, the response is {\"answer\": \"N/A\", \"quote\": \"\"}. Quoting text that does not answer the question is never done.",
+      "answer": "N/A",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"N/A\", \"quote\": \"\"}\n\nThe question asks for the median follow-up duration in months, but the provided document does not include this information. Therefore, the answer is \"N/A\" (not applicable), and there is no supporting quote to provide.",
+      "answer": "N/A",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Unspecified in the provided document.\", \"quote\": \"\"}",
+      "answer": "Unspecified in the provided document.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document provided does not contain information regarding the estimated revenue impact of the outage. Therefore, the response is to provide an answer and quote that indicate the requested information was not found in the given document.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The cost of a replacement badge is not mentioned in the document.\", \"quote\": \"\"}\n\nHowever, if we assume that the author's statement \"About 12% of badge photos failed the new system's quality check\" implies that there will be a fee for retakes, then we can infer that the cost of a replacement badge may also involve a fee. However, this is not explicitly stated in the document, and so our response must remain as above.\n\nIf further information becomes available, we will update our response accordingly. Until then, we recommend contacting facilities@ for clarification on any badge-related fees.",
+      "answer": "The cost of a replacement badge is not mentioned in the document.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text. However, based on the use of 'our grandfathers' and 'his grandson', it can be inferred that the author may be writing from a historical perspective and could potentially be someone from the past.\", \"quote\": \"\"}\n\nIf the question asks for the author's name instead of just identifying whether or not it is explicitly stated, then the response would be: {\"answer\": \"The author of the essay 'On the Cultivation of Attention' is unknown from the provided text.\", \"quote\": \"\"}",
+      "answer": "The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text. However, based on the use of 'our grandfathers' and 'his grandson', it can be inferred that the author may be writing from a historical perspective and could potentially be someone from the past.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The text does not provide information about the company's chief executive officer.\"}\n\nQuote (if applicable): \"\"\n\nNote: The quote provided in the document is not relevant to answering this question, so it is not included in the response.",
+      "answer": "The text does not provide information about the company's chief executive officer.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\n  \"answer\": \"Net 30\",\n  \"quote\": \"Payment due within thirty (30) days of invoice date.\"\n ",
+      "parse_error": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The date of this meeting is not explicitly stated in the provided document.\"}",
+      "answer": "The date of this meeting is not explicitly stated in the provided document.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"54.9\", \"anchor\": \"Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago.\"}",
+      "answer": "54.9",
+      "anchor": "Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago.",
+      "locate": {
+        "method": "exact",
+        "span": "Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago.",
+        "occurrences": 1,
+        "sentence": "Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago. Research and development spending rose 18% to $27.4 million as we accelerated work on the Atlas-9 platform, which remains on schedule for general availability in the second quarter of 2026."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"N/A\", \"anchor\": \"clinical sites\"}",
+      "answer": "N/A",
+      "anchor": "clinical sites",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The study did not provide information on the median follow-up duration in months.\", \"anchor\": \"follow-up duration\"}",
+      "answer": "The study did not provide information on the median follow-up duration in months.",
+      "anchor": "follow-up duration",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe question does not provide any context or information about the location, making it impossible to determine whether the requested individual is mentioned in the given document. Therefore, there is no answer to this question and the response is \"NOT_FOUND\".",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe provided document does not contain information about the estimated revenue impact of the outage.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The cost of a replacement badge is not mentioned in the provided document.\", \"anchor\": \"BADGES\"}",
+      "answer": "The cost of a replacement badge is not mentioned in the provided document.",
+      "anchor": "BADGES",
+      "locate": {
+        "method": "exact",
+        "span": "BADGES",
+        "occurrences": 3,
+        "sentence": "BADGES."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text.\", \"anchor\": \"\"}\n\nAlternatively, if further context suggests a likely author, you could provide that information as well:\n\n{\"answer\": \"The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text. However, based on historical records, it is believed to be written by Henry David Thoreau.\", \"anchor\": \"\"}",
+      "answer": "The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text.",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Roland Fischer\", \"anchor\": \"chief executive officer\"}",
+      "answer": "Roland Fischer",
+      "anchor": "chief executive officer",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Net 30\", \"anchor\": \"payment terms\"}",
+      "answer": "Net 30",
+      "anchor": "payment terms",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Recorded on an unspecified date\", \"anchor\": \"\"}",
+      "answer": "Recorded on an unspecified date",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The sales and marketing expense for Meridian in Q3 2025 was not explicitly stated in the provided document. However, it is mentioned that operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago. This suggests that the sales and marketing expense as a percentage of revenue decreased from Q3 2024 to Q3 2025. The exact amount of the sales and marketing expense in Q3 2025 cannot be determined without further information.\"}",
+      "answer": "The sales and marketing expense for Meridian in Q3 2025 was not explicitly stated in the provided document. However, it is mentioned that operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago. This suggests that the sales and marketing expense as a percentage of revenue decreased from Q3 2024 to Q3 2025. The exact amount of the sales and marketing expense in Q3 2025 cannot be determined without further information.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"N/A\", \"quote\": \"\"}\n\nThe provided document does not contain information about how many clinical sites participated in the trial. Therefore, the response is {\"answer\": \"N/A\", \"quote\": \"\"}. Quoting text that does not answer the question is never done.",
+      "answer": "N/A",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"N/A\", \"quote\": \"\"}\n\nThe question asks for the median follow-up duration in months, but the provided document does not include this information. Therefore, the answer is \"N/A\" (not applicable), and there is no supporting quote to provide.",
+      "answer": "N/A",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Unspecified in the provided document.\", \"quote\": \"\"}",
+      "answer": "Unspecified in the provided document.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document provided does not contain information regarding the estimated revenue impact of the outage. Therefore, the response is to provide an answer and quote that indicate the requested information was not found in the given document.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The cost of a replacement badge is not mentioned in the document.\", \"quote\": \"\"}\n\nHowever, if we assume that the author's statement \"About 12% of badge photos failed the new system's quality check\" implies that there will be a fee for retakes, then we can infer that the cost of a replacement badge may also involve a fee. However, this is not explicitly stated in the document, and so our response must remain as above.\n\nIf further information becomes available, we will update our response accordingly. Until then, we recommend contacting facilities@ for clarification on any badge-related fees.",
+      "answer": "The cost of a replacement badge is not mentioned in the document.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text. However, based on the use of 'our grandfathers' and 'his grandson', it can be inferred that the author may be writing from a historical perspective and could potentially be someone from the past.\", \"quote\": \"\"}\n\nIf the question asks for the author's name instead of just identifying whether or not it is explicitly stated, then the response would be: {\"answer\": \"The author of the essay 'On the Cultivation of Attention' is unknown from the provided text.\", \"quote\": \"\"}",
+      "answer": "The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text. However, based on the use of 'our grandfathers' and 'his grandson', it can be inferred that the author may be writing from a historical perspective and could potentially be someone from the past.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The text does not provide information about the company's chief executive officer.\"}\n\nQuote (if applicable): \"\"\n\nNote: The quote provided in the document is not relevant to answering this question, so it is not included in the response.",
+      "answer": "The text does not provide information about the company's chief executive officer.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\n  \"answer\": \"Net 30\",\n  \"quote\": \"Payment due within thirty (30) days of invoice date.\"\n ",
+      "parse_error": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The date of this meeting is not explicitly stated in the provided document.\"}",
+      "answer": "The date of this meeting is not explicitly stated in the provided document.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"54.9\", \"anchor\": \"Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago.\"}",
+      "answer": "54.9",
+      "anchor": "Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago.",
+      "locate": {
+        "method": "exact",
+        "span": "Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago.",
+        "occurrences": 1,
+        "sentence": "Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago. Research and development spending rose 18% to $27.4 million as we accelerated work on the Atlas-9 platform, which remains on schedule for general availability in the second quarter of 2026."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"N/A\", \"anchor\": \"clinical sites\"}",
+      "answer": "N/A",
+      "anchor": "clinical sites",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The study did not provide information on the median follow-up duration in months.\", \"anchor\": \"follow-up duration\"}",
+      "answer": "The study did not provide information on the median follow-up duration in months.",
+      "anchor": "follow-up duration",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe question does not provide any context or information about the location, making it impossible to determine whether the requested individual is mentioned in the given document. Therefore, there is no answer to this question and the response is \"NOT_FOUND\".",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe provided document does not contain information about the estimated revenue impact of the outage.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The cost of a replacement badge is not mentioned in the provided document.\", \"anchor\": \"BADGES\"}",
+      "answer": "The cost of a replacement badge is not mentioned in the provided document.",
+      "anchor": "BADGES",
+      "locate": {
+        "method": "exact",
+        "span": "BADGES",
+        "occurrences": 3,
+        "sentence": "BADGES."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text.\", \"anchor\": \"\"}\n\nAlternatively, if further context suggests a likely author, you could provide that information as well:\n\n{\"answer\": \"The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text. However, based on historical records, it is believed to be written by Henry David Thoreau.\", \"anchor\": \"\"}",
+      "answer": "The author of the essay 'On the Cultivation of Attention' is not explicitly stated in the provided text.",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Roland Fischer\", \"anchor\": \"chief executive officer\"}",
+      "answer": "Roland Fischer",
+      "anchor": "chief executive officer",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Net 30\", \"anchor\": \"payment terms\"}",
+      "answer": "Net 30",
+      "anchor": "payment terms",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Recorded on an unspecified date\", \"anchor\": \"\"}",
+      "answer": "Recorded on an unspecified date",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    }
+  ]
+}

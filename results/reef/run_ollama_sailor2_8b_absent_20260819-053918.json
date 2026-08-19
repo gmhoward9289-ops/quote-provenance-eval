@@ -1,0 +1,1059 @@
+{
+  "provider": "ollama",
+  "model": "sailor2:8b",
+  "timestamp": "20260819-053918",
+  "corpus": "questions_absent",
+  "summary": {
+    "n_quote": 0,
+    "n_anchor": 0,
+    "n_provider_errors": 0,
+    "n_unparseable": 0,
+    "n_absent_quote": 30,
+    "quote_absent_refusal_rate": 0.3,
+    "quote_absent_confident_with_exact_span": 12,
+    "n_absent_anchor": 30,
+    "anchor_absent_refusal_rate": 0.4,
+    "anchor_absent_confident_with_located_span": 15,
+    "per_rep": {}
+  },
+  "rows": [
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Meridian did not specify a separate line item for 'sales and marketing expenses' within their Q3 2025 financial report; instead, operating expenses were reported as $54.9 million (36.9% of revenue), which includes various operational costs.\",\n  \"quote\": \"Operating expenses were $54.9 million, or 36.9% of revenue\"\n}\n```",
+      "answer": "Meridian did not specify a separate line item for 'sales and marketing expenses' within their Q3 2025 financial report; instead, operating expenses were reported as $54.9 million (36.9% of revenue), which includes various operational costs.",
+      "quote": "Operating expenses were $54.9 million, or 36.9% of revenue",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Not specified (number of clinical sites not mentioned in the provided document)\",\n  \"quote\": \"\"\n}\n```",
+      "answer": "Not specified (number of clinical sites not mentioned in the provided document)",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"24 weeks\",\n  \"quote\": \"We randomly assigned ... for 24 weeks.\"\n}\n```",
+      "answer": "24 weeks",
+      "quote": "We randomly assigned ... for 24 weeks.",
+      "refused": false,
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.658,
+        "detail": "no plausible source span"
+      }
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Maria Okafor\",\n  \"quote\": \"Council President Maria Okafor, who championed the measure.\"\n}\n```",
+      "answer": "Maria Okafor",
+      "quote": "Council President Maria Okafor, who championed the measure.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"quote\": \"\"\n}\n```\n(Note: The document does not provide specific information on the revenue impact)",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"$85 per space per month (for parking overflow)\",\n  \"quote\": \"Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.\"\n}\n```",
+      "answer": "$85 per space per month (for parking overflow)",
+      "quote": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"The author of the essay is not explicitly named in the provided excerpt, but it is attributed to an anonymous writer from 'On the Cultivation of Attention', published in 1873.\",\n  \"quote\": \"\"\n}\n``` (NOT_FOUND if specific name was required and absent)",
+      "answer": "The author of the essay is not explicitly named in the provided excerpt, but it is attributed to an anonymous writer from 'On the Cultivation of Attention', published in 1873.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"quote\": \"\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"quote\": \"\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"The meeting was held on an unspecified recorded date (auto-generated, unedited transcript)\",\n  \"quote\": \"Recorded meeting, 4 participants, 47 minutes\"\n}\n```",
+      "answer": "The meeting was held on an unspecified recorded date (auto-generated, unedited transcript)",
+      "quote": "Recorded meeting, 4 participants, 47 minutes",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"anchor\": \"operating expenses\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "anchor": "operating expenses",
+      "locate": {
+        "method": "normalized",
+        "span": "Operating expenses",
+        "occurrences": 1,
+        "sentence": "Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago."
+      },
+      "located": true,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Not specified (document does not mention the number of clinical sites)\",\n  \"anchor\": \"clinicalTrials.gov\"\n}\n```",
+      "answer": "Not specified (document does not mention the number of clinical sites)",
+      "anchor": "clinicalTrials.gov",
+      "locate": {
+        "method": "normalized",
+        "span": "ClinicalTrials.gov",
+        "occurrences": 1,
+        "sentence": "(Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.)"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"24 weeks\",\n  \"anchor\": \"for 24 weeks\"\n}\n```",
+      "answer": "24 weeks",
+      "anchor": "for 24 weeks",
+      "locate": {
+        "method": "exact",
+        "span": "for 24 weeks",
+        "occurrences": 1,
+        "sentence": "We randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Maria Okafor\",\n  \"anchor\": \"Council President Maria Okafor\"\n}\n```",
+      "answer": "Maria Okafor",
+      "anchor": "Council President Maria Okafor",
+      "locate": {
+        "method": "exact",
+        "span": "Council President Maria Okafor",
+        "occurrences": 1,
+        "sentence": "\"This is the single largest investment in mobility our city has ever contemplated,\" said Council President Maria Okafor, who championed the measure."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"anchor\": \"estimated revenue impact\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "anchor": "estimated revenue impact",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"The company will incur $85 per space per month for overflow parking, but there is no direct cost mentioned for replacing badges.\",\n  \"anchor\": \"overflow will cost the company $85 per space per month\"\n}\n```",
+      "answer": "The company will incur $85 per space per month for overflow parking, but there is no direct cost mentioned for replacing badges.",
+      "anchor": "overflow will cost the company $85 per space per month",
+      "locate": {
+        "method": "normalized",
+        "span": "Overflow will cost the company $85 per space per month",
+        "occurrences": 1,
+        "sentence": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"The author of the essay is not explicitly named in the provided excerpt but is referred to as 'the writer' or implied to be from 1873 (On the Cultivation of Attention, an essay, 1873)\",\n  \"anchor\": \"an essay, 1873\"\n}\n```",
+      "answer": "The author of the essay is not explicitly named in the provided excerpt but is referred to as 'the writer' or implied to be from 1873 (On the Cultivation of Attention, an essay, 1873)",
+      "anchor": "an essay, 1873",
+      "locate": {
+        "method": "normalized",
+        "span": "An essay, 1873",
+        "occurrences": 1,
+        "sentence": "An essay, 1873"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"not specified in the annual report\",\n  \"anchor\": \"Chief Executive Officer details are not provided\"\n}\n```",
+      "answer": "not specified in the annual report",
+      "anchor": "Chief Executive Officer details are not provided",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"anchor\": \"The document does not specify net days or any specific payment term\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "anchor": "The document does not specify net days or any specific payment term",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Unknown (document does not specify the exact date of the meeting)\",\n  \"anchor\": \"Recorded meeting\"\n}\n```",
+      "answer": "Unknown (document does not specify the exact date of the meeting)",
+      "anchor": "Recorded meeting",
+      "locate": {
+        "method": "exact",
+        "span": "Recorded meeting",
+        "occurrences": 1,
+        "sentence": "Recorded meeting, 4 participants, 47 minutes"
+      },
+      "located": true,
+      "refused": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Meridian did not specify a separate line item for 'sales and marketing expenses' within their Q3 2025 financial report; instead, operating expenses were reported as $54.9 million (36.9% of revenue), which includes various categories including R&D.\",\n  \"quote\": \"Operating expenses were $54.9 million, or 36.9% of revenue\"\n}\n```",
+      "answer": "Meridian did not specify a separate line item for 'sales and marketing expenses' within their Q3 2025 financial report; instead, operating expenses were reported as $54.9 million (36.9% of revenue), which includes various categories including R&D.",
+      "quote": "Operating expenses were $54.9 million, or 36.9% of revenue",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Not specified (number of clinical sites not mentioned in the provided document)\",\n  \"quote\": \"\"\n}\n```",
+      "answer": "Not specified (number of clinical sites not mentioned in the provided document)",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"24 weeks\",\n  \"quote\": \"We randomly assigned ... for 24 weeks.\"\n}\n```",
+      "answer": "24 weeks",
+      "quote": "We randomly assigned ... for 24 weeks.",
+      "refused": false,
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.658,
+        "detail": "no plausible source span"
+      }
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Maria Okafor\",\n  \"quote\": \"Council President Maria Okafor, who championed the measure.\"\n}\n```",
+      "answer": "Maria Okafor",
+      "quote": "Council President Maria Okafor, who championed the measure.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"quote\": \"\"\n}\n```\n(Note: The document does not provide specific information on the revenue impact)",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"$85 per space per month (for parking overflow)\",\n  \"quote\": \"Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.\"\n}\n```",
+      "answer": "$85 per space per month (for parking overflow)",
+      "quote": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"The author of the essay is not explicitly named in the provided excerpt, but it is attributed to an anonymous writer from 'On the Cultivation of Attention', published in 1873.\",\n  \"quote\": \"\"\n}\n```",
+      "answer": "The author of the essay is not explicitly named in the provided excerpt, but it is attributed to an anonymous writer from 'On the Cultivation of Attention', published in 1873.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"quote\": \"\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"quote\": \"\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"The meeting was held on an unspecified recorded date (auto-generated, unedited transcript)\",\n  \"quote\": \"Recorded meeting, 4 participants, 47 minutes\"\n}\n```",
+      "answer": "The meeting was held on an unspecified recorded date (auto-generated, unedited transcript)",
+      "quote": "Recorded meeting, 4 participants, 47 minutes",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"anchor\": \"operating expenses\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "anchor": "operating expenses",
+      "locate": {
+        "method": "normalized",
+        "span": "Operating expenses",
+        "occurrences": 1,
+        "sentence": "Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago."
+      },
+      "located": true,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Not specified (document does not mention the number of clinical sites)\",\n  \"anchor\": \"clinicalTrials.gov\"\n}\n```",
+      "answer": "Not specified (document does not mention the number of clinical sites)",
+      "anchor": "clinicalTrials.gov",
+      "locate": {
+        "method": "normalized",
+        "span": "ClinicalTrials.gov",
+        "occurrences": 1,
+        "sentence": "(Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.)"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"24 weeks\",\n  \"anchor\": \"for 24 weeks\"\n}\n```",
+      "answer": "24 weeks",
+      "anchor": "for 24 weeks",
+      "locate": {
+        "method": "exact",
+        "span": "for 24 weeks",
+        "occurrences": 1,
+        "sentence": "We randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Maria Okafor\",\n  \"anchor\": \"Council President Maria Okafor\"\n}\n```",
+      "answer": "Maria Okafor",
+      "anchor": "Council President Maria Okafor",
+      "locate": {
+        "method": "exact",
+        "span": "Council President Maria Okafor",
+        "occurrences": 1,
+        "sentence": "\"This is the single largest investment in mobility our city has ever contemplated,\" said Council President Maria Okafor, who championed the measure."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"anchor\": \"estimated revenue impact\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "anchor": "estimated revenue impact",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"The company will incur $85 per space per month for overflow parking, but there is no direct cost mentioned for replacing badges.\",\n  \"anchor\": \"overflow will cost the company $85 per space per month\"\n}\n```",
+      "answer": "The company will incur $85 per space per month for overflow parking, but there is no direct cost mentioned for replacing badges.",
+      "anchor": "overflow will cost the company $85 per space per month",
+      "locate": {
+        "method": "normalized",
+        "span": "Overflow will cost the company $85 per space per month",
+        "occurrences": 1,
+        "sentence": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"The author of the essay is not explicitly named in the provided excerpt but is referred to as 'the writer' or implied to be from 1873 (On the Cultivation of Attention, an essay, 1873)\",\n  \"anchor\": \"an essay, 1873\"\n}\n```",
+      "answer": "The author of the essay is not explicitly named in the provided excerpt but is referred to as 'the writer' or implied to be from 1873 (On the Cultivation of Attention, an essay, 1873)",
+      "anchor": "an essay, 1873",
+      "locate": {
+        "method": "normalized",
+        "span": "An essay, 1873",
+        "occurrences": 1,
+        "sentence": "An essay, 1873"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"not specified in the annual report\",\n  \"anchor\": \"Chief Executive Officer details are not provided\"\n}\n```",
+      "answer": "not specified in the annual report",
+      "anchor": "Chief Executive Officer details are not provided",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"anchor\": \"The document does not specify net days or any specific payment term\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "anchor": "The document does not specify net days or any specific payment term",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Unknown (document does not specify the exact date of the meeting)\",\n  \"anchor\": \"Recorded meeting\"\n}\n```",
+      "answer": "Unknown (document does not specify the exact date of the meeting)",
+      "anchor": "Recorded meeting",
+      "locate": {
+        "method": "exact",
+        "span": "Recorded meeting",
+        "occurrences": 1,
+        "sentence": "Recorded meeting, 4 participants, 47 minutes"
+      },
+      "located": true,
+      "refused": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Meridian did not specify a separate line item for 'sales and marketing expenses' within their Q3 2025 financial report; instead, operating expenses were reported as $54.9 million (36.9% of revenue), which includes various categories including R&D.\",\n  \"quote\": \"Operating expenses were $54.9 million, or 36.9% of revenue\"\n}\n```",
+      "answer": "Meridian did not specify a separate line item for 'sales and marketing expenses' within their Q3 2025 financial report; instead, operating expenses were reported as $54.9 million (36.9% of revenue), which includes various categories including R&D.",
+      "quote": "Operating expenses were $54.9 million, or 36.9% of revenue",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Not specified (number of clinical sites not mentioned in the provided document)\",\n  \"quote\": \"\"\n}\n```",
+      "answer": "Not specified (number of clinical sites not mentioned in the provided document)",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"24 weeks\",\n  \"quote\": \"We randomly assigned ... for 24 weeks.\"\n}\n```",
+      "answer": "24 weeks",
+      "quote": "We randomly assigned ... for 24 weeks.",
+      "refused": false,
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.658,
+        "detail": "no plausible source span"
+      }
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Maria Okafor\",\n  \"quote\": \"Council President Maria Okafor, who championed the measure.\"\n}\n```",
+      "answer": "Maria Okafor",
+      "quote": "Council President Maria Okafor, who championed the measure.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"quote\": \"\"\n}\n```\n(Note: The document does not provide specific information on the revenue impact)",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"$85 per space per month (for parking overflow)\",\n  \"quote\": \"Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.\"\n}\n```",
+      "answer": "$85 per space per month (for parking overflow)",
+      "quote": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"The author of the essay is not explicitly named in the provided excerpt, but it is attributed to an anonymous writer from 'On the Cultivation of Attention', published in 1873.\",\n  \"quote\": \"\"\n}\n```",
+      "answer": "The author of the essay is not explicitly named in the provided excerpt, but it is attributed to an anonymous writer from 'On the Cultivation of Attention', published in 1873.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"quote\": \"\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"quote\": \"\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"The meeting was held on an unspecified recorded date (auto-generated, unedited transcript)\",\n  \"quote\": \"Recorded meeting, 4 participants, 47 minutes\"\n}\n```",
+      "answer": "The meeting was held on an unspecified recorded date (auto-generated, unedited transcript)",
+      "quote": "Recorded meeting, 4 participants, 47 minutes",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"anchor\": \"operating expenses\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "anchor": "operating expenses",
+      "locate": {
+        "method": "normalized",
+        "span": "Operating expenses",
+        "occurrences": 1,
+        "sentence": "Operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago."
+      },
+      "located": true,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Not specified (document does not mention the number of clinical sites)\",\n  \"anchor\": \"clinicalTrials.gov\"\n}\n```",
+      "answer": "Not specified (document does not mention the number of clinical sites)",
+      "anchor": "clinicalTrials.gov",
+      "locate": {
+        "method": "normalized",
+        "span": "ClinicalTrials.gov",
+        "occurrences": 1,
+        "sentence": "(Funded by Halcyon Therapeutics; TRIDENT-3 ClinicalTrials.gov number, NCT0000000.)"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"24 weeks\",\n  \"anchor\": \"for 24 weeks\"\n}\n```",
+      "answer": "24 weeks",
+      "anchor": "for 24 weeks",
+      "locate": {
+        "method": "exact",
+        "span": "for 24 weeks",
+        "occurrences": 1,
+        "sentence": "We randomly assigned 1,284 adults with office systolic blood pressure of 150 mm Hg or higher despite stable treatment with three antihypertensive agents to receive lorvatinib 50 mg once daily (n=642) or matching placebo (n=642) for 24 weeks."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Maria Okafor\",\n  \"anchor\": \"Council President Maria Okafor\"\n}\n```",
+      "answer": "Maria Okafor",
+      "anchor": "Council President Maria Okafor",
+      "locate": {
+        "method": "exact",
+        "span": "Council President Maria Okafor",
+        "occurrences": 1,
+        "sentence": "\"This is the single largest investment in mobility our city has ever contemplated,\" said Council President Maria Okafor, who championed the measure."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"anchor\": \"estimated revenue impact\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "anchor": "estimated revenue impact",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"The company will incur $85 per space per month for overflow parking, but there is no direct cost mentioned for replacing badges.\",\n  \"anchor\": \"overflow will cost the company $85 per space per month\"\n}\n```",
+      "answer": "The company will incur $85 per space per month for overflow parking, but there is no direct cost mentioned for replacing badges.",
+      "anchor": "overflow will cost the company $85 per space per month",
+      "locate": {
+        "method": "normalized",
+        "span": "Overflow will cost the company $85 per space per month",
+        "occurrences": 1,
+        "sentence": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"The author of the essay is not explicitly named in the provided excerpt but is referred to as 'the writer' or implied to be from 1873 (On the Cultivation of Attention, an essay, 1873)\",\n  \"anchor\": \"an essay, 1873\"\n}\n```",
+      "answer": "The author of the essay is not explicitly named in the provided excerpt but is referred to as 'the writer' or implied to be from 1873 (On the Cultivation of Attention, an essay, 1873)",
+      "anchor": "an essay, 1873",
+      "locate": {
+        "method": "normalized",
+        "span": "An essay, 1873",
+        "occurrences": 1,
+        "sentence": "An essay, 1873"
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"not specified in the annual report\",\n  \"anchor\": \"Chief Executive Officer details are not provided\"\n}\n```",
+      "answer": "not specified in the annual report",
+      "anchor": "Chief Executive Officer details are not provided",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"NOT_FOUND\",\n  \"anchor\": \"The document does not specify net days or any specific payment term\"\n}\n```",
+      "answer": "NOT_FOUND",
+      "anchor": "The document does not specify net days or any specific payment term",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "```json\n{\n  \"answer\": \"Unknown (document does not specify the exact date of the meeting)\",\n  \"anchor\": \"Recorded meeting\"\n}\n```",
+      "answer": "Unknown (document does not specify the exact date of the meeting)",
+      "anchor": "Recorded meeting",
+      "locate": {
+        "method": "exact",
+        "span": "Recorded meeting",
+        "occurrences": 1,
+        "sentence": "Recorded meeting, 4 participants, 47 minutes"
+      },
+      "located": true,
+      "refused": true
+    }
+  ]
+}

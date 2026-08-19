@@ -1,0 +1,928 @@
+{
+  "provider": "ollama",
+  "model": "starling-lm:7b",
+  "timestamp": "20260819-050353",
+  "corpus": "questions_absent",
+  "summary": {
+    "n_quote": 0,
+    "n_anchor": 0,
+    "n_provider_errors": 0,
+    "n_unparseable": 3,
+    "n_absent_quote": 30,
+    "quote_absent_refusal_rate": 0.8,
+    "quote_absent_confident_with_exact_span": 0,
+    "n_absent_anchor": 30,
+    "anchor_absent_refusal_rate": 0.9,
+    "anchor_absent_confident_with_located_span": 1,
+    "per_rep": {}
+  },
+  "rows": [
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe provided document does not contain information about Meridian's sales and marketing expenses for Q3 2025. The document discusses total revenue, gross margin, operating expenses, research and development spending, net income, cash and equivalents, deferred revenue, customer concentration, and a share repurchase program, but it does not mention specific sales and marketing expenses.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe provided document does not contain information about the number of clinical sites that participated in the trial.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe provided document does not mention the median follow-up duration in months.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document does not provide information about the name of Harborview's mayor.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe provided document does not contain any information regarding the estimated revenue impact of the API Gateway Outage on 2026-03-14.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document provided does not contain information about the cost of a replacement badge.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"The author of the essay is not explicitly mentioned in the provided text.\", \"quote\": \"\"}",
+      "answer": "The author of the essay is not explicitly mentioned in the provided text.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe provided document does not contain information about the company's Chief Executive Officer.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\nThe document does not provide information about the payment terms (net days) agreed for the renewal. Therefore, the answer is:\n\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"June 2021\", \"quote\": \"\"[00:02:13] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.\"\"}\n\nThe exact date of the meeting is not provided in the document. However, we can infer that it was held in June 2021 based on the quote from Tom at the beginning of the transcript.",
+      "parse_error": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide information about Meridian's sales and marketing expenses for Q3 2025. The provided information discusses total revenue, gross margin, operating expenses, research and development spending, net income, cash and equivalents, deferred revenue, customer concentration, and a share repurchase program, but it does not mention specific sales and marketing expenses.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe provided document does not contain information about the number of clinical sites that participated in the trial.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide information about the median follow-up duration in months.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide information about the name of Harborview's mayor. The text discusses the City Council, Council President Maria Okafor, and other council members, but it does not mention the current mayor of Harborview.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide any information about the estimated revenue impact of the API Gateway Outage on 2026-03-14.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide information about the cost of a replacement badge.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Not found in the document\", \"anchor\": \"\"}\n\nThe provided document does not mention the name of the author of the essay \"On the Cultivation of Attention\". Therefore, it is not possible to provide an answer based on the given text.",
+      "answer": "Not found in the document",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe provided document does not mention the name of the company's Chief Executive Officer (CEO). Therefore, I cannot provide an answer or anchor based on the given information.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not contain information about payment terms (net days) for the renewal.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"June 2021\", \"anchor\": \"Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it.\"}",
+      "answer": "June 2021",
+      "anchor": "Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it.",
+      "locate": {
+        "method": "exact",
+        "span": "Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it.",
+        "occurrences": 1,
+        "sentence": "[00:13:21] DANA: Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe provided document does not contain information about Meridian's sales and marketing expenses for Q3 2025. The document discusses total revenue, gross margin, operating expenses, research and development spending, net income, cash and equivalents, deferred revenue, customer concentration, and a share repurchase program, but it does not mention specific sales and marketing expenses.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe provided document does not contain information about the number of clinical sites that participated in the trial.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe provided document does not mention the median follow-up duration in months.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document does not provide information about the name of Harborview's mayor.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document provided does not contain any information regarding the estimated revenue impact of the API Gateway Outage on 2026-03-14.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document provided does not contain information about the cost of a replacement badge.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Algernon Charles Swinburne\", \"quote\": \"On the Cultivation of Attention, an essay, 1873\"}",
+      "answer": "Algernon Charles Swinburne",
+      "quote": "On the Cultivation of Attention, an essay, 1873",
+      "refused": false,
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.979,
+        "detail": "small word-level edits"
+      }
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe provided document does not contain information about the company's Chief Executive Officer.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\nThe document does not provide information about the payment terms (net days) agreed for the renewal. Therefore, the answer is:\n\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"June 2021\", \"quote\": \"\"[00:02:13] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.\"\"}\n\nThe exact date of the meeting is not provided in the document. However, based on the context and the mention of a revised marketing budget for the quarter, we can infer that this meeting was held in June 2021.",
+      "parse_error": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide information about Meridian's sales and marketing expenses for Q3 2025. The provided information discusses total revenue, gross margin, operating expenses, research and development spending, net income, cash and equivalents, deferred revenue, customer concentration, and a share repurchase program, but it does not mention specific sales and marketing expenses.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe provided document does not contain information about the number of clinical sites that participated in the trial.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide information about the median follow-up duration in months.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide information about the name of Harborview's mayor.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide any information about the estimated revenue impact of the API Gateway Outage on 2026-03-14.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide information about the cost of a replacement badge.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Not found in the document\", \"anchor\": \"\"}\n\nThe provided document does not mention the name of the author of the essay \"On the Cultivation of Attention\". Therefore, it is not possible to provide an answer based on the given text.",
+      "answer": "Not found in the document",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe provided document does not mention the name of the company's Chief Executive Officer (CEO). Therefore, I cannot provide an answer or anchor based on the given information.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not contain information about payment terms (net days) for the renewal.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"June 2021\", \"anchor\": \"June 2021\"}\n\nThe document does not provide an exact date for the meeting, but it mentions that the revised marketing budget is for the quarter, which implies that the meeting took place in June 2021.",
+      "answer": "June 2021",
+      "anchor": "June 2021",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe provided document does not contain information about Meridian's sales and marketing expenses for Q3 2025. The document discusses total revenue, gross margin, operating expenses, research and development spending, net income, cash and equivalents, deferred revenue, customer concentration, and a share repurchase program, but it does not mention specific sales and marketing expenses.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe provided document does not contain information about the number of clinical sites that participated in the trial.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe provided document does not mention the median follow-up duration in months.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document does not provide information about the name of Harborview's mayor.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document provided does not contain any information regarding the estimated revenue impact of the API Gateway Outage on 2026-03-14.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document provided does not contain information about the cost of a replacement badge.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Algernon Charles Swinburne\", \"quote\": \"On the Cultivation of Attention, an essay, 1873\"}",
+      "answer": "Algernon Charles Swinburne",
+      "quote": "On the Cultivation of Attention, an essay, 1873",
+      "refused": false,
+      "score": {
+        "level": "minor_edit",
+        "ratio": 0.979,
+        "detail": "small word-level edits"
+      }
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe provided document does not contain information about the company's Chief Executive Officer.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\nThe document does not provide information about the payment terms (net days) agreed for the renewal. Therefore, the answer is:\n\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"June 2021\", \"quote\": \"\"[00:02:13] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.\"\"}\n\nThe exact date of the meeting is not provided in the document. However, based on the context and the mention of a revised marketing budget for the quarter, we can infer that this meeting was held in June 2021.",
+      "parse_error": true
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide information about Meridian's sales and marketing expenses for Q3 2025. The provided information discusses total revenue, gross margin, operating expenses, research and development spending, net income, cash and equivalents, deferred revenue, customer concentration, and a share repurchase program, but it does not mention specific sales and marketing expenses.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe provided document does not contain information about the number of clinical sites that participated in the trial.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide information about the median follow-up duration in months.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide information about the name of Harborview's mayor.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide any information about the estimated revenue impact of the API Gateway Outage on 2026-03-14.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not provide information about the cost of a replacement badge.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": " {\"answer\": \"Not found in the document\", \"anchor\": \"\"}\n\nThe provided document does not mention the name of the author of the essay \"On the Cultivation of Attention\". Therefore, it is not possible to provide an answer based on the given text.",
+      "answer": "Not found in the document",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe provided document does not mention the name of the company's Chief Executive Officer (CEO). Therefore, I cannot provide an answer or anchor based on the given information.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe document does not contain information about payment terms (net days) for the renewal.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "\n{\"answer\": \"June 2021\", \"anchor\": \"June 2021\"}\n\nThe document does not provide an exact date for the meeting, but it mentions that the revised marketing budget is for the quarter, which implies that the meeting took place in June 2021.",
+      "answer": "June 2021",
+      "anchor": "June 2021",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    }
+  ]
+}
