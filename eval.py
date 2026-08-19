@@ -29,7 +29,7 @@ import sys
 import time
 from pathlib import Path
 
-from anchor import locate
+from anchor import locate, locate_pair
 from mock import mock_response
 from providers import CALLERS, ProviderError
 from scoring import score_quote, values_match
@@ -57,6 +57,55 @@ ANCHOR_SYSTEM = (
     "short and distinctive. If the document does not contain the requested "
     'information, respond with {"answer": "NOT_FOUND", "anchor": ""}.'
 )
+
+# Second anchor, for disambiguating documents that repeat themselves.
+ANCHOR2_SYSTEM = (
+    "You extract facts from documents. Respond with ONLY a JSON object, no "
+    'markdown fences, no commentary: {"answer": "<the answer>", "anchor": '
+    '"<location anchor>", "anchor2": "<second anchor>"}. Each anchor is a '
+    "short distinctive phrase of 3 to 8 consecutive words copied from the "
+    "document. The first is from the same sentence as the answer. The second "
+    "is from NEARBY BUT DIFFERENT text — a heading, a date line, the previous "
+    "or next sentence — chosen so that the pair together occurs in only one "
+    "place, even if the document repeats similar wording elsewhere. If the "
+    "document does not contain the requested information, respond with "
+    '{"answer": "NOT_FOUND", "anchor": "", "anchor2": ""}.'
+)
+
+# Prompt variants, tested one variable at a time.
+#
+#   fewshot  — granite3.3:8b scored 53% coverage by returning *descriptions*
+#              of the value ("net income per diluted share in Q3 2025") rather
+#              than text copied from the document. The instruction already
+#              says "copied"; this tests whether a worked example does what
+#              the instruction alone did not.
+#   refusal  — refusal rates ranged from 10% to 100% under the base prompt.
+#              This tests how much of that is the model and how much is the
+#              prompt not making the refusal path vivid enough.
+FEWSHOT_SUFFIX = """
+
+EXAMPLE. Suppose the document contains this sentence:
+
+    Consolidated revenue for fiscal 2025 was $2,847.3 million, up 11.2 percent.
+
+and the question is "What was consolidated revenue?".
+
+CORRECT: {"answer": "$2,847.3 million", "anchor": "Consolidated revenue for fiscal 2025"}
+    — the anchor is text copied out of the document, so a program can find it.
+
+WRONG:   {"answer": "$2,847.3 million", "anchor": "the consolidated revenue figure"}
+    — those words describe the value instead of appearing in the document, so
+      no program can find them and the citation is lost."""
+
+REFUSAL_SUFFIX = (
+    "\n\nIMPORTANT: many documents do NOT contain the value asked for. When "
+    "that happens the only correct response is the NOT_FOUND object. Do not "
+    "supply the closest available number, do not estimate, and do not point "
+    "at text that is merely on a related topic. Answering when the value is "
+    "absent is a worse failure than refusing when it is present."
+)
+
+VARIANT_SUFFIX = {"base": "", "fewshot": FEWSHOT_SUFFIX, "refusal": REFUSAL_SUFFIX}
 
 REFUSAL_TOKENS = ("not_found", "not found", "n/a", "none", "unknown")
 
@@ -115,10 +164,13 @@ def parse_model_json(raw: str) -> dict | None:
     return None
 
 
-def get_response(provider: str, model: str, arm: str, question: dict, doc_text: str) -> str:
+def get_response(provider: str, model: str, arm: str, question: dict, doc_text: str,
+                 variant: str = "base") -> str:
     if provider == "mock":
-        return mock_response(question, arm, model)
-    system = QUOTE_SYSTEM if arm == "quote" else ANCHOR_SYSTEM
+        return mock_response(question, "anchor" if arm == "anchor2" else arm, model)
+    system = {"quote": QUOTE_SYSTEM, "anchor": ANCHOR_SYSTEM,
+              "anchor2": ANCHOR2_SYSTEM}[arm]
+    system += VARIANT_SUFFIX.get(variant, "")
     return CALLERS[provider](model, system, user_prompt(doc_text, question["question"]))
 
 
@@ -127,7 +179,7 @@ def answer_correct(expected: str, *candidates: str) -> bool:
 
 
 def run_arm(arm: str, questions: list, docs: dict, provider: str, model: str,
-            verbose: bool, rep: int = 1) -> list:
+            verbose: bool, rep: int = 1, variant: str = "base") -> list:
     rows = []
     for i, q in enumerate(questions, 1):
         doc_text = docs[q["doc"]]
@@ -136,7 +188,7 @@ def run_arm(arm: str, questions: list, docs: dict, provider: str, model: str,
         if q.get("expect_absent"):
             row["absent"] = True
         try:
-            raw = get_response(provider, model, arm, q, doc_text)
+            raw = get_response(provider, model, arm, q, doc_text, variant)
         except ProviderError as e:
             row.update({"error": str(e)})
             rows.append(row)
@@ -172,7 +224,12 @@ def run_arm(arm: str, questions: list, docs: dict, provider: str, model: str,
         else:
             anchor_text = str(parsed.get("anchor", ""))
             row["anchor"] = anchor_text
-            loc = locate(doc_text, anchor_text)
+            if arm == "anchor2":
+                anchor2_text = str(parsed.get("anchor2", ""))
+                row["anchor2"] = anchor2_text
+                loc = locate_pair(doc_text, anchor_text, anchor2_text)
+            else:
+                loc = locate(doc_text, anchor_text)
             row["locate"] = loc
             located = loc["method"] != "not_found"
             row["located"] = located
@@ -313,7 +370,7 @@ def cmd_run(args: argparse.Namespace) -> None:
             print(f"Running arm={arm} provider={args.provider} model={args.model} "
                   f"({len(questions)} questions){rep_tag}")
             all_rows += run_arm(arm, questions, docs, args.provider, args.model,
-                                args.verbose, rep)
+                                args.verbose, rep, args.variant)
 
     summary = summarize(all_rows)
     out_dir = ROOT / "results"
@@ -321,10 +378,16 @@ def cmd_run(args: argparse.Namespace) -> None:
     safe_model = re.sub(r"[^A-Za-z0-9._-]+", "_", args.model)
     stamp = time.strftime("%Y%m%d-%H%M%S")
     tag = "" if qpath.stem == "questions" else f"_{qpath.stem.replace('questions_', '')}"
-    out = out_dir / f"run_{args.provider}_{safe_model}{tag}_{stamp}.json"
+    # variant and non-default arms go in the filename: without them a fewshot
+    # run and a base run of the same model+corpus are indistinguishable, and
+    # anything globbing results/ silently mixes them.
+    vtag = "" if args.variant == "base" else f"_{args.variant}"
+    atag = "_anchor2" if args.arm == "anchor2" else ""
+    out = out_dir / f"run_{args.provider}_{safe_model}{tag}{vtag}{atag}_{stamp}.json"
     out.write_text(json.dumps({
         "provider": args.provider, "model": args.model, "timestamp": stamp,
-        "corpus": qpath.stem, "summary": summary, "rows": all_rows,
+        "corpus": qpath.stem, "variant": args.variant,
+        "arms": arms, "summary": summary, "rows": all_rows,
     }, indent=2, ensure_ascii=False), encoding="utf-8")
 
     csv_path = out.with_suffix(".csv")
@@ -434,7 +497,10 @@ def main() -> None:
     pr.add_argument("--provider", required=True, choices=["anthropic", "ollama", "openrouter", "mock"])
     pr.add_argument("--model", required=True,
                     help="model id, or mock profile (faithful|sloppy|chaotic)")
-    pr.add_argument("--arm", default="both", choices=["both", "quote", "anchor"])
+    pr.add_argument("--arm", default="both", choices=["both", "quote", "anchor", "anchor2"])
+    pr.add_argument("--variant", default="base", choices=sorted(VARIANT_SUFFIX),
+                    help="system-prompt variant: base, fewshot (worked anchor example), "
+                         "refusal (emphatic absent-value instruction)")
     pr.add_argument("--limit", type=int, default=0, help="only run the first N questions")
     pr.add_argument("--repeats", type=int, default=1,
                     help="run the whole question set N times; summary pools "

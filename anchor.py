@@ -87,6 +87,59 @@ def _expand_to_sentence(doc: str, start: int, end: int) -> str:
     return doc[left:right].strip()
 
 
+def _all_norm_occurrences(ndoc: str, needle: str) -> list:
+    """Every start index of `needle` in the normalized doc."""
+    out, start = [], 0
+    if not needle:
+        return out
+    while True:
+        i = ndoc.find(needle, start)
+        if i == -1:
+            return out
+        out.append(i)
+        start = i + 1
+
+
+def locate_pair(doc: str, anchor: str, anchor2: str) -> dict:
+    """Locate `anchor`, using `anchor2` to choose between repeated occurrences.
+
+    Single-anchor location silently takes the first match, which is fine until
+    the document repeats itself — quoted-reply email chains, repeated headers.
+    Measured on this corpus, every located anchor in the hard email thread was
+    ambiguous. Asking the model for a second, further-away phrase and picking
+    the occurrence of the first that sits nearest an occurrence of the second
+    is the cheapest fix that doesn't require the model to be more careful.
+
+    Falls back to plain locate() whenever the second anchor doesn't help:
+    missing, unfindable, or the first anchor was unique anyway. The returned
+    dict carries `disambiguated` so a caller can tell which happened."""
+    base = locate(doc, anchor)
+    if base.get("method") == "not_found":
+        return {**base, "disambiguated": False}
+    if (base.get("occurrences") or 0) <= 1 or not (anchor2 or "").strip():
+        return {**base, "disambiguated": False}
+
+    ndoc, idx_map = _norm_index_map(doc)
+    n1, n2 = normalize(anchor), normalize(anchor2)
+    hits1 = _all_norm_occurrences(ndoc, n1)
+    hits2 = _all_norm_occurrences(ndoc, n2)
+    if len(hits1) <= 1 or not hits2:
+        return {**base, "disambiguated": False}
+
+    # the occurrence of anchor1 closest to any occurrence of anchor2
+    best = min(hits1, key=lambda p: min(abs(p - q) for q in hits2))
+    o_start = idx_map[best]
+    o_end = idx_map[min(best + len(n1) - 1, len(idx_map) - 1)] + 1
+    return {
+        "method": "pair",
+        "span": doc[o_start:o_end],
+        "occurrences": len(hits1),
+        "sentence": _expand_to_sentence(doc, o_start, o_end),
+        "disambiguated": True,
+        "chose_occurrence": hits1.index(best) + 1,
+    }
+
+
 def locate(doc: str, anchor: str) -> dict:
     """Locate an anchor phrase in the doc. Returns:
     {method, span, sentence, occurrences} — span/sentence are exact doc
