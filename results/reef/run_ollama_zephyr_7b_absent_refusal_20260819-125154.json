@@ -1,0 +1,989 @@
+{
+  "provider": "ollama",
+  "model": "zephyr:7b",
+  "timestamp": "20260819-125154",
+  "corpus": "questions_absent",
+  "variant": "refusal",
+  "arms": [
+    "quote",
+    "anchor"
+  ],
+  "summary": {
+    "n_quote": 0,
+    "n_anchor": 0,
+    "n_provider_errors": 0,
+    "n_unparseable": 0,
+    "n_absent_quote": 30,
+    "quote_absent_refusal_rate": 0.2,
+    "quote_absent_confident_with_exact_span": 6,
+    "n_absent_anchor": 30,
+    "anchor_absent_refusal_rate": 0.2,
+    "anchor_absent_confident_with_located_span": 6,
+    "per_rep": {}
+  },
+  "rows": [
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Sales and marketing expense in Q3 2025 for Meridian Robotics, Inc. Was not explicitly stated in the provided document. The operating expenses were $54.9 million, but it is unclear how this amount was allocated between sales, marketing, research and development, and general and administrative expenses.\", \"quote\": \"\"}",
+      "answer": "Sales and marketing expense in Q3 2025 for Meridian Robotics, Inc. Was not explicitly stated in the provided document. The operating expenses were $54.9 million, but it is unclear how this amount was allocated between sales, marketing, research and development, and general and administrative expenses.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The provided document does not contain information about how many clinical sites participated in the trial.\"}\n\nIf the document contained such information, the response would be:\n\n{\"answer\": \"The trial involved clinical sites at [number] locations.\", \"quote\": \"\"}\n\nHowever, since the document does not provide this information, the response is:\n\n{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "The provided document does not contain information about how many clinical sites participated in the trial.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The study did not provide information on the median follow-up duration in months.\", \"quote\": \"\"}",
+      "answer": "The study did not provide information on the median follow-up duration in months.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document provided does not contain information about Harborview's mayor. Therefore, the correct response is to return a JSON object with an answer of \"NOT_FOUND\" and an empty quote field.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"85\", \"quote\": \"Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.\"}",
+      "answer": "85",
+      "quote": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Henry Adams\", \"quote\": \"The remedy lies rather in the discipline of election: in choosing, from among the innumerable claimants upon our notice, the few that deserve it, and in attending to those few with the whole force of the mind.\"}",
+      "answer": "Henry Adams",
+      "quote": "The remedy lies rather in the discipline of election: in choosing, from among the innumerable claimants upon our notice, the few that deserve it, and in attending to those few with the whole force of the mind.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The text does not provide information about the company's chief executive officer.\"}\n\nHowever, based on the annual report, the CEO's name can be found in the section titled \"Management's Discussion and Analysis of Financial Condition and Results of Operations\" under the heading \"Executive Officers\". The report lists Michael McMillan as President and Chief Executive Officer. Therefore, a more accurate response would be:\n\n{\"answer\": \"The CEO of Titan Materials Group is Michael McMillan.\", \"quote\": \"\"}",
+      "answer": "The text does not provide information about the company's chief executive officer.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Net terms of 30 days from invoice date were agreed for the renewal.\", \"quote\": \"\\\"Payment due in full within thirty (30) days of invoice date unless otherwise agreed in writing by both parties.\\\" - Section 6.1, Meridian Software License Agreement\"}",
+      "answer": "Net terms of 30 days from invoice date were agreed for the renewal.",
+      "quote": "\"Payment due in full within thirty (30) days of invoice date unless otherwise agreed in writing by both parties.\" - Section 6.1, Meridian Software License Agreement",
+      "refused": false,
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.348,
+        "detail": "no plausible source span"
+      }
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"2021-07-26\", \"quote\": \"\"}\n\nExplanation:\n\nTo find the date of the meeting, we need to analyze the transcript provided. The meeting seems to have been recorded on July 26, 2021, as mentioned in the following lines:\n\n- [00:02:13] TOM: Yeah, um, can everyone see my screen? Okay, cool, cool.\n- [00:48:28] DANA: I'll drop the doc in the channel after this, everyone please actually read it this time.\n\nThe \"after this\" refers to the end of the meeting, and \"this time\" indicates that they have had similar meetings before. Therefore, we can assume that the document being dropped is related to this meeting, and we can find its date by checking the timestamps in the transcript. The first line where TOM mentions everyone seeing his screen is at [00:02:13], and the last line where DANA drops the document is at [00:48:28]. Subtracting these two timestamps gives us an approximate duration of 46 minutes for the meeting.\n\nTo find the exact date, we need to check the transcript for any other lines that might provide a clue. Fortunately, there are a few such lines:\n\n- [00:13:21] DANA: Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it.\n- [00:28:48] DANA: For what it's worth NPS is sitting at 41, up three points since the onboarding redesign shipped.\n\nFrom these lines, we can infer that there was a monthly churn of 4.7% in June and an NPS (Net Promoter Score) of 41 as of some point after the onboarding redesign shipped. Since the meeting seems to be discussing various issues related to product planning, it's likely that these lines are also from this meeting.\n\nTo find the exact date when the churn and NPS were discussed, we need to check the timestamps for these lines:\n\n- [00:13:21] DANA: Monthly churn ticked up to 4.7% in June, which, look, some of that is the pricing change but not all of it.\n- [00:28:48] DANA: For what it's worth NPS is sitting at 41, up three points since the onboarding redesign shipped.\n\nThe first line where DANA mentions the monthly churn is at [00:13:21], and the second line where she mentions the NPS is at [00:28:48]. Subtracting these two timestamps gives us an approximate duration of 15 minutes for this discussion.\n\nSince the meeting seems to have been recorded on July 26, 2021, we can assume that the discussion about churn and NPS also took place on that day. Therefore, we can provide the following JSON object as the answer:\n\n{\"answer\": \"2021-07-26\", \"quote\": \"\"}\n\nThe quote is left empty because there is no supporting quote provided in the transcript for this question.",
+      "answer": "2021-07-26",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Sales and marketing expense in Q3 2025 was $14.6 million, which is a decrease of 1.8% compared to the same period last year.\", \"anchor\": \"sales and marketing expense in q3 2025\"}.",
+      "answer": "Sales and marketing expense in Q3 2025 was $14.6 million, which is a decrease of 1.8% compared to the same period last year.",
+      "anchor": "sales and marketing expense in q3 2025",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Number of clinical sites is not provided in the given document.\", \"anchor\": \"clinical sites\"}",
+      "answer": "Number of clinical sites is not provided in the given document.",
+      "anchor": "clinical sites",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"24 weeks\", \"anchor\": \"longer trials are needed to establish effects on cardiovascular outcomes\"}",
+      "answer": "24 weeks",
+      "anchor": "longer trials are needed to establish effects on cardiovascular outcomes",
+      "locate": {
+        "method": "normalized",
+        "span": "Longer trials are needed to establish effects on cardiovascular outcomes",
+        "occurrences": 1,
+        "sentence": "Longer trials are needed to establish effects on cardiovascular outcomes."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe question does not provide any context or information about Harborview's mayor, indicating that the requested information is not present in the given document. Therefore, the correct response is to indicate that the answer is not found and provide an empty anchor value.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nNo information provided in the given document regarding the estimated revenue impact of the outage.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"85\", \"anchor\": \"Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.\"}",
+      "answer": "85",
+      "anchor": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+      "locate": {
+        "method": "exact",
+        "span": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+        "occurrences": 1,
+        "sentence": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces. Carpoolers get reserved spots on P1 — register your carpool with reception by Sept 15."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Henry Adams\", \"anchor\": \"Adams Henry\"}",
+      "answer": "Henry Adams",
+      "anchor": "Adams Henry",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Ralph Lebermann\", \"anchor\": \"company's chief executive officer\"}. The anchor is a short distinctive phrase of 3 to 8 consecutive words copied from the document, from the same sentence as the answer. Its only job is to let a program find the location — keep it short and distinctive. If the document does not contain the requested information, respond with {\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}.\n\nIn this case, the company's annual report provides the answer directly, so we can extract the necessary information and return it as a JSON object. The anchor is included for completeness, but in this case, it is not strictly necessary since the question itself includes the phrase we are looking for. However, including the anchor ensures that our extraction process will work correctly if the question were to change or be presented differently in the future.",
+      "answer": "Ralph Lebermann",
+      "anchor": "company's chief executive officer",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Net 30\", \"anchor\": \"payment terms\"}",
+      "answer": "Net 30",
+      "anchor": "payment terms",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 1,
+      "absent": true,
+      "raw_response": "{\"answer\": \"2021-07-26\", \"anchor\": \"meeting held\" }",
+      "answer": "2021-07-26",
+      "anchor": "meeting held",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Sales and marketing expense in Q3 2025 for Meridian Robotics, Inc. Was not explicitly stated in the provided document. However, operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago. The document mentions that research and development spending rose 18% to $27.4 million as they accelerated work on the Atlas-9 platform. It is unclear whether sales and marketing expenses are included in this figure or not.\", \"quote\": \"\"}",
+      "answer": "Sales and marketing expense in Q3 2025 for Meridian Robotics, Inc. Was not explicitly stated in the provided document. However, operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago. The document mentions that research and development spending rose 18% to $27.4 million as they accelerated work on the Atlas-9 platform. It is unclear whether sales and marketing expenses are included in this figure or not.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Number of clinical sites participating in the TRIDENT-3 trial is not provided in the given document.\", \"quote\": \"\"}",
+      "answer": "Number of clinical sites participating in the TRIDENT-3 trial is not provided in the given document.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The study did not provide information on the median follow-up duration in months.\", \"quote\": \"\"}",
+      "answer": "The study did not provide information on the median follow-up duration in months.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document provided does not contain information about Harborview's mayor. Therefore, the correct response is to return a JSON object with an answer of \"NOT_FOUND\" and an empty quote field.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document provided does not contain information regarding the estimated revenue impact of the outage. It is recommended to always respond with {\"answer\": \"NOT_FOUND\", \"quote\": \"\"} when the requested information is not present in the given document.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"85\", \"quote\": \"Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.\"}",
+      "answer": "85",
+      "quote": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Henry Adams\", \"quote\": \"The remedy lies rather in the discipline of election: in choosing, from among the innumerable claimants upon our notice, the few that deserve it, and in attending to those few with the whole force of the mind.\"}",
+      "answer": "Henry Adams",
+      "quote": "The remedy lies rather in the discipline of election: in choosing, from among the innumerable claimants upon our notice, the few that deserve it, and in attending to those few with the whole force of the mind.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The text does not provide information about the company's chief executive officer.\"}\n\nHowever, based on the annual report, the identity of the CEO can be found in the section titled \"Management and Board of Directors\" which is included at the end of the report. The report states that as of the end of fiscal 2025, the company's president and chief executive officer was Jane Doe. Therefore, a more accurate response would be:\n\n{\"answer\": \"The CEO of the company as of the end of fiscal year 2025 is Jane Doe.\", \"quote\": \"\"}",
+      "answer": "The text does not provide information about the company's chief executive officer.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Net terms of 30 days from invoice date were agreed for the renewal.\", \"quote\": \"\\\"Payment due in full within thirty (30) days of invoice date unless otherwise agreed in writing by both parties.\\\" - Section 6.1, Meridian Services Agreement\"}",
+      "answer": "Net terms of 30 days from invoice date were agreed for the renewal.",
+      "quote": "\"Payment due in full within thirty (30) days of invoice date unless otherwise agreed in writing by both parties.\" - Section 6.1, Meridian Services Agreement",
+      "refused": false,
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.365,
+        "detail": "no plausible source span"
+      }
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"2021-07-26\", \"quote\": \"\"}\n\nExplanation:\n\nTo determine the date of the meeting, we need to analyze the transcript provided. The meeting was recorded on July 26, 2021, as evidenced by the following statements made during the meeting:\n\n- \"Tom: Yeah, um, can everyone see my screen? Okay, cool, cool.\" (At approximately 00:02:13)\n- \"Dana: Let's timebox this to five minutes because we have to get to roadmap.\" (At approximately 00:47:46)\n\nThe meeting was held on July 26, 2021. Therefore, the JSON object will contain the answer and quote as follows:\n\n{\"answer\": \"2021-07-26\", \"quote\": \"\"}\n\nNote that there is no quote provided because the question did not ask for a quote from the meeting. If the question had asked for a quote, we would have found one by analyzing the transcript and copying it character-for-character, identical punctuation, capitalization, spacing, and special characters. However, since there was no request for a quote, we are providing an empty JSON object for that field.",
+      "answer": "2021-07-26",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Sales and marketing expense in Q3 2025 was $16.4 million, which represents 11.1% of total revenue.\", \"anchor\": \"sales and marketing expense in q3 2025\" }",
+      "answer": "Sales and marketing expense in Q3 2025 was $16.4 million, which represents 11.1% of total revenue.",
+      "anchor": "sales and marketing expense in q3 2025",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Number of clinical sites is not provided in the given document.\", \"anchor\": \"clinical sites\"}",
+      "answer": "Number of clinical sites is not provided in the given document.",
+      "anchor": "clinical sites",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"24 weeks\", \"anchor\": \"longer trials are needed to establish effects on cardiovascular outcomes\"}",
+      "answer": "24 weeks",
+      "anchor": "longer trials are needed to establish effects on cardiovascular outcomes",
+      "locate": {
+        "method": "normalized",
+        "span": "Longer trials are needed to establish effects on cardiovascular outcomes",
+        "occurrences": 1,
+        "sentence": "Longer trials are needed to establish effects on cardiovascular outcomes."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe question does not provide any context or information about Harborview's mayor, indicating that the requested information is not present in the given document. Therefore, the correct response is to indicate that the answer is not found and provide an empty anchor value.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nNo information provided in the given document regarding the estimated revenue impact of the outage.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"85\", \"anchor\": \"Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.\"}",
+      "answer": "85",
+      "anchor": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+      "locate": {
+        "method": "exact",
+        "span": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+        "occurrences": 1,
+        "sentence": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces. Carpoolers get reserved spots on P1 — register your carpool with reception by Sept 15."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Henry Adams\", \"anchor\": \"Adams Henry\"}",
+      "answer": "Henry Adams",
+      "anchor": "Adams Henry",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Peter Rautavaara\", \"anchor\": \"company's chief executive officer\"}. The text provided does not explicitly state who the CEO is, but Peter Rautavaara was announced as the new CEO in a press release dated September 20, 2021. This information can be found on the company's website under the \"Investors\" section.",
+      "answer": "Peter Rautavaara",
+      "anchor": "company's chief executive officer",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Net 30\", \"anchor\": \"payment terms\"}",
+      "answer": "Net 30",
+      "anchor": "payment terms",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 2,
+      "absent": true,
+      "raw_response": "{\"answer\": \"2021-07-26\", \"anchor\": \"meeting held\" }",
+      "answer": "2021-07-26",
+      "anchor": "meeting held",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Sales and marketing expense in Q3 2025 for Meridian Robotics, Inc. Was not explicitly stated in the provided document. However, operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago. The document mentions that research and development spending rose 18% to $27.4 million as they accelerated work on the Atlas-9 platform. It is unclear whether sales and marketing expenses are included in this figure or not.\", \"quote\": \"\"}",
+      "answer": "Sales and marketing expense in Q3 2025 for Meridian Robotics, Inc. Was not explicitly stated in the provided document. However, operating expenses were $54.9 million, or 36.9% of revenue, down from 41.3% of revenue a year ago. The document mentions that research and development spending rose 18% to $27.4 million as they accelerated work on the Atlas-9 platform. It is unclear whether sales and marketing expenses are included in this figure or not.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Number of clinical sites participating in the TRIDENT-3 trial is not provided in the given document.\", \"quote\": \"\"}",
+      "answer": "Number of clinical sites participating in the TRIDENT-3 trial is not provided in the given document.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The study did not provide information on the median follow-up duration in months.\", \"quote\": \"\"}",
+      "answer": "The study did not provide information on the median follow-up duration in months.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document provided does not contain information about Harborview's mayor. Therefore, the correct response is to return a JSON object with an answer of \"NOT_FOUND\" and an empty quote field.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"quote\": \"\"}\n\nThe document provided does not contain information regarding the estimated revenue impact of the outage. It is recommended to always respond with {\"answer\": \"NOT_FOUND\", \"quote\": \"\"} when the requested information is not present in the given document.",
+      "answer": "NOT_FOUND",
+      "quote": "",
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"85\", \"quote\": \"Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.\"}",
+      "answer": "85",
+      "quote": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Henry Adams\", \"quote\": \"The remedy lies rather in the discipline of election: in choosing, from among the innumerable claimants upon our notice, the few that deserve it, and in attending to those few with the whole force of the mind.\"}",
+      "answer": "Henry Adams",
+      "quote": "The remedy lies rather in the discipline of election: in choosing, from among the innumerable claimants upon our notice, the few that deserve it, and in attending to those few with the whole force of the mind.",
+      "refused": false,
+      "score": {
+        "level": "exact",
+        "ratio": 1.0,
+        "detail": ""
+      }
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"The text does not provide information about the company's chief executive officer.\"}\n\nHowever, based on the annual report, the identity of the CEO can be found in the section titled \"Management and Board of Directors\" which is included at the end of the report. The report states that as of the end of fiscal 2025, the company's president and chief executive officer was Jane Doe. Therefore, a more accurate response would be:\n\n{\"answer\": \"The CEO of the company as of the end of fiscal year 2025 is Jane Doe.\", \"quote\": \"\"}",
+      "answer": "The text does not provide information about the company's chief executive officer.",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Net terms of 30 days from invoice date were agreed for the renewal.\", \"quote\": \"\\\"Payment due in full within thirty (30) days of invoice date unless otherwise agreed in writing by both parties.\\\" - Section 6.1, Meridian Services Agreement\"}",
+      "answer": "Net terms of 30 days from invoice date were agreed for the renewal.",
+      "quote": "\"Payment due in full within thirty (30) days of invoice date unless otherwise agreed in writing by both parties.\" - Section 6.1, Meridian Services Agreement",
+      "refused": false,
+      "score": {
+        "level": "fabricated",
+        "ratio": 0.365,
+        "detail": "no plausible source span"
+      }
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "quote",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"2021-07-26\", \"quote\": \"\"}\n\nExplanation:\n\nTo determine the date of the meeting, we need to analyze the transcript provided. The meeting was recorded on July 26, 2021, as evidenced by the following statements made during the meeting:\n\n- \"Tom: Yeah, um, can everyone see my screen? Okay, cool, cool.\" (At approximately 00:02:13)\n- \"Dana: Let's timebox this to five minutes because we have to get to roadmap.\" (At approximately 00:47:46)\n\nThe meeting was held on July 26, 2021. Therefore, the JSON object will contain the answer and quote as follows:\n\n{\"answer\": \"2021-07-26\", \"quote\": \"\"}\n\nNote that there is no quote provided because the question did not ask for a quote from the meeting. If the question had asked for a quote, we would have found one by analyzing the transcript and copying it character-for-character, identical punctuation, capitalization, spacing, and special characters. However, since there was no request for a quote, we are providing an empty JSON object for that field.",
+      "answer": "2021-07-26",
+      "quote": "",
+      "refused": false
+    },
+    {
+      "id": "ab-1",
+      "doc": "quarterly_report.txt",
+      "question": "What was Meridian's sales and marketing expense in Q3 2025?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Sales and marketing expense in Q3 2025 was $16.4 million, which represents 11.1% of total revenue.\", \"anchor\": \"sales and marketing expense in q3 2025\" }",
+      "answer": "Sales and marketing expense in Q3 2025 was $16.4 million, which represents 11.1% of total revenue.",
+      "anchor": "sales and marketing expense in q3 2025",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-2",
+      "doc": "clinical_trial.txt",
+      "question": "How many clinical sites participated in the trial?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Number of clinical sites is not provided in the given document.\", \"anchor\": \"clinical sites\"}",
+      "answer": "Number of clinical sites is not provided in the given document.",
+      "anchor": "clinical sites",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-3",
+      "doc": "clinical_trial.txt",
+      "question": "What was the median follow-up duration in months?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"24 weeks\", \"anchor\": \"longer trials are needed to establish effects on cardiovascular outcomes\"}",
+      "answer": "24 weeks",
+      "anchor": "longer trials are needed to establish effects on cardiovascular outcomes",
+      "locate": {
+        "method": "normalized",
+        "span": "Longer trials are needed to establish effects on cardiovascular outcomes",
+        "occurrences": 1,
+        "sentence": "Longer trials are needed to establish effects on cardiovascular outcomes."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-4",
+      "doc": "news_article.txt",
+      "question": "What is the name of Harborview's mayor?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nThe question does not provide any context or information about Harborview's mayor, indicating that the requested information is not present in the given document. Therefore, the correct response is to indicate that the answer is not found and provide an empty anchor value.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-5",
+      "doc": "incident_postmortem.txt",
+      "question": "What was the estimated revenue impact of the outage?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"NOT_FOUND\", \"anchor\": \"\"}\n\nNo information provided in the given document regarding the estimated revenue impact of the outage.",
+      "answer": "NOT_FOUND",
+      "anchor": "",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": true
+    },
+    {
+      "id": "ab-6",
+      "doc": "messy_memo.txt",
+      "question": "How much does a replacement badge cost?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"85\", \"anchor\": \"Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.\"}",
+      "answer": "85",
+      "anchor": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+      "locate": {
+        "method": "exact",
+        "span": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces.",
+        "occurrences": 1,
+        "sentence": "Overflow will cost the company $85 per space per month, which is why we only reserved 60 spaces. Carpoolers get reserved spots on P1 — register your carpool with reception by Sept 15."
+      },
+      "located": true,
+      "refused": false
+    },
+    {
+      "id": "ab-7",
+      "doc": "victorian_essay.txt",
+      "question": "Who is the author of the essay?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Henry Adams\", \"anchor\": \"Adams Henry\"}",
+      "answer": "Henry Adams",
+      "anchor": "Adams Henry",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-8",
+      "doc": "hard_annual_report.txt",
+      "question": "Who is the company's chief executive officer?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Peter Rautavaara\", \"anchor\": \"company's chief executive officer\"}. The text provided does not explicitly state who the CEO is, but Peter Rautavaara was announced as the new CEO in a press release dated September 20, 2021. This information can be found on the company's website under the \"Investors\" section.",
+      "answer": "Peter Rautavaara",
+      "anchor": "company's chief executive officer",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-9",
+      "doc": "hard_email_thread.txt",
+      "question": "What payment terms (net days) were agreed for the renewal?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"Net 30\", \"anchor\": \"payment terms\"}",
+      "answer": "Net 30",
+      "anchor": "payment terms",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    },
+    {
+      "id": "ab-10",
+      "doc": "hard_transcript.txt",
+      "question": "On what date was this meeting held?",
+      "expect_value": null,
+      "arm": "anchor",
+      "rep": 3,
+      "absent": true,
+      "raw_response": "{\"answer\": \"2021-07-26\", \"anchor\": \"meeting held\" }",
+      "answer": "2021-07-26",
+      "anchor": "meeting held",
+      "locate": {
+        "method": "not_found"
+      },
+      "located": false,
+      "refused": false
+    }
+  ]
+}
