@@ -4,6 +4,8 @@
 
 **On adversarial documents, models produce a character-for-character verbatim quote only 64–73% of the time — even when explicitly told to.** Letting code locate a short model-proposed anchor phrase instead recovers 91–100% coverage, with every emitted span guaranteed to be a real substring of the source. That's the whole argument: don't trust the model's quote — trust its anchor, and verify the anchor in code.
 
+**52 local models measured**, and only 11 clear a usable bar — ≥95% verified coverage *and* a perfect record of refusing when the requested value is absent. Published results, including what each model costs in energy per 100 extractions: **[swamplink.com/data/trust](https://www.swamplink.com/data/trust/)**.
+
 **Question:** when you ask an LLM to justify an extracted value with a *verbatim* quote from the source, how often is the quote actually verbatim — and does "model proposes, code anchors" beat trusting the model's quotes?
 
 **Design:** two arms over the same 30 questions across 6 documents.
@@ -36,7 +38,7 @@ Even the chaotic profile recovers 93% coverage through anchoring — that's the 
 
 ## Running against real models
 
-Have results for a model not in `results/comparison.md`? Post it in [Show and tell](https://github.com/gmhoward9289-ops/trust-but-anchor/discussions/categories/show-and-tell).
+Results are not collected or ranked here: run the harness against your own models, prompts and documents, because that is the only measurement that describes your system. The published numbers are our own runs on our own hardware, and they are reproducible from the stored responses rather than submitted. [Discussions](https://github.com/gmhoward9289-ops/trust-but-anchor/discussions) is open for questions and for what you find.
 
 Everything is stdlib-only Python 3.10+; nothing to install.
 
