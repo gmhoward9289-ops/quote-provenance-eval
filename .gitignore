@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 *.log
 /draft_post.md
+dist/
+*.egg-info/
+.eggs/

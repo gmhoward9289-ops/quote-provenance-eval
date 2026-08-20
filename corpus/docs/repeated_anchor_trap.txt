@@ -1,0 +1,22 @@
+INTERNAL MEMO — FY2026 project allocations
+Date: August 12, 2026
+To: Portfolio review committee
+From: Finance planning
+
+All figures below are preliminary until the board vote on September 8, 2026.
+
+Project Orion (infrastructure): The allocated budget was $120,000 for Phase 1 planning.
+Project Vega (research): The allocated budget was $120,000 for exploratory work only.
+Project Atlas (deployment): The allocated budget was $120,000 for Phase 1 planning, with a final approved cap of $2.4 million for full deployment in Q1 2027.
+
+Headcount (FTE):
+Orion: 4. Vega: 2. Atlas: 18.
+
+Kickoff dates:
+Orion: January 6, 2026. Vega: February 3, 2026. Atlas: March 17, 2026, contingent on board approval.
+
+Risk note: The service-level target of 99.9% uptime applies to production systems only.
+The service-level target of 99.9% uptime was cited in the Vega pilot proposal but does not bind Atlas until contract execution.
+The service-level target of 99.9% uptime for Atlas production carries a contractual credit of $50,000 per incident above the monthly allowance.
+
+Board materials will be circulated by August 28.

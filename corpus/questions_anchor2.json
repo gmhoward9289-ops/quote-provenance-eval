@@ -1,0 +1,42 @@
+[
+  {
+    "id": "a2-1",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "What is the final approved cap for Project Atlas full deployment?",
+    "expect_value": "$2.4 million",
+    "gt_quote": "Project Atlas (deployment): The allocated budget was $120,000 for Phase 1 planning, with a final approved cap of $2.4 million for full deployment in Q1 2027."
+  },
+  {
+    "id": "a2-2",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "How many FTE are allocated to Project Atlas?",
+    "expect_value": "18",
+    "gt_quote": "Orion: 4. Vega: 2. Atlas: 18."
+  },
+  {
+    "id": "a2-3",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "When is Project Atlas scheduled to kick off?",
+    "expect_value": "March 17, 2026",
+    "gt_quote": "Orion: January 6, 2026. Vega: February 3, 2026. Atlas: March 17, 2026, contingent on board approval."
+  },
+  {
+    "id": "a2-4",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "What Phase 1 planning budget was allocated to Project Orion?",
+    "expect_value": "$120,000",
+    "gt_quote": "Project Orion (infrastructure): The allocated budget was $120,000 for Phase 1 planning."
+  },
+  {
+    "id": "a2-5",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "What contractual credit applies per incident for Atlas production uptime breaches?",
+    "expect_value": "$50,000",
+    "gt_quote": "The service-level target of 99.9% uptime for Atlas production carries a contractual credit of $50,000 per incident above the monthly allowance."
+  }
+]
