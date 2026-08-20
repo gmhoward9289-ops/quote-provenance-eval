@@ -1,0 +1,37 @@
+name: publish-doctor
+
+# Does PyPI actually serve the version pyproject.toml claims?
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["release"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-doctor
+  cancel-in-progress: false
+
+jobs:
+  doctor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Let PyPI catch up after release
+        if: github.event_name == 'workflow_run'
+        run: sleep 120
+
+      - name: Run publish doctor
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash packaging/publish-doctor.sh
