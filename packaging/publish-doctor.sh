@@ -11,13 +11,22 @@ ROOT=$(cd "$(dirname "$0")/.." && pwd)
 
 GRACE_MIN=${PUBLISH_DOCTOR_GRACE_MIN:-60}
 
-VERSION=$(cd "$ROOT" && python3 -c '
-import tomllib, pathlib
-print(tomllib.loads(pathlib.Path("pyproject.toml").read_bytes())["project"]["version"])
-' 2>/dev/null)
+VERSION=$(grep -E '^version = ' "$ROOT/pyproject.toml" | head -1 | sed -n 's/.*"\([^"]*\)".*/\1/p')
 if [ -z "$VERSION" ]; then
   echo "FATAL: could not read version from pyproject.toml" >&2
   exit 2
+fi
+
+if command -v python3 >/dev/null 2>&1; then
+  PY=python3
+elif command -v python >/dev/null 2>&1; then
+  PY=python
+elif [ -x "/c/Users/gmhow/AppData/Local/Programs/Python/Python312/python.exe" ]; then
+  PY="/c/Users/gmhow/AppData/Local/Programs/Python/Python312/python.exe"
+elif command -v py >/dev/null 2>&1; then
+  PY="py -3"
+else
+  PY=
 fi
 
 fails=0
@@ -45,12 +54,16 @@ echo
 published=$(gh release view "v$VERSION" --repo "$REPO" --json publishedAt \
               --jq '.publishedAt' 2>/dev/null)
 if [ -n "${published:-}" ]; then
-  age_min=$(python3 -c '
+  if [ -n "$PY" ]; then
+    age_min=$("$PY" -c '
 import datetime, sys
 t = datetime.datetime.strptime(sys.argv[1], "%Y-%m-%dT%H:%M:%SZ")
 t = t.replace(tzinfo=datetime.timezone.utc)
 print(int((datetime.datetime.now(datetime.timezone.utc) - t).total_seconds() // 60))
 ' "$published" 2>/dev/null)
+  else
+    age_min=99999
+  fi
   : "${age_min:=99999}"
   if [ "$age_min" -lt "$GRACE_MIN" ]; then fresh=1; else fresh=0; fi
   why_fresh="release is ${age_min}m old, inside the ${GRACE_MIN}m window"
@@ -92,11 +105,14 @@ pypi=$(curl -sf "https://pypi.org/pypi/$DIST/json" 2>/dev/null)
 if [ -z "$pypi" ]; then
   todo pypi "nothing on PyPI as $DIST -- trusted publisher: $REPO release.yml environment pypi"
 else
-  pypi_ver=$(printf '%s' "$pypi" | python3 -c 'import json,sys; print(json.load(sys.stdin)["info"]["version"])' 2>/dev/null)
+  if [ -n "$PY" ]; then
+    pypi_ver=$(printf '%s' "$pypi" | "$PY" -c 'import json,sys; print(json.load(sys.stdin)["info"]["version"])' 2>/dev/null)
+    names=$(printf '%s' "$pypi" | "$PY" -c 'import json,sys; print(" ".join(f["filename"] for f in json.load(sys.stdin)["urls"]))' 2>/dev/null)
+  else
+    pypi_ver=$(printf '%s' "$pypi" | grep -o '"version":"[^"]*"' | head -1 | cut -d'"' -f4)
+    names=$(printf '%s' "$pypi" | grep -o '"filename":"[^"]*"' | cut -d'"' -f4 | tr '\n' ' ')
+  fi
   if [ "${pypi_ver:-}" = "$VERSION" ]; then
-    names=$(printf '%s' "$pypi" | python3 -c '
-import json, sys
-print(" ".join(f["filename"] for f in json.load(sys.stdin)["urls"]))' 2>/dev/null)
     want_whl="trust_but_anchor-$VERSION-py3-none-any.whl"
     want_sdist="trust_but_anchor-$VERSION.tar.gz"
     case " $names " in
