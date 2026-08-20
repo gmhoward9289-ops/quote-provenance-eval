@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "trust-but-anchor"
+version = "0.1.0"
+description = "The model proposes a short anchor; code locates a real source span. Fail closed."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "George M. Howard", email = "dev@swamplink.com" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/gmhoward9289-ops/trust-but-anchor"
+
+[project.scripts]
+tba-preflight = "trust_but_anchor.preflight:console_main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/trust_but_anchor"]
