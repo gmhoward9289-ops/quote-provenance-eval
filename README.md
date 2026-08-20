@@ -64,7 +64,7 @@ Even the chaotic profile recovers 93% coverage through anchoring — that's the 
 
 Results are not collected or ranked here: run the harness against your own models, prompts and documents, because that is the only measurement that describes your system. The published numbers are our own runs on our own hardware, and they are reproducible from the stored responses rather than submitted. [Discussions](https://github.com/gmhoward9289-ops/trust-but-anchor/discussions) is open for questions and for what you find.
 
-Everything is stdlib-only Python 3.10+; nothing to install.
+Everything is stdlib-only Python 3.10+ for the eval harness; the library is `pip install trust-but-anchor`.
 
 ```bash
 # Anthropic
@@ -84,7 +84,17 @@ export OPENROUTER_API_KEY=sk-or-...
 python3 eval.py run --provider openrouter --model openai/gpt-4o-mini --verbose
 ```
 
-Useful flags: `--arm quote|anchor|both` (default both), `--limit N` for a cheap smoke test, `--repeats N` to run the whole set N times (the summary pools across repeats, reports 95% Wilson intervals in `ci95`, and adds a `per_rep` breakdown of the headline rates — publish with `--repeats 3` or more).
+Useful flags: `--arm quote|anchor|anchor2|both` (default both), `--variant base|fewshot|refusal`, `--limit N` for a cheap smoke test, `--repeats N` to run the whole set N times (the summary pools across repeats, reports 95% Wilson intervals in `ci95`, and adds a `per_rep` breakdown of the headline rates — publish with `--repeats 3` or more).
+
+### When anchors won't locate (`--variant fewshot`)
+
+Some open-weight models return *descriptions* of the value (`"net income per diluted share in Q3 2025"`) instead of text copied from the document. The base prompt already says "copied"; for those models, add a worked example:
+
+```bash
+python3 eval.py run --provider ollama --model granite3.3:8b --variant fewshot --verbose
+```
+
+In our runs this took `granite3.3:8b` from **53% → 90%** verified coverage and eliminated all unlocatable anchors; models already at ceiling (97–100%) did not move. Try fewshot before concluding a model cannot anchor.
 
 Each run writes `results/run_<provider>_<model>_<stamp>.json` (full raw responses included, so you can re-inspect anything) and a per-question `.csv`. Build the cross-model table with:
 
