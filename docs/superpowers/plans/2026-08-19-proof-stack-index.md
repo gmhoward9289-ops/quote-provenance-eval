@@ -19,7 +19,7 @@
 | 1 trust-but-anchor | yes | optional `[anchor]` extra |
 | 2 henhouse | yes (0.1.2) | JSONL fixtures parse in `test_session_trace.py` |
 | 3 pytest-session-trace | yes (0.1.5+) | `test_session_trace.py` + live capture script |
-| 4 pytest-mcp-contract | yes (0.1.3+) | `test_mcp_contract.py` + schema snapshots |
+| 4 pytest-mcp-contract | yes (0.1.4+) | `test_mcp_contract.py` — all 14 tool schemas, prefix + non-destructive write pins |
 
 `swamp-ops/requirements-dev.txt` pins all three pytest-stack packages from PyPI.
 Each library has `packaging/publish-doctor.sh` (daily CI) verifying the registry
