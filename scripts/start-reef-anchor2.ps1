@@ -10,6 +10,8 @@ if (-not (Test-Path $Launch)) { throw "missing $Launch" }
 Write-Host "Copying scripts to reef..." -ForegroundColor Cyan
 scp $Launch "${Reef}:C:/Users/Owner/AppData/Local/Temp/reef-anchor2-launch.ps1"
 scp $Worker "${Reef}:C:/Users/Owner/AppData/Local/Temp/anchor2-sweep.ps1"
+$PyHelper = Join-Path $Here "reef-python.ps1"
+scp $PyHelper "${Reef}:C:/Users/Owner/AppData/Local/Temp/reef-python.ps1"
 
 Write-Host "Starting sweep on reef..." -ForegroundColor Cyan
 ssh -o ConnectTimeout=20 $Reef "powershell -NoProfile -ExecutionPolicy Bypass -File C:\Users\Owner\AppData\Local\Temp\reef-anchor2-launch.ps1"

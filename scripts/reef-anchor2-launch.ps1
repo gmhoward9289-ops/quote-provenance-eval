@@ -18,18 +18,23 @@ Set-Location $Repo
 git pull
 
 $Worker = Join-Path $Repo "scripts\anchor2-sweep.ps1"
+$PyHelper = Join-Path $Repo "scripts\reef-python.ps1"
 $TempWorker = "C:\Users\Owner\AppData\Local\Temp\anchor2-sweep.ps1"
-if (-not (Test-Path $Worker) -and (Test-Path $TempWorker)) {
-    New-Item -ItemType Directory -Force -Path (Split-Path $Worker) | Out-Null
-    Copy-Item $TempWorker $Worker -Force
+$TempPy = "C:\Users\Owner\AppData\Local\Temp\reef-python.ps1"
+foreach ($pair in @(
+    @($TempWorker, $Worker),
+    @($TempPy, $PyHelper)
+)) {
+    if ((-not (Test-Path $pair[1])) -and (Test-Path $pair[0])) {
+        New-Item -ItemType Directory -Force -Path (Split-Path $pair[1]) | Out-Null
+        Copy-Item $pair[0] $pair[1] -Force
+    }
 }
 if (-not (Test-Path $Worker)) {
     throw "missing scripts\anchor2-sweep.ps1 (pull or scp failed)"
 }
-
-if (-not (Get-Command python -ErrorAction SilentlyContinue)) {
-    throw "python not on PATH on reef"
-}
+. $PyHelper
+$null = Get-ReefPython
 
 $LogDir = Join-Path $Repo "results"
 New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
