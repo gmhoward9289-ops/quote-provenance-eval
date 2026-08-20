@@ -325,5 +325,9 @@ def main(argv: list[str]) -> int:
     return 1 if worst == "high" else 0
 
 
-if __name__ == "__main__":
+def console_main() -> None:
     raise SystemExit(main(sys.argv[1:]))
+
+
+if __name__ == "__main__":
+    console_main()

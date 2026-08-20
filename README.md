@@ -20,6 +20,26 @@
 
 The comparison that matters: **quote-arm coverage** vs **anchor-arm coverage**. Both are held to the same bar: the emitted span must be verifiably real *and* contain the expected value. (`quote_coverage` = exact quote AND value present; in every run so far it equals the raw exact rate — models that quote exactly quote the right sentence — but the harness checks rather than assumes.)
 
+## Library (no model required)
+
+```bash
+pip install trust-but-anchor
+```
+
+```python
+from trust_but_anchor import locate, analyze, score
+
+doc = open("source.txt", encoding="utf-8").read()
+hit = locate(doc, "working set")
+if hit["method"] == "not_found":
+    raise SystemExit("no provenance")
+print(hit["sentence"])  # exact substring of doc
+print(score(hit))
+print(analyze(doc, prompt="Return NOT_FOUND if absent.", num_ctx=8192))
+```
+
+The eval harness below measures *your* models on *your* docs. The library does not need that table to be useful. Published numbers live at [swamplink.com/data/trust](https://www.swamplink.com/data/trust/).
+
 ## Quickstart (no API key needed)
 
 ```bash
