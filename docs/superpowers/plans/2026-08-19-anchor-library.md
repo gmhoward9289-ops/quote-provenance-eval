@@ -16,7 +16,7 @@
 - Fail closed: empty or missing anchor → `{"method": "not_found"}`.
 - Root shims must remain so `from scoring import normalize` and `from anchor import locate` still work for `eval.py`.
 - Do not add nightrun, providers, or energy accounting to the package.
-- Work in `C:\Users\gmhow\dev\quote-provenance-eval`. Confirm GitHub canonical name (`trust-but-anchor` vs `quote-provenance-eval`) before setting `[project.urls]`.
+- Work in `C:\Users\gmhow\dev\trust-but-anchor`.
 - License Apache-2.0 (`LICENSE` already in repo).
 - Do not commit `.env` or API keys. `results/` stays gitignored as today.
 
@@ -103,7 +103,7 @@ def test_pair_disambiguates_repeated_anchor():
 
 - [ ] **Step 2: Run pytest on the new file**
 
-Run: `cd C:\Users\gmhow\dev\quote-provenance-eval && python -m pytest tests/test_locate.py -v`
+Run: `cd C:\Users\gmhow\dev\trust-but-anchor && python -m pytest tests/test_locate.py -v`
 
 Expected: PASS (locator already works). If pytest is missing: `python -m pip install pytest` in a venv, then re-run. Do not change `anchor.py` in this task.
 
@@ -278,7 +278,7 @@ If hatchling cannot find the package, set `packages = ["trust_but_anchor"]` and 
 only-include = ["trust_but_anchor"]
 ```
 
-Confirm `[project.urls]` against the canonical GitHub repo before publish (`trust-but-anchor` vs `quote-provenance-eval`).
+Confirm `[project.urls]` points at `https://github.com/gmhoward9289-ops/trust-but-anchor` (done in pyproject.toml).
 
 Move the four modules. Change internal imports:
 
@@ -293,7 +293,7 @@ Root shims as above. `eval.py` keeps `from anchor import locate`.
 Run:
 
 ```
-cd C:\Users\gmhow\dev\quote-provenance-eval
+cd C:\Users\gmhow\dev\trust-but-anchor
 python -m pip install -e ".[dev]"
 python -m pytest tests -v
 python eval.py run --provider mock --model sloppy --limit 2

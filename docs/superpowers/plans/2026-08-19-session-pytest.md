@@ -186,7 +186,7 @@ def render_test(calls, test_name: str = "test_session") -> str:
 
 pyproject extra: `anchor = ["trust-but-anchor"]`
 
-Skip this task if plan 1 is not on PyPI yet — implement against a path install: `pip install -e ../quote-provenance-eval`.
+Skip this task if plan 1 is not on PyPI yet — implement against a path install: `pip install -e ../trust-but-anchor`.
 
 - [ ] **Step 1–4:** TDD as above. Commit `feat: optional quote anchoring on tool arguments`
 

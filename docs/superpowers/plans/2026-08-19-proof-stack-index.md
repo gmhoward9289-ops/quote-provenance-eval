@@ -7,7 +7,7 @@
 
 | # | Project | Repo (today) | Plan | Depends on |
 |---|---------|--------------|------|------------|
-| 1 | Anchor library | `C:\Users\gmhow\dev\quote-provenance-eval` (GitHub public name: `trust-but-anchor`; local remotes still say `quote-provenance-eval`) | [2026-08-19-anchor-library.md](./2026-08-19-anchor-library.md) | — |
+| 1 | Anchor library | `C:\Users\gmhow\dev\trust-but-anchor` | [2026-08-19-anchor-library.md](./2026-08-19-anchor-library.md) | — |
 | 2 | henhouse session schema | extract from `C:\Users\gmhow\dev\leghorn\henhouse.py`; new package repo `henhouse` | [2026-08-19-henhouse-schema.md](./2026-08-19-henhouse-schema.md) | — (parallel with 1 after schema freeze) |
 | 3 | Session → pytest | **new** repo `pytest-session-trace` | [2026-08-19-session-pytest.md](./2026-08-19-session-pytest.md) | henhouse v1 |
 | 4 | MCP domain contracts | **new** repo `pytest-mcp-contract`; dogfood `C:\Users\gmhow\dev\swamp-ops` | [2026-08-19-mcp-contracts.md](./2026-08-19-mcp-contracts.md) | optional henhouse, optional trust-but-anchor |
@@ -41,6 +41,7 @@ trust_but_anchor (stdlib)          henhouse (stdlib)
 
 Do **1** to a tagged v0.1. Start **2** as soon as the henhouse JSON key list in that plan is frozen (does not wait for PyPI of 1). Start **3** when henhouse can `iter_tool_calls`. Start **4** last.
 
-## Local remotes trap
+## Local remotes
 
-`C:\Users\gmhow\dev\quote-provenance-eval` has `origin = swamplink:/srv/git/quote-provenance-eval.git` and `github = …/quote-provenance-eval.git`. GitHub also hosts `gmhoward9289-ops/trust-but-anchor` at the same commit. Before publishing, confirm which GitHub repo is canonical and put that URL in `pyproject.toml`. Do not silently publish to the wrong name.
+- **Folder + GitHub:** `C:\Users\gmhow\dev\trust-but-anchor` → `github` = `gmhoward9289-ops/trust-but-anchor`
+- **swamplink `origin`:** still `swamplink:/srv/git/quote-provenance-eval.git` until the bare repo on swamplink is renamed server-side (pushes work either way)

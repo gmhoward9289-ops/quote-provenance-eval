@@ -1,6 +1,6 @@
 # Publish trust-but-anchor v0.1.0 to PyPI, tag, and GitHub release.
 # Run from repo root in PowerShell:
-#   cd C:\Users\gmhow\dev\quote-provenance-eval
+#   cd C:\Users\gmhow\dev\trust-but-anchor
 #   .\scripts\publish.ps1
 #
 # Requires: PyPI API token (pypi-...) with 2FA enabled on the account.
