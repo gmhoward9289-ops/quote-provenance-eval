@@ -15,5 +15,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: pip install -e ".[dev]"
+      - run: python validate_corpus.py
       - run: pytest -q
-      - run: python eval.py run --provider mock --model sloppy --limit 3
+        env:
+          PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
+      - run: python eval.py run --provider mock --model sloppy --limit 5
