@@ -23,10 +23,14 @@ if (-not (Test-Path (Join-Path $PSScriptRoot "reef-python.ps1"))) {
 }
 $Py = Get-ReefPython
 Write-Host "python=$Py"
-& $Py -m pip install -e . -q 2>&1 | Out-Null
+$env:PYTHONPATH = Join-Path $Repo "src"
+$importOk = & $Py -c "import trust_but_anchor" 2>&1
 if ($LASTEXITCODE -ne 0) {
+    Write-Host "pip install -e . (trust_but_anchor import failed)"
     & $Py -m pip install -e .
-    if ($LASTEXITCODE -ne 0) { throw "pip install -e . failed on reef" }
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "pip failed; continuing with PYTHONPATH=$env:PYTHONPATH"
+    }
 }
 
 $Worker = Join-Path $Repo "scripts\anchor2-sweep.ps1"

@@ -1,8 +1,10 @@
 # Worker: anchor vs anchor2 models on questions_anchor2.json (3 repeats each).
 $ErrorActionPreference = "Continue"
-Set-Location (Split-Path -Parent $PSScriptRoot)
+$RepoRoot = Split-Path -Parent $PSScriptRoot
+Set-Location $RepoRoot
 . (Join-Path $PSScriptRoot "reef-python.ps1")
 $Py = Get-ReefPython
+$env:PYTHONPATH = Join-Path $RepoRoot "src"
 
 $Log = Join-Path $PWD "results\anchor2-sweep.log"
 $Nohup = Join-Path $PWD "results\anchor2-sweep.nohup"
