@@ -1,5 +1,7 @@
 function Get-ReefPython {
     $paths = @(
+        "X:\venvs\quote-provenance-eval\Scripts\python.exe",
+        "X:\venvs\trust-but-anchor\Scripts\python.exe",
         "C:\Users\Owner\AppData\Local\Programs\Python\Python313\python.exe",
         "C:\Users\Owner\AppData\Local\Programs\Python\Python312\python.exe",
         "C:\Users\Owner\AppData\Local\Programs\Python\Python311\python.exe"

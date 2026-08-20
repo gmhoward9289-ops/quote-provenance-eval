@@ -17,6 +17,18 @@ if (-not $Repo) {
 Set-Location $Repo
 git pull
 
+. (Join-Path $PSScriptRoot "reef-python.ps1")
+if (-not (Test-Path (Join-Path $PSScriptRoot "reef-python.ps1"))) {
+    . (Join-Path $Repo "scripts\reef-python.ps1")
+}
+$Py = Get-ReefPython
+Write-Host "python=$Py"
+& $Py -m pip install -e . -q 2>&1 | Out-Null
+if ($LASTEXITCODE -ne 0) {
+    & $Py -m pip install -e .
+    if ($LASTEXITCODE -ne 0) { throw "pip install -e . failed on reef" }
+}
+
 $Worker = Join-Path $Repo "scripts\anchor2-sweep.ps1"
 $PyHelper = Join-Path $Repo "scripts\reef-python.ps1"
 $TempWorker = "C:\Users\Owner\AppData\Local\Temp\anchor2-sweep.ps1"
@@ -33,7 +45,7 @@ foreach ($pair in @(
 if (-not (Test-Path $Worker)) {
     throw "missing scripts\anchor2-sweep.ps1 (pull or scp failed)"
 }
-. $PyHelper
+. (Join-Path $Repo "scripts\reef-python.ps1")
 $null = Get-ReefPython
 
 $LogDir = Join-Path $Repo "results"
