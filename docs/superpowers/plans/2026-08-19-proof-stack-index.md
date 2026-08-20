@@ -10,7 +10,20 @@
 | 1 | Anchor library | `C:\Users\gmhow\dev\trust-but-anchor` | [2026-08-19-anchor-library.md](./2026-08-19-anchor-library.md) | — |
 | 2 | henhouse session schema | extract from `C:\Users\gmhow\dev\leghorn\henhouse.py`; new package repo `henhouse` | [2026-08-19-henhouse-schema.md](./2026-08-19-henhouse-schema.md) | — (parallel with 1 after schema freeze) |
 | 3 | Session → pytest | **new** repo `pytest-session-trace` | [2026-08-19-session-pytest.md](./2026-08-19-session-pytest.md) | henhouse v1 |
-| 4 | MCP domain contracts | **new** repo `pytest-mcp-contract`; dogfood `C:\Users\gmhow\dev\swamp-ops` | [2026-08-19-mcp-contracts.md](./2026-08-19-mcp-contracts.md) | optional henhouse, optional trust-but-anchor |
+| 4 | MCP domain contracts | `pytest-mcp-contract` on PyPI; dogfood `swamp-ops` | [2026-08-19-mcp-contracts.md](./2026-08-19-mcp-contracts.md) | optional henhouse, optional trust-but-anchor |
+
+## Stack status (2026-08-20)
+
+| Lane | PyPI | swamp-ops dogfood |
+| --- | --- | --- |
+| 1 trust-but-anchor | yes | optional `[anchor]` extra |
+| 2 henhouse | yes (0.1.2) | JSONL fixtures parse in `test_session_trace.py` |
+| 3 pytest-session-trace | yes (0.1.5+) | `test_session_trace.py` + live capture script |
+| 4 pytest-mcp-contract | yes (0.1.3+) | `test_mcp_contract.py` + schema snapshots |
+
+`swamp-ops/requirements-dev.txt` pins all three pytest-stack packages from PyPI.
+Each library has `packaging/publish-doctor.sh` (daily CI) verifying the registry
+matches `__version__`.
 
 ```
 trust_but_anchor (stdlib)          henhouse (stdlib)
