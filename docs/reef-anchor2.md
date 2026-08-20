@@ -1,21 +1,20 @@
 # Reef: anchor vs anchor2 sweep
 
-Run on **reef** (`owner@192.168.68.20`) where Ollama is local. Pull latest `trust-but-anchor` first.
+Run on **reef** (`owner@192.168.68.20`, **Windows** + local Ollama). From COOPER:
 
-```bash
-ssh owner@192.168.68.20
-cd ~/dev/trust-but-anchor   # or quote-provenance-eval until renamed on reef
-git pull
-bash scripts/anchor2-sweep.sh
+```powershell
+cd C:\Users\gmhow\dev\trust-but-anchor
+.\scripts\start-reef-anchor2.ps1
 ```
 
-The sweep runs `granite3.3:8b`, `qwen2.5-coder:7b`, and `mistral:7b` on `corpus/questions_anchor2.json` with both `--arm anchor` and `--arm anchor2` (3 repeats each). Log: `results/anchor2-sweep.log`.
+Reef repo path: `C:\Users\Owner\dev\trust-but-anchor` (cloned from GitHub if missing).
 
-One-off:
+The sweep runs `granite3.3:8b`, `qwen2.5-coder:7b`, and `mistral:7b` on `corpus/questions_anchor2.json` with both `--arm anchor` and `--arm anchor2` (3 repeats each). Logs: `results\anchor2-sweep.log` and `results\anchor2-sweep.nohup`.
 
-```bash
-python3 eval.py run --provider ollama --model granite3.3:8b --arm anchor2 \
-  --questions corpus/questions_anchor2.json --repeats 3 --verbose
+Check progress:
+
+```powershell
+ssh owner@192.168.68.20 "powershell -NoProfile -Command \"Get-Content C:\\Users\\Owner\\dev\\trust-but-anchor\\results\\anchor2-sweep.log -Tail 20\""
 ```
 
-After the run, copy `results/run_*.json` back or `python3 eval.py report results/run_*anchor2*.json`.
+Linux reef (if ever): `bash scripts/anchor2-sweep.sh`
