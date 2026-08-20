@@ -43,5 +43,4 @@ Do **1** to a tagged v0.1. Start **2** as soon as the henhouse JSON key list in 
 
 ## Local remotes
 
-- **Folder + GitHub:** `C:\Users\gmhow\dev\trust-but-anchor` → `github` = `gmhoward9289-ops/trust-but-anchor`
-- **swamplink `origin`:** still `swamplink:/srv/git/quote-provenance-eval.git` until the bare repo on swamplink is renamed server-side (pushes work either way)
+- **Folder + GitHub + swamplink:** `C:\Users\gmhow\dev\trust-but-anchor` → `origin` = `swamplink:/srv/git/trust-but-anchor.git`, `github` = `gmhoward9289-ops/trust-but-anchor`
