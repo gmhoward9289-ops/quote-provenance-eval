@@ -1,6 +1,10 @@
 # Trust, But Anchor
 
+[![ci](https://github.com/gmhoward9289-ops/trust-but-anchor/actions/workflows/ci.yml/badge.svg)](https://github.com/gmhoward9289-ops/trust-but-anchor/actions/workflows/ci.yml)
+[![pypi](https://img.shields.io/pypi/v/trust-but-anchor)](https://pypi.org/project/trust-but-anchor/)
 [![Discussions](https://img.shields.io/github/discussions/gmhoward9289-ops/trust-but-anchor)](https://github.com/gmhoward9289-ops/trust-but-anchor/discussions)
+
+[Discussions](https://github.com/gmhoward9289-ops/trust-but-anchor/discussions) — questions, ideas, and what you find when you run the harness. Bugs go in Issues.
 
 **On adversarial documents, models produce a character-for-character verbatim quote only 64–73% of the time — even when explicitly told to.** Letting code locate a short model-proposed anchor phrase instead recovers 91–100% coverage, with every emitted span guaranteed to be a real substring of the source. That's the whole argument: don't trust the model's quote — trust its anchor, and verify the anchor in code.
 
