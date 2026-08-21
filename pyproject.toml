@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "trust-but-anchor"
-version = "0.1.0"
+version = "0.1.1"
 description = "The model proposes a short anchor; code locates a real source span. Fail closed."
 readme = "README.md"
 requires-python = ">=3.10"

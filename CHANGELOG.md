@@ -4,11 +4,15 @@ All notable changes to **trust-but-anchor** (library + eval harness).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-08-21
+
 ### Added
 
 - **Report** surfaces per-run `anchor_methods` and `anchor_ambiguous` breakdowns after the comparison table (`eval.py report`, issue #7)
 - **`--docs`** on `eval.py run` — comma-separated document basenames; unknown names exit listing available docs (issue #8)
 - **`docs/tested-models.md`** — provider/model matrix and Ollama caveats; linked from README (issue #9)
+- **`docs/research-frame-anchor2-trap.md`** — research frame for the anchor2 trap evaluation
+- **Reef Windows tooling** for anchor2 sweeps (bootstrap, RDP, Ollama fix/serve, unstick/rerun/ship scripts; `docs/reef-rdp.md`)
 
 ### Fixed
 
@@ -36,4 +40,5 @@ All notable changes to **trust-but-anchor** (library + eval harness).
 - Eval harness (`eval.py`, corpus, `results/`) stays in the repo; only the locator stack ships in the wheel.
 - Swamplink bare repo: `swamplink:/srv/git/trust-but-anchor.git`
 
+[0.1.1]: https://github.com/gmhoward9289-ops/trust-but-anchor/releases/tag/v0.1.1
 [0.1.0]: https://github.com/gmhoward9289-ops/trust-but-anchor/releases/tag/v0.1.0
