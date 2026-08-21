@@ -366,9 +366,99 @@ def summarize(rows: list) -> dict:
     return s
 
 
+def filter_questions_by_docs(questions: list, docs_csv: str) -> list:
+    """Keep questions whose ``doc`` basename is in a comma-separated list.
+
+    Raises ValueError with available basenames when any requested doc is unknown
+    for the loaded questions file.
+    """
+    wanted = {d.strip() for d in docs_csv.split(",") if d.strip()}
+    if not wanted:
+        return questions
+    available = sorted({q["doc"] for q in questions})
+    unknown = sorted(wanted - set(available))
+    if unknown:
+        raise ValueError(
+            f"unknown doc(s): {', '.join(unknown)}. "
+            f"Available in this questions file: {', '.join(available)}"
+        )
+    return [q for q in questions if q["doc"] in wanted]
+
+
+def _run_label(r: dict) -> str:
+    """Short corpus/variant/arm label matching the comparison table."""
+    corpus = r["corpus"].replace("questions_", "").replace("questions", "clean")
+    arms = r.get("arms") or []
+    if arms == ["anchor2"]:
+        corpus = f"{corpus}/anchor2"
+    elif arms == ["anchor"]:
+        corpus = f"{corpus}/anchor"
+    elif arms and arms != ["quote", "anchor"]:
+        corpus = f"{corpus}/{'+'.join(arms)}"
+    variant = r.get("variant") or "base"
+    if variant != "base":
+        corpus = f"{corpus}/{variant}"
+    return corpus
+
+
+def format_anchor_breakdown_lines(runs: list) -> list[str]:
+    """Markdown section: per-run anchor_methods and ambiguity (issue #7)."""
+    lines = [
+        "## Anchor methods and ambiguity",
+        "",
+        "Per run with anchor data. *Methods* are how `locate` resolved the "
+        "model's phrase (exact / normalized / subsequence / fuzzy / not_found / "
+        "unparseable). *Ambiguous* counts located anchors whose matched span "
+        "occurs more than once in the normalized document — not a locator "
+        "defect by itself; common on repeated OCR footers or quoted-reply threads.",
+        "",
+    ]
+    any_anchor = False
+    for r in runs:
+        s = r["summary"]
+        methods = s.get("anchor_methods")
+        if not methods:
+            continue
+        any_anchor = True
+        n = s.get("n_anchor") or sum(methods.values())
+        parts = []
+        for method, count in sorted(methods.items(), key=lambda kv: (-kv[1], kv[0])):
+            share = f"{count / n:.0%}" if n else "—"
+            parts.append(f"{method} {count} ({share})")
+        label = _run_label(r)
+        lines.append(f"### `{r['provider']}` `{r['model']}` — `{label}`")
+        lines.append("")
+        lines.append(f"- **methods:** {'; '.join(parts)}")
+        if "anchor_ambiguous" in s:
+            amb = s["anchor_ambiguous"]
+            located = sum(
+                c for m, c in methods.items()
+                if m not in ("not_found", "unparseable")
+            )
+            if located:
+                lines.append(
+                    f"- **ambiguous:** {amb} / {located} located "
+                    f"({amb / located:.0%})"
+                )
+            else:
+                lines.append(f"- **ambiguous:** {amb} (none located)")
+        lines.append("")
+    if not any_anchor:
+        lines.append("_No runs in this report include anchor-arm summary data._")
+        lines.append("")
+    return lines
+
+
 def cmd_run(args: argparse.Namespace) -> None:
     qpath = Path(args.questions)
     questions = json.loads(qpath.read_text(encoding="utf-8"))
+    if getattr(args, "docs", None):
+        try:
+            questions = filter_questions_by_docs(questions, args.docs)
+        except ValueError as e:
+            raise SystemExit(f"error: {e}") from e
+        if not questions:
+            raise SystemExit("error: --docs matched no questions")
     if args.limit:
         questions = questions[: args.limit]
     docs = {p.name: p.read_text(encoding="utf-8") for p in DOCS.glob("*.txt")}
@@ -458,17 +548,7 @@ def cmd_report(args: argparse.Namespace) -> None:
     for r in runs:
         s = r["summary"]
         ci = s.get("ci95", {})
-        corpus = r["corpus"].replace("questions_", "").replace("questions", "clean")
-        arms = r.get("arms") or []
-        if arms == ["anchor2"]:
-            corpus = f"{corpus}/anchor2"
-        elif arms == ["anchor"]:
-            corpus = f"{corpus}/anchor"
-        elif arms and arms != ["quote", "anchor"]:
-            corpus = f"{corpus}/{'+'.join(arms)}"
-        variant = r.get("variant") or "base"
-        if variant != "base":
-            corpus = f"{corpus}/{variant}"
+        corpus = _run_label(r)
         def pct(key):
             return f"{s[key]:.0%}" if key in s else "—"
         def pct_ci(key):
@@ -507,8 +587,10 @@ def cmd_report(args: argparse.Namespace) -> None:
         "is a real substring of the source by construction. All rates are "
         "intent-to-treat: responses that arrived but could not be parsed stay "
         "in the denominators (*unparseable* column); only provider/network "
-        "errors are excluded.", "",
+        "errors are excluded.",
+        "",
     ]
+    lines += format_anchor_breakdown_lines(runs)
     out = ROOT / "results" / "comparison.md"
     out.write_text("\n".join(lines), encoding="utf-8")
     print("\n".join(lines))
@@ -533,6 +615,9 @@ def main() -> None:
                          "across repeats and adds a per-repeat breakdown")
     pr.add_argument("--questions", default=str(ROOT / "corpus" / "questions.json"),
                     help="questions file (e.g. corpus/questions_hard.json)")
+    pr.add_argument("--docs", default="",
+                    help="comma-separated document basenames (match question "
+                         "`doc` field); only those questions run")
     pr.add_argument("--verbose", action="store_true", help="per-question progress lines")
     pr.set_defaults(func=cmd_run)
 

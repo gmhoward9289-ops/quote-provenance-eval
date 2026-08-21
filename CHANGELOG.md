@@ -4,6 +4,12 @@ All notable changes to **trust-but-anchor** (library + eval harness).
 
 ## [Unreleased]
 
+### Added
+
+- **Report** surfaces per-run `anchor_methods` and `anchor_ambiguous` breakdowns after the comparison table (`eval.py report`, issue #7)
+- **`--docs`** on `eval.py run` — comma-separated document basenames; unknown names exit listing available docs (issue #8)
+- **`docs/tested-models.md`** — provider/model matrix and Ollama caveats; linked from README (issue #9)
+
 ### Fixed
 
 - **`summarize()` counts `arm=anchor2`** in `n_anchor` / `anchor_coverage` (was always `n_anchor=0` for dual-anchor runs)

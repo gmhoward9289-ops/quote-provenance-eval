@@ -84,7 +84,9 @@ export OPENROUTER_API_KEY=sk-or-...
 python3 eval.py run --provider openrouter --model openai/gpt-4o-mini --verbose
 ```
 
-Useful flags: `--arm quote|anchor|anchor2|both` (default both), `--variant base|fewshot|refusal`, `--limit N` for a cheap smoke test, `--repeats N` to run the whole set N times (the summary pools across repeats, reports 95% Wilson intervals in `ci95`, and adds a `per_rep` breakdown of the headline rates — publish with `--repeats 3` or more).
+Useful flags: `--arm quote|anchor|anchor2|both` (default both), `--variant base|fewshot|refusal`, `--docs quarterly_report.txt,messy_memo.txt` to run only questions for those document basenames (unknown names exit with the available list), `--limit N` for a cheap smoke test, `--repeats N` to run the whole set N times (the summary pools across repeats, reports 95% Wilson intervals in `ci95`, and adds a `per_rep` breakdown of the headline rates — publish with `--repeats 3` or more).
+
+Which providers and models have been exercised here (and what to watch for): **[docs/tested-models.md](docs/tested-models.md)**.
 
 ### When anchors won't locate (`--variant fewshot`)
 
