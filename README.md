@@ -8,7 +8,7 @@
 
 **On adversarial documents, models produce a character-for-character verbatim quote only 64–73% of the time — even when explicitly told to.** Letting code locate a short model-proposed anchor phrase instead recovers 91–100% coverage, with every emitted span guaranteed to be a real substring of the source. That's the whole argument: don't trust the model's quote — trust its anchor, and verify the anchor in code.
 
-**52 local models measured**, and only 11 clear a usable bar — ≥95% verified coverage *and* a perfect record of refusing when the requested value is absent. Published results, including what each model costs in energy per 100 extractions: **[swamplink.com/data/trust](https://www.swamplink.com/data/trust/)**.
+**52 local models measured**, and only 11 clear a usable bar — ≥95% verified coverage *and* a perfect record of refusing when the requested value is absent. Published results, including what each model costs in energy per 100 extractions: **[swamplink.com/data/trust](https://swamplink.com/data/trust/)**.
 
 **Question:** when you ask an LLM to justify an extracted value with a *verbatim* quote from the source, how often is the quote actually verbatim — and does "model proposes, code anchors" beat trusting the model's quotes?
 
@@ -42,7 +42,7 @@ print(score(hit))
 print(analyze(doc, prompt="Return NOT_FOUND if absent.", num_ctx=8192))
 ```
 
-The eval harness below measures *your* models on *your* docs. The library does not need that table to be useful. Published numbers live at [swamplink.com/data/trust](https://www.swamplink.com/data/trust/).
+The eval harness below measures *your* models on *your* docs. The library does not need that table to be useful. Published numbers live at [swamplink.com/data/trust](https://swamplink.com/data/trust/).
 
 ## Quickstart (no API key needed)
 

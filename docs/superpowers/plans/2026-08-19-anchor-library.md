@@ -341,7 +341,7 @@ print(analyze(doc, prompt="Return NOT_FOUND if absent.", num_ctx=8192))
 The eval harness below measures *your* models on *your* docs. The library does not need that table to be useful.
 ```
 
-Keep the existing eval sections. Link `https://www.swamplink.com/data/trust/`.
+Keep the existing eval sections. Link `https://swamplink.com/data/trust/`.
 
 - [ ] **Step 2: CI workflow**
 

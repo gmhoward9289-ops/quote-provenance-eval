@@ -36,7 +36,7 @@ Mock profiles with saved runs: `faithful`, `sloppy`, `chaotic` (including
 
 Cross-model tables: [`results/comparison.md`](../results/comparison.md),
 [`results/comparison_anchor2.md`](../results/comparison_anchor2.md). Published
-52-model sweep + energy: [swamplink.com/data/trust](https://www.swamplink.com/data/trust/).
+52-model sweep + energy: [swamplink.com/data/trust](https://swamplink.com/data/trust/).
 
 ## Caveats
 

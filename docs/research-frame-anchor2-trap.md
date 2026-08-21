@@ -1,6 +1,8 @@
 # Research frame: dual-anchor (anchor2) vs single-anchor on repeated-anchor trap
 
-**Status:** outline / FRAME only — not a finished blog post.  
+**Status:** shipped as blog + trust section (2026-08-21).  
+**Blog:** `blog.swamplink.com/posts/when-documents-repeat-single-anchor-coverage-collapses/`  
+**Trust:** `swamplink.com/data/trust/` — section “Provenance under document repetition”  
 **Hardware:** reef RTX 4080 SUPER · Ollama · models on `Z:\ollama\models`
 
 ---
