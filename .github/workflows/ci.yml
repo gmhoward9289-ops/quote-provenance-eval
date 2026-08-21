@@ -24,5 +24,8 @@ jobs:
       - run: python validate_corpus.py
       - run: pytest -q
         env:
+          PYTHONPATH: .
           PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
       - run: python eval.py run --provider mock --model sloppy --limit 5
+        env:
+          PYTHONPATH: .
