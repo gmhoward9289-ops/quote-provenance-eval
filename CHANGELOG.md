@@ -2,6 +2,18 @@
 
 All notable changes to **trust-but-anchor** (library + eval harness).
 
+## [Unreleased]
+
+### Fixed
+
+- **`summarize()` counts `arm=anchor2`** in `n_anchor` / `anchor_coverage` (was always `n_anchor=0` for dual-anchor runs)
+- Report `n` column no longer shows `0/15` for anchor-only runs
+
+### Changed
+
+- Trap corpus grown to **15 questions** (`repeated_anchor_trap.txt` + `questions_anchor2.json`)
+- Mock provider emits `anchor2` for `--arm anchor2`; `rescore.py` / confidence calibration include dual-anchor rows
+
 ## [0.1.0] - 2026-08-20
 
 ### Added

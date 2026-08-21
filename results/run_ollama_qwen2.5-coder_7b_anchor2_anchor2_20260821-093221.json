@@ -1,0 +1,373 @@
+{
+  "provider": "ollama",
+  "model": "qwen2.5-coder:7b",
+  "timestamp": "20260821-093221",
+  "corpus": "questions_anchor2",
+  "variant": "base",
+  "arms": [
+    "anchor2"
+  ],
+  "summary": {
+    "n_quote": 0,
+    "n_anchor": 15,
+    "n_provider_errors": 0,
+    "n_unparseable": 0,
+    "anchor_located_rate": 1.0,
+    "anchor_coverage": 1.0,
+    "anchor_methods": {
+      "exact": 12,
+      "pair": 3
+    },
+    "anchor_ambiguous": 3,
+    "anchor_answer_accuracy": 1.0,
+    "anchor_provenance_fidelity_of_located": 1.0,
+    "ci95": {
+      "anchor_coverage": [
+        0.796,
+        1.0
+      ]
+    },
+    "per_rep": {
+      "anchor_coverage": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "rows": [
+    {
+      "id": "a2-1",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "What is the final approved cap for Project Atlas full deployment?",
+      "expect_value": "$2.4 million",
+      "arm": "anchor2",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$2.4 million\", \"anchor\": \"final approved cap of $2.4 million\", \"anchor2\": \"Project Orion (infrastructure): The allocated budget was $120,000 for Phase 1 planning.\"}",
+      "answer": "$2.4 million",
+      "anchor": "final approved cap of $2.4 million",
+      "anchor2": "Project Orion (infrastructure): The allocated budget was $120,000 for Phase 1 planning.",
+      "locate": {
+        "method": "exact",
+        "span": "final approved cap of $2.4 million",
+        "occurrences": 1,
+        "sentence": "Project Atlas (deployment): The allocated budget was $120,000 for Phase 1 planning, with a final approved cap of $2.4 million for full deployment in Q1 2027.",
+        "disambiguated": false
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-2",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "How many FTE are allocated to Project Atlas?",
+      "expect_value": "18",
+      "arm": "anchor2",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"18\", \"anchor\": \"Atlas: 18.\", \"anchor2\": \"Headcount (FTE): Orion: 4. Vega: 2.\"}",
+      "answer": "18",
+      "anchor": "Atlas: 18.",
+      "anchor2": "Headcount (FTE): Orion: 4. Vega: 2.",
+      "locate": {
+        "method": "exact",
+        "span": "Atlas: 18.",
+        "occurrences": 1,
+        "sentence": "Atlas: 18.",
+        "disambiguated": false
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-3",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "When is Project Atlas scheduled to kick off?",
+      "expect_value": "March 17, 2026",
+      "arm": "anchor2",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"March 17, 2026\", \"anchor\": \"Atlas: March 17, 2026\", \"anchor2\": \"Headcount (FTE): Orion: 4. Vega: 2. Atlas: 18.\"}",
+      "answer": "March 17, 2026",
+      "anchor": "Atlas: March 17, 2026",
+      "anchor2": "Headcount (FTE): Orion: 4. Vega: 2. Atlas: 18.",
+      "locate": {
+        "method": "exact",
+        "span": "Atlas: March 17, 2026",
+        "occurrences": 1,
+        "sentence": "Atlas: March 17, 2026, contingent on board approval.",
+        "disambiguated": false
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-4",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "What Phase 1 planning budget was allocated to Project Orion?",
+      "expect_value": "$120,000",
+      "arm": "anchor2",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$120,000\", \"anchor\": \"Phase 1 planning\", \"anchor2\": \"Project Orion (infrastructure)\"}",
+      "answer": "$120,000",
+      "anchor": "Phase 1 planning",
+      "anchor2": "Project Orion (infrastructure)",
+      "locate": {
+        "method": "pair",
+        "span": "Phase 1 planning",
+        "occurrences": 2,
+        "sentence": "Project Orion (infrastructure): The allocated budget was $120,000 for Phase 1 planning.",
+        "disambiguated": true,
+        "chose_occurrence": 1
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-5",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "What contractual credit applies per incident for Atlas production uptime breaches?",
+      "expect_value": "$50,000",
+      "arm": "anchor2",
+      "rep": 1,
+      "raw_response": "{\"answer\": \"$50,000\", \"anchor\": \"carries a contractual credit of $50,000 per incident above the monthly allowance\", \"anchor2\": \"Risk note: The service-level target of 99.9% uptime applies to production systems only.\"}",
+      "answer": "$50,000",
+      "anchor": "carries a contractual credit of $50,000 per incident above the monthly allowance",
+      "anchor2": "Risk note: The service-level target of 99.9% uptime applies to production systems only.",
+      "locate": {
+        "method": "exact",
+        "span": "carries a contractual credit of $50,000 per incident above the monthly allowance",
+        "occurrences": 1,
+        "sentence": "The service-level target of 99.9% uptime for Atlas production carries a contractual credit of $50,000 per incident above the monthly allowance.",
+        "disambiguated": false
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-1",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "What is the final approved cap for Project Atlas full deployment?",
+      "expect_value": "$2.4 million",
+      "arm": "anchor2",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$2.4 million\", \"anchor\": \"final approved cap of $2.4 million\", \"anchor2\": \"Project Orion (infrastructure): The allocated budget was $120,000 for Phase 1 planning.\"}",
+      "answer": "$2.4 million",
+      "anchor": "final approved cap of $2.4 million",
+      "anchor2": "Project Orion (infrastructure): The allocated budget was $120,000 for Phase 1 planning.",
+      "locate": {
+        "method": "exact",
+        "span": "final approved cap of $2.4 million",
+        "occurrences": 1,
+        "sentence": "Project Atlas (deployment): The allocated budget was $120,000 for Phase 1 planning, with a final approved cap of $2.4 million for full deployment in Q1 2027.",
+        "disambiguated": false
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-2",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "How many FTE are allocated to Project Atlas?",
+      "expect_value": "18",
+      "arm": "anchor2",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"18\", \"anchor\": \"Atlas: 18.\", \"anchor2\": \"Headcount (FTE): Orion: 4. Vega: 2.\"}",
+      "answer": "18",
+      "anchor": "Atlas: 18.",
+      "anchor2": "Headcount (FTE): Orion: 4. Vega: 2.",
+      "locate": {
+        "method": "exact",
+        "span": "Atlas: 18.",
+        "occurrences": 1,
+        "sentence": "Atlas: 18.",
+        "disambiguated": false
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-3",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "When is Project Atlas scheduled to kick off?",
+      "expect_value": "March 17, 2026",
+      "arm": "anchor2",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"March 17, 2026\", \"anchor\": \"Atlas: March 17, 2026\", \"anchor2\": \"Headcount (FTE): Orion: 4. Vega: 2. Atlas: 18.\"}",
+      "answer": "March 17, 2026",
+      "anchor": "Atlas: March 17, 2026",
+      "anchor2": "Headcount (FTE): Orion: 4. Vega: 2. Atlas: 18.",
+      "locate": {
+        "method": "exact",
+        "span": "Atlas: March 17, 2026",
+        "occurrences": 1,
+        "sentence": "Atlas: March 17, 2026, contingent on board approval.",
+        "disambiguated": false
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-4",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "What Phase 1 planning budget was allocated to Project Orion?",
+      "expect_value": "$120,000",
+      "arm": "anchor2",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$120,000\", \"anchor\": \"Phase 1 planning\", \"anchor2\": \"Project Orion (infrastructure)\"}",
+      "answer": "$120,000",
+      "anchor": "Phase 1 planning",
+      "anchor2": "Project Orion (infrastructure)",
+      "locate": {
+        "method": "pair",
+        "span": "Phase 1 planning",
+        "occurrences": 2,
+        "sentence": "Project Orion (infrastructure): The allocated budget was $120,000 for Phase 1 planning.",
+        "disambiguated": true,
+        "chose_occurrence": 1
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-5",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "What contractual credit applies per incident for Atlas production uptime breaches?",
+      "expect_value": "$50,000",
+      "arm": "anchor2",
+      "rep": 2,
+      "raw_response": "{\"answer\": \"$50,000\", \"anchor\": \"carries a contractual credit of $50,000 per incident above the monthly allowance\", \"anchor2\": \"Risk note: The service-level target of 99.9% uptime applies to production systems only.\"}",
+      "answer": "$50,000",
+      "anchor": "carries a contractual credit of $50,000 per incident above the monthly allowance",
+      "anchor2": "Risk note: The service-level target of 99.9% uptime applies to production systems only.",
+      "locate": {
+        "method": "exact",
+        "span": "carries a contractual credit of $50,000 per incident above the monthly allowance",
+        "occurrences": 1,
+        "sentence": "The service-level target of 99.9% uptime for Atlas production carries a contractual credit of $50,000 per incident above the monthly allowance.",
+        "disambiguated": false
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-1",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "What is the final approved cap for Project Atlas full deployment?",
+      "expect_value": "$2.4 million",
+      "arm": "anchor2",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$2.4 million\", \"anchor\": \"final approved cap of $2.4 million\", \"anchor2\": \"Project Orion (infrastructure): The allocated budget was $120,000 for Phase 1 planning.\"}",
+      "answer": "$2.4 million",
+      "anchor": "final approved cap of $2.4 million",
+      "anchor2": "Project Orion (infrastructure): The allocated budget was $120,000 for Phase 1 planning.",
+      "locate": {
+        "method": "exact",
+        "span": "final approved cap of $2.4 million",
+        "occurrences": 1,
+        "sentence": "Project Atlas (deployment): The allocated budget was $120,000 for Phase 1 planning, with a final approved cap of $2.4 million for full deployment in Q1 2027.",
+        "disambiguated": false
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-2",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "How many FTE are allocated to Project Atlas?",
+      "expect_value": "18",
+      "arm": "anchor2",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"18\", \"anchor\": \"Atlas: 18.\", \"anchor2\": \"Headcount (FTE): Orion: 4. Vega: 2.\"}",
+      "answer": "18",
+      "anchor": "Atlas: 18.",
+      "anchor2": "Headcount (FTE): Orion: 4. Vega: 2.",
+      "locate": {
+        "method": "exact",
+        "span": "Atlas: 18.",
+        "occurrences": 1,
+        "sentence": "Atlas: 18.",
+        "disambiguated": false
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-3",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "When is Project Atlas scheduled to kick off?",
+      "expect_value": "March 17, 2026",
+      "arm": "anchor2",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"March 17, 2026\", \"anchor\": \"Atlas: March 17, 2026\", \"anchor2\": \"Headcount (FTE): Orion: 4. Vega: 2. Atlas: 18.\"}",
+      "answer": "March 17, 2026",
+      "anchor": "Atlas: March 17, 2026",
+      "anchor2": "Headcount (FTE): Orion: 4. Vega: 2. Atlas: 18.",
+      "locate": {
+        "method": "exact",
+        "span": "Atlas: March 17, 2026",
+        "occurrences": 1,
+        "sentence": "Atlas: March 17, 2026, contingent on board approval.",
+        "disambiguated": false
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-4",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "What Phase 1 planning budget was allocated to Project Orion?",
+      "expect_value": "$120,000",
+      "arm": "anchor2",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$120,000\", \"anchor\": \"Phase 1 planning\", \"anchor2\": \"Project Orion (infrastructure)\"}",
+      "answer": "$120,000",
+      "anchor": "Phase 1 planning",
+      "anchor2": "Project Orion (infrastructure)",
+      "locate": {
+        "method": "pair",
+        "span": "Phase 1 planning",
+        "occurrences": 2,
+        "sentence": "Project Orion (infrastructure): The allocated budget was $120,000 for Phase 1 planning.",
+        "disambiguated": true,
+        "chose_occurrence": 1
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    },
+    {
+      "id": "a2-5",
+      "doc": "repeated_anchor_trap.txt",
+      "question": "What contractual credit applies per incident for Atlas production uptime breaches?",
+      "expect_value": "$50,000",
+      "arm": "anchor2",
+      "rep": 3,
+      "raw_response": "{\"answer\": \"$50,000\", \"anchor\": \"carries a contractual credit of $50,000 per incident above the monthly allowance\", \"anchor2\": \"Risk note: The service-level target of 99.9% uptime applies to production systems only.\"}",
+      "answer": "$50,000",
+      "anchor": "carries a contractual credit of $50,000 per incident above the monthly allowance",
+      "anchor2": "Risk note: The service-level target of 99.9% uptime applies to production systems only.",
+      "locate": {
+        "method": "exact",
+        "span": "carries a contractual credit of $50,000 per incident above the monthly allowance",
+        "occurrences": 1,
+        "sentence": "The service-level target of 99.9% uptime for Atlas production carries a contractual credit of $50,000 per incident above the monthly allowance.",
+        "disambiguated": false
+      },
+      "located": true,
+      "value_in_span": true,
+      "answer_correct": true
+    }
+  ]
+}

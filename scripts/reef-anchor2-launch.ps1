@@ -64,11 +64,15 @@ if ($running) {
     exit 0
 }
 
-$p = Start-Process powershell -PassThru -WindowStyle Hidden -ArgumentList @(
-    "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", $Worker
-)
+$cmd = "powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$Worker`""
+# Win32_Process.Create breaks away from OpenSSH job (Start-Process dies with SSH session).
+$created = Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{ CommandLine = $cmd }
 Write-Host "HOST=$env:COMPUTERNAME"
 Write-Host "REPO=$Repo"
-Write-Host "started_pid=$($p.Id)"
-Start-Sleep -Seconds 3
-if (Test-Path $Log) { Get-Content $Log -Tail 15 }
+Write-Host "started_pid=$($created.ProcessId)"
+Write-Host "create_return=$($created.ReturnValue)"
+Start-Sleep -Seconds 5
+if (Test-Path $Log) { Get-Content $Log -Tail 20 }
+$alive = Get-CimInstance Win32_Process -Filter "Name='powershell.exe'" -ErrorAction SilentlyContinue |
+    Where-Object { $_.CommandLine -like '*anchor2-sweep.ps1*' }
+if ($alive) { Write-Host "ALIVE_AFTER_LAUNCH pid=$($alive.ProcessId -join ',')" } else { Write-Host "WARN not alive 5s after launch" }

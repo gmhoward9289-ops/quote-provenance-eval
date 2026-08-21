@@ -135,7 +135,7 @@ def calibrate(pattern: str = "results/run_*.json",
         with open(path, encoding="utf-8") as fh:
             data = json.load(fh)
         for row in data.get("rows", []):
-            if row.get("arm") != "anchor":
+            if row.get("arm") not in ("anchor", "anchor2"):
                 continue
             loc = row.get("locate")
             if isinstance(loc, str):

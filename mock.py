@@ -96,7 +96,7 @@ def mock_response(question: dict, arm: str, profile: str) -> str:
         quote = _corrupt(question["gt_quote"], mode, rng, answer)
         return json.dumps({"answer": answer, "quote": quote, "_mock_mode": mode})
 
-    # anchor arm: pick 4-6 consecutive words near the value, then corrupt
+    # anchor / anchor2: pick 4-6 consecutive words near the value, then corrupt
     words = question["gt_quote"].split()
     n = min(len(words), rng.randrange(4, 7))
     start = rng.randrange(0, max(1, len(words) - n + 1))
@@ -105,4 +105,15 @@ def mock_response(question: dict, arm: str, profile: str) -> str:
         anchor = "somewhere in the appendix table"
     else:
         anchor = _corrupt(anchor, mode, rng, answer)
-    return json.dumps({"answer": answer, "anchor": anchor, "_mock_mode": mode})
+    payload = {"answer": answer, "anchor": anchor, "_mock_mode": mode}
+    if arm == "anchor2":
+        # second phrase elsewhere in the same gt sentence (or a short suffix)
+        rest = words[start + n:] or words[:start] or words[-3:]
+        n2 = min(len(rest), rng.randrange(3, 6) if len(rest) >= 3 else len(rest) or 1)
+        anchor2 = " ".join(rest[:n2]) if rest else " ".join(words[-3:])
+        if mode == "fabricate":
+            anchor2 = "appendix cross-reference note"
+        else:
+            anchor2 = _corrupt(anchor2, mode, rng, answer)
+        payload["anchor2"] = anchor2
+    return json.dumps(payload)

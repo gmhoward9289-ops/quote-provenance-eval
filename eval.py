@@ -167,7 +167,7 @@ def parse_model_json(raw: str) -> dict | None:
 def get_response(provider: str, model: str, arm: str, question: dict, doc_text: str,
                  variant: str = "base") -> str:
     if provider == "mock":
-        return mock_response(question, "anchor" if arm == "anchor2" else arm, model)
+        return mock_response(question, arm, model)
     system = {"quote": QUOTE_SYSTEM, "anchor": ANCHOR_SYSTEM,
               "anchor2": ANCHOR2_SYSTEM}[arm]
     system += VARIANT_SUFFIX.get(variant, "")
@@ -252,6 +252,11 @@ def run_arm(arm: str, questions: list, docs: dict, provider: str, model: str,
     return rows
 
 
+def is_anchor_arm(arm: str) -> bool:
+    """Single-anchor and dual-anchor arms share the same coverage metrics."""
+    return arm in ("anchor", "anchor2")
+
+
 def summarize(rows: list) -> dict:
     # Intent-to-treat: a response the model produced but we could not parse
     # is a failure of the arm (a naive pipeline gets no provenance from it),
@@ -262,8 +267,14 @@ def summarize(rows: list) -> dict:
     def attempted(arm: str) -> list:
         return [r for r in rows if r["arm"] == arm and not r.get("absent")
                 and "raw_response" in r]
+
+    def attempted_anchor_family() -> list:
+        # --arm anchor2 writes arm="anchor2"; treat it like anchor for rates
+        return [r for r in rows if is_anchor_arm(r["arm"]) and not r.get("absent")
+                and "raw_response" in r]
+
     quote_rows = attempted("quote")
-    anchor_rows = attempted("anchor")
+    anchor_rows = attempted_anchor_family()
     provider_errors = [r for r in rows if "error" in r]
     unparseable = [r for r in rows if r.get("parse_error")]
     s: dict = {"n_quote": len(quote_rows), "n_anchor": len(anchor_rows),
@@ -324,7 +335,7 @@ def summarize(rows: list) -> dict:
     # Unparseable responses count in the denominator (not a clean refusal).
     abs_q = [r for r in rows if r.get("absent") and r["arm"] == "quote"
              and ("refused" in r or r.get("parse_error"))]
-    abs_a = [r for r in rows if r.get("absent") and r["arm"] == "anchor"
+    abs_a = [r for r in rows if r.get("absent") and is_anchor_arm(r["arm"])
              and ("refused" in r or r.get("parse_error"))]
     if abs_q:
         n = len(abs_q)
@@ -448,6 +459,16 @@ def cmd_report(args: argparse.Namespace) -> None:
         s = r["summary"]
         ci = s.get("ci95", {})
         corpus = r["corpus"].replace("questions_", "").replace("questions", "clean")
+        arms = r.get("arms") or []
+        if arms == ["anchor2"]:
+            corpus = f"{corpus}/anchor2"
+        elif arms == ["anchor"]:
+            corpus = f"{corpus}/anchor"
+        elif arms and arms != ["quote", "anchor"]:
+            corpus = f"{corpus}/{'+'.join(arms)}"
+        variant = r.get("variant") or "base"
+        if variant != "base":
+            corpus = f"{corpus}/{variant}"
         def pct(key):
             return f"{s[key]:.0%}" if key in s else "—"
         def pct_ci(key):
@@ -459,7 +480,12 @@ def cmd_report(args: argparse.Namespace) -> None:
                 v += f" <sub>{lo:.0%}–{hi:.0%}</sub>"
             return v
         nq, na = s.get("n_quote", 0), s.get("n_anchor", 0)
-        n_col = str(nq) if nq == na else f"{nq}/{na}"
+        if nq and na and nq != na:
+            n_col = f"{nq}/{na}"
+        elif na:
+            n_col = str(na)
+        else:
+            n_col = str(nq)
         bad = s.get("n_unparseable", s.get("n_failed_calls", 0))
         lines.append(
             f"| {r['provider']} | {r['model']} | {corpus} | {n_col} | {bad} | "

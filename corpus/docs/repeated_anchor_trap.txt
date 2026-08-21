@@ -19,4 +19,24 @@ Risk note: The service-level target of 99.9% uptime applies to production system
 The service-level target of 99.9% uptime was cited in the Vega pilot proposal but does not bind Atlas until contract execution.
 The service-level target of 99.9% uptime for Atlas production carries a contractual credit of $50,000 per incident above the monthly allowance.
 
+Vendor retainers (annual):
+The retainer amount was $8,500 for Northwind Consulting (advisory only).
+The retainer amount was $8,500 for Contoso Labs (research support).
+The retainer amount was $8,500 for Fabrikam Ops, with an overtime rider of $1,200 per on-call weekend.
+
+Change-control status:
+Status update: change request CR-401 is pending legal review.
+Status update: change request CR-402 is pending legal review.
+Status update: change request CR-403 is approved; cutover window is October 3, 2026 at 02:00 UTC.
+
+Named contacts:
+Primary contact for Orion is Maya Chen, ext. 4410.
+Primary contact for Vega is Jordan Lee, ext. 4410.
+Primary contact for Atlas is Priya Nair, ext. 5522.
+
+Training seats:
+Training seats reserved: 12 for the Orion runbook workshop.
+Training seats reserved: 12 for the Vega lab day.
+Training seats reserved: 12 for Atlas go-live, plus 6 overflow seats held until September 15, 2026.
+
 Board materials will be circulated by August 28.

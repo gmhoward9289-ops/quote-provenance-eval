@@ -38,5 +38,85 @@
     "question": "What contractual credit applies per incident for Atlas production uptime breaches?",
     "expect_value": "$50,000",
     "gt_quote": "The service-level target of 99.9% uptime for Atlas production carries a contractual credit of $50,000 per incident above the monthly allowance."
+  },
+  {
+    "id": "a2-6",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "What overtime rider applies for Fabrikam Ops on-call weekends?",
+    "expect_value": "$1,200",
+    "gt_quote": "The retainer amount was $8,500 for Fabrikam Ops, with an overtime rider of $1,200 per on-call weekend."
+  },
+  {
+    "id": "a2-7",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "Which vendor has the Contoso Labs retainer?",
+    "expect_value": "Contoso Labs",
+    "gt_quote": "The retainer amount was $8,500 for Contoso Labs (research support)."
+  },
+  {
+    "id": "a2-8",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "When is the CR-403 cutover window?",
+    "expect_value": "October 3, 2026 at 02:00 UTC",
+    "gt_quote": "Status update: change request CR-403 is approved; cutover window is October 3, 2026 at 02:00 UTC."
+  },
+  {
+    "id": "a2-9",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "What is the status of change request CR-401?",
+    "expect_value": "pending legal review",
+    "gt_quote": "Status update: change request CR-401 is pending legal review."
+  },
+  {
+    "id": "a2-10",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "Who is the primary contact for Project Atlas?",
+    "expect_value": "Priya Nair",
+    "gt_quote": "Primary contact for Atlas is Priya Nair, ext. 5522."
+  },
+  {
+    "id": "a2-11",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "What extension reaches Maya Chen for Orion?",
+    "expect_value": "4410",
+    "gt_quote": "Primary contact for Orion is Maya Chen, ext. 4410."
+  },
+  {
+    "id": "a2-12",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "How many overflow seats are held for Atlas go-live?",
+    "expect_value": "6",
+    "gt_quote": "Training seats reserved: 12 for Atlas go-live, plus 6 overflow seats held until September 15, 2026."
+  },
+  {
+    "id": "a2-13",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "Until when are Atlas overflow training seats held?",
+    "expect_value": "September 15, 2026",
+    "gt_quote": "Training seats reserved: 12 for Atlas go-live, plus 6 overflow seats held until September 15, 2026."
+  },
+  {
+    "id": "a2-14",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "How many training seats are reserved for the Orion runbook workshop?",
+    "expect_value": "12",
+    "gt_quote": "Training seats reserved: 12 for the Orion runbook workshop."
+  },
+  {
+    "id": "a2-15",
+    "doc": "repeated_anchor_trap.txt",
+    "set": "anchor2",
+    "question": "What is the annual retainer for Northwind Consulting?",
+    "expect_value": "$8,500",
+    "gt_quote": "The retainer amount was $8,500 for Northwind Consulting (advisory only)."
   }
 ]

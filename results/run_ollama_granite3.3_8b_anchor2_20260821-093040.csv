@@ -1,0 +1,6 @@
+id,arm,rep,outcome,ratio,answer_correct,detail
+a2-1,anchor,1,subsequence/value-hit,,True,
+a2-2,anchor,1,not_found,,True,
+a2-3,anchor,1,subsequence/value-hit,,True,
+a2-4,anchor,1,not_found,,True,
+a2-5,anchor,1,not_found,,True,

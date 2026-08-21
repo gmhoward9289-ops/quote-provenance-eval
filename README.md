@@ -117,7 +117,7 @@ Six synthetic documents in `corpus/docs/` — synthetic so ground truth is exact
 
 `corpus/questions_absent.json` has 10 **value-absent** questions (`--questions corpus/questions_absent.json`): the document does not contain the requested value, and both system prompts permit an explicit `NOT_FOUND` refusal. The right behavior is refusing; the dangerous failure is a confident invented answer backed by a real-looking span (an exact quote or a located anchor of irrelevant text). The summary reports `*_absent_refusal_rate` and counts of `confident_with_*_span` — fabrication under pressure, measured directly. These rows are excluded from the main coverage rates.
 
-`corpus/questions_anchor2.json` exercises **dual-anchor disambiguation** (`--arm anchor2`): repeated phrases where the first occurrence lacks the expected value (`repeated_anchor_trap.txt`). Blind `locate()` takes the first match and misses; `locate_pair()` should recover when the model supplies a second nearby phrase.
+`corpus/questions_anchor2.json` exercises **dual-anchor disambiguation** (`--arm anchor2`): repeated phrases where the first occurrence lacks the expected value (`repeated_anchor_trap.txt`, 15 questions). Blind `locate()` takes the first match and misses; `locate_pair()` should recover when the model supplies a second nearby phrase.
 
 To grow the eval: add a `.txt` to `corpus/docs/`, add question entries, re-run the validator. More docs and more question styles (multi-hop, ambiguous) make the numbers more publishable.
 

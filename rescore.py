@@ -8,8 +8,8 @@ import json
 import sys
 from pathlib import Path
 
-from anchor import locate
-from eval import answer_correct, parse_model_json, summarize
+from anchor import locate, locate_pair
+from eval import answer_correct, is_anchor_arm, parse_model_json, summarize
 from scoring import score_quote
 
 ROOT = Path(__file__).parent
@@ -32,8 +32,15 @@ def rescore_row(row: dict) -> dict:
     if parsed is None:
         return row
     row["answer"] = str(parsed.get("answer", ""))
-    if row["arm"] == "anchor":
-        loc = locate(doc, str(parsed.get("anchor", "")))
+    if is_anchor_arm(row["arm"]):
+        a1 = str(parsed.get("anchor", ""))
+        row["anchor"] = a1
+        if row["arm"] == "anchor2":
+            a2 = str(parsed.get("anchor2", ""))
+            row["anchor2"] = a2
+            loc = locate_pair(doc, a1, a2)
+        else:
+            loc = locate(doc, a1)
         row["locate"] = loc
         row["located"] = loc["method"] != "not_found"
         if row["located"]:
