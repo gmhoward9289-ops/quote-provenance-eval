@@ -53,7 +53,10 @@ METHOD_PRIOR = {
 # Located-but-ambiguous anchors: the locator took the first of several
 # identical spans. Answer is untouched; the citation is a coin-flip over
 # however many occurrences there were.
-AMBIGUITY_PROVENANCE_PENALTY = 0.45
+# Factor is set so exact+ambiguous lands at provenance_confidence == 0.44
+# (was 0.45 → 0.98*0.45=0.441; weight on ambiguity was a hair high).
+AMBIGUITY_TARGET_PROV = 0.44
+AMBIGUITY_PROVENANCE_PENALTY = AMBIGUITY_TARGET_PROV / METHOD_PRIOR["exact"][0]
 
 # Located span didn't carry the expected value: the anchor landed near, not on.
 VALUE_MISSING_PROVENANCE_PENALTY = 0.35
